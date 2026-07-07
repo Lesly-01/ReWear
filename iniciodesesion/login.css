@@ -1,0 +1,58 @@
+header{
+
+background-color: #64b99e;
+color: hsl(0, 0%, 0%);
+padding: 20px;
+position: sticky;
+top: 0;
+z-index: 1000; 
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+
+#slogan{
+    margin-right: 200px;
+    text-align: right;
+    font-size: 50px;
+}
+
+#boton_login{
+    color:#295a2c;
+    background-color: white;
+    border-color: #295a2c;
+    border-style: solid;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+
+    font-size: 30px;
+    width: 200px;
+}
+
+#boton_signup{
+    background-color: #295a2c;
+    border: #295a2c;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+
+    font-size: 30px;
+    width: 200px;
+}
+
+.botones_login{
+  display: flex;
+  justify-content: right; 
+  align-items: right; 
+  margin-right: 400px;
+  height: 100px;
+}

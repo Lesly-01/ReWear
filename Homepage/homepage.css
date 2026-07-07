@@ -1,0 +1,34 @@
+header{
+
+background-color: #64b99e;
+color: hsl(0, 0%, 0%);
+padding: 20px;
+position: sticky;
+top: 0;
+z-index: 1000; 
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+
+#Inicio{
+    text-align: center;
+}
+
+#home{
+    background-color: #7e724b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #64b99e;
+    color: white;
+    margin-top: 40px;
+
+}
