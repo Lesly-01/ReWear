@@ -14,15 +14,16 @@ justify-content: space-evenly;
 
 #Inicio{
     text-align: center;
+    font-size: 50px;
 }
 
-#home{
-    background-color: #7e724b;
-    color: white;
+#home_boton{
+    color: #295a2c;
     border: none;
     cursor: pointer;
     margin-top: 10px;
 }
+
 
 footer{
     text-align: center;

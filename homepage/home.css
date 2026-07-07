@@ -56,3 +56,9 @@ justify-content: space-evenly;
   margin-right: 400px;
   height: 100px;
 }
+
+#encabezado_login{
+    text-align: center;
+    font-size: 50px;
+
+}
