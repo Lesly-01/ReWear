@@ -1,20 +1,28 @@
-body{
+*{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
-header{
-
-background-color: #64b99e;
-color: hsl(0, 0%, 0%);
-padding: 20px;
-position: sticky;
-top: 0;
-z-index: 1000; 
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-evenly;
+.form-contenedor{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   padding: 20px;
 }
+
+header{
+   background-color: #64b99e;
+   color: hsl(0, 0%, 0%);
+   padding: 20px;
+   position: sticky;
+   top: 0;
+   z-index: 1000; 
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
 
