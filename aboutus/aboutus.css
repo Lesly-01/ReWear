@@ -1,0 +1,165 @@
+/* --- RESETEO DE ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif; /* Usamos una fuente serif para el texto como en la imagen */
+}
+
+body {
+    background-color: #f7faf9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER / NAVBAR (Estilo Desktop) --- */
+.header {
+    background-color: #f0f7f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    border-bottom: 1px solid #e0ede7;
+}
+
+/* Estilizando el logo ReWear */
+.logo-circle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    color: #4a7c64;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a7c64; /* Verde oscuro del logo */
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-menu a.active {
+    border-bottom: 2px solid #4a7c64;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    color: #555;
+    cursor: pointer;
+}
+
+/* --- CONTENIDO PRINCIPAL (Diseño en Columnas para PC) --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px; /* Espacio generoso entre las 3 columnas */
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- CÍRCULOS DE LOS ICONOS - RECREANDO EL ESTILO EXACTO --- */
+.icon-circle {
+    width: 150px;  /* Círculos más grandes para escritorio */
+    height: 150px;
+    background-color: #bbf2e3; /* Verde menta claro exacto */
+    border-radius: 50%;
+    margin-bottom: 25px;
+    background-size: 65%; /* Escala de la imagen dentro del círculo */
+    background-repeat: no-repeat;
+    background-position: center; /* Centrado perfecto */
+}
+
+/* ASIGNANDO CADA IMAGEN DE FONDO A SU CÍRCULO */
+
+.mission-icon {
+    background-image: url('needle.png'); /* Ruta a la imagen de la aguja */
+}
+
+.vision-icon {
+    background-image: url('button.png'); /* Ruta a la imagen del botón */
+    background-size: 55%; /* Un poco más pequeño para que respire */
+}
+
+.objective-icon {
+    background-image: url('hanger.png'); /* Ruta a la imagen del gancho */
+}
+
+/* --- BLOQUES DE TEXTO --- */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-block h2 {
+    font-size: 1.6rem;
+    color: #111;
+    font-weight: 700;
+}
+
+.text-block p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* --- FOOTER (Estilo Desktop) --- */
+.footer {
+    background-color: #63b39d;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 1rem;
+}
