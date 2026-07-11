@@ -14,7 +14,7 @@ estado ENUM('activo','suspendido') DEFAULT 'activo'
 );
 
 CREATE TABLE perfiles_disenador(
-id_perfil INT AUTO_INCREMENT PRIMARY KEY
+id_perfil INT AUTO_INCREMENT PRIMARY KEY 
 id_usuario INT NOT NULL UNIQUE
 biografia TEXT
 rango_precio_desde DECIMAL (10,2)
