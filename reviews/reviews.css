@@ -9,42 +9,48 @@ body{
     background:#fff;
 }
 
-
-
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-    border-top:4px solid #6db49e;
+.header {
+    background-color: #f0f7f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    border-bottom: 1px solid #e0ede7;
 }
 
-.logo img{
-    width:120px;
+.logo-circulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-nav{
-    display:flex;
-    gap:35px;
+.logo-texto {
+    font-size: 1.3rem;
+    color: #4a7c64;
+    font-weight: bold;
 }
 
-nav a{
-    text-decoration:none;
-    color:#234d2d;
-    font-size:22px;
+.nav-menu {
+    display: flex;
+    gap: 30px;
 }
 
-.active{
-    border-bottom:3px solid #6db49e;
-    padding-bottom:5px;
+.nav-menu a {
+    text-decoration: none;
+    color: #4a7c64; 
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.search i{
-    font-size:28px;
-    cursor:pointer;
+.nav-menu a.active {
+    padding-bottom: 3px;
 }
 
-/* CONTENIDO */
+.search-icono {
+    font-size: 1.2rem;
+    color: #555;
+    cursor: pointer;
+}
 
 .review-box{
     width:80%;
@@ -80,8 +86,6 @@ button{
 button:hover{
     background:#1f4b25;
 }
-
-/* CONEJO */
 
 .rabbit-section{
     margin-top:80px;
@@ -133,7 +137,6 @@ button:hover{
     width:260px;
 }
 
-/* FOOTER */
 
 footer{
     margin-top:80px;

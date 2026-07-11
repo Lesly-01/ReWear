@@ -1,9 +1,8 @@
-/* --- RESETEO DE ESTILOS GENERALES --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif; /* Usamos una fuente serif para el texto como en la imagen */
+    font-family: 'Times New Roman', Times, serif; 
 }
 
 body {
@@ -14,7 +13,6 @@ body {
     min-height: 100vh;
 }
 
-/* --- HEADER / NAVBAR (Estilo Desktop) --- */
 .header {
     background-color: #f0f7f4;
     display: flex;
@@ -24,14 +22,13 @@ body {
     border-bottom: 1px solid #e0ede7;
 }
 
-/* Estilizando el logo ReWear */
-.logo-circle {
+.logo-circulo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-text {
+.logo-texto {
     font-size: 1.3rem;
     color: #4a7c64;
     font-weight: bold;
@@ -44,24 +41,22 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #4a7c64; /* Verde oscuro del logo */
+    color: #4a7c64; 
     font-size: 1rem;
     font-weight: 500;
 }
 
 .nav-menu a.active {
-    border-bottom: 2px solid #4a7c64;
     font-weight: bold;
     padding-bottom: 3px;
 }
 
-.search-icon {
+.search-icono {
     font-size: 1.2rem;
     color: #555;
     cursor: pointer;
 }
 
-/* --- CONTENIDO PRINCIPAL (Diseño en Columnas para PC) --- */
 .main-content {
     flex: 1;
     display: flex;
@@ -75,7 +70,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px; /* Espacio generoso entre las 3 columnas */
+    gap: 50px;
 }
 
 .info-card {
@@ -85,53 +80,49 @@ body {
     text-align: center;
 }
 
-/* --- CÍRCULOS DE LOS ICONOS - RECREANDO EL ESTILO EXACTO --- */
-.icon-circle {
-    width: 150px;  /* Círculos más grandes para escritorio */
+.icono-circulo {
+    width: 150px;  
     height: 150px;
-    background-color: #bbf2e3; /* Verde menta claro exacto */
+    background-color: #bbf2e3; 
     border-radius: 50%;
     margin-bottom: 25px;
-    background-size: 65%; /* Escala de la imagen dentro del círculo */
+    background-size: 65%; 
     background-repeat: no-repeat;
-    background-position: center; /* Centrado perfecto */
+    background-position: center;
 }
 
-/* ASIGNANDO CADA IMAGEN DE FONDO A SU CÍRCULO */
-
-.mission-icon {
-    background-image: url('needle.png'); /* Ruta a la imagen de la aguja */
+.mision-icono {
+    background-image: url('needle.png'); 
 }
 
-.vision-icon {
-    background-image: url('button.png'); /* Ruta a la imagen del botón */
-    background-size: 55%; /* Un poco más pequeño para que respire */
+.vision-icono {
+    background-image: url('button.png'); 
+    background-size: 55%; 
 }
 
-.objective-icon {
-    background-image: url('hanger.png'); /* Ruta a la imagen del gancho */
+.objectivo-icono {
+    background-image: url('hanger.png'); 
 }
 
-/* --- BLOQUES DE TEXTO --- */
-.text-block {
+.texto-bloque {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.text-block h2 {
+.texto-bloque h2 {
     font-size: 1.6rem;
     color: #111;
     font-weight: 700;
 }
 
-.text-block p {
+.texto-bloque p {
     font-size: 1rem;
     color: #444;
     line-height: 1.4;
 }
 
-/* --- FOOTER (Estilo Desktop) --- */
+
 .footer {
     background-color: #63b39d;
     padding: 20px 0;
