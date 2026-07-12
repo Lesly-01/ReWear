@@ -18,6 +18,18 @@ body{
     border-bottom: 1px solid #e0ede7;
 }
 
+button{
+    font-family:"Open sans", sans-serif;
+}
+
+.speech{
+    font-family:"Open sans", sans-serif;
+}
+
+textarea{
+    font-family:"Open sans", sans-serif;
+}
+
 .logo-circulo {
     display: flex;
     align-items: center;

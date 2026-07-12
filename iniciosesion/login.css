@@ -55,4 +55,16 @@
    cursor: pointer;
 }
 
+form{
+   font-family:"Open sans", sans-serif;
+   margin-top: 20px;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+}
+
+button{
+   font-family:"Open sans", sans-serif;
+}
+
 
