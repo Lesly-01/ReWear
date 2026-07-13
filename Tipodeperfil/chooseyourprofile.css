@@ -1,0 +1,47 @@
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #64b99e;
+}
+
+li{
+    color: #004434;
+}
+
+.profile-card {
+    border: 2px solid #a3c2a0; /* Borde verde suave */
+    border-radius: 15px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    width: 160px;
+    height: 160px;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    border-color: #2d4a22;
+}
+
+.btn-enter {
+    border: 1px solid #c2c2c2;
+    background-color: #ffffff;
+    color: #2d4a22;
+    border-radius: 8px;
+    padding: 8px 40px;
+    font-size: 1.1rem;
+}
+
+.btn-enter:hover {
+    background-color: #f0f0f0;
+    color: #2d4a22;
+}
+
+
+
+
+.footer-color{
+    background-color: #64b99e;
+}

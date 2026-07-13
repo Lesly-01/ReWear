@@ -1,0 +1,52 @@
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #64b99e;
+}
+
+li{
+    color: #004434;
+}
+
+.encabezado-bienvenida{
+    color: #05492d;
+}
+
+.color-contenedor{
+    background-color: #fff3b0;
+}
+
+h3{
+    color: rgb(21, 22, 22);
+}
+
+.texto-inicial{
+    color: rgb(21, 22, 22);
+}
+
+#pagbienvenida_boton{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#bienvenida_boton{
+    background-color: #295a2c;
+    border: #295a2c;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    width: 390px;
+    height: 60px;
+    font-size: 25px;
+}
+
+.footer-color{
+    background-color: #64b99e;
+}

@@ -17,38 +17,16 @@ p, button{
     font-family:"Open sans", sans-serif;
 }
 
-.logo-circulo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
 }
 
-.logo-texto {
-    font-size: 1.3rem;
-    color: #4a7c64;
-    font-weight: bold;
+.diseño-de-navbar{
+    background-color: #64b99e;
 }
 
-.nav-menu {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #4a7c64; 
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.nav-menu a.active {
-    padding-bottom: 3px;
-}
-
-.search-icono {
-    font-size: 1.2rem;
-    color: #555;
-    cursor: pointer;
+li{
+    color: #004434;
 }
 
 #slogan{
