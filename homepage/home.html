@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -32,69 +33,86 @@
     </nav>
 
 
-    <p id="slogan">Your clothes, your impact!</p><br><br>
+    <div class="container my-5 custom-hero">
+       <div class="row align-items-center justify-content-center">
+        
+          <div class="col-10 col-md-5 text-center mb-4 mb-md-0 position-relative">
+            
+              <div class="illustration-wrapper">
+                  <div class="blob blob-beige"></div>
+                  <div class="blob blob-green"></div>
+                  <img src="/IMG/Untitled design.png"  width="200px"   class="img-fluid rabbit-img" alt="Conejo costurero">
+             </div>
+         </div>
 
-    <div class="botones_login">
-    <a href="/iniciosesion/login.html">
-    <button type="button" id="boton_login">Log in</button></a>
-    </div>
-
-    <div class="botones_login">
-    <a href="/Tipodeperfil/chooseyourprofile.html">
-    <button type="button" id="boton_signup">Sign up</button></a>
-    </div>
-
-    <div class="botones_login">
-    <a href="/iniciosesion/login.html">
-    <button type="button" id="boton_login">Guest</button></a>
-    </div> <br><br>
-
-    <main class="contenedor">
-        <p id="encabezado_login">How it works?</p> <br>
-
-     <div class="steps-grid">
-            <section class="tarjeta-pasos">
-                <div class="icono-circulo">
-                    <img src="https://images.vexels.com/media/users/3/153096/isolated/preview/9f420eda3be1ce9b846edc9cba4bc84a-icono-de-trazo-de-camiseta-de-cuello-redondo.png" alt="Camiseta" width="100px">
-                </div>
+         <div class="col-10 col-md-5 text-md-start text-center">
+            
+             <h2 class="hero-title mb-4">
+                 Your clothes,<span class="highlight-text">your impact!</span>
+             </h2>
+           <div class="d-flex flex-column gap-3 btn-group-vertical-custom mx-auto mx-md-0">
+                <a href="/iniciosesion/login.html" class="btn btn-outline-custom  boton-sin-color">Log in</a>
                 
-                <h2>Select and upload</h2>
-                <p>Choose a clothing item and upload a photo</p>
-            </section>
+                <a href="/Tipodeperfil/chooseyourprofile.html" class="btn btn-filled-custom boton-con-color">Sign up</a>
+                
+                <a href="#" class="btn btn-outline-custom boton-sin-color">Guest</a>
 
-            <section class="tarjeta-pasos">
-                <div class="icono-circulo">
-                    <img src="" alt="Botón" width="100px">
-                </div>
-                <h2>Customize</h2>
-                <p>Choose the design and details of your preference</p>
-            </section>
-
-            <section class="tarjeta-pasos">
-                <div class="icono-circulo">
-                    <img src="" alt="Aguja" width="100px">
-                </div>
-                <h2>Transform</h2>
-                <p>Your clothes take on a new life through creativity and sustainability brought by the our local tailors</p>
-            </section>
-
-            <section class="tarjeta-pasos">
-                <div class="icono-circulo">
-                    <img src="" alt="Mundo" width="100px">
-                </div>
-                <h2 class="lowercase">Makes an Impact</h2>
-                <p>You save water, reduce waste, and support local talent</p>
-            </section>
+            </div>
         </div>
-    </main> <br><br>
 
-<footer>
-    <p>a</p>
+    </div>
+  </div>
 
-</footer>
+   <main class="color py-5">
+
+    <div class="container text-center text-container">
+        <h2 class="mb-5 fw-bold original-title">How it works?</h2>
+
+        <div class="row g-4 justify-content-center">
+    
+           <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                <div class="icon-circle mb-3">
+                    
+                    <img src="tu-icono-camiseta.svg" alt="Select">
+                </div>
+
+                <h3 class="h5 fw-bold mb-2">Select a post</h3>
+                <p class="text-muted small">Browse unique items or post your own item to transform it</p>
+         </div>
+            
+                <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                  <div class="icon-circle mb-3">
+                     <img src="tu-icono-boton.svg" alt="Connect">
+               </div>
+
+                <h3 class="h5 fw-bold mb-2">Connect</h3>
+                <p class="text-muted small">Connect with local designers and receive personalized proposals</p>
+         </div>
+               <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                  <div class="icon-circle mb-3">
+                    <img src="tu-icono-aguja.svg" alt="Transform">
+             </div>
 
 
+                <h3 class="h5 fw-bold mb-2">Transform</h3>
+               <p class="text-muted small">Your garment takes on a new life through creativity and sustainability</p>
+         </div>
 
+            <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                <div class="icon-circle mb-3">
+                    <img src="tu-icono-mundo.svg" alt="Impact">
+                </div>
+
+                <h3 class="h5 fw-bold mb-2">makes an impact</h3>
+                <p class="text-muted small">You save water, reduce waste, and support local talent</p>
+            </div>
+        </div>
+    </div>
+ </main>
+
+  <footer>
+     <p>a</p>
+  </footer>
 
 </body>
 </html>

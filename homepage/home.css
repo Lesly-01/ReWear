@@ -4,14 +4,6 @@
    box-sizing: border-box;
 }
 
-.header {
-    background-color: #f0f7f4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 80px;
-    border-bottom: 1px solid #e0ede7;
-}
 
 p, button{
     font-family:"Open sans", sans-serif;
@@ -22,12 +14,125 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-    background-color: #64b99e;
+    background-color: #e7f5c3;
 }
 
 li{
     color: #004434;
 }
+
+.hero-title {
+    font-family:"Open sans", sans-serif;
+    font-weight: bold;
+    color: #1a1a1a;
+    font-size: 2rem;
+}
+
+.highlight-text {
+    color: #427440; 
+}
+
+.color{
+    background-color: #8ba34c;
+}
+
+.boton-con-color{
+    background-color: #267965;
+    color: burlywood;
+}
+
+.boton-sin-color{
+    border-color: #2e3c09;
+}
+
+.btn-group-vertical-custom {
+    max-width: 280px; 
+}
+
+.btn-group-vertical-custom .btn {
+    font-family:"Open sans", sans-serif;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 8px; 
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom {
+    border-color: #2b5129;
+    color: #2b5129;
+    background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+    background-color: #2b5129;
+    color: #ffffff;
+}
+
+.btn-filled-custom {
+    background-color: #2e3c09;
+    border-color: #2b5129;
+    color: #ffffff;
+}
+
+.btn-filled-custom:hover {
+    background-color: #1e3a1d;
+    border-color: #1e3a1d;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle img {
+    width: 60%;
+    height: auto;
+}
+
+.original-title {
+    font-family:"Open sans", sans-serif;
+    color: #1a1a1a;
+}
+
+.text-container p {
+    max-width: 220px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #slogan{
     margin-right: 200px;
