@@ -33,17 +33,54 @@ li{
     color: #004434;
 }
 
-form{
-   font-family:"Open sans", sans-serif;
-   margin-top: 20px;
-   margin-left: auto;
-   margin-right: auto;
-   width: 50%;
+
+.formulario{
+
+    width:320px;
+    border-radius:15px;
+    background:#f7f4ed;
+    border:none;
+
 }
 
-button{
-   font-family:"Open sans", sans-serif;
+.input-group-text{
+
+    background:white;
+    border:2px solid #6b9b74;
+    border-right:none;
+    color:#3f6d50;
 }
+
+.form-control{
+
+    border:2px solid #6b9b74;
+    border-left:none;
+    height:50px;
+}
+
+.form-control:focus{
+
+    box-shadow:none;
+    border-color:#6b9b74;
+}
+
+.btn-success{
+
+    background:#3f5b2d;
+    border:none;
+}
+
+.btn-success:hover{
+
+    background:#30471f;
+}
+
+.btn-outline-success{
+
+    color:#3f5b2d;
+    border:1px solid #3f5b2d;
+}
+
 
 .footer-color{
    background-color: #e7f5c3;
