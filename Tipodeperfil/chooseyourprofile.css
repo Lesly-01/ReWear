@@ -10,36 +10,52 @@ li{
     color: #004434;
 }
 
+.profile-title {
+    color: #273e16; 
+    font-size: 2.2rem;
+}
+
 .profile-card {
-    border: 2px solid #a3c2a0;
-    border-radius: 15px;
     background-color: #ffffff;
+    border: 4px solid #946b54; 
+    border-radius: 25px;  
+    aspect-ratio: 1 / 1;  
     cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
-    width: 160px;
-    height: 160px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile-card:hover {
-    transform: scale(1.05);
-    border-color: #2d4a22;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(148, 107, 84, 0.15);
+}
+
+.profile-icon-wrapper {
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card-text {
+    color: #1a2c06;
+    font-size: 1.6rem;
+    margin: 0;
 }
 
 .btn-enter {
-    border: 1px solid #c2c2c2;
-    background-color: #ffffff;
-    color: #2d4a22;
-    border-radius: 8px;
-    padding: 8px 40px;
-    font-size: 1.1rem;
+    border: 2px solid #555555;
+    color: #111111;
+    font-size: 1.3rem;
+    border-radius: 12px;    
+    transition: all 0.2s ease;
 }
 
 .btn-enter:hover {
-    background-color: #f0f0f0;
-    color: #2d4a22;
+    background-color: #f0f3eb;
+    border-color: #273e16;
+    color: #273e16;
 }
-
-
 
 
 .footer-color{

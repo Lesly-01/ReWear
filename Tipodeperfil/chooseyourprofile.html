@@ -31,27 +31,39 @@
         </div>
     </nav>
 
-    <h2 class="my-3 text-center ">Choose your profile</h2>
+    <main class="container my-5 text-center flex-grow-1">
+    
+    <h1 class="profile-title fw-bold my-4">Choose your profile</h1>
+    
+    <div class="row justify-content-center gap-4 my-4">
+        
+    
+        <div class="col-9 col-sm-5 col-md-4 col-lg-3">
+            <div class="profile-card p-4 d-flex flex-column align-items-center justify-content-center">
+                <div class="profile-icon-wrapper mb-3">
 
-    <div class="d-flex justify-content-center gap-4 mb-5">
-        <div class="profile-card d-flex flex-column align-items-center justify-content-center p-3" onclick="selectProfile(this)">
-            <div class="icon-placeholder mb-2">
-                <img src="" alt="paleta">
-            </div>
-                <span class="fs-5">Designer</span>
-            </div>
-
-            <div class="profile-card d-flex flex-column align-items-center justify-content-center p-3" onclick="selectProfile(this)">
-                <div class="icon-placeholder mb-2">
-                    <img src="" alt="carrito de compras">
+                    <!--falta imagennnnnn-->
+                    <img src="designer-icon.png" alt="Designer" class="img-fluid"> 
                 </div>
-                <span class="fs-5">Buyer</span>
+                <h3 class="fw-bold profile-card-text">Designer</h3>
             </div>
-             
-            <div>
-               <button class="btn btn-enter ">Enter</button>
-           </div>
-    </div>
+        </div>
+
+        <div class="col-9 col-sm-5 col-md-4 col-lg-3">
+            <div class="profile-card p-4 d-flex flex-column align-items-center justify-content-center">
+                <div class="profile-icon-wrapper mb-3">
+
+                    <!--falta imagennnnnn-->
+                    <img src="buyer-icon.png" alt="Buyer" class="img-fluid"> 
+                </div>
+                <h3 class="fw-bold profile-card-text">Buyer</h3>
+            </div>
+        </div>
+
+        <div class="mt-4">
+          <a href="/iniciosesion/login.html" class="btn btn-enter px-5 py-2 fw-bold bg-white">Enter</a>
+        </div>
+</main>
 
     
     <footer class="footer-color text-center py-4 border-top">

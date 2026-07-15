@@ -10,6 +10,61 @@ li{
     color: #004434;
 }
 
+.welcome-container {
+    flex: 1;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    color: #333333;
+    letter-spacing: -0.5px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.welcome-text {
+    font-family:"Open sans", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #121212;
+    text-align: justify;
+    text-align-last: center
+}
+
+.btn-home {
+    background-color: #273e16;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.btn-home:hover {
+    background-color: #1a2a0e;
+}
+
+.eco-illustration-wrapper {
+    max-width: 250px;
+    width: 100%;
+}
+
+.eco-img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .encabezado-bienvenida{
     color: #05492d;
 }
