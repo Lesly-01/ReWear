@@ -3,7 +3,7 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-    background-color: #64b99e;
+    background-color: #e7f5c3;
 }
 
 li{
@@ -11,7 +11,7 @@ li{
 }
 
 .profile-card {
-    border: 2px solid #a3c2a0; /* Borde verde suave */
+    border: 2px solid #a3c2a0;
     border-radius: 15px;
     background-color: #ffffff;
     cursor: pointer;
@@ -43,5 +43,5 @@ li{
 
 
 .footer-color{
-    background-color: #64b99e;
+    background-color: #e7f5c3;
 }

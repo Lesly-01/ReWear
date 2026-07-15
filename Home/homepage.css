@@ -1,0 +1,107 @@
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #e7f5c3;
+}
+
+li{
+    color: #004434;
+}
+
+.highlight-text {
+    color: #f1fcb8; 
+}
+
+.diseño-de-navbar{
+    background-color: #e7f5c3;
+}
+
+li{
+    color: #004434;
+}
+
+.brand-title {
+    color: #4a632d;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2b3a1a;
+    font-size: 1.1rem;
+}
+
+.degradado{
+    background: linear-gradient(to right, #007bff, #6610f2);
+    background-size: cover;       
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+.hero-section {
+    background-color: #83a251; 
+    color: #1c280d;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #263c16;
+}
+
+.btn-login {
+    background-color: #062c24; 
+    border: none;
+}
+
+.btn-login:hover {
+    background-color: #324d16;
+}
+
+.btn-signup {
+    background-color: #ffffff;
+    color: #557233;
+    border: 2px solid #557233;
+}
+
+.btn-signup:hover {
+    background-color: #f0f5e9;
+    color: #557233;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #223310;
+}
+
+.steps-title {
+    font-size: 1.1rem;
+    color: #1a2c06;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #83a251;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7faf0;
+}
+
+.icon-wrapper i {
+    color: #83a251;
+}
+
+.footer-color{
+    background-color: #e7f5c3;
+}
