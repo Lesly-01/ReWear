@@ -1,25 +1,10 @@
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
 }
 
-.form-contenedor{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   padding: 20px;
-}
-
-.header {
-   background-color: #f0f7f4;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 15px 80px;
-   border-bottom: 1px solid #e0ede7;
-}
 
 a, p, li, h1{
     font-family:"Open sans", sans-serif;
@@ -35,54 +20,39 @@ li{
 
 
 .formulario{
-
     width:320px;
     border-radius:15px;
     background:#f7f4ed;
     border:none;
-
 }
 
 .input-group-text{
-
     background:white;
     border:2px solid #6b9b74;
     border-right:none;
-    color:#3f6d50;
+    color:#176935;
 }
 
 .form-control{
-
     border:2px solid #6b9b74;
     border-left:none;
-    height:50px;
+    height:60px;
 }
 
 .form-control:focus{
-
     box-shadow:none;
     border-color:#6b9b74;
 }
 
-.btn-success{
-
-    background:#3f5b2d;
-    border:none;
-}
-
-.btn-success:hover{
-
-    background:#30471f;
-}
-
 .btn-outline-success{
-
     color:#3f5b2d;
     border:1px solid #3f5b2d;
+    border: none;
 }
 
-
-.footer-color{
-   background-color: #e7f5c3;
+.footer-color {
+    background-color: #e7f5c3;
+   
+   
+    
 }
-

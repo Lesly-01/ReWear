@@ -14,6 +14,7 @@ li{
     color: #004434;
 }
 
+
 .custom-textarea {
     border: 6px solid #5aab61;
     border-radius: 20px;       
@@ -47,7 +48,6 @@ li{
     height: auto;
     width: 50%;
 }
-
 
 .footer-color{
     background-color: #e7f5c3;
