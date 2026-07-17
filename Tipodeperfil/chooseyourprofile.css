@@ -16,12 +16,14 @@ li{
 }
 
 .profile-card {
-    background-color: #ffffff;
+    
     border: 4px solid #946b54; 
-    border-radius: 25px;  
+    border-radius: 25px; 
     aspect-ratio: 1 / 1;  
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
 }
 
 .profile-card:hover {
@@ -61,4 +63,19 @@ li{
 
 .footer-color{
     background-color: #e7f5c3;
+}
+.bg-overlay-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+    url("../IMG/disenador.png");
+    background-size: cover;
+    background-position: right;
+
+}
+
+.bg-overlay-imagi {
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+    url("../IMG/buyer.png");
+    background-size: cover;
+    background-position: right;
+
 }

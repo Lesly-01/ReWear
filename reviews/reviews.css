@@ -14,6 +14,13 @@ li{
     color: #004434;
 }
 
+.boton-rewear{
+    background-color: #5aab61;
+    border: 1px solid #004434;
+    color: white;
+    
+}
+
 
 .custom-textarea {
     border: 6px solid #5aab61;
@@ -40,7 +47,6 @@ li{
 }
 
 .mascot-container {
-    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -51,4 +57,26 @@ li{
 
 .footer-color{
     background-color: #e7f5c3;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 35px;
+    color: gray;
+    cursor: pointer;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
 }
