@@ -10,10 +10,15 @@ li{
     color: #004434;
 }
 
+.img-icono{
+    max-width: 250px;
+    width: 100%;
+}
+
 .circle-icon-wrapper {
     width: 130px;
     height: 130px;
-    background-color: #f2fba3;
+    background-color: #f8f0ac;
     border-radius: 50%;
     display: flex;
     align-items: center;

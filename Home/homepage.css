@@ -41,6 +41,25 @@ li{
     height: 100vh;
 }
 
+.container bg-gradient{
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+  min-height: 100vh;
+}
+
+
+@media (min-width: 768px) {
+  .container bg-gradient{
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+  }
+}
+
+
+
+
+
+
+
+
 
 .hero-section {
     background-color: #83a251; 
