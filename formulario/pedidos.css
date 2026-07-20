@@ -10,6 +10,19 @@ li{
     color: #004434;
 }
 
+#success-alert.alert-custom {
+  background-color: #adc570;
+  color: #ffffff; 
+  border: none;
+  font-weight: bold;
+}
+
+
+
+#success-alert.alert-custom .btn-close {
+  filter: invert(1); 
+}
+
 
 
 

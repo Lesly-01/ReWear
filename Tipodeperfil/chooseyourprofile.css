@@ -17,13 +17,11 @@ li{
 
 .profile-card {
     
-    border: 4px solid #946b54; 
+    border: 6px solid #946b54; 
     border-radius: 25px; 
     aspect-ratio: 1 / 1;  
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-
 }
 
 .profile-card:hover {
@@ -45,25 +43,40 @@ li{
     margin: 0;
 }
 
-.btn-enter {
-    border: 2px solid #807171;
-    color: #111111;
-    font-size: 1.3rem;
-    border-radius: 12px;    
-    transition: all 0.2s ease;
+
+.btn-enter-custom{
+    background-color: #273e16;
+    color: #ffffff; 
+    border: none;
+    
+    width: 100%;             
+    max-width: 680px;        
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+
+    display: inline-block;
+    text-align: center;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+    
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
 }
 
-.btn-enter:hover {
-    background-color: #f0f3eb;
-    border-color: #273e16;
-    color: #273e16;
-}
 
+.btn-enter-custom:hover {
+    background-color: #13612a;
+}
 
 
 .footer-color{
     background-color: #e7f5c3;
 }
+
 .bg-overlay-image {
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
     url("../IMG/disenador.png");
@@ -79,3 +92,15 @@ li{
     background-position: right;
 
 }
+
+.profile-card.selected {
+    border-color: #1a7f52;
+    background-color: #f0f7f4;
+    transform: translateY(-8px);           
+    box-shadow: 0 10px 20px rgba(26, 127, 82, 0.2); 
+}
+
+.profile-card.selected .profile-card-text {
+    color: #4c972f;
+}
+
