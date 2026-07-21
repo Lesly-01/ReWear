@@ -27,24 +27,42 @@
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
                    <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+
+                   <!--opcion para diseñador-->
+                   <li class="nav-item d-none" id="nav-designer-requests">
+                      <a class="nav-link text-warning fw-bold" href="/solicitudes/solicitudes.html">Requests</a>
+                   </li>
+
+                   <li class="nav-item d-none" id="nav-user-orders">
+                      <a class="nav-link text-info" href="#">Orders</a>
+                 </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <script>
+        function updateNavbarByAccountType(accountType) {
 
+       const designerRequests = document.getElementById('nav-designer-requests');
+       const userOrders = document.getElementById('nav-user-orders');
 
+       if (accountType === 'designer') {
 
+       designerRequests.classList.remove('d-none');
+       userOrders.classList.add('d-none');
+        } 
+       else if (accountType === 'customer') {
 
+      userOrders.classList.remove('d-none');
+      designerRequests.classList.add('d-none');
+       }}
+ </script>
 
+ <script src="https://jsdelivr.net"></script>
 
-
-
-
-
-
-
-
+  <a href="/formulario/pedidos.html">pedidos</a>
+  <a href="/solicitudes/solicitudes.html">solicitudes</a>
 
 
     

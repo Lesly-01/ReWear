@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReWear</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/solicitudes/solicitudes.css">
+
+    <style>
+    /* Contenedor marrón claro de la imagen */
+    .request-card-container {
+      background-color: #be9975; /* Tono marrón claro de tu boceto */
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 850px;
+      margin: 40px auto 20px auto;
+    }
+
+    .card-main-title {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 2px;
+    }
+
+    .user-info-text {
+      color: #f1f1f1;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .request-card-container .form-control-plaintext {
+      background-color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      font-weight: 500;
+      color: #333333;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .right-preview-box {
+      background-color: #ffffff;
+      border-radius: 4px;
+      height: 100%;
+      min-height: 250px;
+      padding: 15px;
+      font-size: 0.95rem;
+      color: #333333;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .action-buttons-group {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .btn-action-custom {
+      border-radius: 25px;
+      padding: 8px 50px;
+      font-weight: bold;
+      color: #ffffff;
+      border: none;
+      font-size: 1.1rem;
+      transition: opacity 0.2s ease;
+    }
+
+     .btn-action-custom:hover {
+      opacity: 0.9;
+      color: #ffffff;
+    }
+
+    .btn-accept-custom {
+      background-color: #1e5631; /* Verde oscuro */
+    }
+
+    .btn-reject-custom {
+      background-color: #b31b1b; /* Rojo oscuro */
+    }
+  </style>
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg diseño-de-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="">ReWear</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item"><a class="nav-link" href="/Home/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+<div class="request-card-container">
+  
+
+  <h3 class="card-main-title text-center">Customization request</h3>
+  <div class="user-info-text text-center text-md-start ps-md-2">
+    
+      <!-- Icono de usuario de Bootstrap en formato SVG -->
+      <svg xmlns="http://w3.org" width="20" height="20" fill="currentColor" class="bi bi-person-circle me-1 align-middle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>
+      <span class="align-middle">Request made by: <strong>@username</strong></span>
+    </div>
+  
+  
+  
+  <div class="row g-4">
+    
+    
+    <div class="col-md-7 d-flex flex-column justify-content-between gap-3">
+      <div>
+        <input type="text" class="form-control-plaintext" value="Method: Custom Embroidery" readonly>
+      </div>
+      <div>
+        <input type="text" class="form-control-plaintext" value="Placement: Full Back (Centered)" readonly>
+      </div>
+      <div>
+        <input type="text" class="form-control-plaintext" value="Garment/Fabric: Black Hoodie (100% Cotton)" readonly>
+      </div>
+      <div>
+        <input type="text" class="form-control-plaintext" value="Attached File: logo_vector_final.pdf" readonly>
+        <a href="/ruta-al-archivo/logo_final_vector.pdf" class="btn btn-sm btn-outline-dark fw-bold w-100" download>
+            Download File
+          </a>
+      </div>
+    </div> 
+
+    
+    <div class="col-md-5">
+      <div class="right-preview-box d-flex flex-column justify-content-between h-100">
+        
+    
+        <div>
+          <strong class="text-muted small d-block mb-1">DESIGN INSTRUCTIONS:</strong>
+          <p class="mb-0 text-secondary" style="font-size: 0.9rem;">
+            Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
+          </p>
+        </div>
+
+         
+
+    
+        
+
+      </div>
+    </div> 
+
+  </div> 
+</div>
+
+  </div>
+
+   <div class="action-buttons-group d-flex justify-content-center gap-3">
+    <button type="button" class="btn btn-action-custom btn-accept-custom shadow-sm" onclick="handleAction('accepted')">Accept</button>
+    <button type="button" class="btn btn-action-custom btn-reject-custom shadow-sm" onclick="handleAction('rejected')">Reject</button>
+  </div>
+
+</div>
+
+<script>
+  
+  function handleAction(status) {
+    if (status === 'accepted') {
+      alert('Order approved! It has been moved to the production queue.');
+    } else {
+      alert('Order rejected. A notification has been sent to the user.');
+    }
+  }
+</script>
+
+<script src="https://jsdelivr.net"></script>
+
+
+
+
+    
+</body>
+</html>

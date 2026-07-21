@@ -98,7 +98,7 @@
       
       <div class="row g-3">
     
-        <div class="col-md-7 d-flex flex-column gap-3">
+        <div class="col-md-7 d-flex flex-column gap-3 overflow-y-auto">
           
           <div>
             <select id="technique" name="technique" class="form-select" required>
@@ -106,14 +106,12 @@
               <option value="embroidery">Custom Embroidery</option>
               <option value="screenprint">Screen Printing</option>
               <option value="sublimation">Sublimation Printing</option>
-              <option value="rhinestones">Rhinestones & Studs</option>
               <option value="tie-dye">Custom Tie-Dye</option>
               <option value="laser-engraving">Laser Engraving</option>
               <option value="patches">Patch Attachment</option>
           </select>
             
-          
-
+  
 
           </div>
 
@@ -137,6 +135,17 @@
              </optgroup>
           </select>
 
+
+          <div>
+             <select id="fabric" name="fabric" class="form-select">
+                <option value="" disabled selected>Select fabric type (Cotton, Polyester...)</option>
+                <option value="cotton">100% Cotton</option>
+                <option value="polyester">Polyester Blend</option>
+             </select>
+           </div>
+
+
+           
            <div>
             <input type="file" id="design-file" name="design-file" class="form-control" accept=".png, .pdf, .ai, .eps" required>
             <div class="form-text text-muted ps-1" style="font-size: 0.8rem;">Upload a photo of your garment  (PNG, PDF, AI, EPS)</div>
