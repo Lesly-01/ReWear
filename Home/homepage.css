@@ -61,18 +61,17 @@ li{
 }
 
 .hero-section{
-    background: linear-gradient(
-        to right, 
-        #34441b 0%, 
-        #83a251 20%,   
-        #aec473 50%,  
-        #455f26 80%,  
-        #314915 100%   
-    );
-    width: 100%;
-    position: relative;
-    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.15);
+    height: 400px;
+    background-image: url(../img/); 
+    background-size: cover;     
+    background-position: center; 
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
 }
+
+   
 
 
 .hero-section {
