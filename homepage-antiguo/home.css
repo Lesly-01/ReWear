@@ -106,6 +106,18 @@ li{
 }
 
 
+.icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
 
 
 
