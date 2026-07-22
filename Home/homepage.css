@@ -34,17 +34,7 @@ li{
     font-size: 1.1rem;
 }
 
-.degradado{
-    background: linear-gradient(to right, #007bff, #6610f2);
-    background-size: cover;       
-    background-repeat: no-repeat;
-    height: 100vh;
-}
 
-.container bg-gradient{
-  background: linear-gradient(to bottom, #4facfe, #00f2fe);
-  min-height: 100vh;
-}
 
 
 @media (min-width: 768px) {
@@ -53,16 +43,11 @@ li{
   }
 }
 
-.degradado{
-    background: linear-gradient(to right, #007bff, #6610f2);
-    background-size: cover;       
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+
 
 .hero-section{
     height: 400px;
-    background-image: url(../img/); 
+    background-image: url(../IMG/Collage\ final\ con\ opacidad\ .png); 
     background-size: cover;     
     background-position: center; 
     background-repeat: no-repeat;
@@ -72,25 +57,15 @@ li{
 }
 
    
-
-
-.hero-section {
-    background: linear-gradient(to right, #6d8b42 0%, #8cae5b 25%, #92b55f 50%, #8cae5b 75%, #618137 100%);
-    width: 100%;
-    position: relative;
-    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.05); 
-   
-}
-
 .hero-title {
     font-size: calc(1.8rem + 1vw); 
-    color: #1a2c06; 
+    color: #fafafa; 
     line-height: 1.2;
     
 }
 
 .btn-login {
-    background-color: #032119;
+    background-color: #2a5a2d;
     color: #ffffff;
     border: none;
     font-size: 1rem;
