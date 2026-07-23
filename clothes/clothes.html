@@ -10,6 +10,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/clothes/clothes.css">
+
+    <style>
+    .main-title {
+      color: #1b3827; 
+    }
+    .subtitle {
+      color: #636159;
+    }
+
+.clothing-card {
+  position: relative;         
+  background-color:#fff38b; 
+  border: 4px solid #ffaa5c;  
+  border-radius: 10px;
+  padding: 6px;               
+  margin-bottom: 25px;  
+  box-shadow: 0 6px 0px rgba(0, 0, 0, 0.1); 
+}
+
+.info-box {
+  background-color: #ffffff; 
+  border: 2px solid #ffffff;  
+  margin-bottom: 4px;        
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+.info-box:last-child {
+  margin-bottom: 0;          
+}
+
+.heart-box {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  width: 80px;               
+  margin-left: 6px;          
+}
+
+.card-btn-container {
+  position: absolute;
+  bottom: -40px;             
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;    
+  z-index: 10;                
+}
+
+.btn-view-post-sm {
+  background-color: #645327; 
+  color: #ffffff;            
+  font-weight: bold;         
+  padding: 6px 24px;   
+  border-radius: 50px;  
+  font-size: 0.85rem;         
+  text-decoration: none;     
+  display: inline-block;     
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-view-post-sm:hover {
+  background-color: #4c3e1c; 
+  color: #ffffff;            
+  transform: scale(1.05); 
+}
+
+  </style>
 </head>
 
 <body>
@@ -28,7 +95,7 @@
                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
                    <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
 
-                   <!--opcion para diseñador-->
+                
                    <li class="nav-item d-none" id="nav-designer-requests">
                       <a class="nav-link text-warning fw-bold" href="/solicitudes/solicitudes.html">Requests</a>
                    </li>
@@ -41,6 +108,72 @@
         </div>
     </nav>
 
+
+    <div class="container my-5">
+  <h1 class="main-title h2 mb-1">Exploring Clothing...</h1>
+  <p class="subtitle mb-4">140 available clothing</p>
+
+  
+  <div class="row g-4">
+    
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="clothing-card d-flex">
+        
+
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <div class="info-box fw-semibold">Floral Denim Jacket</div>
+          <div class="info-box text-muted text-center">S / M / XL</div>
+          <div class="info-box text-center fw-bold">$00</div>
+        </div>
+    
+        <div class="heart-box d-flex align-items-center justify-content-center">
+          <i class="bi bi-heart"></i>
+        </div>
+        
+        <div class="card-btn-container">
+          <a href="/publicaciones/publicaciones.html" class="btn-view-post-sm">View post</a>
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="clothing-card d-flex">
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <div class="info-box fw-semibold">Florar Denim Jacket</div>
+          <div class="info-box text-muted text-center">S / M / XL</div>
+          <div class="info-box text-center fw-bold">$0.0</div>
+        </div>
+        <div class="heart-box d-flex align-items-center justify-content-center"><i class="bi bi-heart heart-icon"></i></div>
+        
+        <div class="card-btn-container">
+          <a href="/publicaciones/publicaciones.html" class="btn-view-post-sm">View post</a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="clothing-card d-flex">
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <div class="info-box fw-semibold">Florar Denim Jacket</div>
+          <div class="info-box text-muted text-center">S / M / XL</div>
+          <div class="info-box text-center fw-bold">$0.0</div>
+        </div>
+        <div class="heart-box d-flex align-items-center justify-content-center"><i class="bi bi-heart heart-icon"></i></div>
+
+        <div class="card-btn-container">
+          <a href="/publicaciones/publicaciones.html" class="btn-view-post-sm">View post</a>
+        </div>
+        
+      </div>
+
+
+    
+    
     <script>
         function updateNavbarByAccountType(accountType) {
 
@@ -60,9 +193,6 @@
  </script>
 
  <script src="https://jsdelivr.net"></script>
-
-  <a href="/formulario/pedidos.html">pedidos</a>
-  <a href="/solicitudes/solicitudes.html">solicitudes</a>
 
 
     

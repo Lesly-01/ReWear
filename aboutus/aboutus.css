@@ -10,6 +10,10 @@ li{
     color: #004434;
 }
 
+body{
+    background-color:#f8f4e6;
+}
+
 .img-icono{
     max-width: 250px;
     width: 100%;
