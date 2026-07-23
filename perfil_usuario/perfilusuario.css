@@ -1,0 +1,11 @@
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #c9e18a;
+}
+
+li{
+    color: #004434;
+}
