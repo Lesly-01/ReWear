@@ -1,0 +1,110 @@
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #c9e18a;
+}
+
+li{
+    color: #004434;
+}
+
+body{
+    background-color:#f8f4e6;
+}
+
+.stats-bar {
+  border-radius: 4px;
+}
+.stat-icon-circle {
+  width: 45px;
+  height: 45px;
+  color: #1a202c;
+}
+.bg-green-light {
+  background-color: #a3d193;
+}
+.stat-number {
+  font-size: 1.3rem;
+  color: #000000;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991px) {
+  .stat-item {
+
+    border-bottom: 1px solid #000000;
+    min-width: 50%;
+  }
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+}
+
+
+.designer-panel-card {
+  border-radius: 28px; 
+}
+.panel-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.design-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  background-color: #82b76a; 
+}
+.design-item-title {
+  font-size: 0.85rem;
+  color: #000000;
+  line-height: 1.2;
+}
+.design-item-price {
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+.order-placeholder {
+  width: 75px;
+  height: 75px;
+  background-color: #82b76a;
+}
+.order-item-title {
+  font-size: 1.2rem;
+  color: #000000;
+}
+.order-id {
+  font-size: 1rem;
+}
+.order-date {
+  font-size: 0.85rem;
+}
+
+.badge-status {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  font-weight: 500;
+}
+.badge-in-progress {
+  background-color: #fae8ff; 
+  color: #a21caf; 
+  border: 1px solid #e879f9;
+}
+.badge-completed {
+  background-color: #dcfce7; 
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+
+
+
+

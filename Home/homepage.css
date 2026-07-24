@@ -3,7 +3,7 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-    background-color: #e7f5c3;
+    background-color: #c9e18a;
 }
 
 li{
@@ -14,9 +14,14 @@ li{
     color: #f1fcb8; 
 }
 
-.diseño-de-navbar{
-    background-color: #e7f5c3;
+body{
+    background-color:#f8f4e6;
 }
+
+.logo_rewear{
+    width: 80px;
+}
+
 
 li{
     color: #004434;
@@ -34,18 +39,6 @@ li{
     font-size: 1.1rem;
 }
 
-.degradado{
-    background: linear-gradient(to right, #007bff, #6610f2);
-    background-size: cover;       
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.container bg-gradient{
-  background: linear-gradient(to bottom, #4facfe, #00f2fe);
-  min-height: 100vh;
-}
-
 
 @media (min-width: 768px) {
   .container bg-gradient{
@@ -53,47 +46,30 @@ li{
   }
 }
 
-.degradado{
-    background: linear-gradient(to right, #007bff, #6610f2);
-    background-size: cover;       
-    background-repeat: no-repeat;
-    height: 100vh;
-}
 
 .hero-section{
-    background: linear-gradient(
-        to right, 
-        #34441b 0%, 
-        #83a251 20%,   
-        #aec473 50%,  
-        #455f26 80%,  
-        #314915 100%   
-    );
-    width: 100%;
-    position: relative;
-    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.15);
+    height: 300px;
+    background-image: url(../IMG/Collage\ final\ con\ opacidad\ .png); 
+    background-size: cover;     
+    background-position: center; 
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
 }
 
-
-.hero-section {
-    background: linear-gradient(to right, #6d8b42 0%, #8cae5b 25%, #92b55f 50%, #8cae5b 75%, #618137 100%);
-    width: 100%;
-    position: relative;
-    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.05); 
    
-}
-
 .hero-title {
     font-size: calc(1.8rem + 1vw); 
-    color: #1a2c06; 
+    color: #fafafa; 
     line-height: 1.2;
     
 }
 
 .btn-login {
-    background-color: #032119;
+    background-color: #2a5a2d;
     color: #ffffff;
-    border: none;
+    border: 4px solid white;
     font-size: 1rem;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -101,13 +77,13 @@ li{
 }
 
 .btn-login:hover {
-    background-color: #324d16;
+    background-color:#4e8048;
 }
 
 .btn-signup {
     background-color: #ffffff;
     color: #1a2c06;
-    border: 1px solid #cccccc;
+    border: 4px solid #2a5a2d;
     font-size: 1rem;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05)
@@ -135,14 +111,14 @@ li{
 }
 
 .icon-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 2px solid #83a251;
+    border: 2px solid #89bc63;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f7faf0;
+    background-color:#89bc63;
 }
 
 .icon-wrapper i {

@@ -1,58 +1,58 @@
 body {
+    background-color:#f8f4e6;
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
     margin: 0;
 }
 
-
 a, p, li, h1{
     font-family:"Open sans", sans-serif;
 }
 
 .diseño-de-navbar{
-    background-color: #e7f5c3;
+    background-color: #c9e18a;
 }
 
 li{
     color: #004434;
 }
 
-
 .formulario{
-    width:320px;
+    width:600px;
     border-radius:15px;
-    background:#f7f4ed;
-    border:none;
+    border:#333333;
 }
 
 .input-group-text{
-    background:white;
-    border:2px solid #6b9b74;
+    background:#c4e0cd;
+    border:4px solid #3e5d64;
     border-right:none;
     color:#176935;
 }
 
 .form-control{
-    border:2px solid #6b9b74;
+    border:4px solid #3e5d64;
     border-left:none;
     height:60px;
 }
 
 .form-control:focus{
     box-shadow:none;
-    border-color:#6b9b74;
+    border-color:#3e5d64;
 }
 
 .btn-outline-success{
     color:#3f5b2d;
-    border:1px solid #3f5b2d;
+    border:2px solid #3f5b2d;
     border: none;
 }
 
 .footer-color {
     background-color: #e7f5c3;
    
-   
-    
+}
+
+.logo_rewear{
+    width: 80px;
 }

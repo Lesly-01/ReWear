@@ -1,5 +1,5 @@
 body{
-    background:#fff;
+    background-color:#f8f4e6;
 }
 
 a, p, li, h1{
@@ -7,18 +7,21 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-    background-color: #e7f5c3;
+    background-color: #c9e18a;
 }
 
 li{
     color: #004434;
 }
 
+.logo_rewear{
+    width: 80px;
+}
+
 .boton-rewear{
     background-color: #5aab61;
     border: 1px solid #004434;
     color: white;
-    
 }
 
 
@@ -52,7 +55,7 @@ li{
 
 .mascot-img {
     height: auto;
-    width: 50%;
+    width: 70%;
 }
 
 .footer-color{
