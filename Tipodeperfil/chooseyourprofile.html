@@ -10,6 +10,110 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="chooseyourprofile.css">
+
+    <style>
+    .role-section-container {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+
+    .role-main-img {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .role-content-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+
+
+
+    .top-badge-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #e2f0e3; 
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-badge-icon img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .role-description {
+      font-size: 0.85rem;
+      color: #555555;
+      line-height: 1.3;
+      margin: 10px 0;
+    }
+
+
+    .features-pill-box {
+      background-color: #e2f0e3; 
+      border-radius: 12px;
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+     .feature-inline-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #2e4a31; 
+    }
+
+    .feature-inline-item img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+
+    .role-label-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e5631; 
+      margin-top: 15px;
+    }
+
+    
+    .btn-enter-main {
+      background-color: #ffffff;
+      color: #1e5631;
+      border: 2px solid #a3bca4;
+      border-radius: 12px;
+      padding: 10px 65px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .btn-enter-main:hover {
+      background-color: #f4f9f4;
+      border-color: #1e5631;
+      color: #1e5631;
+    }
+    </style>
 </head>
 
 <body>
@@ -33,56 +137,108 @@
         </div>
     </nav>
 
-    <main class="container my-5 text-center flex-grow-1">
+    <div class="container">
+
+        <h1 class="profile-title fw-bold my-4">Choose your profile</h1>
+  
+  
+  <div class="row g-5 justify-content-center align-items-center">
     
-    <h1 class="profile-title fw-bold my-4">Choose your profile</h1>
-    
-    <div class="row justify-content-center gap-4 my-4">
+    <!-- diseñadorrrrr -->
+    <div class="col-10 col-lg-6">
+      <div class="role-section-container">
+        
+
+        <img src="/img/designer perfil.jpeg" alt="Designer custom clothing workflow" class="role-main-img">
         
     
-        <div class="col-9 col-sm-5 col-md-4 col-lg-3">
-            <div id="card-designer"  class="profile-card bg-overlay-image p-4 d-flex flex-column align-items-center justify-content-center">
-                
-                <h3 class="fw-bold profile-card-text text-white">Designer</h3>
+        <div class="role-content-side">
+          <div class="top-badge-icon">
+            <img src="/img/mannequin.png" alt="Designer apparel creation icon">
+          </div>
+          
+          <p class="role-description">
+            Create, inspire and share your unique designs with a conscious community.
+          </p>
+
+
+
+          <div class="features-pill-box">
+            <div class="feature-inline-item">
+              <img src="/img/hojas perfil.png" alt="Sustainability badge"> Showcase your designs
             </div>
-        </div>
-
-        <div class="col-9 col-sm-5 col-md-4 col-lg-3">
-            <div  id="card-buyer" class="profile-card bg-overlay-imagi p-4 d-flex flex-column align-items-center justify-content-center">
-                
-                <h3 class="fw-bold profile-card-text text-white">Buyer</h3>
+            <div class="feature-inline-item">
+              <img src="/img/people designer.png" alt="Community connection"> Connect with buyers
             </div>
+          </div>
         </div>
+      </div>
+      <h2 class="role-label-title text-center">Designer</h2>
+    </div>
 
+
+
+     <div class="col-10 col-lg-6">
+      <div class="role-section-container">
+        <!-- usuarioooooo -->
+
+        <img src="/img/buyer perfil.jpeg" alt="Buyer sustainable apparel marketplace" class="role-main-img">
         
-       <div class="d-flex justify-content-center mt-4 px-3">
-           <a href="/iniciosesion/login.html" class="btn btn-enter-custom fw-bold rounded-pill text-decoration-none">
-               Enter
-           </a>
-       </div>
-
-
         
-</main>
+        <div class="role-content-side">
+          
+          <div class="top-badge-icon">
+            <img src="/img/bolsa-perfil.png" alt="Buyer purchase action icon">
+          </div>
+          
+          <p class="role-description">
+            Create, inspire and share your unique designs with a conscious community.
+          </p>
+
+          <div class="features-pill-box">
+            <div class="feature-inline-item">
+              <img src="/img/etiqueta buyer.png" alt="Discount label"> Amazing deals
+            </div>
+            <div class="feature-inline-item">
+              <img src="/img/green hear buyer.png" alt="Eco friendly clothing discovery"> Discover and transfer unique clothes
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <h2 class="role-label-title text-center">User</h2>
+    </div>
+
+  </div>
+
+
+  <div class="text-center mt-5 pt-3">
+    <button type="button" class="btn btn-enter-main">Enter</button>
+  </div>
+
+</div>
 
       
-    <script>
-    
-      const cardDesigner = document.getElementById('card-designer');
-      const cardBuyer = document.getElementById('card-buyer');
+
+      
 
     
-      cardDesigner.addEventListener('click', function() {
-      cardDesigner.classList.add('selected'); 
-      cardBuyer.classList.remove('selected'); 
-      });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
-      cardBuyer.addEventListener('click', function() {
-      cardBuyer.classList.add('selected');    
-      cardDesigner.classList.remove('selected'); 
-      });
-  </script>
 
 
 

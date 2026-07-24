@@ -19,71 +19,19 @@ body{
 }
 
 .profile-title {
-    color: #273e16; 
+    color: #273e16;
     font-size: 2.2rem;
 }
 
-.profile-card {
-    
-    border: 6px solid #946b54; 
-    border-radius: 25px; 
-    aspect-ratio: 1 / 1;  
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.profile-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(148, 107, 84, 0.15);
-}
-
-.profile-icon-wrapper {
-    width: 60%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-card-text {
-    color: #1a2c06;
-    font-size: 1.6rem;
-    margin: 0;
-}
-
-
-.btn-enter-custom{
-    background-color: #273e16;
-    color: #ffffff; 
-    border: none;
-    
-    width: 100%;             
-    max-width: 680px;        
-    
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 1.1rem;
-
-    display: inline-block;
-    text-align: center;
-    
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease;
-    
-    
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease;
-}
-
-
-.btn-enter-custom:hover {
-    background-color: #13612a;
-}
 
 
 .footer-color{
     background-color: #e7f5c3;
 }
+
+
+
+/*
 
 .bg-overlay-image {
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
@@ -111,4 +59,6 @@ body{
 .profile-card.selected .profile-card-text {
     color: #4c972f;
 }
+*/
+
 
