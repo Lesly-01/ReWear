@@ -40,8 +40,8 @@
 
 
     .top-badge-icon {
-      width: 50px;
-      height: 50px;
+      width: 65px;
+      height: 65px;
       background-color: #e2f0e3; 
       border-radius: 50%;
       display: flex;
@@ -50,8 +50,8 @@
     }
 
     .top-badge-icon img {
-      width: 26px;
-      height: 26px;
+      width: 46px;
+      height: 46px;
       object-fit: contain;
     }
 
@@ -82,8 +82,8 @@
     }
 
     .feature-inline-item img {
-      width: 16px;
-      height: 16px;
+      width: 35px;
+      height: 35px;
       object-fit: contain;
     }
 
@@ -93,7 +93,15 @@
       font-weight: 700;
       color: #1e5631; 
       margin-top: 15px;
+
+      display: inline-block;
+      transition: opacity 0.2s ease;
     }
+
+    .role-label-title:hover {
+       color: #12351e; 
+      opacity: 0.9;
+}
 
     
     .btn-enter-main {
@@ -113,6 +121,30 @@
       border-color: #1e5631;
       color: #1e5631;
     }
+
+
+    .role-btn-custom {
+  font-size: 2rem ;
+  font-weight: 700;
+  color: #1e5631; 
+  
+  border: 2px solid #a3bca4; 
+  border-radius: 12px; 
+  background-color: transparent;
+  
+
+  padding: 6px 35px; 
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.role-btn-custom:hover {
+  background-color: #e2f0e3; 
+  border-color: #1e5631;
+  color: #1e5631; 
+  transform: scale(1.02); 
+}
     </style>
 </head>
 
@@ -136,6 +168,7 @@
             </div>
         </div>
     </nav>
+    
 
     <div class="container">
 
@@ -173,7 +206,13 @@
           </div>
         </div>
       </div>
-      <h2 class="role-label-title text-center">Designer</h2>
+
+
+      <div class="text-center mt-3">
+  <button type="button" class="btn btn-outline-success role-btn-custom ">
+    Designer
+  </button>
+</div>
     </div>
 
 
@@ -192,7 +231,7 @@
           </div>
           
           <p class="role-description">
-            Create, inspire and share your unique designs with a conscious community.
+            Discover unique clothing, find amazing local deals, and support sustainable fashion.
           </p>
 
           <div class="features-pill-box">
@@ -207,43 +246,19 @@
       </div>
     
 
-      <h2 class="role-label-title text-center">User</h2>
+      <div class="text-center mt-3">
+          <button type="button" class="btn btn-outline-success role-btn-custom" onclick="selectRole('user', this)"> User</button>
+     </div>
     </div>
 
   </div>
 
 
-  <div class="text-center mt-5 pt-3">
-    <button type="button" class="btn btn-enter-main">Enter</button>
-  </div>
-
-</div>
-
-      
-
-      
+    <div class="text-center mt-5 pt-3">
+        <a href="/iniciosesion/login.html" class="btn btn-enter-main text-decoration-none shadow-sm">Enter</a>
+    </div></div><br><br>
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
     
     <footer class="footer-color text-center py-4 border-top">
         <p class="text-muted mb-0"> Todos los derechos reservados</p>
