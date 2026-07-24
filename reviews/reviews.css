@@ -18,6 +18,7 @@ li{
     width: 80px;
 }
 
+/*
 .boton-rewear{
     background-color: #5aab61;
     border: 1px solid #004434;
@@ -57,6 +58,8 @@ li{
     height: auto;
     width: 70%;
 }
+*/
+
 
 .footer-color{
     background-color: #e7f5c3;
@@ -82,4 +85,12 @@ li{
 .rating label:hover,
 .rating label:hover ~ label {
     color: gold;
+}
+
+.feature-icon-img {
+  width: 40px;       
+  height: 40px;      
+  min-width: 40px;  
+  object-fit: contain;
+  align-self: center; 
 }
