@@ -26,13 +26,13 @@ li{
 
 .input-group-text{
     background:#c4e0cd;
-    border:4px solid #3e5d64;
+    border:2px solid #3e5d64;
     border-right:none;
     color:#176935;
 }
 
 .form-control{
-    border:4px solid #3e5d64;
+    border:2px solid #597f88;
     border-left:none;
     height:60px;
 }
