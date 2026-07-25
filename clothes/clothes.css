@@ -19,27 +19,3 @@ body{
 }
 
 
-.image-container {
-  background-color: #ffffff; 
-  border: 1px solid #ffcc00;  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.img-fluid-fit {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-.card-producto {
-  background-color: #fffaaa; 
-  border: 2px solid #ffaa44;
-  border-radius: 8px;
-  max-width: 350px;
-}
