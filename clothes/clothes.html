@@ -12,17 +12,114 @@
     <link rel="stylesheet" href="/clothes/clothes.css">
 
     <style>
-    .main-title {
-      color: #1b3827; 
-    }
-    .subtitle {
-      color: #636159;
-    }
+        :root {
+            --bg-cream: #F9F7E8;
+            --navbar-green: #C2DC88;
+            --banner-green: #E2F0BD;
+            --text-dark-green: #1B3B22;
+            --btn-green: #C2DC88;
+        }
 
+        body {
+            background-color: var(--bg-cream);
+            font-family: 'Quicksand', sans-serif;
+            color: #333;
+        }
 
+        .custom-navbar {
+            background-color: var(--navbar-green);
+            padding: 10px 40px;
+        }
 
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-dark-green) !important;
+        }
 
-  </style>
+        .navbar-brand img {
+            height: 35px;
+        }
+
+        .nav-link {
+            color: var(--text-dark-green) !important;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+
+        .banner-section {
+            background-color: var(--banner-green);
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 20px 30px;
+        }
+
+        .banner-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark-green);
+            margin-bottom: 5px;
+        }
+
+        .banner-subtitle {
+            font-size: 1.2rem;
+            color: #4A5D4E;
+            margin: 0;
+        }
+
+        .product-card-container {
+            width: 210px; 
+        }
+
+        .card-custom {
+            border-radius: 10px;
+            border: 1px solid #D0D0D0;
+            background-color: #FFFFFF;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-img-top {
+            border-radius: 6px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 0.85rem;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .btn-view-post {
+            background-color: var(--btn-green);
+            color: var(--text-dark-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 12px;
+            padding: 6px 0;
+            width: 100%;
+            margin-top: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-view-post:hover {
+            background-color: #B2CC78;
+            color: var(--text-dark-green);
+        }
+    </style>
 </head>
 
 <body>
@@ -56,14 +153,30 @@
     </nav>
 
 
-    <div class="container my-5">
-  <h1 class="main-title h2 mb-1">Exploring Clothing...</h1>
-  <p class="subtitle mb-4">140 available clothing</p>
 
-  
- 
+<main class="container my-4 px-4">
 
+        
+          <div class="banner-section mb-4">
+            <h1 class="banner-title">Exploring Clothing...</h1>
+            <p class="banner-subtitle">140 available clothing</p>
+        </div> 
+        <div class="row">
+            <div class="col-auto mb-4">
+                <div class="product-card-container">
+                    <div class="card card-custom">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="Denim patchwork corset">
+                        <div class="card-body p-0">
+                            <h5 class="product-title">Denim patchwork corset</h5>
+                            <p class="product-price">Price: $20.00</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-view-post">View post</button>
+                </div>
+              </div>
+        </div>
 
+    </main>
     
 </body>
 </html>
