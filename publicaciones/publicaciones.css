@@ -12,7 +12,12 @@ li{
 
 body{
     background-color:#f8f4e6;
-}
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
 
 .logo_rewear{
     width: 80px;
@@ -24,7 +29,7 @@ body{
     justify-content: center; 
     gap: 8px;
     background-color: #5C4D26; 
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     font-weight: 600;
     font-size: 0.95rem;
     padding: 8px 16px; 
@@ -35,11 +40,8 @@ body{
     margin-left: 5%; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     transition: all 0.2s ease;
-}
-
-   
     width: fit-content; 
-
+}
 
 .btn-return-outside:hover {
     background-color: #43371A;
