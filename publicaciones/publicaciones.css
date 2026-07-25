@@ -18,25 +18,34 @@ body{
     width: 80px;
 }
 
-.card-btn-container {
-  position: absolute;
-  bottom: 40px;             
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;    
-  z-index: 10;                
+.btn-return-outside {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 8px;
+    background-color: #5C4D26; 
+    color: #FFFFFF !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px; 
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 5%; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+
+   
+    width: fit-content; 
+
+
+.btn-return-outside:hover {
+    background-color: #43371A;
+    transform: translateX(-3px); 
+    color: #FFFFFF;
 }
 
-.btn-return-post-sm {
-  background-color: #645327; 
-  color: #ffffff;            
-  font-weight: bold;         
-  padding: 6px 24px;   
-  border-radius: 50px;  
-  font-size: 0.85rem;         
-  text-decoration: none;     
-  display: inline-block;     
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease-in-out;
+.btn-return-outside .arrow {
+    font-size: 1.1rem;
 }
