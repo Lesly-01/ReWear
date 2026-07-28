@@ -18,35 +18,7 @@ li{
     color: #004434;
 }
 
-.formulario{
-    width:600px;
-    border-radius:15px;
-    border:#333333;
-}
 
-.input-group-text{
-    background:#c4e0cd;
-    border:2px solid #3e5d64;
-    border-right:none;
-    color:#176935;
-}
-
-.form-control{
-    border:2px solid #597f88;
-    border-left:none;
-    height:60px;
-}
-
-.form-control:focus{
-    box-shadow:none;
-    border-color:#3e5d64;
-}
-
-.btn-outline-success{
-    color:#3f5b2d;
-    border:2px solid #3f5b2d;
-    border: none;
-}
 
 .footer-color {
     background-color: #e7f5c3;
@@ -55,4 +27,61 @@ li{
 
 .logo_rewear{
     width: 80px;
+}
+
+
+.custom-login-layout {
+  max-width: 950px;
+}
+
+.floating-img {
+  max-height: 480px;
+  object-fit: contain;
+
+  /* Opcional*/
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.08)); 
+  transition: transform 0.3s ease;
+}
+
+.floating-img:hover {
+  transform: scale(1.02);
+}
+
+.inputs-card-box {
+  background: #ffffff; 
+  border: 1.5px solid #2b4c52; 
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.inputs-card-box:hover {
+  box-shadow: 0 12px 30px rgba(43, 76, 82, 0.12);
+}
+
+
+.custom-input {
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+}
+
+.custom-input:focus {
+  border-color: #82a342;
+  box-shadow: 0 0 0 0.2rem rgba(130, 163, 66, 0.25);
+}
+
+.btn-custom-submit {
+  background-color: #82a342;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(130, 163, 66, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-custom-submit:hover {
+  background-color: #6d8b33;
+  transform: translateY(-2px);
 }

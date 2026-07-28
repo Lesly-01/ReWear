@@ -19,3 +19,50 @@ body{
 }
 
 
+        .card-custom {
+            border-radius: 10px;
+            border: 1px solid #D0D0D0;
+            background-color: #FFFFFF;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-img-top {
+            border-radius: 6px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            font-size: 0.85rem;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .btn-view-post {
+            background-color: var(--btn-green);
+            color: var(--text-dark-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 12px;
+            padding: 6px 0;
+            width: 100%;
+            margin-top: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-view-post:hover {
+            background-color: #B2CC78;
+            color: var(--text-dark-green);
+        }
+
+
