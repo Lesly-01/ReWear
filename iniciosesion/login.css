@@ -28,6 +28,13 @@ li{
     width: 80px;
 }
 
+.login-card {
+  max-width: 900px;
+  background-color: white; 
+  border-radius: 20px;    
+  border: none;
+}
+
 .custom-login-layout {
   max-width: 950px;
 }

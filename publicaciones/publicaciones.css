@@ -23,32 +23,3 @@ body{
     width: 80px;
 }
 
-.btn-return-outside {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; 
-    gap: 8px;
-    background-color: #5C4D26; 
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 8px 16px; 
-    border-radius: 20px;
-    text-decoration: none;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    margin-left: 5%; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: all 0.2s ease;
-    width: fit-content; 
-}
-
-.btn-return-outside:hover {
-    background-color: #43371A;
-    transform: translateX(-3px); 
-    color: #FFFFFF;
-}
-
-.btn-return-outside .arrow {
-    font-size: 1.1rem;
-}
