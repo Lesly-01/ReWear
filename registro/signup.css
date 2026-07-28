@@ -1,0 +1,67 @@
+body {
+    background-color:#f8f4e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+}
+
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+    background-color: #c9e18a;
+}
+
+li{
+    color: #004434;
+}
+
+.footer-color {
+    background-color: #e7f5c3;
+}
+
+.logo_rewear{
+    width: 80px;
+}
+
+
+.custom-checkbox:checked {
+  background-color: #82a342;
+  border-color: #82a342;
+}
+
+.custom-checkbox:focus {
+  border-color: #82a342;
+  box-shadow: 0 0 0 0.2rem rgba(130, 163, 66, 0.25);
+}
+
+.terms-text {
+  font-size: 0.85rem;
+  color: #5a4033;
+}
+
+.terms-link {
+  color: #82a342;
+  text-decoration: underline;
+}
+
+.terms-link:hover {
+  color: #6d8b33;
+}
+
+
+.custom-login-layout {
+  background: transparent; 
+  box-shadow: none;       
+  border: none;           
+  max-width: 950px;
+}
+
+.inputs-card-box {
+  background-color: #ffffff;
+  border: 1.5px solid #2b4c52;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
