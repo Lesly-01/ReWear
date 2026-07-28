@@ -65,4 +65,84 @@ body{
             color: var(--text-dark-green);
         }
 
+    
+.max-w-400 {
+  max-width: 380px;
+}
 
+.nav-search-input {
+  background-color: #f7f5e8;
+  border: 1px solid #c0d89d;
+  font-size: 0.9rem;
+}
+
+.nav-search-input:focus {
+  background-color: #ffffff;
+  border-color: #82a342;
+  box-shadow: 0 0 0 0.2rem rgba(130, 163, 66, 0.2);
+}
+
+/* Botón principal de Filtros */
+.btn-filter {
+  background-color: #f7f5e8;
+  color: #1b4317;
+  border: 1px solid #c0d89d;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+  background-color: #82a342;
+  color: #ffffff;
+  border-color: #82a342;
+}
+
+
+/* Botón verde principal (Filtros) */
+.btn-eco {
+  background-color: #82a342;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.btn-eco:hover {
+  background-color: #6d8b33;
+  color: #ffffff;
+}
+
+/* Botón contorno (Categorías) */
+.btn-outline-eco {
+  background-color: #f7f5e8;
+  color: #2b4c52;
+  border: 1px solid #c0d89d;
+  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-eco:hover {
+  background-color: #82a342;
+  color: #ffffff;
+  border-color: #82a342;
+}
+
+
+.btn-apply {
+  background-color: #2b4c52;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+}
+
+.btn-apply:hover {
+  background-color: #1b3237;
+  color: #ffffff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
