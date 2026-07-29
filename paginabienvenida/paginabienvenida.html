@@ -36,115 +36,62 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-lg diseño-de-navbar">
-        <div class="container">
-            <a class="navbar-brand" href=""></a>
+
+    <header class="navbar">
+    <div class="logo">
+         <a class="navbar-brand" href=""></a>
             <img class="logo_rewear"  src="/IMG/ReWear logo.png" alt="">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                   <li class="nav-item"><a class="nav-link" href="/Home/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
-                </ul>
-            </div>
-        </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/clothes/clothes.html">Clothes</a></li>
+        <li><a href="/myprofile/profile.html">My profile</a></li>
+        <li><a href="/reviews/reviews.html">Reviews</a></li>
+        <li><a href="/aboutus/aboutus.html">About us</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section class="hero">
+  <section class="hero">
+    
 
-    <div class="container text-center my-5">
-        <div class="row align-items-center">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="video/video bienvenida.mp4" type="video/mp4">
+    </video>
 
-            
-            <div class="col-lg-6 text-center text-lg-start">
+    <div class="overlay"></div>
 
-                <h1 class="fw-bold">
-                    Welcome to <span class="text-success">ReWear!</span>
-                </h1>
-
-                <p class="text-muted fs-5 max-w-sm mx-auto">
-                    Give your clothes a second life and help
-                    create a more sustainable world.
-                </p>
-            
-                 <div class="d-flex justify-content-center mt-3">
-                    <a href="/home/homepage.html" class="btn btn-login w-90 py-2 fw-bold text-white ">Go to home page</a>
-                   
-                </div>
-
-
-
-
-
-            </div>
-
-            
-            <div class="col-lg-6 text-center mt-5 mt-lg-0 position-relative">
-
-        
-
-                <img src="/IMG/conejo 2.png" class="img-fluid rabbit" alt="Rabbit">
-
-            </div>
-
-        </div>
+    
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to ReWear!</h1>
+      <p class="hero-subtitle">Join us and support local talent.</p>
+      
+      <div class="hero-buttons">
+        <a href="/clothes/clothes.html" class="btn btn-primary">Descubrir Colección</a>
+        <a href="/aboutus/aboutus.html" class="btn btn-secondary">Get to know about us</a>
+      </div>
     </div>
 
-    </section>
-
-
-<section class="features">
-
-    <div class="container">
-
-        <div class="row text-center">
-
-            <div class="col-md-4 feature-box">
-
-                <img src="/IMG/plant.png" alt="" class="icon">
-
-                <p>
-                    Every purchase from a Sustainable entrepreneur
-                    strengthens the local economy and supports families
-                    who rely on their small businesses.
-                </p>
-
-            </div>
-
-            <div class="col-md-4 feature-box">
-
-                 <img src="/IMG/bolsa.png" alt="" class="icon">
-
-                <p>
-                    ReWear connects buyers with Salvadoran entrepreneurs
-                    to give clothes a second life and promote more
-                    sustainable consumption.
-                </p>
-
-            </div>
-
-            <div class="col-md-4 feature-box">
-
-                <img src="/IMG/fabrica.png" alt="" class="icon">
-
-                <p>
-                    Every second, a truckload of clothing ends up
-                    in a landfill or is burned.
-                </p>
-
-            </div>
-
-        </div>
-
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">Support</span>
+        <span class="stat-label">salvadoran talent</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">Make</span>
+        <span class="stat-label">an impact</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">local impact</span>
+      </div>
     </div>
 
-</section>
+  </section>
+   
 
 </body>
 </html>
