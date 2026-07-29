@@ -27,8 +27,8 @@ body{
 
 
 :root {
-  --rewear-green-dark: #1b4332;
-  --rewear-green-main: #2d6a4f;
+  --rewear-green-dark: #1c2e0d;
+  --rewear-green-main: #55ac85;
   --rewear-green-light: #52b788;
   --rewear-cream-bg: #f7f4ea;
   --rewear-cream-card: #fefdfa;
@@ -56,7 +56,7 @@ body{
   letter-spacing: 0.5px;
 }
 
-/* Botones */
+
 .btn-rewear-solid {
   background-color: var(--rewear-green-main);
   color: #ffffff;
