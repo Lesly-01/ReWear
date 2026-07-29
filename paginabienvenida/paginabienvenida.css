@@ -80,7 +80,7 @@ body{
 }
 
 .btn-rewear-outline-dark:hover {
-  background-color: var(--rewear-green-dark);
+  background-color: var(--rewear-green-light);
   color: #ffffff;
 }
 
