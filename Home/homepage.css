@@ -128,3 +128,81 @@ li{
 .footer-color{
     background-color: #e7f5c3;
 }
+
+
+
+:root {
+  --rewear-green-dark: #2e6930;
+  --rewear-green-light: #8bc34a;
+  --rewear-bg-card: #fefdfa;
+}
+
+
+.how-it-works-section {
+  background-color: #f7f4ea; 
+}
+
+.section-title {
+  color: var(--rewear-green-dark);
+  font-size: 2.2rem;
+}
+
+
+.step-card {
+  background-color: var(--rewear-bg-card);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(46, 105, 48, 0.15);
+  border-color: var(--rewear-green-light);
+}
+
+
+.step-number {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--rewear-green-dark);
+  opacity: 0.4;
+  letter-spacing: 1px;
+}
+
+
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: var(--rewear-green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step-card:hover .icon-wrapper {
+  transform: scale(1.08);
+  background-color: var(--rewear-green-dark);
+}
+
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+.step-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
