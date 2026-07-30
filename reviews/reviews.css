@@ -50,14 +50,6 @@ li{
     background-color: #1b3a1d; 
 }
 
-.mascot-container {
-    margin: 0 auto;
-}
-
-.mascot-img {
-    height: auto;
-    width: 70%;
-}
 
 
 .rating {
@@ -91,16 +83,17 @@ li{
 }
 */
 
-/* Color general de fondo de la página */
+
+
 .bg-rewear-page {
-  background-color: #f7f4ea; /* Crema ReWear */
+  background-color: #f7f4ea; 
 }
 
 .text-rewear-dark {
   color: #1b4332;
 }
 
-/* --- TARJETA IZQUIERDA (FORMULARIO) --- */
+
 .card-review-form {
   background: #ffffff;
   border-radius: 20px;
