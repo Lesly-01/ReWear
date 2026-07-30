@@ -269,3 +269,26 @@ body{
   border-top: 1px solid rgba(247, 244, 234, 0.15);
 }
 
+
+
+.custom-tab-banner {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f7f4ea;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.custom-tab-banner:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.custom-tab-banner.active {
+  background-color: #f7f4ea;
+  color: #1b4332;            
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
