@@ -18,72 +18,6 @@ li{
     width: 80px;
 }
 
-/*
-.boton-rewear{
-    background-color: #5aab61;
-    border: 1px solid #004434;
-    color: white;
-}
-
-
-.custom-textarea {
-    border: 6px solid #5aab61;
-    border-radius: 20px;       
-    resize: none;                         
-    font-family:"Open sans", sans-serif;        
-    color: #2b3a1a;
-}
-
-.custom-textarea:focus {
-    box-shadow: 0 0 0 0.25rem rgba(90, 171, 97, 0.25);
-    border-color: #5aab61;
-}
-
-.btn-send {
-    background-color: #27522a; 
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s ease;
-}
-
-.btn-send:hover {
-    background-color: #1b3a1d; 
-}
-
-
-
-.rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-}
-
-.rating input {
-    display: none;
-}
-
-.rating label {
-    font-size: 35px;
-    color: gray;
-    cursor: pointer;
-}
-
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-    color: gold;
-}
-
-.feature-icon-img {
-  width: 40px;       
-  height: 40px;      
-  min-width: 40px;  
-  object-fit: contain;
-  align-self: center; 
-}
-*/
-
-
 
 .bg-rewear-page {
   background-color: #f7f4ea; 
@@ -92,7 +26,6 @@ li{
 .text-rewear-dark {
   color: #1b4332;
 }
-
 
 .card-review-form {
   background: #ffffff;
@@ -115,12 +48,11 @@ li{
   box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
 }
 
-/* Botón Cuadrado / Suave */
 .btn-rewear-submit {
   background-color: #2d6a4f;
   color: #ffffff;
   border: none;
-  border-radius: 12px; /* Forma cuadrada suave */
+  border-radius: 12px; 
   font-size: 1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(45, 106, 79, 0.2);
@@ -167,5 +99,41 @@ li{
 
 .star-rating .star.active {
   color: #2d6a4f;
+}
+
+
+.metric-icon {
+  width: 84px;
+  height: 84px;
+  background-color: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  flex-shrink: 0; 
+}
+
+.metric-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain; 
+}
+
+.footer-rewear a {
+  color: rgba(247, 244, 234, 0.75);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-rewear a:hover {
+  color: #ffffff;
+  padding-left: 3px; 
+}
+
+.footer-rewear .fs-5 a:hover {
+  padding-left: 0;
+  transform: translateY(-2px); 
+  display: inline-block;
+}
+
+.footer-bottom-border {
+  border-top: 1px solid rgba(247, 244, 234, 0.15);
 }
 
