@@ -261,3 +261,7 @@ body{
   color: #dc3545;
   transform: scale(1.1);
 }
+
+.extra-small {
+  font-size: 0.75rem; 
+}
