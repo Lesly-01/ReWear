@@ -43,7 +43,7 @@ li{
   max-height: 480px;
   object-fit: contain;
 
-  /* Opcional*/
+
   filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.08)); 
   transition: transform 0.3s ease;
 }
@@ -89,3 +89,28 @@ li{
   background-color: #6d8b33;
   transform: translateY(-2px);
 }
+
+.footer-rewear {
+  background-color: #1b431b;
+  color: #f7f4ea;            
+  border-top-left-radius: 24px;  
+  border-top-right-radius: 24px; 
+  margin-top: 3rem;   
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.text-cream {
+  color: #f7f4ea;
+}
+
+.text-cream-muted {
+  color: rgba(247, 244, 234, 0.75);
+}
+
+
+.bg-rewear-accent {
+  background-color: #2d6a35;
+  font-weight: 500;
+}
+
