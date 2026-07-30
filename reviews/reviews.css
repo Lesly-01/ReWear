@@ -58,12 +58,7 @@ li{
     height: auto;
     width: 70%;
 }
-*/
 
-
-.footer-color{
-    background-color: #e7f5c3;
-}
 
 .rating {
     display: flex;
@@ -94,3 +89,90 @@ li{
   object-fit: contain;
   align-self: center; 
 }
+*/
+
+/* Color general de fondo de la página */
+.bg-rewear-page {
+  background-color: #f7f4ea; /* Crema ReWear */
+}
+
+.text-rewear-dark {
+  color: #1b4332;
+}
+
+/* --- TARJETA IZQUIERDA (FORMULARIO) --- */
+.card-review-form {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(27, 67, 50, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-content-input {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  resize: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-content-input:focus {
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+/* Botón Cuadrado / Suave */
+.btn-rewear-submit {
+  background-color: #2d6a4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px; /* Forma cuadrada suave */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.2);
+}
+
+.btn-rewear-submit:hover {
+  background-color: #1b4332;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+.card-impact-metrics {
+  background-color: #1b4332; 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.text-cream {
+  color: #f7f4ea;
+}
+
+.text-cream-muted {
+  color: rgba(247, 244, 234, 0.8);
+}
+
+.text-accent-light {
+  color: #a3b18a;
+}
+
+.bg-white-10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.star-rating .star {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.star-rating .star:hover {
+  transform: scale(1.2);
+}
+
+.star-rating .star.active {
+  color: #2d6a4f;
+}
+
