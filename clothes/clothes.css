@@ -49,7 +49,6 @@ body{
   border-color: #82a342;
 }
 
-
 .btn-eco {
   background-color: #82a342;
   color: #ffffff;
@@ -95,12 +94,9 @@ body{
   cursor: pointer;
 }
 
-
-
 .max-w-600 {
   max-width: 600px;
 }
-
 
 .font-serif {
   font-family: 'Open sans", sans-serif', serif;
@@ -222,4 +218,46 @@ body{
   color: #1b4332;            
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-img {
+  height: 240px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.extra-small {
+  font-size: 0.75rem;
+}
+
+.text-dark-green {
+  color: #1b4332;
+}
+
+.btn-rewear-action {
+  background-color: #b7e4c7;
+  color: #1b4332;
+  border: none;
+}
+
+.btn-rewear-action:hover {
+  background-color: #1b4332;
+  color: #ffffff;
+}
+
+
+.btn-fav {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  color: #495057;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-fav:hover {
+  background-color: #ffffff;
+  color: #dc3545;
+  transform: scale(1.1);
 }
