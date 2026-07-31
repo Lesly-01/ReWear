@@ -19,25 +19,7 @@ body{
 }
 
 
-.stats-bar {
-  border-radius: 4px;
-}
-.stat-icon-circle {
-  width: 45px;
-  height: 45px;
-  color: #1a202c;
-}
-.bg-green-light {
-  background-color: #a3d193;
-}
-.stat-number {
-  font-size: 1.3rem;
-  color: #000000;
-  line-height: 1.1;
-}
-.stat-label {
-  font-size: 0.85rem;
-}
+
 
 
 
@@ -153,4 +135,33 @@ body{
 
 .footer-bottom-border {
   border-top: 1px solid rgba(247, 244, 234, 0.15);
+}
+
+
+
+
+
+
+.dropdown-toggle-no-caret::after {
+  display: none;
+}
+
+
+.extra-small {
+  font-size: 0.85rem;
+}
+
+
+.dropdown-menu {
+  z-index: 1050;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+  margin-top: 0;
+}
+
+.dropdown-toggle-no-caret::after {
+  display: none ;
 }

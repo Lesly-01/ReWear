@@ -115,85 +115,77 @@
     </nav>
 
 
-    
-<div class="request-card-container">
-  
 
-  <h3 class="card-main-title text-center">Customization request</h3>
-  <div class="user-info-text text-center text-md-start ps-md-2">
+    <main class="container my-5 pt-3">
+     <div class="card designer-card shadow-sm rounded-4 p-4 p-md-5 mx-auto" style="max-width: 850px; background-color: #6b9080; border: 2px solid #1b4332;">
+       <h3 class="fw-bold text-center text-white mb-2">Customization request</h3>
+       
+       <div class="text-center text-white-50 extra-small mb-4">
+        <i class="bi bi-person-circle me-1 text-white"></i> Request made by: <strong class="text-white">@username</strong>
+      </div>
+      
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-6 d-flex flex-column gap-3">
+          
+          <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method</span>
+            <strong class="text-dark fs-6">Custom Embroidery</strong>
+         </div>
 
-      <!-- Icono de usuario de Bootstrap en formato SVG -->
-      <svg xmlns="http://w3.org" width="20" height="20" fill="currentColor" class="bi bi-person-circle me-1 align-middle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-      </svg>
-      <span class="align-middle">Request made by: <strong>@username</strong></span>
-    </div>
-  
-  
-  
-  <div class="row g-4">
-    
-    
-    <div class="col-md-7 d-flex flex-column justify-content-between gap-3">
-      <div>
-        <input type="text" class="form-control-plaintext" value="Method: Custom Embroidery" readonly>
-      </div>
-      <div>
-        <input type="text" class="form-control-plaintext" value="Placement: Full Back (Centered)" readonly>
-      </div>
-      <div>
-        <input type="text" class="form-control-plaintext" value="Garment/Fabric: Black Hoodie (100% Cotton)" readonly>
-      </div>
-      <div>
-        <input type="text" class="form-control-plaintext" value="Attached File: logo_vector_final.pdf" readonly>
-        <a href="/ruta-al-archivo/logo_final_vector.pdf" class="btn btn-sm btn-outline-dark fw-bold w-100" download>
-            Download File
-          </a>
-      </div>
-    </div> 
+      
+         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Placement</span>
+           <strong class="text-dark fs-6">Full Back (Centered)</strong>
+         </div>
 
     
-    <div class="col-md-5">
-      <div class="right-preview-box d-flex flex-column justify-content-between h-100">
-        
-    
-        <div>
-          <strong class="text-muted small d-block mb-1">Design instructions:</strong>
-          <p class="mb-0 text-secondary" style="font-size: 0.9rem;">
-            Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
-          </p>
+         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment / Fabric</span>
+            <strong class="text-dark fs-6">Black Hoodie (100% Cotton)</strong>
+         </div>
+
+      
+         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success d-flex flex-column gap-2">
+           <span class="d-block text-muted extra-small fw-semibold text-uppercase">Attached File</span>
+           <div class="d-flex align-items-center justify-content-between">
+             <span class="text-dark fw-bold extra-small text-truncate me-2">
+               <i class="bi bi-file-earmark-pdf text-danger me-1"></i>logo_vector_final.pdf
+             </span>
+
+             <a href="assets/files/logo_vector_final.pdf" download="logo_vector_final.pdf" class="btn btn-sm btn-rewear-download rounded-pill px-3 py-1 extra-small fw-semibold">
+               <i class="bi bi-download me-1"></i>Download
+             </a>
+           </div>
+          </div>
         </div>
- 
 
-      </div>
-    </div> 
-
-  </div> 
-</div>
-
-  </div>
-
-   <div class="action-buttons-group d-flex justify-content-center gap-3">
-    <button type="button" class="btn btn-action-custom btn-accept-custom shadow-sm" onclick="handleAction('accepted')">Accept</button>
-    <button type="button" class="btn btn-action-custom btn-reject-custom shadow-sm" onclick="handleAction('rejected')">Reject</button>
-  </div>
-
-</div>
-
-<script>
   
-  function handleAction(status) {
-    if (status === 'accepted') {
-      alert('Order approved! It has been moved to the production queue.');
-    } else {
-      alert('Order rejected. A notification has been sent to the user.');
-    }
-  }
-</script>
+    <div class="col-12 col-md-6">
+      <div class="bg-white rounded-3 p-4 shadow-sm h-100 d-flex flex-column">
+        <h6 class="fw-bold text-dark mb-2">Design instructions:</h6>
+        <p class="text-secondary extra-small mb-0 flex-grow-1" style="line-height: 1.6; font-size: 0.9rem;">
+          Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
+        </p>
+      </div>
+    </div>
 
-<script src="https://jsdelivr.net"></script>
+  </div>
 
+  <div class="d-flex justify-content-center gap-3 mt-2">
+    <button type="button" class="btn btn-accept rounded-pill px-5 py-2.5 fw-bold text-white shadow-sm">
+      <i class="bi bi-check-circle-fill me-2"></i>Accept
+    </button>
+    <button type="button" class="btn btn-reject rounded-pill px-5 py-2.5 fw-bold text-white shadow-sm">
+      <i class="bi bi-x-circle-fill me-2"></i>Reject
+    </button>
+  </div>
+
+</div>
+
+    </main>
+
+
+    
 
 
 
