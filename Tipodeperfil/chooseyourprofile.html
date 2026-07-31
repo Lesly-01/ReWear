@@ -10,142 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="chooseyourprofile.css">
-
-    <style>
-    .role-section-container {
-      display: flex;
-      align-items: stretch;
-      gap: 20px;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-
-    .role-main-img {
-      width: 220px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .role-content-side {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 5px 0;
-    }
-
-
-
-    .top-badge-icon {
-      width: 65px;
-      height: 65px;
-      background-color: #e2f0e3; 
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .top-badge-icon img {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-    }
-
-    .role-description {
-      font-size: 0.85rem;
-      color: #555555;
-      line-height: 1.3;
-      margin: 10px 0;
-    }
-
-
-    .features-pill-box {
-      background-color: #e2f0e3; 
-      border-radius: 12px;
-      padding: 8px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-     .feature-inline-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: #2e4a31; 
-    }
-
-    .feature-inline-item img {
-      width: 35px;
-      height: 35px;
-      object-fit: contain;
-    }
-
-
-    .role-label-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e5631; 
-      margin-top: 15px;
-
-      display: inline-block;
-      transition: opacity 0.2s ease;
-    }
-
-    .role-label-title:hover {
-       color: #12351e; 
-      opacity: 0.9;
-}
-
-    
-    .btn-enter-main {
-      background-color: #ffffff;
-      color: #1e5631;
-      border: 2px solid #a3bca4;
-      border-radius: 12px;
-      padding: 10px 65px;
-      font-size: 1.6rem;
-      font-weight: bold;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    }
-
-    .btn-enter-main:hover {
-      background-color: #f4f9f4;
-      border-color: #1e5631;
-      color: #1e5631;
-    }
-
-
-    .role-btn-custom {
-  font-size: 2rem ;
-  font-weight: 700;
-  color: #1e5631; 
-  
-  border: 2px solid #a3bca4; 
-  border-radius: 12px; 
-  background-color: transparent;
-  
-
-  padding: 6px 35px; 
-  display: inline-block;
-  transition: all 0.2s ease-in-out;
-}
-
-
-.role-btn-custom:hover {
-  background-color: #e2f0e3; 
-  border-color: #1e5631;
-  color: #1e5631; 
-  transform: scale(1.02); 
-}
-    </style>
 </head>
 
 <body>
@@ -168,103 +32,148 @@
             </div>
         </div>
     </nav>
+
+
+    <main class="min-vh-100 d-flex flex-column align-items-center justify-content-center p-3 p-md-4">
+      
+      <div class="text-center mb-4">
+        <h2 class="fw-bold display-6 mb-2" style="color: #1b4332;">Choose your profile</h2>
+        <p class="text-muted mb-0 ">Select how you want to experience ReWear</p>
+    </div>
     
+    <div class="row g-4 justify-content-center align-items-stretch w-100 mx-auto" style="max-width: 900px;">
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card border-0 shadow-sm rounded-4 w-100 profile-selectable-card cursor-pointer p-3" id="cardDesigner">
+          <div class="row g-3 align-items-center h-100">
+            <div class="col-5">
+               <img src="/img/designer perfil.jpeg" class="img-fluid rounded-3 w-100 object-fit-cover"  style="height: 170px;" alt="Designer Profile">
+              </div>
+              
+              <div class="col-7">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 58px; height: 58px; background-color: #e8f5e9;">
+                    <img src="/img/mannequin.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-scissors" style="color: #2d6a4f; font-size: 0.85rem;"></i>
+                  </div>
+                  <h5 class="fw-bold mb-0 text-dark fs-6">Designer</h5>
+                </div>
+                
+                <p class="text-muted extra-small mb-3" style="font-size: 0.78rem; line-height: 1.3;">
+                  Create, inspire and share your unique designs with a conscious community.
+               </p>
 
-    <div class="container">
+                <div class="d-flex flex-column gap-2">
+                   <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
+                       <img src="/img/hojas perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                       <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Showcase your designs</span>
+                     </div>
+                      <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
+                         <img src="/img/people designer.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                         <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Connect with buyers</span>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12 col-md-6 d-flex">
+                 <div class="card border-0 shadow-sm rounded-4 w-100 profile-selectable-card cursor-pointer p-3" id="cardUser">
+                  <div class="row g-3 align-items-center h-100">
+                    <div class="col-5">
+                      <img src="/img/buyer perfil.jpeg" class="img-fluid rounded-3 w-100 object-fit-cover" style="height: 170px;" alt="User Profile">
+                   </div>
+                   
+                   <div class="col-7">
+                      <div class="d-flex align-items-center gap-2 mb-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 58px; height: 58px; background-color: #e8f5e9;">
+                            <i class="bi bi-bag-heart" style="color: #2d6a4f; font-size: 0.85rem;"></i>
+                            <img src="/img/bolsa-perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                         </div>
+                          <h5 class="fw-bold mb-0 text-dark fs-6">User</h5>
+                       </div>
 
-        <h1 class="profile-title fw-bold my-4">Choose your profile</h1>
-  
-  
-  <div class="row g-5 justify-content-center align-items-center">
-    
-    <!-- diseñadorrrrr -->
-    <div class="col-10 col-lg-6">
-      <div class="role-section-container">
-        
+                        <p class="text-muted extra-small mb-3" style="font-size: 0.78rem; line-height: 1.3;">
+                          Discover unique clothing, find amazing local deals, and support sustainable fashion.
+                       </p>
+                       
+                       <div class="d-flex flex-column gap-2">
+                          <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
+                           <img src="/img/etiqueta buyer.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                           <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Amazing deals</span>
+                         </div>
+                         
+                         <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
+                           <img src="/img/green hear buyer.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                            <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Transform unique clothes</span>
+                         </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4 text-center">
+                 <button id="btnEnter" class="btn text-white rounded-pill px-5 py-2 fw-semibold shadow-sm transition-all" style="background-color: #1b4332; opacity: 0.5; pointer-events: none; cursor: not-allowed;">
+                   Enter <i class="bi bi-arrow-right ms-2"></i>
+                 </button>
+               </div>
+</main>
 
-        <img src="/img/designer perfil.jpeg" alt="Designer custom clothing workflow" class="role-main-img">
-        
-    
-        <div class="role-content-side">
-          <div class="top-badge-icon">
-            <img src="/img/mannequin.png" alt="Designer apparel creation icon">
-          </div>
-          
-          <p class="role-description">
-            Create, inspire and share your unique designs with a conscious community.
-          </p>
-
-
-
-          <div class="features-pill-box">
-            <div class="feature-inline-item">
-              <img src="/img/hojas perfil.png" alt="Sustainability badge"> Showcase your designs
-            </div>
-            <div class="feature-inline-item">
-              <img src="/img/people designer.png" alt="Community connection"> Connect with buyers
-            </div>
-          </div>
-        </div>
+<footer class="footer-rewear pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      
+      
+      <div class="col-12 col-md-4">
+        <h3 class="fw-bold text-cream mb-2">ReWear</h3>
+        <p class="text-cream-muted small pe-md-3">
+          We reduce environmental impact by transforming how garments are consumed.
+        </p>
+        <span class="badge bg-rewear-accent text-white px-3 py-2 rounded-pill small">
+          Your clothes, your impact!
+        </span>
       </div>
 
-
-      <div class="text-center mt-3">
-  <button type="button" class="btn btn-outline-success role-btn-custom ">
-    Designer
-  </button>
-</div>
-    </div>
-
-
-
-     <div class="col-10 col-lg-6">
-      <div class="role-section-container">
-        <!-- usuarioooooo -->
-
-        <img src="/img/buyer perfil.jpeg" alt="Buyer sustainable apparel marketplace" class="role-main-img">
-        
-        
-        <div class="role-content-side">
-          
-          <div class="top-badge-icon">
-            <img src="/img/bolsa-perfil.png" alt="Buyer purchase action icon">
-          </div>
-          
-          <p class="role-description">
-            Discover unique clothing, find amazing local deals, and support sustainable fashion.
-          </p>
-
-          <div class="features-pill-box">
-            <div class="feature-inline-item">
-              <img src="/img/etiqueta buyer.png" alt="Discount label"> Amazing deals
-            </div>
-            <div class="feature-inline-item">
-              <img src="/img/green hear buyer.png" alt="Eco friendly clothing discovery"> Discover and transfer unique clothes
-            </div>
-          </div>
-        </div>
+     
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold text-cream mb-3">Explore the website</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+          <li><a href="/Home/homepage.html">Homepage</a></li>
+          <li><a href="/clothes/clothes.html">Clothes</a></li>
+          <li><a href="/reviews/reviews.html">Reviews</a></li>
+          <li><a href="/aboutus/aboutus.html">About us</a></li>
+        </ul>
       </div>
-    
 
-      <div class="text-center mt-3">
-          <button type="button" class="btn btn-outline-success role-btn-custom" onclick="selectRole('user', this)"> User</button>
-     </div>
+      
+      <div class="col-6 col-md-3">
+        <h6 class="fw-bold text-cream mb-3">Explore the catalog</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+          <li><a href="">Support salvadoran talent</a></li>
+          <li><a href="">Make a positive impact</a></li>
+          <li><a href="">Promote an upcycling culture</a></li>
+          <li><a href="">Give your clothes a second chance</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="col-12 col-md-3">
+        <h6 class="fw-bold text-cream mb-3">Be part of the change</h6>
+      
+        <p class="text-cream-muted small mb-0">Join ReWear</p>
+      </div>
+
     </div>
 
+    <div class="footer-bottom-border pt-3 text-center small text-cream-muted">
+      <p class="mb-0">&copy; 2026 ReWear. All rights reserved.</p>
+    </div>
   </div>
+</footer>
 
-
-    <div class="text-center mt-5 pt-3">
-        <a href="/registro/signup.html" class="btn btn-enter-main text-decoration-none shadow-sm">Enter</a>
-    </div></div><br><br>
-
-    
-    
-    <footer class="footer-color text-center py-4 border-top">
-        <p class="text-muted mb-0"> Todos los derechos reservados</p>
-  </footer>
-
-
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="selecciónperfil.js"></script>
 </body>
 </html>

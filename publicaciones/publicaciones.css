@@ -35,3 +35,18 @@ body{
     width: 80px;
 }
 
+
+.btn-back-custom {
+  background-color: #ffffff;
+  border-color: #e0ded5;
+  color: #1b4332; 
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-back-custom:hover {
+  background-color: #1b4332;
+  color: #ffffff;
+  border-color: #1b4332;
+  transform: translateX(-3px); 
+}
+

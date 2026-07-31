@@ -2,16 +2,27 @@ a, p, li, h1{
     font-family:"Open sans", sans-serif;
 }
 
-.diseño-de-navbar{
-    background-color: #78d3b5#c9e18a;
+body{
+    background-color:#f8f4e6;
 }
 
 li{
     color: #004434;
 }
 
-body{
-    background-color:#f8f4e6;
+.diseño-de-navbar{
+  background-color: #a5e5c8;
+  height: 100px;
+}
+
+.navbar-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.navbar-nav .nav-link:hover {
+  font-size: 1.08rem; 
+  color: #ffffff;     
 }
 
 .logo_rewear{
@@ -25,41 +36,64 @@ body{
 
 
 
-.footer-color{
-    background-color: #e7f5c3;
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.profile-selectable-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.profile-selectable-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 
-
-/*
-
-.bg-overlay-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
-    url("../IMG/disenador.png");
-    background-size: cover;
-    background-position: right;
-
+.profile-selectable-card.selected {
+  border-color: #1b4332 ; 
+  background-color: #64a096; 
+  box-shadow: 0 8px 20px rgba(27, 67, 50, 0.12);
 }
 
-.bg-overlay-imagi {
-    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
-    url("../IMG/buyer.png");
-    background-size: cover;
-    background-position: right;
-
+.transition-all {
+  transition: all 0.3s ease;
 }
 
-.profile-card.selected {
-    border-color: #1a7f52;
-    background-color: #f0f7f4;
-    transform: translateY(-8px);           
-    box-shadow: 0 10px 20px rgba(26, 127, 82, 0.2); 
+
+.footer-rewear {
+  background-color: #1b432d;
+  color: #f7f4ea;            
+  border-top-left-radius: 24px;  
+  border-top-right-radius: 24px; 
+  margin-top: 3rem;   
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.profile-card.selected .profile-card-text {
-    color: #4c972f;
+.footer-rewear a {
+  color: rgba(247, 244, 234, 0.75);
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
-*/
+
+.footer-rewear a:hover {
+  color: #ffffff;
+  padding-left: 3px; 
+}
+
+.footer-rewear .fs-5 a:hover {
+  padding-left: 0;
+  transform: translateY(-2px); 
+  display: inline-block;
+}
+
+.footer-bottom-border {
+  border-top: 1px solid rgba(247, 244, 234, 0.15);
+}
+
+
 
 
 

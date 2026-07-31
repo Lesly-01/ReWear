@@ -187,15 +187,6 @@ body{
 }
 
 
-.footer-rewear {
-  background-color: #1b431b;
-  color: #f7f4ea;            
-  border-top-left-radius: 24px;  
-  border-top-right-radius: 24px; 
-  margin-top: 3rem;   
-  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12);
-}
-
 
 .text-cream {
   color: #f7f4ea;
@@ -209,6 +200,15 @@ body{
 .bg-rewear-accent {
   background-color: #2d6a35;
   font-weight: 500;
+}
+
+.footer-rewear {
+  background-color: #1b432d;
+  color: #f7f4ea;            
+  border-top-left-radius: 24px;  
+  border-top-right-radius: 24px; 
+  margin-top: 3rem;   
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .footer-rewear a {
