@@ -11,182 +11,132 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/clothes/clothes.css">
-
-    <style>
-        :root {
-            --bg-cream: #F9F7E8;
-            --navbar-green: #C2DC88;
-            --banner-green: #E2F0BD;
-            --text-dark-green: #1B3B22;
-            --btn-green: #C2DC88;
-        }
-
-        .custom-navbar {
-            background-color: var(--navbar-green);
-            padding: 10px 40px;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            color: var(--text-dark-green);
-        }
-
-        .navbar-brand img {
-            height: 35px;
-        }
-
-        .nav-link {
-            color: var(--text-dark-green);
-            font-size: 1.15rem;
-            font-weight: 500;
-            margin-left: 15px;
-        }
-        .product-card-container {
-            width: 210px; 
-        }
-
-    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg diseño-de-navbar">
+  <nav class="navbar navbar-expand-lg diseño-de-navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href=""></a>
-            <img class="logo_rewear"  src="/IMG/ReWear logo.png" alt="">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img class="logo_rewear" src="/IMG/ReWear logo.png" alt="ReWear Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                   <li class="nav-item"><a class="nav-link" href="/Home/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
+                <ul class="navbar-nav ms-auto align-items-center">
+                   <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link active fw-bold" href="/clothes/clothes.html">Clothes</a></li>
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link active" href="/aboutus/aboutus.html">About us</a></li>
                 </ul>
-            </div>
-            
-            <div class="navbar navbar-expand-lg nav-rewear">
-                <div class="search-nav-wrapper mx-lg-4 my-2 my-lg-0 flex-grow-1 max-w-400">
-                     <input type="text" class="form-control rounded-pill nav-search-input" placeholder="Search clothes...">
-                </div>
             </div>
         </div>
     </nav>
-
+    
 
 
     <div class="container mb-4">
-  <div class="d-flex flex-wrap justify-content-between align-items-center bg-white p-3 rounded-4 border gap-2">
-    
-    
-    <div class="d-flex gap-2">
-      
-   
-      <button class="btn btn-outline-eco d-flex align-items-center gap-2 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
-          <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
-        </svg>
-        Categories
-      </button>
+      <div class="d-flex flex-wrap justify-content-between align-items-center bg-white p-3 rounded-4 border gap-2">
+        <div class="d-flex gap-2">
+          
+          <button class="btn btn-outline-eco d-flex align-items-center gap-2 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+            </svg>
+            Categories
+          </button>
 
      
-      <button class="btn btn-eco d-flex align-items-center gap-2 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1h-1.55a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1zm-5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M1.55 8a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1H6.45a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1zm7 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8.55 13a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1h-2.05a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1z"/>
-        </svg>
-        Filters
-      </button>
-
-    </div>
-
-    <span class="text-muted fs-7">Showing 140 garments</span>
-  </div>
-</div>
-
-
-<div class="offcanvas offcanvas-start rounded-end-4" tabindex="-1" id="offcanvasCategories" aria-labelledby="offcanvasCategoriesLabel">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title fw-bold text-success-eco" id="offcanvasCategoriesLabel">Categories</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  
-  <div class="offcanvas-body p-4">
-    <p class="text-muted small mb-3">Select the type of garment you are looking for:</p>
-
-    <div class="list-group list-group-flush mb-4">
-      <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
-        <span><input class="form-check-input filter-category me-2" type="checkbox" value="all" checked> All Garments</span>
-      </label>
-      <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
-        <span><input class="form-check-input filter-category me-2" type="checkbox" value="denim"> Denim & Patchwork</span>
-        <span class="badge bg-light text-dark rounded-pill">24</span>
-      </label>
-      <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
-        <span><input class="form-check-input filter-category me-2" type="checkbox" value="corset"> Corsets & Tops</span>
-        <span class="badge bg-light text-dark rounded-pill">18</span>
-      </label>
-      <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
-        <span><input class="form-check-input filter-category me-2" type="checkbox" value="jacket"> Jackets & Coats</span>
-        <span class="badge bg-light text-dark rounded-pill">12</span>
-      </label>
-      <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
-        <span><input class="form-check-input filter-category me-2" type="checkbox" value="pants"> Pants & Skirts</span>
-        <span class="badge bg-light text-dark rounded-pill">30</span>
-      </label>
-    </div>
-
-    <button type="button" class="btn btn-apply w-100 py-2 fw-semibold" id="btnApplyCategories" data-bs-dismiss="offcanvas">
-      Apply Categories
-    </button>
-  </div>
-</div>
-
-
-
-
-<div class="offcanvas offcanvas-start rounded-end-4" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title fw-bold text-success-eco" id="offcanvasFiltersLabel">Advanced Filters</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  
-  <div class="offcanvas-body p-4">
-    
-    
-    <div class="mb-4">
-      <h6 class="fw-bold mb-3">Garment Condition</h6>
-      <div class="form-check mb-2">
-        <input class="form-check-input filter-condition" type="checkbox" value="upcycled" id="condUpcycled">
-        <label class="form-check-label" for="condUpcycled">Upcycled / Redesigned</label>
+          <button class="btn btn-eco d-flex align-items-center gap-2 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters">
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1h-1.55a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1zm-5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M1.55 8a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1H6.45a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1zm7 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8.55 13a2.5 2.5 0 0 1 4.9 0H15.5a.5.5 0 0 1 0 1h-2.05a2.5 2.5 0 0 1-4.9 0H0.5a.5.5 0 0 1 0-1z"/>
+             </svg>
+             Filters
+            </button>
+          </div>
+          
+          <span class="text-muted fs-7">Showing 140 garments</span>
+        </div>
       </div>
-      <div class="form-check mb-2">
-        <input class="form-check-input filter-condition" type="checkbox" value="vintage" id="condVintage">
-        <label class="form-check-label" for="condVintage">Vintage / Second Hand</label>
+      
+      <div class="offcanvas offcanvas-start rounded-end-4" tabindex="-1" id="offcanvasCategories" aria-labelledby="offcanvasCategoriesLabel">
+        <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title fw-bold text-success-eco" id="offcanvasCategoriesLabel">Categories</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="offcanvas-body p-4">
+          <p class="text-muted small mb-3">Select the type of garment you are looking for:</p>
+          
+          <div class="list-group list-group-flush mb-4">
+            
+            <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
+              <span><input class="form-check-input filter-category me-2" type="checkbox" value="all" checked> All Garments</span>
+            </label>
+            
+            <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
+              <span><input class="form-check-input filter-category me-2" type="checkbox" value="denim"> Denim & Patchwork</span>
+              <span class="badge bg-light text-dark rounded-pill">24</span>
+            </label>
+            
+            <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
+              <span><input class="form-check-input filter-category me-2" type="checkbox" value="corset"> Corsets & Tops</span>
+              <span class="badge bg-light text-dark rounded-pill">18</span>
+            </label>
+
+            <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
+              <span><input class="form-check-input filter-category me-2" type="checkbox" value="jacket"> Jackets & Coats</span>
+              <span class="badge bg-light text-dark rounded-pill">12</span>
+            </label>
+            
+            <label class="list-group-item d-flex justify-content-between align-items-center border-0 py-3 px-0 cursor-pointer">
+              <span><input class="form-check-input filter-category me-2" type="checkbox" value="pants"> Pants & Skirts</span>
+              <span class="badge bg-light text-dark rounded-pill">30</span>
+            </label>
+          </div>
+          
+        <button type="button" class="btn btn-apply w-100 py-2 fw-semibold" id="btnApplyCategories" data-bs-dismiss="offcanvas">
+          Apply Categories
+        </button>
       </div>
     </div>
-
     
-    <div class="mb-4">
-      <h6 class="fw-bold mb-3">Size</h6>
-      <div class="d-flex gap-2 flex-wrap">
-        <input type="checkbox" class="btn-check" id="sizeXS" autocomplete="off">
-        <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeXS">XS</label>
-
-        <input type="checkbox" class="btn-check" id="sizeS" autocomplete="off">
-        <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeS">S</label>
-
-        <input type="checkbox" class="btn-check" id="sizeM" autocomplete="off">
-        <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeM">M</label>
-
-        <input type="checkbox" class="btn-check" id="sizeL" autocomplete="off">
-        <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeL">L</label>
+    <div class="offcanvas offcanvas-start rounded-end-4" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold text-success-eco" id="offcanvasFiltersLabel">Advanced Filters</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-    </div>
+      
+      <div class="offcanvas-body p-4">
+        
+        <div class="mb-4">
+          <h6 class="fw-bold mb-3">Garment Condition</h6>
+          <div class="form-check mb-2">
+            <input class="form-check-input filter-condition" type="checkbox" value="upcycled" id="condUpcycled">
+            <label class="form-check-label" for="condUpcycled">Upcycled / Redesigned</label>
+          </div>
+          
+          <div class="form-check mb-2">
+            <input class="form-check-input filter-condition" type="checkbox" value="vintage" id="condVintage">
+            <label class="form-check-label" for="condVintage">Vintage / Second Hand</label>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <h6 class="fw-bold mb-3">Size</h6>
+          <div class="d-flex gap-2 flex-wrap">
+            <input type="checkbox" class="btn-check" id="sizeXS" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeXS">XS</label>
+            <input type="checkbox" class="btn-check" id="sizeS" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeS">S</label>
+            <input type="checkbox" class="btn-check" id="sizeM" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeM">M</label>
+            <input type="checkbox" class="btn-check" id="sizeL" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-circle px-3" for="sizeL">L</label>
+          </div>
+        </div>
 
 
     <div class="mb-4">

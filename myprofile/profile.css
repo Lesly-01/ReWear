@@ -2,8 +2,20 @@ a, p, li, h1{
     font-family:"Open sans", sans-serif;
 }
 
+
 .diseño-de-navbar{
     background-color: #78d3b5;
+    height: 100px;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.navbar-nav .nav-link:hover {
+    font-size: 1.08rem; 
+    color: #ffffff;     
 }
 
 li{
@@ -25,6 +37,3 @@ li{
 
 
 
-.footer-color{
-    background-color: #e7f5c3;
-}

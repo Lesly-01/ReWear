@@ -16,120 +16,103 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg diseño-de-navbar">
+  <nav class="navbar navbar-expand-lg diseño-de-navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href=""></a>
-            <img class="logo_rewear"  src="/IMG/ReWear logo.png" alt="">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img class="logo_rewear" src="/IMG/ReWear logo.png" alt="ReWear Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+                <ul class="navbar-nav ms-auto align-items-center">
+                   <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
+                   <li class="nav-item"><a class="nav-link active fw-bold" href="/reviews/reviews.html">Reviews</a></li>
+                   <li class="nav-item"><a class="nav-link active" href="/aboutus/aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
-      </nav>
-
-
+    </nav>
     
-<section class="py-5 bg-rewear-page">
-  <div class="container py-4">
-    
-
-    <div class="text-center mb-5">
-      <h1 class="fw-bold text-rewear-dark display-5 mb-2">We'd love to hear from you!</h1>
-      <p class="text-muted mb-3">Rating:</p>
-      
-    
-      <div class="star-rating d-flex justify-content-center gap-2 fs-3 text-secondary" id="starContainer">
-        <i class="bi bi-star-fill star" data-value="1"></i>
-        <i class="bi bi-star-fill star" data-value="2"></i>
-        <i class="bi bi-star-fill star" data-value="3"></i>
-        <i class="bi bi-star-fill star" data-value="4"></i>
-        <i class="bi bi-star-fill star" data-value="5"></i>
-      </div>
-    </div>
-
-    
-    <div class="row g-4 align-items-stretch justify-content-center">
-      
-    
-      <div class="col-12 col-lg-6">
-        <div class="card-review-form p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
-          <div>
-            <div class="d-flex align-items-center gap-2 mb-3 text-rewear-dark">
-              <i class="bi bi-chat-left-text-fill fs-5"></i>
-              <h5 class="fw-bold mb-0">Write your comment here...</h5>
-            </div>
-
-
-            <div class="position-relative">
-      <textarea 
-        class="form-content-input w-100 p-3" 
-        rows="5" 
-        maxlength="500" 
-        placeholder="Type your message..."
-        id="reviewTextarea"></textarea>
-      <span class="char-counter text-muted small position-absolute bottom-0 end-0 pe-3 pb-2" id="charCount">0/500</span>
-    </div>
-  </div>
-  
-     <div class="mt-4 text-center">
-       <button type="button" class="btn btn-rewear-submit w-100 py-3 fw-bold" id="submitBtn">
-          Send Review
-       </button>
-     </div>
-    </div>
-  </div>
-
-      
-      <div class="col-12 col-lg-6">
-        <div class="card-impact-metrics p-4 p-md-5 h-100 d-flex flex-column justify-content-between text-white">
-          <div>
-            <div class="d-flex align-items-center gap-2 mb-3 text-accent-light">
-              <i class="bi bi-leaf-fill fs-4"></i>
-              <h5 class="fw-bold mb-0">Your feedback drives real impact</h5>
-            </div>
-            <p class="text-cream-muted small mb-4">
-              Every review helps us build a more transparent and sustainable fashion community in El Salvador.
-            </p>
-
-            <hr class="border-light opacity-25 my-4">
-
-            
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="metric-icon rounded-3 d-flex align-items-center justify-content-center">
-                
-                <img src="/IMG/water icon.png" alt="Water icon" class="metric-img">
-              </div>
+    <section class="py-5 bg-rewear-page">
+       <div class="container py-4">
+        <div class="text-center mb-5">
+          <h1 class="fw-bold text-rewear-dark display-5 mb-2">We'd love to hear from you!</h1>
+          <p class="text-muted mb-3">Rating:</p>
+          
+          <div class="star-rating d-flex justify-content-center gap-2 fs-3 text-secondary" id="starContainer">
+            <i class="bi bi-star-fill star" data-value="1"></i>
+            <i class="bi bi-star-fill star" data-value="2"></i>
+            <i class="bi bi-star-fill star" data-value="3"></i>
+            <i class="bi bi-star-fill star" data-value="4"></i>
+            <i class="bi bi-star-fill star" data-value="5"></i>
+          </div>
+        </div>
+        
+        <div class="row g-4 align-items-stretch justify-content-center">
+          <div class="col-12 col-lg-6">
+            <div class="card-review-form p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
               <div>
-                 <h4 class="fw-bold mb-0 text-cream">12,500 L</h4>
-                 <p class="text-cream-muted small mb-0">Of water saved by circular fashion choices.</p>
+                <div class="d-flex align-items-center gap-2 mb-3 text-rewear-dark">
+                  <i class="bi bi-chat-left-text-fill fs-5"></i>
+                  <h5 class="fw-bold mb-0">Write your comment here...</h5>
+                </div>
+                
+                <div class="position-relative">
+                  <textarea class="form-content-input w-100 p-3" rows="5" maxlength="500" placeholder="Type your message..."id="reviewTextarea"></textarea>
+                  <span class="char-counter text-muted small position-absolute bottom-0 end-0 pe-3 pb-2" id="charCount">0/500</span>
                 </div>
               </div>
-
-              <div class="d-flex align-items-center gap-3">
-                <div class="metric-icon rounded-3 d-flex align-items-center justify-content-center">
-                  <img src="/img/c02 icon.png" alt="CO2 icon" class="metric-img">
+              
+              <div class="mt-4 text-center">
+                <button type="button" class="btn btn-rewear-submit w-100 py-3 fw-bold" id="submitBtn">
+                Send Review
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-lg-6">
+          <div class="card-impact-metrics p-4 p-md-5 h-100 d-flex flex-column justify-content-between text-white">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-3 text-accent-light">
+                <i class="bi bi-leaf-fill fs-4"></i>
+                 <h5 class="fw-bold mb-0">Your feedback drives real impact</h5>
                 </div>
-                <div>
-                  <h4 class="fw-bold mb-0 text-cream">350 kg</h4>
-                  <p class="text-cream-muted small mb-0">Of CO₂ emissions avoided by giving clothes a second life.</p>
+                <p class="text-cream-muted small mb-4">
+                  Every review helps us build a more transparent and sustainable fashion community in El Salvador.
+                </p>
+                
+                <hr class="border-light opacity-25 my-4">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <div class="metric-icon rounded-3 d-flex align-items-center justify-content-center">
+                    <img src="/IMG/water icon.png" alt="Water icon" class="metric-img">
+                  </div>
+                  <div>
+                    <h4 class="fw-bold mb-0 text-cream">12,500 L</h4>
+                    <p class="text-cream-muted small mb-0">Of water saved by circular fashion choices.</p>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3">
+                  <div class="metric-icon rounded-3 d-flex align-items-center justify-content-center">
+                    <img src="/img/c02 icon.png" alt="CO2 icon" class="metric-img">
+                  </div>
+                  
+                  <div>
+                    <h4 class="fw-bold mb-0 text-cream">350 kg</h4>
+                    <p class="text-cream-muted small mb-0">Of CO₂ emissions avoided by giving clothes a second life.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
 </section>
 
 <footer class="footer-rewear pt-5 pb-4">
