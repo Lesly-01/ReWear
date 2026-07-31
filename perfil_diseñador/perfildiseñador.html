@@ -34,180 +34,249 @@
             </div>
         </div>
     </nav>
-  
-    
 
-    <div class="container my-5">
-  
-  <div class="profile-card d-flex align-items-center align-items-sm-start p-4 shadow-sm position-relative">
-    
-    
-    <div class="avatar-container position-relative flex-shrink-0 me-3 me-sm-4">
-      <div class="avatar-placeholder rounded-circle d-flex align-items-center justify-content-center">
+
+    <div class="container py-4">
+
+  <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      
+      <div class="d-flex align-items-center gap-3">
+        
+        <div class="position-relative">
+          <div class="rounded-circle bg-light d-flex align-items-center justify-content-center overflow-hidden border" style="width: 80px; height: 80px;">
+            <i class="bi bi-scissors fs-1 text-secondary" id="designerAvatarIcon"></i>
+            <img id="designerAvatarImg" src="" class="w-100 h-100 object-fit-cover d-none" alt="Designer Profile">
+          </div>
+        </div>
 
         
-        <svg viewBox="0 0 24 24" width="55" height="55" fill="#fbcfe8"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v2h-16v-2c0-2.66 5.33-4 8-4z"/></svg>
+        <div>
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <h4 class="fw-bold mb-0 text-dark" id="displayDesignerName">@Username</h4>
+            <span class="badge rounded-pill bg-light text-dark border extra-small" id="displayDesignerTag">Sustainable Fashion Designer</span>
+          </div>
+          <p class="text-muted small mb-0 mt-1" id="displayDesignerBio">
+            I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.
+          </p>
+        </div>
       </div>
+
       
-
-      <button class="camera-badge rounded-circle border-0 d-flex align-items-center justify-content-center position-absolute">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="#1e293b"><path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+      <button class="btn btn-outline-dark rounded-pill px-4 btn-sm fw-semibold ms-md-auto" data-bs-toggle="modal" data-bs-target="#editDesignerModal">
+        Edit Profile <i class="bi bi-pencil ms-1"></i>
       </button>
-    </div>
 
-    
-    <div class="flex-grow-1 profile-info pt-1">
-      <div class="d-flex flex-wrap align-items-baseline mb-2">
-        <h2 class="username me-2 mb-0">@Username</h2>
-        <span class="tagline text-muted">Sustainable Fashion Designer</span>
-      </div>
-      <p class="description mb-0">
-        I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.
-      </p>
     </div>
-
-    
-    <div class="ms-auto pt-1 btn-container">
-      <button class="btn btn-edit-profile d-flex align-items-center rounded-pill px-3 py-1fw-medium">
-        <span>Edit Profile</span>
-        <svg class="ms-2" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.995.995 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-      </button>
-    </div>
-
   </div>
-</div>
 
 
-<div class="container my-5 pb-5">
+  <div class="row g-3 mb-4 text-center">
+    
+    <div class="col-6 col-md">
+      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-2">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #e8f5e9;">
+          <i class="bi bi-bag-check-fill" style="color: #2d6a4f;"></i>
+        </div>
+        <div class="text-start">
+          <h5 class="fw-bold mb-0 text-dark">24</h5>
+          <span class="text-muted extra-small">Designs published</span>
+        </div>
+      </div>
+    </div>
+
   
-  <div class="stats-bar d-flex flex-wrap align-items-center justify-content-between mb-4 border border-dark bg-white">
-
-    <div class="stat-item d-flex align-items-center flex-grow-1 justify-content-center p-3 border-end border-dark">
-      <div class="stat-icon-circle rounded-circle bg-green-light d-flex align-items-center justify-content-center me-3">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
-      </div>
-      <div>
-        <div class="stat-number fw-bold">24</div>
-        <div class="stat-label text-muted">Designs published</div>
-      </div>
-    </div>
-
-    <div class="stat-item d-flex align-items-center flex-grow-1 justify-content-center p-3 border-end border-dark">
-      <div class="stat-icon-circle rounded-circle bg-green-light d-flex align-items-center justify-content-center me-3">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      </div>
-      <div>
-        <div class="stat-number fw-bold">4.9</div>
-        <div class="stat-label text-muted">Average rating</div>
+    <div class="col-6 col-md">
+      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-2">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #e8f5e9;">
+          <i class="bi bi-star-fill" style="color: #2d6a4f;"></i>
+        </div>
+        <div class="text-start">
+          <h5 class="fw-bold mb-0 text-dark">4.9</h5>
+          <span class="text-muted extra-small">Average rating</span>
+        </div>
       </div>
     </div>
 
-    <div class="stat-item d-flex align-items-center flex-grow-1 justify-content-center p-3 border-end border-dark">
-      <div class="stat-icon-circle rounded-circle bg-green-light d-flex align-items-center justify-content-center me-3">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
-      </div>
-      <div>
-        <div class="stat-number fw-bold">152</div>
-        <div class="stat-label text-muted">Request completed</div>
-      </div>
-    </div>
-
-     <div class="stat-item d-flex align-items-center flex-grow-1 justify-content-center p-3 border-end border-dark">
-      <div class="stat-icon-circle rounded-circle bg-green-light d-flex align-items-center justify-content-center me-3">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 13h-2v-2h2v2zm0-4h-2V7h2v4z"/></svg>
-      </div>
-      <div>
-        <div class="stat-number fw-bold">$1,240</div>
-        <div class="stat-label text-muted">Total earnings</div>
+    
+    <div class="col-6 col-md">
+      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-2">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #e8f5e9;">
+          <i class="bi bi-check-circle-fill" style="color: #2d6a4f;"></i>
+        </div>
+        <div class="text-start">
+          <h5 class="fw-bold mb-0 text-dark">152</h5>
+          <span class="text-muted extra-small">Requests completed</span>
+        </div>
       </div>
     </div>
 
-     <div class="stat-item d-flex align-items-center flex-grow-1 justify-content-center p-3">
-      <div class="stat-icon-circle rounded-circle bg-green-light d-flex align-items-center justify-content-center me-3">
-         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-      </div>
-      <div>
-        <div class="stat-number fw-bold">318</div>
-        <div class="stat-label text-muted">Followers</div>
+    <!-- Total Earnings -->
+    <div class="col-6 col-md">
+      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-2">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #e8f5e9;">
+          <i class="bi bi-cash-stack" style="color: #2d6a4f;"></i>
+        </div>
+        <div class="text-start">
+          <h5 class="fw-bold mb-0 text-dark">$1,240</h5>
+          <span class="text-muted extra-small">Total earnings</span>
+        </div>
       </div>
     </div>
+
+  
+    <div class="col-12 col-md">
+      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-2">
+        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px; background-color: #e8f5e9;">
+          <i class="bi bi-people-fill" style="color: #2d6a4f;"></i>
+        </div>
+        <div class="text-start">
+          <h5 class="fw-bold mb-0 text-dark">318</h5>
+          <span class="text-muted extra-small">Followers</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-
-
-   <div class="row g-4">
-    
+  
+  <div class="row g-4">
     
     <div class="col-12 col-lg-6">
-      <div class="designer-panel-card bg-white p-4 shadow-sm h-100">
-        <h3 class="panel-section-title mb-4">My designs</h3>
-        <div class="row g-2">
-
-             <div class="col-3 text-start">
-            <div class="design-placeholder rounded mb-2"></div>
-            <div class="design-item-title fw-bold">Florar Denim Jacket</div>
-            <div class="design-item-price">$30</div>
+      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
+        <h5 class="fw-bold mb-3 text-dark">My designs</h5>
+        
+        <div class="row g-3">
+          
+          
+          <div class="col-6 col-sm-3">
+            <a href="#" class="text-decoration-none">
+              <div class="card border-0 product-card h-100">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Floral Denim">
+                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Floral Denim Jacket</h6>
+                <span class="extra-small fw-bold" style="color: #2d6a4f;">$30</span>
+              </div>
+            </a>
           </div>
 
-           <div class="col-3 text-start">
-            <div class="design-placeholder rounded mb-2"></div>
-            <div class="design-item-title fw-bold">Botanical Tote bag</div>
-            <div class="design-item-price">$25</div>
+        
+          <div class="col-6 col-sm-3">
+            <a href="#" class="text-decoration-none">
+              <div class="card border-0 product-card h-100">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Botanical Tote">
+                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Botanical Tote bag</h6>
+                <span class="extra-small fw-bold" style="color: #2d6a4f;">$25</span>
+              </div>
+            </a>
           </div>
 
-           <div class="col-3 text-start">
-            <div class="design-placeholder rounded mb-2"></div>
-            <div class="design-item-title fw-bold">Minimal Line Tee</div>
-            <div class="design-item-price">$30</div>
+    
+          <div class="col-6 col-sm-3">
+            <a href="#" class="text-decoration-none">
+              <div class="card border-0 product-card h-100">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Minimal Line Tee">
+                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Minimal Line Tee</h6>
+                <span class="extra-small fw-bold" style="color: #2d6a4f;">$30</span>
+              </div>
+            </a>
           </div>
 
-          <div class="col-3 text-start">
-            <div class="design-placeholder rounded mb-2"></div>
-            <div class="design-item-title fw-bold">Daysi Sweater</div>
-            <div class="design-item-price">$40</div>
+          
+          <div class="col-6 col-sm-3">
+            <a href="#" class="text-decoration-none">
+              <div class="card border-0 product-card h-100">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Daysi Sweater">
+                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Daysi Sweater</h6>
+                <span class="extra-small fw-bold" style="color: #2d6a4f;">$40</span>
+              </div>
+            </a>
           </div>
+
         </div>
       </div>
     </div>
 
-     <div class="col-12 col-lg-6">
-      <div class="designer-panel-card bg-white p-4 shadow-sm h-100">
-        <h3 class="panel-section-title mb-4">Recent Orders</h3>
-        
     
-        <div class="d-flex justify-content-between align-items-start mb-4">
-          <div class="d-flex align-items-center">
-            <div class="order-placeholder rounded me-3 flex-shrink-0"></div>
-            <div>
-              <h5 class="order-item-title fw-bold mb-1">Botanical Tote bag</h5>
-              <p class="order-id text-muted mb-0">Order #124</p>
+    <div class="col-12 col-lg-6">
+      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
+        <h5 class="fw-bold mb-3 text-dark">Recent Orders</h5>
+        
+        <div class="d-flex flex-column gap-3">
+          
+          
+          <div class="d-flex align-items-center gap-3 pb-3 border-bottom">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=200" class="rounded-3 object-fit-cover flex-shrink-0" width="60" height="60" alt="Botanical Tote bag">
+            <div class="w-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0 extra-small">Botanical Tote bag</h6>
+                  <span class="text-muted extra-small">Order #124</span>
+                </div>
+                <div class="text-end">
+                  <span class="text-muted extra-small d-block mb-1">10 mayo, 2026</span>
+                  <span class="badge rounded-pill bg-danger-subtle text-danger border border-danger-subtle extra-small">In progress</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="text-end">
-            <small class="order-date d-block text-muted mb-2">10 mayo, 2026</small>
-            <span class="badge-status badge-in-progress">In progress</span>
-          </div>
-        </div>
 
-         <div class="d-flex justify-content-between align-items-start">
-          <div class="d-flex align-items-center">
-            <div class="order-placeholder rounded me-3 flex-shrink-0"></div>
-            <div>
-              <h5 class="order-item-title fw-bold mb-1">Florar Denim Jacket</h5>
-              <p class="order-id text-muted mb-0">Order #125</p>
+          
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=200" class="rounded-3 object-fit-cover flex-shrink-0" width="60" height="60" alt="Floral Denim Jacket">
+            <div class="w-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0 extra-small">Floral Denim Jacket</h6>
+                  <span class="text-muted extra-small">Order #125</span>
+                </div>
+                <div class="text-end">
+                  <span class="text-muted extra-small d-block mb-1">28 mayo, 2026</span>
+                  <span class="badge rounded-pill bg-success-subtle text-success border border-success-subtle extra-small">Completed</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="text-end">
-            <small class="order-date d-block text-muted mb-2">28 mayo, 2026</small>
-            <span class="badge-status badge-completed">Completed</span>
-          </div>
-        </div>
 
+        </div>
       </div>
     </div>
 
   </div>
+
 </div>
+
+<!-- edición de perfil -->
+<div class="modal fade" id="editDesignerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold">Edit Designer Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editDesignerForm">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Username / Brand Name</label>
+            <input type="text" class="form-control rounded-3" id="inputDesignerName" value="@Username">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Specialty / Title</label>
+            <input type="text" class="form-control rounded-3" id="inputDesignerTag" value="Sustainable Fashion Designer">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Bio</label>
+            <textarea class="form-control rounded-3" id="inputDesignerBio" rows="3">I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.</textarea>
+          </div>
+          <button type="submit" class="btn text-white w-100 rounded-3 fw-semibold" style="background-color: #1b4332;">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
+    
+
+    
 
 
 <footer class="footer-rewear pt-5 pb-4">
@@ -262,16 +331,9 @@
   </div>
 </footer>
 
-    
 
-
-
-
-
-
-
-
-
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="perfil.js"></script>
+ 
 </body>
 </html>
