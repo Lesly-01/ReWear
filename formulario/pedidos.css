@@ -75,5 +75,50 @@ body{
 
 
 
+body {
+      background-color: #fbf9f1;
+    }
+    .text-rewear-dark {
+      color: #1b4332;
+    }
+    .btn-rewear-submit {
+      background-color: #1b4332;
+      color: #ffffff;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-rewear-submit:hover {
+      background-color: #2d6a4f;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .btn-back-custom {
+      background-color: #ffffff;
+      border-color: #e0ded5;
+      color: #1b4332;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-back-custom:hover {
+      background-color: #1b4332;
+      color: #ffffff;
+      border-color: #1b4332;
+      transform: translateX(-3px);
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #5daa92;
+      box-shadow: 0 0 0 0.25rem rgba(99, 172, 149, 0.562);
+    }
+    .upload-zone {
+      border: 2px dashed #d0d7d1;
+      border-radius: 0.75rem;
+      background-color: #f8faf8;
+      transition: border-color 0.2s ease;
+    }
+    .upload-zone:hover {
+      border-color: #73d1b4;
+    }
+
+
+
+
 
 

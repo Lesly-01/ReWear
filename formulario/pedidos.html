@@ -87,118 +87,179 @@
     
 
 
-     <a href="/publicaciones/publicaciones.html" class="btn-return-outside">
-        <span class="arrow">&larr;</span> Return to posts
-     </a>
-
-       <div class="container">
-  <form action="/procesar-personalizacion" method="POST" enctype="multipart/form-data">
-
-    <div class="container">
-    <div class="container mt-3" style="max-width: 1000px;">
-      <div id="success-alert" class="alert alert-custom alert-dismissible fade d-none" role="alert">
-          <strong>Success!</strong> Your customization order has been submitted successfully. The designer will contact you soon.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     <main class="container py-4 px-3 px-md-4" style="max-width: 980px;">
+      <div class="mb-3">
+        <a href="post-details.html" class="btn bg-white border rounded-3 px-3 py-2 text-decoration-none fw-semibold shadow-sm d-inline-flex align-items-center gap-2 btn-back-custom">
+          <i class="bi bi-arrow-left fs-5"></i>
+          <span>Return to post</span>
+        </a>
       </div>
- </div>
-    
-
-    <div class="custom-form-container">
-      <h3 class="form-title">Customization details</h3>
       
-      <div class="row g-3">
-    
-        <div class="col-md-7 d-flex flex-column gap-3 overflow-y-auto">
-          
-          <div>
-            <select id="technique" name="technique" class="form-select" required>
-              <option value="" disabled selected>Select method (Embroidery, Screen Print...)</option>
-              <option value="embroidery">Custom Embroidery</option>
-              <option value="screenprint">Screen Printing</option>
-              <option value="sublimation">Sublimation Printing</option>
-              <option value="tie-dye">Custom Tie-Dye</option>
-              <option value="laser-engraving">Laser Engraving</option>
-              <option value="patches">Patch Attachment</option>
-          </select>
-            
+      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 p-md-5">
+        <div id="alertContainer"></div>
+        <div class="mb-4">
+          <h2 class="fw-bold text-rewear-dark mb-1">Customization details</h2>
+          <p class="text-muted extra-small mb-0" style="font-size: 0.9rem;">
+            Specify how you would like your garment to be customized before placing the order.
+          </p>
+        </div>
+        
+        <form class="needs-validation" novalidate>
+           <div class="row g-4">
   
-
-          </div>
-
-          <select id="placement" name="placement" class="form-select" required>
-              <option value="" disabled selected>Design placement (Chest, Back, Sleeve...)</option>
-              <optgroup label="Tops & Jackets">
-                 <option value="left-chest">Left Chest</option>
+          <div class="col-12 col-md-6 d-flex flex-column gap-3">
+            <div>
+              <label class="form-label fw-semibold text-dark extra-small mb-1">Customization Method</label>
+              <select class="form-select rounded-3 border-light-subtle bg-light-subtle py-2" required>
+                <option value="" selected disabled>Select method (Embroidery, Screen Print...)</option>
+                <option value="embroidery">Embroidery</option>
+                <option value="screen_print">Screen Print</option>
+                <option value="patchwork">Patchwork / Upcycling</option>
+                <option value="Sublimation Printing">Sublimation Printing</option>
+                <option value="Custom Tie-Dye">Custom Tie-Dye</option>
+                <option value="Laser Engraving">Laser Engraving</option>
+                <option value="Screen Printing">Screen Printing</option>
+             </select>
+             <div class="invalid-feedback extra-small">Please select a customization method.</div>
+            </div>
+            
+            <div>
+              <label class="form-label fw-semibold text-dark extra-small mb-1">Design Placement</label>
+              <select class="form-select rounded-3 border-light-subtle bg-light-subtle py-2" required>
+                <option value="" selected disabled>Design placement (Chest, Back, Sleeve...)</option>
+                <optgroup label="Tops & Jackets">
+                  <option value="left-chest">Left Chest</option>
                  <option value="right-chest">Right Chest</option>
                  <option value="center-front">Center Front</option>
                  <option value="full-back">Full Back</option>
                  <option value="upper-back">Upper Back (Below Collar)</option>
                  <option value="left-sleeve">Left Sleeve</option>
                  <option value="right-sleeve">Right Sleeve</option>
-              </optgroup>
+                </optgroup>
 
-               <optgroup label="Pants & Shorts">
+                <optgroup label="Pants & Shorts">
                  <option value="left-thigh">Left Thigh</option>
                  <option value="right-thigh">Right Thigh</option>
                  <option value="side-seam">Side Seam (Vertical)</option>
                  <option value="back-pocket">Back Pocket</option>
              </optgroup>
-          </select>
+              </select>
+              
+              <div class="invalid-feedback extra-small">Please select design placement.</div>
+            </div>
+            <div>
+              <label class="form-label fw-semibold text-dark extra-small mb-1">Category</label>
 
-
-          <div>
-             <select id="categoria" name="categoria" class="form-select">
-                <option value="" disabled selected>Category</option>
+              <select class="form-select rounded-3 border-light-subtle bg-light-subtle py-2" required>
+                <option value="" selected disabled>Select Category</option>
+                <option value="corset">Corset</option>
+                <option value="jacket">Jacket / Outerwear</option>
                 <option value="T-shirt">T-shirt</option>
                 <option value="Shirt">Shirt</option>
                 <option value="Jeans">Jeans</option>
                 <option value="Jacket">Jacket</option>
                 <option value="Sweater">Sweater</option>
                 <option value="Dress">Dress</option>
-             </select>
-           </div>
-
-
-           
-           <div>
-            <input type="file" id="design-file" name="design-file" class="form-control" accept=".png, .pdf, .ai, .eps" required>
-            <div class="form-text text-muted ps-1" style="font-size: 0.8rem;">Upload a photo of your garment  (PNG, PDF, AI, EPS)</div>
+            </select>
+            <div class="invalid-feedback extra-small">Please select a category.</div>
           </div>
 
-        </div>
-
-         <div class="col-md-5">
-          <textarea id="notes" name="notes" class="form-control right-square-input" placeholder="Enter detailed order instructions, thread/ink colors, specific measurements, or special requests here..." required></textarea>
-        </div>
-      </div>
-
-      </div>
-
-      <button type="submit" class="btn btn-send shadow-sm">Send</button>
-    </form>
- </div>
-
-
-  <script>
-       document.querySelector('form').addEventListener('submit', function(event) {
-       event.preventDefault(); 
     
-       const alertElement = document.getElementById('success-alert');
-       alertElement.classList.remove('d-none');
-       alertElement.classList.add('show');
-      this.reset();
+      <div class="upload-zone p-3 text-center border rounded-3 position-relative" style="border: 2px dashed #d0d7d1; background-color: #f8faf8;">
+  
+
+  <i class="bi bi-cloud-arrow-up text-success fs-3 mb-1 d-block" id="uploadIcon"></i>
+  
+  <input type="file" id="garmentPhoto" class="d-none" accept="image/*,.pdf,.ai,.eps" required>
+  
+
+  <label for="garmentPhoto" class="btn btn-sm btn-outline-success rounded-pill px-3 mb-2 cursor-pointer">
+    Choose file
+  </label>
+  
+  
+  <div id="fileNameDisplay" class="text-muted extra-small" style="font-size: 0.8rem;">
+    Upload a photo of your garment (PNG, PDF, AI, EPS)
+  </div>
+
+  
+  <span id="successBadge" class="position-absolute top-0 end-0 translate-middle p-2 bg-success border border-light rounded-circle d-none" style="margin-top: 10px; margin-right: 10px;">
+    <i class="bi bi-check-lg text-white fs-6 d-block" style="line-height: 1;"></i>
+  </span>
+
+</div>
+
+    </div>
+
     
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    <div class="col-12 col-md-6 d-flex flex-column">
+      <label class="form-label fw-semibold text-dark extra-small mb-1">Detailed Order Instructions</label>
+      <textarea class="form-control rounded-3 border-light-subtle bg-light-subtle p-3 flex-grow-1" 
+                rows="8" 
+                placeholder="Enter detailed order instructions, thread/ink colors, specific measurements, or special requests here..." 
+                required></textarea>
+      <div class="invalid-feedback extra-small">Please provide order instructions.</div>
+    </div>
+
+  </div>
+
+  <div class="mt-5 text-center">
+    <button type="submit" class="btn btn-rewear-submit rounded-pill px-5 py-2.5 fw-semibold shadow-sm fs-6">
+      <i class="bi bi-send me-2"></i>Send order
+    </button>
+  </div>
+</form>
+
+      
+
+    </div>
+
+  </main>
+
+       
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const orderForm = document.querySelector('.needs-validation');
+    const alertContainer = document.getElementById('alertContainer');
+
+    orderForm.addEventListener('submit', function(event) {
+      
+      if (!orderForm.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        orderForm.classList.add('was-validated');
+        return; 
+      }
+
+      event.preventDefault();
+
+    
+      const submitBtn = orderForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+
+
+      alertContainer.innerHTML = `
+        <div class="alert alert-success border-0 shadow-sm rounded-3 d-flex align-items-center gap-2 mb-4" role="alert" style="background-color: #d1e7dd; color: #0f5132;">
+          <i class="bi bi-check-circle-fill fs-5"></i>
+          <div>
+            <strong>Order submitted successfully!</strong> Redirecting you to the clothes catalogue...
+          </div>
+        </div>
+      `;
 
       setTimeout(function() {
-     
-      window.location.href = "../clothes/clothes.html"; 
-      }, 5000); 
-      });
-  </script>
+        window.location.href = 'clothes.html';
+      }, 3000);
+    });
+  });
+</script>
 
-
-
- 
+<script src="/formulario/pedidos.js"></script>
 </body>
 </html>
