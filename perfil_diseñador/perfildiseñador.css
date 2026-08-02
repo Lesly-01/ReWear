@@ -3,7 +3,18 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-    background-color: #78d3b5;
+    background-color:#00403A;
+    color: #35a882;
+}
+
+.navbar-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.navbar-nav .nav-link:hover {
+  font-size: 1.08rem; 
+  color:#A4F002;     
 }
 
 li{
@@ -17,11 +28,6 @@ body{
 .logo_rewear{
     width: 80px;
 }
-
-
-
-
-
 
 @media (max-width: 991px) {
   .stat-item {
@@ -93,7 +99,7 @@ body{
 }
 
 .footer-rewear {
-  background-color: #1b432d;
+  background-color: #06664e;
   color: #f7f4ea;            
   border-top-left-radius: 24px;  
   border-top-right-radius: 24px; 
@@ -112,9 +118,10 @@ body{
 
 
 .bg-rewear-accent {
-  background-color: #2d6a35;
+  background-color: #55aa87;
   font-weight: 500;
 }
+
 
 .footer-rewear a {
   color: rgba(247, 244, 234, 0.75);
@@ -158,7 +165,7 @@ body{
 
 
 .dropdown:hover .dropdown-menu {
-  display: block !important;
+  display: block;
   margin-top: 0;
 }
 
