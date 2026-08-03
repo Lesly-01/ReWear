@@ -30,7 +30,7 @@ body{
 }
 
 :root {
-  --rewear-green-dark: #2e6930;
+  --rewear-green-dark: #064631;
   --rewear-green-light: #8bc34a;
   --rewear-bg-card: #fefdfa;
 }
@@ -75,12 +75,12 @@ body{
 
 .section-title {
     font-size: 2rem;
-    color: #223310;
+    color: #0c5a40;
 }
 
 .steps-title {
     font-size: 1.1rem;
-    color: #1a2c06;
+    color: #053f1b;
 }
 
 .small-text {
@@ -92,7 +92,7 @@ body{
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 2px solid #63bcb5;
+    border: 2px solid #bce757;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,7 +143,7 @@ body{
 .icon-wrapper {
   width: 90px;
   height: 90px;
-  background-color:#78d3b5;
+  background-color:#bce757;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -153,7 +153,7 @@ body{
 
 .step-card:hover .icon-wrapper {
   transform: scale(1.08);
-  background-color: #356e6a;
+  background-color: #41682f;
 }
 
 
@@ -170,7 +170,7 @@ body{
 }
 
 .banner-glass-card {
-  background: rgba(255, 255, 253, 0.986); 
+  background-color: #e1f0c2; 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.938);
@@ -181,7 +181,7 @@ body{
 
 
 .banner-glass-card h2 {
-  color: #34a576;
+  color:#073d30;
   font-weight: 700;
   margin: 0;
 }
