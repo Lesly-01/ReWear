@@ -10,6 +10,7 @@ a, p, li, h1{
 .navbar-nav .nav-link {
   transition: all 0.2s ease-in-out;
   display: inline-block;
+  color:#85ad65;
 }
 
 .navbar-nav .nav-link:hover {
@@ -89,9 +90,9 @@ body{
   font-weight: 500;
 }
 .badge-in-progress {
-  background-color: #fae8ff; 
-  color: #a21caf; 
-  border: 1px solid #e879f9;
+  background-color: #f5e5af; 
+  color: #775008; 
+  border: 1px solid #f3ca57;
 }
 .badge-completed {
   background-color: #dcfce7; 

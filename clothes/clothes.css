@@ -15,7 +15,8 @@ a, p, li, h1{
 
 .navbar-nav .nav-link:hover {
   font-size: 1.08rem; 
-  color: #A4F002;     
+  color: #A4F002;    
+  font-weight: bold; 
 }
 
 li{
@@ -30,8 +31,6 @@ body{
     width: 120px;
 }
 
-
-    
 .max-w-400 {
   max-width: 380px;
 }
@@ -63,9 +62,11 @@ body{
   border-color: #82a342;
 }
 
+
+
 .btn-eco {
-  background-color: #82a342;
-  color: #ffffff;
+  background-color: #e2fbce;
+  color: #076653;
   border: none;
   border-radius: 20px;
   padding: 0.4rem 1.2rem;
@@ -73,34 +74,33 @@ body{
 }
 
 .btn-eco:hover {
-  background-color: #6d8b33;
+  background-color: #076653;
   color: #ffffff;
 }
 
 .btn-outline-eco {
-  background-color: #f7f5e8;
-  color: #2b4c52;
-  border: 1px solid #c0d89d;
+  background-color: #e2fbce;
+  color: #076653;
+  border: none;
   border-radius: 20px;
   padding: 0.4rem 1.2rem;
   transition: all 0.2s ease;
 }
 
 .btn-outline-eco:hover {
-  background-color: #82a342;
+  background-color: #076653;
   color: #ffffff;
-  border-color: #82a342;
 }
 
 .btn-apply {
-  background-color: #2b4c52;
+  background-color: #2f6e59;
   color: #ffffff;
   border: none;
   border-radius: 12px;
 }
 
 .btn-apply:hover {
-  background-color: #1b3237;
+  background-color: #092b20;
   color: #ffffff;
 }
 
@@ -286,4 +286,25 @@ body{
 
 .extra-small {
   font-size: 0.75rem; 
+}
+
+/* botones banner*/
+.custom-tab-banner {
+  background-color: #fbf9f1; 
+  color: #1b4332;       
+  border-radius: 12px; 
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-tab-banner:hover {
+  background-color: #e2dfd2 ;
+  color: #1b4332;
+}
+
+.custom-tab-banner.active {
+  background-color: #1b4332; /* Verde Bosque ( #73d1b4 para Menta) */
+  color: #ffffff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
