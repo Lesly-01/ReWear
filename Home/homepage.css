@@ -46,10 +46,13 @@ body{
     background-position: center; 
     background-repeat: no-repeat;
 
-    display: flex;
-    align-items: center;
+    
 }
 
+.custom-botones{
+  display: flex;
+  justify-content: right;
+}
 .btn-login{
     background-color: #93c476;
    

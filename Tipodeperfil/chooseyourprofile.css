@@ -11,18 +11,19 @@ li{
 }
 
 .diseño-de-navbar{
-  background-color: #a5e5c8;
+  background-color: #00403A;
   height: 100px;
 }
 
 .navbar-nav .nav-link {
   transition: all 0.2s ease-in-out;
   display: inline-block;
+  color:#85ad65;
 }
 
 .navbar-nav .nav-link:hover {
   font-size: 1.08rem; 
-  color: #ffffff;     
+  color: #A4F002;     
 }
 
 .logo_rewear{
@@ -54,13 +55,14 @@ li{
 
 .profile-selectable-card.selected {
   border-color: #1b4332 ; 
-  background-color: #64a096; 
-  box-shadow: 0 8px 20px rgba(27, 67, 50, 0.12);
+  background-color: #418566; 
+  box-shadow: 0 8px 20px rgba(27, 67, 50, 0.945);
 }
 
 .transition-all {
   transition: all 0.3s ease;
 }
+
 
 
 .footer-rewear {

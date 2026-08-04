@@ -5,16 +5,22 @@ a, p, li, h1{
 .diseño-de-navbar{
   background-color: #00403A;
   height: 100px;
+  
 }
 
+.navbar-nav{
+  color: #dfef87;
+}
 .navbar-nav .nav-link {
   transition: all 0.2s ease-in-out;
   display: inline-block;
+  color:#85ad65;
 }
 
 .navbar-nav .nav-link:hover {
   font-size: 1.08rem; 
-  color:#A4F002;     
+  color:#A4F002;  
+  font-weight: bold;   
 }
 
 li{
@@ -26,7 +32,7 @@ li{
 }
 
 body{
-    background-color:#f8f4e6;
+    background-color:#e0dbc1;
 }
 
 
@@ -41,7 +47,7 @@ body{
   --rewear-green-dark: #1c2e0d;
   --rewear-green-main: #55ac85;
   --rewear-green-light: #52b788;
-  --rewear-cream-bg: #f7f4ea;
+  --rewear-cream-bg: #faf4d8;
   --rewear-cream-card: #fefdfa;
 }
 
@@ -77,13 +83,13 @@ body{
 }
 
 .btn-rewear-solid:hover {
-  background-color: var(--rewear-green-dark);
+  background-color: #0d2e1d;
   color: #ffffff;
 }
 
 .btn-rewear-outline-dark {
   background: transparent;
-  color: var(--rewear-green-dark);
+  color: #55ac85;
   border: 1.5px solid var(--rewear-green-dark);
   border-radius: 12px;
   font-weight: 600;

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://jsdelivr.net" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/perfil_diseñador/perfildiseñador.css">
 </head>
 
@@ -53,7 +54,7 @@
       <div>
         <div class="d-flex align-items-center gap-2 flex-wrap">
           <h5 class="fw-bold text-dark mb-0">@Username</h5>
-          <span class="badge rounded-pill text-dark border extra-small" style="background-color: #e8f5e9;">
+          <span class="badge rounded-pill text-dark border extra-small" style="background-color: #bfeeb9;">
             Sustainable Fashion Designer
           </span>
         </div>
@@ -146,6 +147,48 @@
         </ul>
       </div>
 
+      <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark" id="editProfileModalLabel">Edit Designer Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4">
+        <form id="editProfileForm">
+          
+        
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Username</label>
+            <input type="text" class="form-control rounded-3" value="@Username" required>
+          </div>
+
+        
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Bio / Tagline</label>
+            <textarea class="form-control rounded-3" rows="3">I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.</textarea>
+          </div>
+
+          
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Specialty</label>
+            <input type="text" class="form-control rounded-3" value="Sustainable Fashion Designer">
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-light rounded-pill px-4 extra-small" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4 extra-small fw-semibold" style="background-color: #1b4332; border: none;">Save Changes</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
       </div>
@@ -199,30 +242,31 @@
           <div class="row g-3">
             <div class="col-6 col-sm-3">
               <div class="rounded-3 bg-light p-2 text-center">
-                <div class="bg-secondary-subtle rounded-3 mb-2" style="height: 80px;"></div>
-                <span class="d-block text-truncate extra-small fw-semibold">Floral Denim...</span>
+                
+                <img src="/img/denim corset.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Denim corset...</span>
                 <span class="text-success extra-small fw-bold">$30</span>
               </div>
             </div>
             <div class="col-6 col-sm-3">
               <div class="rounded-3 bg-light p-2 text-center">
-                <div class="bg-secondary-subtle rounded-3 mb-2" style="height: 80px;"></div>
-                <span class="d-block text-truncate extra-small fw-semibold">Botanical T...</span>
+                <img src="/IMG/tarjeta img.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Stawberry painting...</span>
                 <span class="text-success extra-small fw-bold">$25</span>
               </div>
             </div>
             <div class="col-6 col-sm-3">
               <div class="rounded-3 bg-light p-2 text-center">
-                <div class="bg-secondary-subtle rounded-3 mb-2" style="height: 80px;"></div>
-                <span class="d-block text-truncate extra-small fw-semibold">Minimal Li...</span>
-                <span class="text-success extra-small fw-bold">$30</span>
+                <img src="/img/Patched jeans.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Patched jeans...</span>
+                <span class="text-success extra-small fw-bold">$20</span>
               </div>
             </div>
             <div class="col-6 col-sm-3">
               <div class="rounded-3 bg-light p-2 text-center">
-                <div class="bg-secondary-subtle rounded-3 mb-2" style="height: 80px;"></div>
-                <span class="d-block text-truncate extra-small fw-semibold">Daysi Swea...</span>
-                <span class="text-success extra-small fw-bold">$40</span>
+                <img src="/img/pantalon.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Jeans design...</span>
+                <span class="text-success extra-small fw-bold">$35</span>
               </div>
             </div>
           </div>
@@ -240,7 +284,7 @@
           <div class="d-flex flex-column gap-2">
           
 
-            <a href="customization_request.html" class="p-2.5 rounded-3 bg-light border-start border-4 border-warning d-flex align-items-center justify-content-between text-decoration-none">
+            <a href="/solicitudes/solicitudes.html" class="p-2.5 rounded-3 bg-light border-start border-4 border-warning d-flex align-items-center justify-content-between text-decoration-none">
               <div class="d-flex align-items-center gap-3">
                 <div class="rounded-circle bg-warning-subtle text-warning p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
                   <i class="bi bi-exclamation-circle-fill"></i>
@@ -256,7 +300,7 @@
 
             <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center gap-3">
-                <div class="bg-secondary-subtle rounded-3" style="width: 40px; height: 40px;"></div>
+                <img src="/img/totee bag.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
                 <div>
                   <h6 class="fw-bold mb-0 text-dark extra-small">Botanical Tote bag</h6>
                   <span class="text-muted extra-small">Order #124 • 10 mayo, 2026</span>
@@ -268,7 +312,7 @@
 
             <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center gap-3">
-                <div class="bg-secondary-subtle rounded-3" style="width: 40px; height: 40px;"></div>
+                <img src="/img/floral jacket.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
                 <div>
                   <h6 class="fw-bold mb-0 text-dark extra-small">Floral Denim Jacket</h6>
                   <span class="text-muted extra-small">Order #125 • 28 mayo, 2026</span>
