@@ -10,11 +10,13 @@ a, p, li, h1{
 .navbar-nav .nav-link {
     transition: all 0.2s ease-in-out;
     display: inline-block;
+    color:#85ad65;
 }
 
 .navbar-nav .nav-link:hover {
     font-size: 1.08rem; 
-    color:#A4F002;     
+    color:#A4F002;  
+    font-weight: bold;   
 }
 
 li{
@@ -45,25 +47,28 @@ body{
     background-size: cover;     
     background-position: center; 
     background-repeat: no-repeat;
-
-    
 }
 
 .custom-botones{
   display: flex;
   justify-content: right;
+
 }
+
 .btn-login{
-    background-color: #93c476;
+    background-color: #076653;
+    color: #e2fbce;
+  
    
 }
 .btn-login:hover {
-    background-color:#38813e;
+    background-color:#e2fbce;
+    color: #076653;
 }
 
 .btn-signup {
-    background-color: #ffffff;
-    color: #1a2c06;
+    background-color: #e2fbce;
+    color: #076653;
     font-size: 1rem;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05)
@@ -71,8 +76,8 @@ body{
 }
 
 .btn-signup:hover {
-    background-color: #f0f5e9;
-    color: #557233;
+    background-color: #076653;
+    color: #e2fbce;
 }
 
 
@@ -95,7 +100,7 @@ body{
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 2px solid #bce757;
+    border: 2px solid #b6d175;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,22 +178,21 @@ body{
 }
 
 .banner-glass-card {
-  background-color: #e1f0c2; 
+  background-color: #ffffff; 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.938);
   border-radius: 20px;
   padding: 1.5rem 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(143, 230, 44, 0.726);
 }
 
 
 .banner-glass-card h2 {
-  color:#073d30;
+  color:#2baf7c;
   font-weight: 700;
   margin: 0;
 }
-
 
 
 .text-cream {

@@ -162,8 +162,6 @@ body{
 }
 
 
-
-
 .text-cream {
   color: #f7f4ea;
 }
@@ -212,7 +210,7 @@ body{
 
 
 
-
+/*
 .custom-tab-banner {
   background-color:#1b553a;
   color: #f7f4ea;
@@ -241,6 +239,7 @@ body{
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+*/
 
 
 .product-img {
@@ -288,23 +287,24 @@ body{
   font-size: 0.75rem; 
 }
 
+
 /* botones banner*/
 .custom-tab-banner {
-  background-color: #fbf9f1; 
-  color: #1b4332;       
-  border-radius: 12px; 
+  background-color: #fbf9f1;
+  color: #1b4332;
+  border-radius: 12px;                  
   font-weight: 600;
   border: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .custom-tab-banner:hover {
-  background-color: #e2dfd2 ;
+  background-color: #e2dfd2;
   color: #1b4332;
 }
 
 .custom-tab-banner.active {
-  background-color: #1b4332; /* Verde Bosque ( #73d1b4 para Menta) */
-  color: #ffffff; 
+  background-color: #1b4332;
+  color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

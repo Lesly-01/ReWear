@@ -25,11 +25,11 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                   <li class="nav-item"><a class="nav-link active fw-bold" href="/home/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
                    <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link active" href="/aboutus/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
@@ -39,24 +39,42 @@
 
 
     <header class="hero-section text-center text-md-start">
+       <!-- BANNER PRINCIPAL-->
+        <div class="banner-container position-relative d-flex align-items-center justify-content-center p-4 p-md-5" style="background-image: url('assets/images/banner-bg.jpg'); background-size: cover; background-position: center; min-height: 380px;">
+  
+      <!-- CAPA OSCURA OPCIONAL (Para mejorar legibilidad) -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+
+     <!-- CONTENIDO CENTRADO EN EL MEDIO -->
+      <div class="container position-relative z-1">
+        <div class="row align-items-center justify-content-center g-4">
       
-      <div class="banner-container p-4 p-md-5 position-relative w-400 h-400 mt-0">
-         <div class="banner-overlay "></div>
-         <div class="container banner-content">
-          <div class="row align-items-center">
-            
-            <div class="col-12 col-md-7 mb-3 mb-md-0">
-              <div class="banner-glass-card text-center text-md-start d-inline-block">
-                <h2 class="display-6 mb-0">Your clothes, <span class="text-success-dark">your impact!</span></h2></div>
-              </div>
+        <!--"Your clothes, your impact!" -->
+      <div class="col-12 col-md-7 col-lg-6">
+        <div class="bg-white rounded-4 p-4 text-center shadow-lg">
+          <h2 class="banner-glass-card fw-bold text-success mb-0 fs-2 fs-md-1">
+            Your clothes, your impact!
+          </h2>
+        </div>
+      </div>
 
+      <!-- BOTONES DE LOGIN Y SIGN UP -->
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="d-flex flex-column gap-3">
+          <a href="/iniciosesion/login.html" class="btn btn-login fw-bold py-2.5 rounded-3 text-center shadow-sm">
+            Login
+          </a>
+          <a href="/registro/signup.html" class="btn btn-signup fw-bold py-2.5 rounded-3 text-success text-center shadow-sm">
+            Sign up
+          </a>
+        </div>
+      </div>
 
-              <div class="col-md-5 d-flex flex-column custom-botones gap-3">
-                    <a href="/iniciosesion/login.html" class="btn btn-login w-75 py-2 fw-bold text-white">Log in</a>
-                    <a href="/Tipodeperfil/chooseyourprofile.html" class="btn btn-signup w-75 py-2 fw-bold">Sign up</a>
-              </div>
-             </div>
-          </div>
+    </div>
+  </div>
+
+</div>
+
     </header>
 
     <section class="how-it-works-section py-5">
