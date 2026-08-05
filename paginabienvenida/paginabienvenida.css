@@ -31,9 +31,6 @@ li{
     width: 80px;
 }
 
-body{
-    background-color:#e0dbc1;
-}
 
 
 * {
@@ -47,7 +44,7 @@ body{
   --rewear-green-dark: #1c2e0d;
   --rewear-green-main: #55ac85;
   --rewear-green-light: #52b788;
-  --rewear-cream-bg: #faf4d8;
+  --rewear-cream-bg: #f8f4e6;
   --rewear-cream-card: #fefdfa;
 }
 
@@ -58,46 +55,48 @@ body{
 
 
 .text-rewear {
-  color: var(--rewear-green-dark);
+  color:#084432;
 }
 
 .text-rewear-highlight {
-  color: var(--rewear-green-main);
+  color: #2baf7c;
 }
 
 
 .badge-rewear {
-  background-color: rgba(45, 106, 79, 0.1);
+  background-color: #c6e876b0;
   color: var(--rewear-green-dark);
-  font-size: 0.85rem;
+  font-size: 20px;
+  font-weight: bold;
   letter-spacing: 0.5px;
 }
 
 
 .btn-rewear-solid {
-  background-color: var(--rewear-green-main);
-  color: #ffffff;
-  border-radius: 12px;
+  background-color: #e2fbce;
+  color: #076653;
+  border-radius: 12px ;
+  border:  #076653 solid 1.5px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn-rewear-solid:hover {
-  background-color: #0d2e1d;
+  background-color: #00403a;
   color: #ffffff;
 }
 
 .btn-rewear-outline-dark {
-  background: transparent;
-  color: #55ac85;
-  border: 1.5px solid var(--rewear-green-dark);
+  background: #e2fbce;
+  color: #076653;
+  border: 1.5px solid #076653;
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn-rewear-outline-dark:hover {
-  background-color: var(--rewear-green-light);
+  background-color: #00403A;
   color: #ffffff;
 }
 
@@ -108,6 +107,14 @@ body{
   object-fit: cover;
   border-radius: 28px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.texto-subtitulo{
+  color: #1b1b1b;
+}
+
+.texto-info{
+  font-weight: 320;
 }
 
 
