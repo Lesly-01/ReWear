@@ -54,14 +54,34 @@ li{
 
 
 .profile-selectable-card.selected {
-  border-color: #1b4332 ; 
-  background-color: #418566; 
+  border-color: #03201a ; 
+  background-color: #076653; 
   box-shadow: 0 8px 20px rgba(27, 67, 50, 0.945);
+  color: #bfff6c;
 }
 
 .transition-all {
   transition: all 0.3s ease;
 }
+
+.texto-info{
+  color: #03201a;
+
+}
+
+.profile-text.selected{
+  color: #badd8c;
+}
+
+.btn-enter{
+  background-color: #076653;
+  color: white;
+}
+
+.btn-enter:hover{
+  color: #e2fbce;
+}
+
 
 
 
