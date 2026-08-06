@@ -7,18 +7,20 @@ a, p, li, h1{
 }
 
 .diseño-de-navbar{
-  background-color: #78d3b5;
+  background-color: #00403a;
   height: 100px;
 }
 
 .navbar-nav .nav-link {
   transition: all 0.2s ease-in-out;
   display: inline-block;
+  color:#85ad65;
 }
 
 .navbar-nav .nav-link:hover {
   font-size: 1.08rem; 
-  color: #ffffff;     
+  color: #A4F002;    
+  font-weight: bold; 
 }
 
 li{
@@ -127,6 +129,13 @@ li{
   object-fit: contain; 
 }
 
+
+
+
+.bg-rewear-accent {
+  background-color: #2d6a35;
+  font-weight: 500;
+}
 
 .footer-rewear {
   background-color: #1b432d;
