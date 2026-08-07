@@ -31,13 +31,16 @@ li{
     width: 80px;
 }
 
+.chat-color{
+  color: #A4F002;
+}
 
 .bg-rewear-page {
   background-color: #f7f4ea; 
 }
 
 .text-rewear-dark {
-  color: #1b4332;
+  color: #00403a;
 }
 
 .card-review-form {
@@ -79,7 +82,8 @@ li{
 
 
 .card-impact-metrics {
-  background-color: #1b4332; 
+  background-color: #076653;
+  color: #badd8c;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
@@ -101,17 +105,21 @@ li{
 }
 
 
+
+
+/* Estrellas*/
 .star-rating .star {
+  color: #6c757d; 
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .star-rating .star:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .star-rating .star.active {
-  color: #2d6a4f;
+  color: #ffc107; 
 }
 
 
@@ -124,8 +132,8 @@ li{
 }
 
 .metric-img {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   object-fit: contain; 
 }
 
@@ -133,13 +141,12 @@ li{
 
 
 .bg-rewear-accent {
-  background-color: #2d6a35;
+  background-color: #022723;
   font-weight: 500;
 }
-
 .footer-rewear {
-  background-color: #1b432d;
-  color: #f7f4ea;            
+  background-color: #225e4c;
+  color: #ffffff;            
   border-top-left-radius: 24px;  
   border-top-right-radius: 24px; 
   margin-top: 3rem;   
