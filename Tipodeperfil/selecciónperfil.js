@@ -38,17 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardUser.addEventListener('click', () => selectCard('user'));
   }
 
-  // 4. Acción del botón Enter
-  if (btnEnter) {
-    btnEnter.addEventListener('click', () => {
-      if (selectedRole === 'designer') {
-        alert('Redirigiendo a perfil de Diseñador...');
-        // window.location.href = 'designer-profile.html'; 
-      } else if (selectedRole === 'user') {
-        alert('Redirigiendo a perfil de Usuario...');
-        // window.location.href = 'user-profile.html';
-      }
-    });
-  }
+  
+  
 
 });
