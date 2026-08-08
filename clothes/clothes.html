@@ -174,6 +174,14 @@
       Local Tailors & Artisans
     </button>
   </li>
+
+  <li>
+    <!-- boton para diseñadores (Oculto por defecto para compradores) -->
+   <button id="btnAddDesign" class="btn btn-rewear-action rounded-3 px-3 fw-semibold d-none" data-bs-toggle="modal" data-bs-target="#newPostModal" style="background-color: #1b4332; color: #ffffff;">
+     <i class="bi bi-plus-circle me-1"></i> Add new design
+   </button>
+  </li>
+  
 </ul>
   </div>
 </section>
@@ -181,19 +189,21 @@
 
 
 <div class="container my-0 px-3 px-md-4">
-  
   <div class="tab-content" id="catalogTabContent">
     
     <!-- Catálogo de prendas -->
     <div class="tab-pane fade show active" id="clothes-content" role="tabpanel">
-      <div class="row g-4">
+      
+      <!-- CONTENEDOR HORIZONTAL (g-4 le da la distancia entre tarjetas) -->
+      <div class="row g-4" id="cardsContainer">
 
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- TARJETA ORIGINAL A CLONAR -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="cardToClone">
           <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white">
             <div class="position-relative overflow-hidden">
               <img src="/img/denim corset.png" class="card-img-top product-img" alt="Denim patchwork corset">
               <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm small fw-semibold">
-                 @juanperez
+                @juanperez
               </span>
               
               <button class="btn btn-light btn-fav position-absolute top-0 end-0 m-3 rounded-circle d-flex align-items-center justify-content-center shadow-sm" type="button" data-product-id="denim-corset-1">
@@ -212,12 +222,13 @@
                 <a href="/publicaciones/publicaciones.html" class="btn btn-rewear-action btn-sm rounded-3 px-3 fw-semibold">
                   View product
                 </a>
-               
               </div>
             </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
@@ -323,5 +334,128 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="icono.js"></script>
+
+
+
+<!-- ventana popup para diseñadores-->
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow">
+      
+      <div class="modal-header border-0 pb-0 px-4 pt-4">
+        <h5 class="modal-title fw-bold text-dark fs-5">Create New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4">
+        <form id="createPostForm">
+          <div class="row g-3">
+            
+            <!-- Imagen de la Prenda -->
+            <div class="col-12 col-md-5">
+              <label class="form-label extra-small fw-semibold text-muted">Image Path or URL</label>
+              <input type="text" id="postImg" class="form-control rounded-3" placeholder="/img/denim corset.png" required>
+              <div class="mt-2 text-center p-3 border rounded-3 bg-light">
+                <i class="bi bi-image text-muted fs-3"></i>
+                <p class="extra-small text-muted mb-0">Preview image path</p>
+              </div>
+            </div>
+
+            <!-- Campos de Detalles del Post -->
+            <div class="col-12 col-md-7">
+              
+              <!-- Title -->
+              <div class="mb-3">
+                <label class="form-label extra-small fw-semibold text-muted">Title of the publication</label>
+                <input type="text" id="postTitle" class="form-control rounded-3" placeholder="e.g., Denim patchwork corset" required>
+              </div>
+
+              <!-- Category or Style Tags -->
+              <div class="mb-3">
+                <label class="form-label extra-small fw-semibold text-muted">Category or Style (Tags)</label>
+                <input type="text" id="postCategory" class="form-control rounded-3" placeholder="e.g., Corset, Contemporary Craft, Y2K" required>
+              </div>
+
+              <!-- Price Range -->
+              <div class="mb-3">
+                <label class="form-label extra-small fw-semibold text-muted">Price range ($USD)</label>
+                <div class="input-group">
+                  <input type="text" id="postMinPrice" class="form-control rounded-3" placeholder="Min (20.00)" required>
+                  <span class="input-group-text bg-transparent border-0">-</span>
+                  <input type="text" id="postMaxPrice" class="form-control rounded-3" placeholder="Max (40.00)" required>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="mb-3">
+                <label class="form-label extra-small fw-semibold text-muted">Description of the garment or design</label>
+                <textarea id="postDescription" class="form-control rounded-3" rows="3" placeholder="Describe the materials, upcycling process, and details..." required></textarea>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-4 text-end border-top pt-3">
+            <button type="button" class="btn btn-light rounded-3 px-4 me-2 fw-semibold" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success rounded-3 px-4 fw-semibold" style="background-color: #1b4332; border: none;">Publish post</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    const currentUserRole = 'designer'; 
+
+    const btnAddDesign = document.getElementById('btnAddDesign');
+    const createPostForm = document.getElementById('createPostForm');
+    const cardsContainer = document.getElementById('cardsContainer');
+    const cardToClone = document.getElementById('cardToClone');
+
+    
+    if (btnAddDesign && currentUserRole === 'designer') {
+      btnAddDesign.classList.remove('d-none');
+    }
+
+  
+    if (createPostForm && cardsContainer && cardToClone) {
+      createPostForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        
+        const imgPath = document.getElementById('postImg').value;
+        const title = document.getElementById('postTitle').value;
+        const minPrice = document.getElementById('postMinPrice').value;
+        const maxPrice = document.getElementById('postMaxPrice').value;
+
+        
+        const newCard = cardToClone.cloneNode(true);
+        newCard.removeAttribute('id');
+
+        
+        const imgElem = newCard.querySelector('.product-img');
+        const titleElem = newCard.querySelector('.card-title');
+        const priceElem = newCard.querySelector('strong');
+
+        if (imgElem) imgElem.src = imgPath;
+        if (titleElem) titleElem.textContent = title;
+        if (priceElem) priceElem.textContent = `$${minPrice} - $${maxPrice}`;
+
+        
+        cardsContainer.appendChild(newCard);
+
+      
+        createPostForm.reset();
+        const modalElement = document.getElementById('newPostModal');
+        const modalInstance = bootstrap.Modal.getInstance(modalElement);
+        if (modalInstance) modalInstance.hide();
+      });
+    }
+  });
+</script>
 </body>
 </html>
