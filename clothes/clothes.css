@@ -127,6 +127,12 @@ body{
 
 }
 
+.hero-banner {
+  background: linear-gradient(rgba(117, 145, 86, 0.88), rgba(163, 196, 136, 0.92)), 
+              url('banner.jpg') center/cover no-repeat;
+}
+
+/*
 .banner-overlay {
   position: absolute;
   top: 0;
@@ -136,6 +142,7 @@ body{
   background-color: #a5d666;
   z-index: 0;
 }
+*/
 
 .bg-rewear-accent {
   background-color: #022723;
@@ -268,6 +275,7 @@ body{
 .extra-small {
   font-size: 0.75rem; 
 }
+
 
 
 /* botones banner*/

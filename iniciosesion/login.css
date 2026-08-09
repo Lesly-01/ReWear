@@ -18,11 +18,13 @@ a, p, li, h1{
 .navbar-nav .nav-link {
     transition: all 0.2s ease-in-out;
     display: inline-block;
+    color: #85ad65;
 }
 
 .navbar-nav .nav-link:hover {
     font-size: 1.08rem; 
-    color: #A4F002;     
+    color: #A4F002;
+    font-weight: bold;
 }
 
 li{
@@ -31,6 +33,10 @@ li{
 
 .logo_rewear{
     width: 80px;
+}
+
+.title-text{
+  color: #00403A;
 }
 
 .login-card {
@@ -69,6 +75,8 @@ li{
   box-shadow: 0 12px 30px rgba(43, 76, 82, 0.12);
 }
 
+
+
 .custom-input {
   border: 1px solid #c0c0c0;
   border-radius: 8px;
@@ -105,6 +113,10 @@ li{
   color: rgba(247, 244, 234, 0.75);
 }
 
+.signup-link{
+  color: #82a342;
+  text-decoration: none;
+}
 
 .bg-rewear-accent {
   background-color: #022723;

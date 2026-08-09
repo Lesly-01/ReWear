@@ -101,20 +101,6 @@ li{
   box-shadow: 0 0 0 0.2rem rgba(130, 163, 66, 0.25);
 }
 
-.terms-text {
-  font-size: 0.85rem;
-  color: #5a4033;
-  border: 2px #646464;
-}
-
-.terms-link {
-  color: #82a342;
-  text-decoration: underline;
-}
-
-.terms-link:hover {
-  color: #6d8b33;
-}
 
 
 .btn-custom-submit {
