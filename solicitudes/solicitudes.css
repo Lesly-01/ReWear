@@ -88,3 +88,8 @@ body{
 .extra-small {
   font-size: 0.85rem;
 }
+
+.section-title {
+    font-size: 2rem;
+    color: #0c5a40;
+}
