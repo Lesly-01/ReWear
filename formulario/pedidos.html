@@ -164,8 +164,22 @@
                 <option value="Sweater">Sweater</option>
                 <option value="Dress">Dress</option>
             </select>
+
+
+      
             <div class="invalid-feedback extra-small">Please select a category.</div>
           </div>
+
+          <div class="mb-3  rounded-3 border-light-subtle bg-light-subtle py-2 required">
+    <label class="form-label extra-small fw-semibold text-muted mb-1">Estimated Price Range ($USD)</label>
+    <div class="input-group">
+      <span class="input-group-text bg-white border-end-0 rounded-start-3 text-muted small">$</span>
+      <input type="number" class="form-control border-start-0 border-end-0 shadow-none extra-small" placeholder="Min" min="0">
+      <span class="input-group-text bg-white border-start-0 border-end-0 text-muted extra-small">-</span>
+      <span class="input-group-text bg-white border-end-0 rounded-0 text-muted small">$</span>
+      <input type="number" class="form-control border-start-0 rounded-end-3 shadow-none extra-small" placeholder="Max" min="0">
+    </div>
+  </div>
           
           <div class="upload-zone p-3 text-center border rounded-3 position-relative" style="border: 2px dashed #d0d7d1; background-color: #f8faf8;">
             <i class="bi bi-cloud-arrow-up text-success fs-3 mb-1 d-block" id="uploadIcon"></i>
