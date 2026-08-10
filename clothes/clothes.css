@@ -128,7 +128,7 @@ body{
 }
 
 .hero-banner {
-  background: linear-gradient(rgba(117, 145, 86, 0.88), rgba(163, 196, 136, 0.92)), 
+  background: linear-gradient(rgba(133, 158, 104, 0.753), rgba(163, 196, 136, 0.747)), 
               url('banner.jpg') center/cover no-repeat;
 }
 

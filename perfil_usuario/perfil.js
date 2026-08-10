@@ -1,24 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const profileForm = document.getElementById('editProfileForm');
-  
-  if (profileForm) {
-    profileForm.addEventListener('submit', (e) => {
-      e.preventDefault(); 
+document.addEventListener('DOMContentLoaded', function () {
+    const editProfileModal = document.getElementById('editProfileModal');
+    const editProfileForm = document.getElementById('editProfileForm');
 
-      
-      const newUsername = document.getElementById('inputUsername').value;
-      const newTagline = document.getElementById('inputTagline').value;
-      const newBio = document.getElementById('inputBio').value;
+    // Elementos donde se muestra la información en pantalla
+    const displayUsername = document.getElementById('displayUsername');
+    const displayTagline = document.getElementById('displayTagline');
+    const displayBio = document.getElementById('displayBio');
 
+    // Campos de texto dentro del Modal
+    const inputUsername = document.getElementById('inputUsername');
+    const inputTagline = document.getElementById('inputTagline');
+    const inputBio = document.getElementById('inputBio');
 
-      document.getElementById('displayUsername').textContent = newUsername;
-      document.getElementById('displayTagline').textContent = newTagline;
-      document.getElementById('displayBio').textContent = newBio;
+    // 1. CARGAR DATOS ACTUALES AL ABRIR EL MODAL
+    if (editProfileModal) {
+      editProfileModal.addEventListener('show.bs.modal', function () {
+        inputUsername.value = displayUsername.textContent.trim();
+        inputTagline.value = displayTagline.textContent.trim();
+        inputBio.value = displayBio.textContent.trim();
+      });
+    }
 
-      
-      const modalElement = document.getElementById('editProfileModal');
-      const modalInstance = bootstrap.Modal.getInstance(modalElement);
-      modalInstance.hide();
-    });
-  }
-});
+    // 2. ACTUALIZAR EL PERFIL EN VIVO AL GUARDAR
+    if (editProfileForm) {
+      editProfileForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Previene recarga de página
+
+        // Actualiza el DOM inmediatamente con los nuevos valores
+        displayUsername.textContent = inputUsername.value.trim();
+        displayTagline.textContent = inputTagline.value.trim();
+        displayBio.textContent = inputBio.value.trim();
+
+        // Oculta el Modal de Bootstrap
+        const modalInstance = bootstrap.Modal.getInstance(editProfileModal);
+        if (modalInstance) {
+          modalInstance.hide();
+        }
+      });
+    }
+  });

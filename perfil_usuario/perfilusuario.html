@@ -9,58 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link href="https://jsdelivr.net" rel="stylesheet">
     <link rel="stylesheet" href="/perfil_usuario/perfilusuario.css">
-
- <style>
-     .profile-card {
-      background-color: #ffffff; 
-      border-radius: 16px;
-      padding: 20px;
-    }
-
-    .avatar-container {
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      background-color: #e3a6c1;
-      border-radius: 50%;
-    }
-    .camera-badge {
-      position: absolute;
-      bottom: -2px;
-      right: -2px;
-      background-color: #e3a6c1;
-      border: 2px solid #ffffff;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-    }
-
-    .username {
-      color: #3b5a45;
-      font-weight: 200;
-    }
-    
-    .btn-edit-profile {
-      border: 4px solid #333333;
-      border-radius: 20px;
-      padding: 4px 16px;
-      font-weight: 500;
-      color: #333333;
-      background: transparent;
-      font-size: 0.9rem;
-    }
-
- </style>
 </head>
 
 <body>
@@ -77,240 +26,311 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                    <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
                    <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
-                   <li class="nav-item"><a class="nav-link active fw-bold" href="/Miperfil/myprofile.html">My profile</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link active" href="/aboutus/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+
+
+    <main class="container my-5 pt-2">
+
+    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+      <div class="row align-items-center g-3">
     
+    
+    <div class="col-12 col-md-7 d-flex align-items-center gap-3">
+     
+      <div class="rounded-circle overflow-hidden bg-light border shadow-sm" style="width: 120px; height: 120px; flex-shrink: 0;">
+        <img id="profileAvatar" src="usuario foto perfil.jpg" alt="Profile Picture" class="w-100 h-100" style="object-fit: cover;">
+     </div>
 
-
-    <div class="container py-4">
-
-  <!-- perfil -->
-  <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
-    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
       
-      <div class="d-flex align-items-center gap-3">
-      
-        <div class="position-relative">
-          <div class="rounded-circle bg-light d-flex align-items-center justify-content-center overflow-hidden border" style="width: 80px; height: 80px;">
-            <i class="bi bi-person fs-1 text-secondary" id="profileAvatarIcon"></i>
-            <img id="profileAvatarImg" src="" class="w-100 h-100 object-fit-cover d-none" alt="Profile">
-          </div>
+      <div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <h5 class="fw-bold text-dark mb-0">@Username</h5>
+          <span class="badge rounded-pill text-dark border extra-small" style="background-color: #bfeeb9;">
+            Eco user
+          </span>
         </div>
+        <p class="text-muted extra-small mb-0 mt-1">
+          Looking for unique styles to give clothes a second chance.
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="col-12 col-md-5 d-flex align-items-center justify-content-md-end gap-3">
+      
+    
+      <div class="dropdown">
+        <button class="btn btn-light rounded-circle border shadow-sm p-0 d-flex align-items-center justify-content-center position-relative dropdown-toggle-no-caret" 
+                type="button" 
+                id="notificationsDropdown" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false" 
+                style="width: 42px; height: 42px;">
+          <i class="bi bi-bell-fill text-dark fs-6"></i>
+  
+
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger border border-light p-1">
+            <span class="visually-hidden">New requests</span>
+          </span>
+        </button>
 
         
-        <div>
-          <div class="d-flex align-items-center gap-2 flex-wrap">
-            <h4 class="fw-bold mb-0 text-dark" id="displayUsername">@Username</h4>
-            <span class="badge rounded-pill bg-light text-dark border extra-small" id="displayTagline">Eco-conscious fashion lover</span>
-          </div>
-          <p class="text-muted small mb-0 mt-1" id="displayBio">
-            Looking for unique styles to give clothes a second chance and support local talent.
-          </p>
-        </div>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-3 mt-2" aria-labelledby="notificationsDropdown" style="width: 300px; z-index: 1050;">
+          <li class="d-flex justify-content-between align-items-center mb-2">
+            <span class="extra-small fw-bold text-success text-uppercase">Customization Requests</span>
+            <span class="badge bg-danger-subtle text-danger rounded-pill extra-small">1 Pending</span>
+          </li>
+          <li><hr class="dropdown-divider my-2"></li>
+          
+
+        
+          <li>
+            <a class="dropdown-item rounded-3 p-2 extra-small text-wrap bg-light-subtle" href="#">
+              <div class="d-flex justify-content-between fw-bold text-dark mb-1">
+                <span>@client_name</span>
+                <span class="text-muted" style="font-size: 0.75rem;">2m ago</span>
+              </div>
+              <p class="text-secondary mb-0 extra-small">Requested: Black Hoodie Custom Embroidery</p>
+            </a>
+          </li>
+
+          <li><hr class="dropdown-divider my-2"></li>
+          <li class="text-center">
+            <a href="/solicitudes/solicitudes.html" class="text-success extra-small fw-bold text-decoration-none">View all requests</a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Botón Editar Perfil que activa el Modal -->
-      <button class="btn btn-outline-dark rounded-pill px-4 btn-sm fw-semibold ms-md-auto" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-        Edit Profile <i class="bi bi-pencil ms-1"></i>
-      </button>
+      
+      <div class="dropdown">
+        <button class="btn btn-outline-dark rounded-pill px-3 py-2 extra-small fw-semibold dropdown-toggle" 
+                type="button" 
+                id="editProfileDropdown" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+          <i class="bi bi-pencil-square me-1"></i> Edit Profile
+        </button>
+
+        
+        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2" aria-labelledby="editProfileDropdown" style="width: 220px; z-index: 1050;">
+          <li>
+            <a class="dropdown-item rounded-2 py-2 extra-small d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-person-gear text-secondary"></i> Edit Personal Info
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item rounded-2 py-2 extra-small d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-palette text-secondary"></i> Customize Portfolio
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item rounded-2 py-2 extra-small d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-sliders text-secondary"></i> Account Settings
+            </a>
+          </li>
+          <li><hr class="dropdown-divider my-1"></li>
+          <li>
+            <a class="dropdown-item rounded-2 py-2 extra-small text-danger d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-box-arrow-right"></i> Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark" id="editProfileModalLabel">Edit Designer Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-4">
+        <form id="editProfileForm">
+          
+        
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Username</label>
+            <input type="text" class="form-control rounded-3" value="@Username" required>
+          </div>
+
+        
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Bio / Tagline</label>
+            <textarea class="form-control rounded-3" rows="3">I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.</textarea>
+          </div>
+
+          
+          <div class="mb-3">
+            <label class="form-label extra-small fw-semibold text-dark">Specialty</label>
+            <input type="text" class="form-control rounded-3" value="Sustainable Fashion Designer">
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-light rounded-pill px-4 extra-small" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4 extra-small fw-semibold" style="background-color: #1b4332; border: none;">Save Changes</button>
+          </div>
+
+        </form>
+      </div>
 
     </div>
   </div>
+</div>
 
-  <!-- estadisticas -->
-  <div class="row g-3 mb-4 text-center">
+    </div>
+  </div>
+      </div>
     
-    <div class="col-6 col-md-3">
-      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-3">
-        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #e8f5e9;">
-          <i class="bi bi-bag-check-fill" style="color: #2d6a4f;"></i>
-        </div>
-        <div class="text-start">
-          <h5 class="fw-bold mb-0 text-dark">12</h5>
+
+  </div>
+</div>
+    
+  
+
+    <div class="row g-3 mb-4 text-center">
+      <div class="col">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100 justify-content-center">
+          <h4 class="fw-bold mb-0 text-dark">12</h4>
           <span class="text-muted extra-small">Featured items</span>
         </div>
       </div>
-    </div>
-
-    <div class="col-6 col-md-3">
-      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-3">
-        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #e8f5e9;">
-          <i class="bi bi-star-fill" style="color: #2d6a4f;"></i>
-        </div>
-        <div class="text-start">
-          <h5 class="fw-bold mb-0 text-dark">28</h5>
+      <div class="col">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100 justify-content-center">
+          <h4 class="fw-bold mb-0 text-dark">28</h4>
           <span class="text-muted extra-small">Reviews</span>
         </div>
       </div>
-    </div>
-
-    <div class="col-6 col-md-3">
-      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-3">
-        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #e8f5e9;">
-          <i class="bi bi-box-seam-fill" style="color: #2d6a4f;"></i>
-        </div>
-        <div class="text-start">
-          <h5 class="fw-bold mb-0 text-dark">15</h5>
+      <div class="col">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100 justify-content-center">
+          <h4 class="fw-bold mb-0 text-dark">15</h4>
           <span class="text-muted extra-small">Completed orders</span>
         </div>
       </div>
-    </div>
-
-    <div class="col-6 col-md-3">
-      <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100 d-flex flex-row align-items-center justify-content-center gap-3">
-        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #e8f5e9;">
-          <i class="bi bi-heart-fill" style="color: #2d6a4f;"></i>
-        </div>
-        <div class="text-start">
-          <h5 class="fw-bold mb-0 text-dark">36</h5>
+      <div class="col">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-3 h-100 justify-content-center">
+          <h4 class="fw-bold mb-0 text-dark">36</h4>
           <span class="text-muted extra-small">Favorites</span>
         </div>
       </div>
+
     </div>
 
-  </div>
-
-  <!-- favoritos y reseñas -->
-  <div class="row g-4">
     
-    
-    <div class="col-12 col-lg-6">
-      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
-        <h5 class="fw-bold mb-3 text-dark">Favorites</h5>
-        
-        <div class="row g-3" id="favoritesContainer">
-          
-          
-          <div class="col-6 col-sm-3 col-lg-3">
-            <a href="product-detail.html" class="text-decoration-none">
-              <div class="card border-0 product-card h-100">
-                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Floral Denim">
-                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Floral Denim Jacket</h6>
-                <span class="extra-small fw-bold" style="color: #2d6a4f;">$45</span>
+    <div class="row g-4" id="recent-orders-section">
+      
+  
+      <div class="col-12 col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
+          <h6 class="fw-bold text-dark mb-3">Favorites</h6>
+          <div class="row g-3">
+            <div class="col-6 col-sm-3">
+              <div class="rounded-3 bg-light p-2 text-center">
+                
+                <img src="/img/denim corset.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Denim corset...</span>
+                <span class="text-success extra-small fw-bold">$30</span>
               </div>
-            </a>
-          </div>
-
-          
-          <div class="col-6 col-sm-3 col-lg-3">
-            <a href="product-detail.html" class="text-decoration-none">
-              <div class="card border-0 product-card h-100">
-                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Botanical Tote">
-                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Botanical Tote bag</h6>
-                <span class="extra-small fw-bold" style="color: #2d6a4f;">$25</span>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="rounded-3 bg-light p-2 text-center">
+                <img src="/IMG/tarjeta img.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Stawberry painting...</span>
+                <span class="text-success extra-small fw-bold">$25</span>
               </div>
-            </a>
-          </div>
-
-          
-          <div class="col-6 col-sm-3 col-lg-3">
-            <a href="product-detail.html" class="text-decoration-none">
-              <div class="card border-0 product-card h-100">
-                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Minimal Line Tee">
-                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Minimal Line Tee</h6>
-                <span class="extra-small fw-bold" style="color: #2d6a4f;">$30</span>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="rounded-3 bg-light p-2 text-center">
+                <img src="/img/Patched jeans.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Patched jeans...</span>
+                <span class="text-success extra-small fw-bold">$20</span>
               </div>
-            </a>
-          </div>
-
-          
-          <div class="col-6 col-sm-3 col-lg-3">
-            <a href="product-detail.html" class="text-decoration-none">
-              <div class="card border-0 product-card h-100">
-                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=300" class="rounded-3 w-100 mb-2 object-fit-cover" style="height: 90px;" alt="Daysi Sweater">
-                <h6 class="extra-small fw-semibold text-dark mb-0 text-truncate">Daysi Sweater</h6>
-                <span class="extra-small fw-bold" style="color: #2d6a4f;">$50</span>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="rounded-3 bg-light p-2 text-center">
+                <img src="/img/pantalon.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
+                <span class="d-block text-truncate extra-small fw-semibold">Jeans design...</span>
+                <span class="text-success extra-small fw-bold">$35</span>
               </div>
-            </a>
+            </div>
           </div>
-
         </div>
       </div>
+
+      
+      <div class="col-12 col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="fw-bold text-dark mb-0">My reviews</h6>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+          
+
+        
+            <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-3">
+                <img src="/img/denim corset.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
+                <div>
+                  <h6 class="fw-bold mb-0 text-dark extra-small">Denim patchwork corset</h6>
+                  <span class="text-muted extra-small">May 10, 2026</span>
+                  <div class="text-warning extra-small my-1">★ ★ ★ ★ ★</div>
+                   <p class="text-muted extra-small mb-0">
+                       It exceeded my expectations! It turned out exactly as I imagined.
+                   </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-3">
+                <img src="/img/floral jacket.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
+                <div>
+                  <h6 class="fw-bold mb-0 text-dark extra-small">Floral Denim Jacket</h6>
+                  <span class="text-muted extra-small"> May 28, 2026</span>
+                  <div class="text-warning extra-small my-1">★ ★ ★ ★ </div>
+                  <p class="text-muted extra-small mb-0">
+                     I loved it! The design is beautiful and the quality is incredible.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
+
+  </main>
+    
+
+
+    
+
+      
+
+
+
+
+
+
+
+
+
 
   
-    <div class="col-12 col-lg-6">
-      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
-        <h5 class="fw-bold mb-3 text-dark">My reviews</h5>
-        
-        <div class="d-flex flex-column gap-3">
-          
-          
-          <div class="d-flex gap-3 pb-3 border-bottom">
-            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=200" class="rounded-3 object-fit-cover flex-shrink-0" width="60" height="60" alt="Embroidered Jacket">
-            <div class="w-100">
-              <div class="d-flex justify-content-between align-items-center">
-                <h6 class="fw-bold text-dark mb-0 extra-small">Embroidered jacket</h6>
-                <span class="text-muted extra-small">10 mayo, 2026</span>
-              </div>
-              <div class="text-warning extra-small my-1">
-                ★ ★ ★ ★ ★
-              </div>
-              <p class="text-muted extra-small mb-0">
-                I loved it! The design is beautiful and the quality is incredible.
-              </p>
-            </div>
-          </div>
-
-          
-          <div class="d-flex gap-3">
-            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=200" class="rounded-3 object-fit-cover flex-shrink-0" width="60" height="60" alt="Personalized Jeans">
-            <div class="w-100">
-              <div class="d-flex justify-content-between align-items-center">
-                <h6 class="fw-bold text-dark mb-0 extra-small">Personalized jeans</h6>
-                <span class="text-muted extra-small">28 mayo, 2026</span>
-              </div>
-              <div class="text-warning extra-small my-1">
-                ★ ★ ★ ★ ★
-              </div>
-              <p class="text-muted extra-small mb-0">
-                It exceeded my expectations! It turned out exactly as I imagined.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 rounded-4 shadow">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title fw-bold">Edit Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="editProfileForm">
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Username</label>
-            <input type="text" class="form-control rounded-3" id="inputUsername" value="@Username">
-          </div>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Tagline</label>
-            <input type="text" class="form-control rounded-3" id="inputTagline" value="Eco-conscious fashion lover">
-          </div>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Bio</label>
-
-            <textarea class="form-control rounded-3" id="inputBio" rows="3">Looking for unique styles to give clothes a second chance and support local talent.</textarea>
-          </div>
-          <button type="submit" class="btn text-white w-100 rounded-3 fw-semibold" style="background-color: #1b4332;">Save Changes</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
     
 
 
@@ -366,9 +386,53 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="perfil.js"></script>
 
+<!-- edit profile-->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow-lg p-3">
+      
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark fs-5">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="editProfileForm">
+          
+          <!-- Input Username -->
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-muted mb-1">Username</label>
+            <input type="text" id="inputUsername" class="form-control rounded-3" required>
+          </div>
+
+          <!-- Input Tagline -->
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-muted mb-1">Tagline</label>
+            <input type="text" id="inputTagline" class="form-control rounded-3" required>
+          </div>
+
+          <!-- Input Bio -->
+          <div class="mb-4">
+            <label class="form-label small fw-semibold text-muted mb-1">Bio</label>
+            <textarea id="inputBio" class="form-control rounded-3" rows="3" required></textarea>
+          </div>
+
+          <!-- Botón Guardar -->
+          <button type="submit" class="btn btn-success w-100 rounded-3 fw-bold py-2" style="background-color: #1b4332; border: none;">
+            Save Changes
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="perfil.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>

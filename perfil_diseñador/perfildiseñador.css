@@ -4,7 +4,7 @@ a, p, li, h1{
 
 .diseño-de-navbar{
     background-color:#00403A;
-    color: #35a882;
+    height: 100px;
 }
 
 .navbar-nav .nav-link {
@@ -82,23 +82,7 @@ body{
   font-size: 0.85rem;
 }
 
-.badge-status {
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  display: inline-block;
-  font-weight: 500;
-}
-.badge-in-progress {
-  background-color: #f5e5af; 
-  color: #775008; 
-  border: 1px solid #f3ca57;
-}
-.badge-completed {
-  background-color: #dcfce7; 
-  color: #15803d;
-  border: 1px solid #86efac;
-}
+
 
 .text-cream {
   color: #f7f4ea;
@@ -107,6 +91,12 @@ body{
 .text-cream-muted {
   color: rgba(247, 244, 234, 0.75);
 }
+
+
+
+
+
+
 
 .bg-rewear-accent {
   background-color: #022723;
@@ -170,3 +160,5 @@ body{
 .dropdown-toggle-no-caret::after {
   display: none ;
 }
+
+
