@@ -65,7 +65,7 @@ body{
 
 
 .btn-eco {
-  background-color: #e2fbce;
+  background-color: #badd8c;
   color: #076653;
   border: none;
   border-radius: 20px;
@@ -75,11 +75,11 @@ body{
 
 .btn-eco:hover {
   background-color: #076653;
-  color: #ffffff;
+  color: #badd8c;
 }
 
 .btn-outline-eco {
-  background-color: #e2fbce;
+  background-color: #badd8c;
   color: #076653;
   border: none;
   border-radius: 20px;
@@ -89,7 +89,7 @@ body{
 
 .btn-outline-eco:hover {
   background-color: #076653;
-  color: #ffffff;
+  color: #badd8c;
 }
 
 .btn-apply {
@@ -130,6 +130,7 @@ body{
 .hero-banner {
   background: linear-gradient(rgba(133, 158, 104, 0.753), rgba(163, 196, 136, 0.747)), 
               url('/clothes/banner.jpg') center/cover no-repeat;
+              height: 440px;
 }
 
 .bg-rewear-accent {
