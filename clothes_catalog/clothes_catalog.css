@@ -132,18 +132,6 @@ body{
               url('/clothes/banner.jpg') center/cover no-repeat;
 }
 
-/*
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #a5d666;
-  z-index: 0;
-}
-*/
-
 .bg-rewear-accent {
   background-color: #022723;
   font-weight: 500;
@@ -175,6 +163,8 @@ body{
 }
 
 
+
+
 .footer-rewear a {
   color: rgba(247, 244, 234, 0.75);
   text-decoration: none;
@@ -196,39 +186,6 @@ body{
   border-top: 1px solid rgba(247, 244, 234, 0.15);
 }
 
-
-
-
-/*
-.custom-tab-banner {
-  background-color:#1b553a;
-  color: #f7f4ea;
-  font-weight: 600;
-  border-radius: 12px;
-  padding: 10px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.custom-tab-banner:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-}
-
-.custom-tab-banner{
-  background-color: #f7f4ea;
-  color: #20bb7a;            
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.custom-tab-banner.active {
-  background-color: #f7f4ea;
-  color: #1b4332;            
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-*/
 
 
 .product-img {
@@ -314,4 +271,28 @@ body{
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 450px; 
+  padding: 6px 14px; 
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+.search-bar-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
 }
