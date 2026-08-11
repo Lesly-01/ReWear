@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/clothes/clothes.css">
+    <link rel="stylesheet" href="/clothes_catalog/clothes_catalog.css">
 </head>
 
 <body>
@@ -175,14 +175,6 @@
     </button>
   </li>
 
-  <li>
-    <!-- boton para diseñadores (Oculto por defecto para compradores) -->
-   <button id="btnAddDesign" class="btn btn-rewear-action rounded-3 px-3 fw-semibold d-none" data-bs-toggle="modal" data-bs-target="#newPostModal" style="background-color: #1b4332; color: #ffffff;">
-     <i class="bi bi-plus-circle me-1"></i> Add new design
-   </button>
-  </li>
-  
-</ul>
   </div>
 </section>
 
@@ -219,7 +211,8 @@
                   <strong class="fs-5 text-dark-green">$20.00</strong>
                 </div>
 
-                <a href="/publicaciones/publicaciones.html" class=" btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
+                <a href="/publicaciones/publicaciones.html" class="btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
+            
                 </a>
               </div>
             </div>
@@ -266,7 +259,6 @@
                       </div>
                       <a href="/perfil_diseñador/perfildiseñador.html" class=" btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
                         </a>
-                      </div>
                       </div>
                     </div>
                   </div>
@@ -350,7 +342,7 @@
         <form id="createPostForm">
           <div class="row g-3">
             
-            <!-- Imagen-->
+            <!-- Imagen de la Prenda -->
             <div class="col-12 col-md-5">
               <label class="form-label extra-small fw-semibold text-muted">Image Path or URL</label>
               <input type="text" id="postImg" class="form-control rounded-3" placeholder="/img/denim corset.png" required>
@@ -360,7 +352,7 @@
               </div>
             </div>
 
-            <!-- Campos -->
+            <!-- Campos de Detalles del Post -->
             <div class="col-12 col-md-7">
               
               <!-- Title -->
