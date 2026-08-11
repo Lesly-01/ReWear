@@ -23,16 +23,12 @@ li{
     color: #004434;
 }
 
-body{
-    background-color:#f8f4e6;
-}
-
 .logo_rewear{
     width: 80px;
 }
 
 body {
-      background-color: #fbf9f1;
+      background-color: #f8f4e6;
     }
     .text-rewear-dark {
       color: #1b4332;
@@ -66,11 +62,11 @@ body {
     }
 
     .form-control:focus, .form-select:focus {
-      border-color: #5daa92;
+      border-color: #badd8c;
       box-shadow: 0 0 0 0.25rem rgba(99, 172, 149, 0.562);
     }
     .upload-zone {
-      border: 2px dashed #d0d7d1;
+      border: 5px dashed #13b42b;
       border-radius: 0.75rem;
       background-color: #f8faf8;
       transition: border-color 0.2s ease;
@@ -79,9 +75,8 @@ body {
       border-color: #73d1b4;
     }
 
-    .card-rewear-border {
-  border: 3px solid #448168;
-}
+
+   
 
 
 
