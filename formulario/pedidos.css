@@ -24,7 +24,7 @@ li{
 }
 
 .logo_rewear{
-    width: 80px;
+    width: 120px;
 }
 
 body {
@@ -62,18 +62,49 @@ body {
     }
 
     .form-control:focus, .form-select:focus {
-      border-color: #badd8c;
+      border-color: #405c1b;
       box-shadow: 0 0 0 0.25rem rgba(99, 172, 149, 0.562);
     }
     .upload-zone {
-      border: 5px dashed #13b42b;
+      border: 5px dashed #00403A;
       border-radius: 0.75rem;
-      background-color: #f8faf8;
+      background-color: #badd8c;
       transition: border-color 0.2s ease;
     }
     .upload-zone:hover {
       border-color: #73d1b4;
     }
+
+    .form-label{
+      border: #00403A;
+    }
+
+    .form-select{
+      color: #2d6a4f;
+    }
+
+
+
+    /* Borde punteado para la zona de subir archivo */
+.border-dashed {
+  border-style: dashed;
+}
+
+.custom-dropzone {
+  transition: all 0.2s ease;
+}
+
+.custom-dropzone:hover {
+  background-color: #f1f5f9;
+  border-color: #1b4332;
+}
+
+
+.form-control:focus, .form-select:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(27, 67, 50, 0.15);
+  border: 1px solid #1b4332;
+}
 
 
    
