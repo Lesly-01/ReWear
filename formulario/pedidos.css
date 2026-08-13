@@ -91,7 +91,7 @@ body {
 }
 
 .custom-dropzone {
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 
 .custom-dropzone:hover {
@@ -99,11 +99,27 @@ body {
   border-color: #1b4332;
 }
 
-
 .form-control:focus, .form-select:focus {
   background-color: #ffffff;
   box-shadow: 0 0 0 0.25rem rgba(27, 67, 50, 0.15);
   border: 1px solid #1b4332;
+}
+
+
+
+
+/* Cambia el borde de todos los campos del formulario */
+#customOrderForm .form-control, 
+#customOrderForm .form-select,
+#customOrderForm .input-group-text {
+  border: 1px solid #228f7d; /* Color de borde personalizado */
+}
+
+/* Borde más marcado cuando se selecciona el campo */
+#customOrderForm .form-control:focus, 
+#customOrderForm .form-select:focus {
+  border-color: #A4F002;
+  box-shadow: 0 0 0 0.2rem #a5f00285;
 }
 
 
