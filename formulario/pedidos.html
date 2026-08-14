@@ -36,147 +36,210 @@
             </div>
         </div>
     </nav>
+
+
+    
     
 
-     <div class="mb-3 container py-4 px-3 px-md-5 d-flex align-items-right" >
-         <a href="/clothes/clothes.html" class="btn border rounded-3 px-3 py-2 text-decoration-none fw-semibold shadow-sm d-inline-flex align-items-center gap-2 btn-back-custom">
-            <i class="bi bi-arrow-left fs-5"></i>
-            <span class="d-none d-sm-inline">Return to posts</span>
-         </a>
-      </div>
 
-     <main class="container py-4 px-3 px-md-4" style="max-width: 1000px;">
-      <div id="alertContainer"></div>
+    
 
-      
-      
-      <div class="card card-rewear-border shadow-sm rounded-4 bg-white p-4 p-md-5">
-        <div class="mb-4">
-          <h2 class="fw-bold text-rewear-dark mb-1">Customization details</h2>
-          <p class="text-muted extra-small mb-0" style="font-size: 0.9rem;">
-            Specify how you would like your garment to be customized before placing the order.
-          </p>
-        </div>
+   <main class="container py-4">
+  <div id="alertContainer"></div>
+
+  <div class="row g-4 justify-content-center">
+    
+    
+    <div class="col-12 col-lg-8">
+      <div class="card card-rewear-border shadow-lg rounded-4 bg-white p-4 p-md-5">
         
+      
+        <a href="#" class="text-decoration-none text-secondary extra-small fw-semibold mb-3 d-inline-block">
+          <i class="bi bi-arrow-left me-1"></i> Return to posts
+        </a>
 
-        <div id="alertContainer" class="mb-3"></div>
-        <form id="customOrderForm" class="needs-validation" novalidate>
-           <div class="row g-4">
-  
-          <div class="col-12 col-md-6 d-flex flex-column gap-3">
-            <div>
-              <label class="form-label fw-semibold text-dark extra-small mb-1">Customization Method</label>
-              <select class="form-select rounded-3  bg-light-subtle py-2" required>
-                <option value="" selected disabled>Select method (Embroidery, Screen Print...)</option>
-                <option value="embroidery">Embroidery</option>
-                <option value="screen_print">Screen Print</option>
-                <option value="patchwork">Patchwork / Upcycling</option>
-                <option value="Sublimation Printing">Sublimation Printing</option>
-                <option value="Custom Tie-Dye">Custom Tie-Dye</option>
-                <option value="Laser Engraving">Laser Engraving</option>
-                <option value="Screen Printing">Screen Printing</option>
-             </select>
-             <div class="invalid-feedback extra-small">Please select a customization method.</div>
-            </div>
-            
-            <div>
-              <label class="form-label fw-semibold text-dark extra-small mb-1">Design Placement</label>
-              <select class="form-select rounded-3  bg-light-subtle py-2" required style="border-style:dashed 2px solid  #1b4332;">
-                <option value="" selected disabled>Design placement (Chest, Back, Sleeve...)</option>
-                <optgroup label="Tops & Jackets">
-                  <option value="left-chest">Left Chest</option>
-                 <option value="right-chest">Right Chest</option>
-                 <option value="center-front">Center Front</option>
-                 <option value="full-back">Full Back</option>
-                 <option value="upper-back">Upper Back (Below Collar)</option>
-                 <option value="left-sleeve">Left Sleeve</option>
-                 <option value="right-sleeve">Right Sleeve</option>
-                </optgroup>
-
-                <optgroup label="Pants & Shorts">
-                 <option value="left-thigh">Left Thigh</option>
-                 <option value="right-thigh">Right Thigh</option>
-                 <option value="side-seam">Side Seam (Vertical)</option>
-                 <option value="back-pocket">Back Pocket</option>
-             </optgroup>
-              </select>
-              
-              <div class="invalid-feedback extra-small">Please select design placement.</div>
-            </div>
-            <div>
-              <label class="form-label fw-semibold text-dark extra-small mb-1">Category</label>
-
-              <select class="form-select rounded-3 border-color bg-light-subtle py-2" required>
-                <option value="" selected disabled>Select Category</option>
-                <option value="corset">Corset</option>
-                <option value="jacket">Jacket / Outerwear</option>
-                <option value="T-shirt">T-shirt</option>
-                <option value="Shirt">Shirt</option>
-                <option value="Jeans">Jeans</option>
-                <option value="Jacket">Jacket</option>
-                <option value="Sweater">Sweater</option>
-                <option value="Dress">Dress</option>
-            </select>
-
+        <div class="mb-4">
+          <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-2 extra-small mb-2">Step 2 of 3 • Customization</span>
+          <h2 class="h3 fw-bold" style="color: #1b4332;">Customization details</h2>
+          <p class="text-muted extra-small">Specify how you would like your garment to be customized before placing the order.</p>
+        </div>
 
       
-            <div class="invalid-feedback extra-small">Please select a category.</div>
-          </div>
-          
-          
-          <div>
-        <label class="form-label extra-small fw-semibold  mb-1">Estimated Price Range ($USD)</label>
-        <div class="input-group">
-          <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
-          <input type="number" id="minPrice" class="form-control bg-light shadow-none extra-small" placeholder="Min" min="0" required>
-          <span class="input-group-text bg-light border-0 text-muted extra-small">-</span>
-          <span class="input-group-text bg-light border-0 text-muted extra-small">$</span>
-          <input type="number" id="maxPrice" class="form-control bg-light rounded-end-3 shadow-none extra-small" placeholder="Max" min="0" required>
-        </div>
-        <div id="fileError" class="text-danger extra-small d-none mt-1 text-center" style="font-size: 0.75rem;">
-          Please specify a price range.
-        </div>
-      </div>
+        <form id="customOrderForm" class="needs-validation" novalidate>
+          <div class="row g-4">
+  
+            <div class="col-12 col-md-6 d-flex flex-column gap-3">
+              <div>
+                <label class="form-label fw-semibold text-dark extra-small mb-1">Customization Method</label>
+                <select class="form-select rounded-3 bg-light-subtle py-2" required>
+                  <option value="" selected disabled>Select method (Embroidery, Screen Print...)</option>
+                  <option value="embroidery">Embroidery</option>
+                  <option value="screen_print">Screen Print</option>
+                  <option value="patchwork">Patchwork / Upcycling</option>
+                  <option value="Sublimation Printing">Sublimation Printing</option>
+                  <option value="Custom Tie-Dye">Custom Tie-Dye</option>
+                  <option value="Laser Engraving">Laser Engraving</option>
+                  <option value="Screen Printing">Screen Printing</option>
+               </select>
+               <div class="invalid-feedback extra-small">Please select a customization method.</div>
+              </div>
+              
+              <div>
+                <label class="form-label fw-semibold text-dark extra-small mb-1">Design Placement</label>
+                <select class="form-select rounded-3 bg-light-subtle py-2" required style="border-style:dashed 2px solid #1b4332;">
+                  <option value="" selected disabled>Design placement (Chest, Back, Sleeve...)</option>
+                  <optgroup label="Tops & Jackets">
+                    <option value="left-chest">Left Chest</option>
+                    <option value="right-chest">Right Chest</option>
+                    <option value="center-front">Center Front</option>
+                    <option value="full-back">Full Back</option>
+                    <option value="upper-back">Upper Back (Below Collar)</option>
+                    <option value="left-sleeve">Left Sleeve</option>
+                    <option value="right-sleeve">Right Sleeve</option>
+                  </optgroup>
 
-      <div>
-        <div id="fileDropzone" class="p-3 border-3 border-dashed rounded-4 bg-light text-center position-relative custom-dropzone" style="border-style: dashed; border-color: #228f7d;">
-          <div class="mt-1">
-            <label for="fileUpload" class="btn btn-sm rounded-pill px-4 py-2 fw-semibold text-white shadow-sm cursor-pointer mb-2" style="background-color: #146443; font-size: 0.8rem;">
-              Choose file
-            </label>
-            <input type="file" id="fileUpload" class="form-control visually-hidden" required>
-          </div>
-          <p id="fileNameDisplay" class="text-muted extra-small mb-0" style="font-size: 0.72rem;">
-            Upload a photo of your garment (PNG, PDF, AI, EPS)
-          </p>
-        </div>
-        <!-- Mensaje de error para el archivo -->
-        <div id="fileError" class="text-danger extra-small d-none mt-1 text-center" style="font-size: 0.75rem;">
-          Please upload an image or file for your garment.
-        </div>
-      </div>
+                  <optgroup label="Pants & Shorts">
+                    <option value="left-thigh">Left Thigh</option>
+                    <option value="right-thigh">Right Thigh</option>
+                    <option value="side-seam">Side Seam (Vertical)</option>
+                    <option value="back-pocket">Back Pocket</option>
+                  </optgroup>
+                </select>
+                
+                <div class="invalid-feedback extra-small">Please select design placement.</div>
+              </div>
+              
+              <div>
+                <label class="form-label fw-semibold text-dark extra-small mb-1">Category</label>
 
+                <select class="form-select rounded-3 border-color bg-light-subtle py-2" required>
+                  <option value="" selected disabled>Select Category</option>
+                  <option value="corset">Corset</option>
+                  <option value="jacket">Jacket / Outerwear</option>
+                  <option value="T-shirt">T-shirt</option>
+                  <option value="Shirt">Shirt</option>
+                  <option value="Jeans">Jeans</option>
+                  <option value="Jacket">Jacket</option>
+                  <option value="Sweater">Sweater</option>
+                  <option value="Dress">Dress</option>
+                </select>
+
+                <div class="invalid-feedback extra-small">Please select a category.</div>
+              </div>
+            
+              <div>
+                <label class="form-label extra-small fw-semibold mb-1">Estimated Price Range ($USD)</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
+                  <input type="number" id="minPrice" class="form-control bg-light shadow-none extra-small" placeholder="Min" min="0" required>
+                  <span class="input-group-text bg-light border-0 text-muted extra-small">-</span>
+                  <span class="input-group-text bg-light border-0 text-muted extra-small">$</span>
+                  <input type="number" id="maxPrice" class="form-control bg-light rounded-end-3 shadow-none extra-small" placeholder="Max" min="0" required>
+                </div>
+                <div id="fileError" class="text-danger extra-small d-none mt-1 text-center" style="font-size: 0.75rem;">
+                  Please specify a price range.
+                </div>
+              </div>
+
+              <div>
+                <div id="fileDropzone" class="p-3 border-3 border-dashed rounded-4 bg-light text-center position-relative custom-dropzone" style="border-style: dashed; border-color: #228f7d;">
+                  <div class="mt-1">
+                    <label for="fileUpload" class="btn btn-sm rounded-pill px-4 py-2 fw-semibold text-white shadow-sm cursor-pointer mb-2" style="background-color: #146443; font-size: 0.8rem;">
+                      Choose file
+                    </label>
+                    <input type="file" id="fileUpload" class="form-control visually-hidden" required>
+                  </div>
+                  <p id="fileNameDisplay" class="text-muted extra-small mb-0" style="font-size: 0.72rem;">
+                    Upload a photo of your garment (PNG, PDF, AI, EPS)
+                  </p>
+                </div>
+                <!-- Mensaje de error para el archivo -->
+                <div id="fileError" class="text-danger extra-small d-none mt-1 text-center" style="font-size: 0.75rem;">
+                  Please upload an image or file for your garment.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 d-flex flex-column">
+              <label class="form-label fw-semibold text-dark extra-small mb-1">Detailed Order Instructions</label>
+              <textarea class="form-control rounded-3 bg-light-subtle p-3 flex-grow-1" rows="8" placeholder="Enter detailed order instructions, thread/ink colors, specific measurements, or special requests here..." required></textarea>
+              <div class="invalid-feedback extra-small">Please provide order instructions.</div>
+            </div>
+          </div>
+
+          <div class="mt-5 text-center">
+            <button type="submit" class="btn btn-rewear-submit rounded-pill px-5 py-2.5 fw-semibold shadow-sm fs-6">
+              <i class="bi bi-send me-2"></i>Send order
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
+    
 
-        <div class="col-12 col-md-6 d-flex flex-column">
-          <label class="form-label fw-semibold text-dark extra-small mb-1">Detailed Order Instructions</label>
-          <textarea class="form-control rounded-3 bg-light-subtle p-3 flex-grow-1" rows="8" placeholder="Enter detailed order instructions, thread/ink colors, specific measurements, or special requests here..." required></textarea>
-          <div class="invalid-feedback extra-small">Please provide order instructions.</div>
+
+    <div class="col-12 col-lg-4">
+      
+      <div class="card border-0 rounded-4 bg-white p-4 shadow-sm mb-3">
+        <h5 class="fw-bold mb-3" style="color: #1b4332; font-size: 1rem;">What happens next?</h5>
+        
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <div class="rounded-circle p-2  text-success flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1b4332" class="bi bi-person-check" viewBox="0 0 16 16">
+              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.75.75 0 0 1 1.06-1.06l.367.367 1.04-1.733a.75.75 0 0 1 1.25.82z"/>
+              <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+              <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C8.844 9.028 8.437 9 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+           </svg>
+          </div>
+          <div>
+            
+            <h6 class="mb-0 extra-small fw-bold">1. Designer Review</h6>
+            <span class="text-muted extra-small" style="font-size: 0.8rem;">A designer checks your request.</span>
+          </div>
+        </div>
+        
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <div class="rounded-circle p-2 text-success flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1b4332" class="bi bi-chat-quote" viewBox="0 0 16 16">
+               <path d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"/>
+               <path d="M7.066 6.76V5.333h-1.62c0-.508.266-.96.715-1.233l-.84-.716C4.606 3.89 4 4.792 4 6.002v1.758h3.066zm3.934 0V5.333h-1.62c0-.508.266-.96.715-1.233l-.839-.716c-.715.507-1.321 1.41-1.321 2.62v1.758h3.065z"/>
+             </svg>
+            </div>
+            <div>
+              
+              <h6 class="mb-0 extra-small fw-bold">2. Price Confirmation</h6>
+              <span class="text-muted extra-small" style="font-size: 0.8rem;">You wll receive a final quote based on your price range.</span>
+            </div>
+          </div>
+          
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="rounded-circle p-2  text-success flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#1b4332" class="bi bi-shield-check" viewBox="0 0 16 16">
+                 <path d="M5.338 1.59a61 61 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025.1 1 0 0 0 .018.003l.001.001a1 1 0 0 0 .018-.002l.001-.001a1 1 0 0 0 .017-.002l.018-.003.029-.008.062-.022a1 1 0 0 0 .101-.028.7 1 0 0 0 .185-.08a4 4 0 0 0 .421-.237c.241-.153.533-.362.852-.635a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.77 11.77 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.77 11.77 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+                 <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+               </svg>
+              </div>
+              <div>
+                
+                <h6 class="mb-0 extra-small fw-bold">3. Safe Approval</h6>
+                <span class="text-muted extra-small" style="font-size: 0.8rem;">Work starts only after you approve the final mockup.</span>
+              </div>
+            </div>
+            
+            <hr class="my-3 text-muted opacity-25">
+            
+            <div class="bg-light p-3 rounded-3 text-center">
+              <p class="extra-small text-muted mb-1" style="font-size: 0.8rem;">Where you can check the status of your order?</p>
+              <a href="#" class="extra-small fw-bold text-decoration-none" style="color: #1b4332; font-size: 0.85rem;">Check your profile <i class="bi bi-chat-dots ms-1"></i></a>
+            </div>
+          </div>
         </div>
       </div>
+    </main>
 
-      
-
-      <div class="mt-5 text-center">
-         <button type="submit" class="btn btn-rewear-submit rounded-pill px-5 py-2.5 fw-semibold shadow-sm fs-6">
-            <i class="bi bi-send me-2"></i>Send order
-         </button>
-       </div>
-  </form>
-</div>
-</main>
-
+    
        
 
 

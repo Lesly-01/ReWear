@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const formInputs = customOrderForm.querySelectorAll('.form-control, .form-select');
 
-  // Validaciones en tiempo real al escribir o seleccionar
+
   formInputs.forEach(input => {
     ['input', 'change', 'blur'].forEach(eventName => {
       input.addEventListener(eventName, function () {
@@ -61,20 +61,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Envío de formulario
+  
   customOrderForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     let isFormValid = true;
 
-    // Validar archivo
+    
     if (fileInput && fileInput.hasAttribute('required')) {
       if (!validateFileInput()) {
         isFormValid = false;
       }
     }
 
-    // Validar demás campos requeridos
+    
     formInputs.forEach(input => {
       if (input.type !== 'file') {
         validateSingleInput(input);
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Order submitted successfully!');
       }
 
-      // Reiniciar estado
+      
       customOrderForm.reset();
       formInputs.forEach(input => input.classList.remove('is-valid', 'is-invalid'));
       if (fileDropzone) {
@@ -110,5 +110,31 @@ document.addEventListener('DOMContentLoaded', function () {
         fileNameDisplay.className = 'text-muted extra-small mb-0';
       }
     }
+    
+
+    if (isFormValid) {
+  if (alertContainer) {
+    alertContainer.innerHTML = `
+      <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2 rounded-3 border-0 shadow-sm mb-4" role="alert">
+        <i class="bi bi-check-circle-fill fs-5"></i>
+        <div><strong>Success!</strong> Order submitted successfully!</div>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+
+    
+    alertContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  
+  customOrderForm.reset();
+}
+
+
+
+
+
+
   });
 });
+
