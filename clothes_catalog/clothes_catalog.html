@@ -40,7 +40,7 @@
       
       <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
     
-      <!-- Botones de Acción (Izquierda) -->
+      
       <div class="d-flex align-items-center gap-2 flex-grow-1">
 
       <button class="btn btn-outline-eco px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-nowrap" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
@@ -60,7 +60,7 @@
           </div>
 
 
-    <!-- Barra de Búsqueda Rápida (Centro) -->
+
   
       <div class="input-group ms-2" style="max-width: 420px;">
         <span class="input-group-text border-0 rounded-start-pill ps-3 text-muted" style="background-color: #badd8c;">
@@ -170,25 +170,31 @@
 
 
 
-<section class="py-5 px-4 mb-5 rounded-2 text-center shadow-sm hero-banner" style="color: #022522;">
-  <div class="container my-4 px-3 px-md-4">
+<section class="w-100 py-5 px-4 mb-5 rounded-0 text-center shadow-sm hero-banner d-flex align-items-center justify-content-center" style="color: #022522; min-height: 400px;">
+  <div class="container my-auto px-3 px-md-4">
     <h2 class="display-6 fw-bold mb-3">Explore Our Ecosystem</h2>
     <p class="lead opacity-100 mx-auto mb-4" style="max-width: 650px; font-weight:400;">
       Discover upcycled fashion or connect with local Salvadoran designers to give your clothes a second life.
     </p>
 
-    <ul class="nav  justify-content-center gap-3" id="catalogTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link custom-tab-banner active" id="clothes-tab" data-bs-toggle="pill" data-bs-target="#clothes-content" type="button" role="tab">
-      Clothes Catalog
-    </button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link custom-tab-banner" id="tailors-tab" data-bs-toggle="pill" data-bs-target="#tailors-content" type="button" role="tab">
-      Local Tailors & Artisans
-    </button>
-  </li>
+    <ul class="nav justify-content-center gap-3 align-items-center" id="catalogTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link custom-tab-banner active" id="clothes-tab" data-bs-toggle="pill" data-bs-target="#clothes-content" type="button" role="tab">
+          Clothes Catalog
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link custom-tab-banner" id="tailors-tab" data-bs-toggle="pill" data-bs-target="#tailors-content" type="button" role="tab">
+          Local Tailors & Artisans
+        </button>
+      </li>
 
+      <li class="nav-item">
+        <button id="btnAddDesign" class="btn btn-rewear-action rounded-3 px-3 fw-semibold d-none" data-bs-toggle="modal" data-bs-target="#newPostModal" style="background-color: #1b4332; color: #ffffff;">
+          <i class="bi bi-plus-circle me-1"></i> Add new design
+        </button>
+      </li>
+    </ul>
   </div>
 </section>
 
