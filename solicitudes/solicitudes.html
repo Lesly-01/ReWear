@@ -119,14 +119,14 @@
 
     <main class="container my-5 pt-3">
 
-      <div class="text-center mb-5">
-        <h2 class="section-title fw-bold">Request orders</h2>
-        <p class="text-muted">Review the client's customization specifications, view reference files, and manage your order response.</p>
-      </div>
+  <div class="text-center mb-5">
+    <h2 class="section-title fw-bold" style="color: #1b4332;">Request orders</h2>
+    <p class="text-muted extra-small">Review the client's customization specifications, view reference files, and manage your order response.</p>
+  </div>
 
-      <div id="alertContainer" class="mb-3">
+  <div id="alertContainer" class="mb-3">
 
-      <div id="statusAlert" class="alert d-none align-items-center justify-content-between rounded-3 mb-4 shadow-sm" role="alert">
+    <div id="statusAlert" class="alert d-none align-items-center justify-content-between rounded-3 mb-4 shadow-sm" role="alert">
       <div class="d-flex align-items-center gap-2">
         <i id="alertIcon" class="bi fs-5"></i>
         <span id="alertMessage" class="fw-semibold extra-small"></span>
@@ -134,106 +134,97 @@
       <button type="button" class="btn-close btn-close-white" onclick="hideAlert()" aria-label="Close"></button>
     </div>
 
-
-     <div class="card designer-card shadow-sm rounded-4 p-4 p-md-5 mx-auto" style="max-width: 850px; background-color: #c6e876; border: 3px solid #1b4332;">
-       <h3 class="fw-bold text-center text-request mb-2">Customization request</h3>
-       
-       <div class="text-center text-request text-90 extra-small mb-4">
-        <i class="bi bi-person-circle me-1 text-request"></i> Request made by: <strong class="text-request">@username</strong>
-      </div>
+    
+    <div class="card designer-card card-rewear-border shadow-lg rounded-4 bg-white p-4 p-md-5 mx-auto" style="max-width: 850px;">
       
+      <div class="mb-4 text-center">
+        <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-2 extra-small mb-2">Incoming Order</span>
+        <h3 class="fw-bold h3" style="color: #1b4332;">Customization request</h3>
+        <p class="text-muted extra-small mb-0">
+          <i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> Request made by: <strong style="color: #1b4332;">@username</strong>
+        </p>
+      </div>
+     
       <div class="row g-4 mb-4">
         <div class="col-12 col-md-6 d-flex flex-column gap-3">
           
-          <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
             <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method</span>
             <strong class="text-dark fs-6">Custom Embroidery</strong>
-         </div>
+          </div>
 
-      
-         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
             <span class="d-block text-muted extra-small fw-semibold text-uppercase">Placement</span>
-           <strong class="text-dark fs-6">Full Back (Centered)</strong>
-         </div>
+            <strong class="text-dark fs-6">Full Back (Centered)</strong>
+          </div>
 
-    
-         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
             <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment / Fabric</span>
             <strong class="text-dark fs-6">Black Hoodie (100% Cotton)</strong>
-         </div>
+          </div>
 
-         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success">
+          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
             <span class="d-block text-muted extra-small fw-semibold text-uppercase">Price range</span>
             <strong class="text-dark fs-6">$20-$40</strong>
-         </div>
+          </div>
 
-      
-         <div class="bg-white rounded-3 p-3 shadow-sm border-start border-4 border-success d-flex flex-column gap-2">
-           <span class="d-block text-muted extra-small fw-semibold text-uppercase">Attached File</span>
-           <div class="d-flex align-items-center justify-content-between">
-             <span class="text-dark fw-bold extra-small text-truncate me-2">
-               <i class="bi bi-file-earmark-pdf text-danger me-1"></i>pantalon.jpg
-             </span>
+          <div class="bg-light-subtle rounded-3 p-3 border-start border-4 d-flex flex-column gap-2" style="border-color: #1b4332 !important;">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Attached File</span>
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="text-dark fw-bold extra-small text-truncate me-2">
+                <i class="bi bi-file-earmark-pdf text-danger me-1"></i>pantalon.jpg
+              </span>
 
-             <a href="/IMG/pantalon.jpg" download="pantalon.jpg" class="btn btn-sm btn-rewear-download rounded-pill px-3 py-1 extra-small fw-semibold">
-               <i class="bi bi-download me-1"></i>Download
-             </a>
-           </div>
+              <a href="/IMG/pantalon.jpg" download="pantalon.jpg" class="btn btn-sm rounded-pill px-3 py-1 extra-small fw-semibold text-white" style="background-color: #146443;">
+                <i class="bi bi-download me-1"></i>Download
+              </a>
+            </div>
           </div>
         </div>
 
-  
-    <div class="col-12 col-md-6">
-      <div class="bg-white rounded-3 p-4 shadow-sm h-100 d-flex flex-column">
-        <h6 class="fw-bold text-dark mb-2">Design instructions:</h6>
-        <p class="text-secondary extra-small mb-0 flex-grow-1" style="line-height: 1.6; font-size: 0.9rem;">
-          Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
-        </p>
+        <div class="col-12 col-md-6">
+          <div class="bg-light-subtle rounded-3 p-4 border border-light-subtle h-100 d-flex flex-column">
+            <h6 class="fw-semibold text-dark extra-small mb-2">Design instructions:</h6>
+            <p class="text-secondary extra-small mb-0 flex-grow-1" style="line-height: 1.6; font-size: 0.85rem;">
+              Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
+            </p>
+          </div>
+        </div>
+
       </div>
+
+      <div class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top border-light-subtle">
+        
+        <button type="button" id="declineBtn" class="btn btn-outline-danger rounded-pill px-4 btn-sm fw-semibold">
+          Decline
+        </button>
+        
+        
+        <button type="button" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold shadow-sm" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
+          Accept Request
+        </button>
+      </div>
+
     </div>
-
   </div>
-
- <div class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top border-dark border-opacity-10">
-  <!-- Botón Rechazar con ID -->
-  <button type="button" id="declineBtn" class="btn btn-outline-danger rounded-pill px-4 btn-sm fw-semibold">
-    Decline
-  </button>
-  
-  <!-- Botón Aceptar que abre el Modal -->
-  <button type="button" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
-    Accept Request
-  </button>
-</div>
-     </div></div>
-      </div>
-    </main>
-
-    
+</main>
 
 
-    
-
-
- <!-- aceptar la ofertaaa -->
 <div class="modal fade" id="acceptRequestModal" tabindex="-1" aria-labelledby="acceptRequestModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 border-0 shadow">
       
-    
       <div class="modal-header border-0 pb-0">
         <h5 class="modal-title fw-bold text-dark" id="acceptRequestModalLabel">Accept Request & Send Proposal</h5>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      
       <form id="acceptRequestForm">
         <div class="modal-body py-3">
           <p class="text-muted extra-small mb-3">
             Set the final price and estimated completion time for <strong>@username</strong>. Client's requested range was <strong>$20 - $40</strong>.
           </p>
 
-          
           <div class="mb-3">
             <label class="form-label extra-small fw-semibold text-muted mb-1">Final Agreed Price ($USD)</label>
             <div class="input-group">
@@ -242,7 +233,6 @@
             </div>
           </div>
 
-      
           <div class="mb-3">
             <label class="form-label extra-small fw-semibold text-muted mb-1">Estimated Delivery Time</label>
             <div class="row g-2">
@@ -258,14 +248,12 @@
             </div>
           </div>
 
-          
           <div class="mb-2">
             <label class="form-label extra-small fw-semibold text-muted mb-1">Message for Client (Optional)</label>
             <textarea id="designerNoteInput" class="form-control bg-light rounded-3 shadow-none extra-small" rows="3" placeholder="Add any details about materials, fitting confirmation, or next steps..."></textarea>
           </div>
         </div>
 
-        
         <div class="modal-footer border-0 pt-0">
           <button type="button" class="btn btn-light rounded-pill px-4 btn-sm fw-semibold text-muted" data-bs-dismiss="modal">Cancel</button>
           <button type="submit" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold" style="background-color: #1b4332; border: none;">
