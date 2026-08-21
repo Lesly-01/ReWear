@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/clothes_catalog/clothes_catalog.css">
+    <link rel="stylesheet" href="/public/css/clothes.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg diseño-de-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img class="logo_rewear" src="/IMG/rewear logo blanco.png" alt="ReWear Logo">
+                <img class="logo_rewear" src="/public/IMG/rewear logo blanco.png" alt="ReWear Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -25,30 +25,27 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                   <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/clothes.html">Clothes</a></li>
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    
-    <div class="card border-0  shadow-sm bg-white p-3">
-      
-      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
-    
-      
-      <div class="d-flex align-items-center gap-2 flex-grow-1">
 
-      <button class="btn btn-outline-eco px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-nowrap" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
+
+    <div class="card border-0  shadow-sm bg-white p-3">
+      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+        
+        <div class="d-flex align-items-center gap-2 flex-grow-1">
+          <button class="btn btn-outline-eco px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-nowrap" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
-              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
-            </svg>
+                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+             </svg>
             Categories
-          </button>
+        </button>
 
      
           <button class="btn btn-eco px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-nowrap" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters">
@@ -58,23 +55,20 @@
              Filters
             </button>
           </div>
-
-
-
-  
-      <div class="input-group ms-2" style="max-width: 420px;">
-        <span class="input-group-text border-0 rounded-start-pill ps-3 text-muted" style="background-color: #badd8c;">
-          <i class="bi bi-search"></i>
-        </span>
-        <input type="text" class="form-control form-control-custom  border-0 rounded-end-pill shadow-none extra-small" placeholder="Search jackets, corsets, denim..." style="background-color: #badd8c;">
+          
+          
+          <div class="input-group ms-2" style="max-width: 420px;">
+            <span class="input-group-text border-0 rounded-start-pill ps-3 text-muted" style="background-color: #badd8c;">
+               <i class="bi bi-search"></i>
+             </span>
+              <input type="text" class="form-control form-control-custom  border-0 rounded-end-pill shadow-none extra-small" placeholder="Search jackets, corsets, denim..." style="background-color: #badd8c;">
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-
   </div>
 </div>
-      </div>
-      
+    
       <div class="offcanvas offcanvas-start rounded-end-4" tabindex="-1" id="offcanvasCategories" aria-labelledby="offcanvasCategoriesLabel">
         <div class="offcanvas-header border-bottom">
           <h5 class="offcanvas-title fw-bold text-success-eco" id="offcanvasCategoriesLabel">Categories</h5>
@@ -203,17 +197,16 @@
 <div class="container my-0 px-3 px-md-4">
   <div class="tab-content" id="catalogTabContent">
     
-    <!-- Catálogo de prendas -->
     <div class="tab-pane fade show active" id="clothes-content" role="tabpanel">
       
-      <!-- Contenedor -->
+    
       <div class="row g-4" id="cardsContainer">
 
-        <!-- Tarjeta -->
+        
         <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="cardToClone">
           <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white card-hover">
             <div class="position-relative overflow-hidden">
-              <img src="/img/denim corset.png" class="card-img-top product-img" alt="Denim patchwork corset">
+              <img src="/public/IMG/denim corset.png" class="card-img-top product-img" alt="Denim patchwork corset">
               <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm small fw-semibold">
                 @juanperez
               </span>
@@ -231,8 +224,7 @@
                   <strong class="fs-5 text-dark-green">$20.00</strong>
                 </div>
 
-                <a href="/publicaciones/publicaciones.html" class="btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
-            
+                <a href="/public/publicaciones.html" class=" btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
                 </a>
               </div>
             </div>
@@ -247,14 +239,14 @@
 
 
         
-  <!-- directorio de sastres -->
+  
    <div class="tab-pane fade" id="tailors-content" role="tabpanel">
         <div class="container py-4">
           <div class="row g-4">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white card-hover">
                 <div class="position-relative overflow-hidden">
-                  <img src="/perfil_diseñador/diseñador foto perfil.jpg" class="card-img-top product-img" alt="Juan Pérez Tailor" style="height: 220px; object-fit: cover;">
+                  <img src="/public/IMG/diseñador foto perfil.jpg" class="card-img-top product-img" alt="Juan Pérez Tailor" style="height: 220px; object-fit: cover;">
                   <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm small fw-semibold">
                     San Salvador</span>
                     <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 bg-dark text-white rounded-pill extra-small shadow-sm" style="background-color: #1b4332 !important;">
@@ -277,8 +269,9 @@
                         <span class="text-muted extra-small d-block">Answers in</span>
                         <strong class="fs-6" style="color: #2d6a4f;">&lt; 1 hour</strong>
                       </div>
-                      <a href="/perfil_diseñador/perfildiseñador.html" class=" btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
+                      <a href="/public/perfildiseñador.html" class=" btn-rewear-action btn-sm rounded-3 px-3 fw-semibold text-decoration-none text-dark stretched-link">
                         </a>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -344,7 +337,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="icono.js"></script>
+<script src="/public/js/icono.js"></script>
 
 
 
@@ -362,7 +355,7 @@
         <form id="createPostForm">
           <div class="row g-3">
             
-            <!-- Imagen de la Prenda -->
+            <!-- Imagen-->
             <div class="col-12 col-md-5">
               <label class="form-label extra-small fw-semibold text-muted">Image Path or URL</label>
               <input type="text" id="postImg" class="form-control rounded-3" placeholder="/img/denim corset.png" required>
@@ -372,7 +365,7 @@
               </div>
             </div>
 
-            <!-- Campos de Detalles del Post -->
+            <!-- Campos -->
             <div class="col-12 col-md-7">
               
               <!-- Title -->

@@ -9,25 +9,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="chooseyourprofile.css">
+    <link rel="stylesheet" href="/public/css/chooseyourprofile.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg diseño-de-navbar">
+  <nav class="navbar navbar-expand-lg diseño-de-navbar sticky-top">
         <div class="container">
-            <a class="navbar-brand" href=""></a>
-            <img class="logo_rewear"  src="/IMG/rewear logo blanco.png" alt="">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img class="logo_rewear" src="/public/IMG/rewear logo blanco.png" alt="ReWear Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                   <li class="nav-item"><a class="nav-link" href="/home/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/clothes/clothes.html">Clothes</a></li>
+                <ul class="navbar-nav ms-auto align-items-center">
+                   <li class="nav-item"><a class="nav-link" href="/public/homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/clothes.html">Clothes</a></li>
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/reviews/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/aboutus/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
@@ -46,13 +47,13 @@
         <div class="card border-0 shadow-sm rounded-4 w-100 profile-selectable-card cursor-pointer p-3" id="cardDesigner">
           <div class="row g-3 align-items-center h-100">
             <div class="col-5">
-               <img src="/img/tailor.jpg" class="img-fluid rounded-3 w-100 object-fit-cover"  style="height: 170px;" alt="Designer Profile">
+               <img src="/public/IMG/tailor.jpg" class="img-fluid rounded-3 w-100 object-fit-cover"  style="height: 170px;" alt="Designer Profile">
               </div>
               
               <div class="col-7">
                 <div class="d-flex align-items-center gap-2 mb-2 profile-text">
                   <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 58px; height: 58px; background-color: #e2fbce;">
-                    <img src="/img/mannequin.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                    <img src="/public/IMG/mannequin.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                     <i class="bi bi-scissors" style="color: #2d6a4f; font-size: 0.85rem;"></i>
                   </div>
                   <h5 class="fw-bold mb-0 fs-6">Designer</h5>
@@ -64,11 +65,11 @@
 
                 <div class="d-flex flex-column gap-2">
                    <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
-                       <img src="/img/hojas perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                       <img src="/public/IMG/hojas perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                        <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Showcase your designs</span>
                      </div>
                       <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
-                         <img src="/img/people community.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                         <img src="/public/img/people community.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                          <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Connect with buyers</span>
                        </div>
                      </div>
@@ -81,14 +82,14 @@
                  <div class="card border-0 shadow-sm rounded-4 w-100 profile-selectable-card cursor-pointer p-3" id="cardUser">
                   <div class="row g-3 align-items-center h-100">
                     <div class="col-5">
-                      <img src="/img/buyer.jpg" class="img-fluid rounded-3 w-100 object-fit-cover" style="height: 170px;" alt="User Profile">
+                      <img src="/public/IMG/buyer.jpg" class="img-fluid rounded-3 w-100 object-fit-cover" style="height: 170px;" alt="User Profile">
                    </div>
                    
                    <div class="col-7">
                       <div class="profile-text d-flex align-items-center gap-2 mb-2">
                           <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 58px; height: 58px; background-color: #e2fbce;">
                             <i class="bi bi-bag-heart" style="color: #185e3e; font-size: 0.85rem;"></i>
-                            <img src="/img/bolsa-perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                            <img src="/public/IMG/bolsa-perfil.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                          </div>
                           <h5 class="profile-text fw-bold mb-0 fs-6">User</h5>
                        </div>
@@ -99,12 +100,12 @@
                        
                        <div class="d-flex flex-column gap-2">
                           <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
-                           <img src="/img/etiqueta buyer.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                           <img src="/public/IMG/etiqueta buyer.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                            <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Amazing deals</span>
                          </div>
                          
                          <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-light">
-                           <img src="/img/clothes.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
+                           <img src="/public/IMG/clothes.png" alt="Designer Logo" class="rounded-circle object-fit-cover flex-shrink-0" style="width: 40px; height: 40px;">
                             <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Transform unique clothes</span>
                          </div>
                        </div>
@@ -115,7 +116,7 @@
               </div>
               
               <div class="mt-4 text-center">
-                 <a  href="/registro/signup.html" id="btnEnter" class="btn btn-enter text-white  px-5 py-2 fw-semibold shadow-sm transition-all text-decoration-none" style="background-color: #1b4332; opacity: 0.5; pointer-events: none; cursor: not-allowed;">
+                 <a  href="/public/signup.html" id="btnEnter" class="btn btn-enter text-white  px-5 py-2 fw-semibold shadow-sm transition-all text-decoration-none" style="background-color: #1b4332; opacity: 0.5; pointer-events: none; cursor: not-allowed;">
                    Enter <i class="bi bi-arrow-right ms-2"></i>
                  </a>
                </div>
