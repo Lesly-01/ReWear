@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const acceptRequestForm = document.getElementById('acceptRequestForm');
   const acceptRequestModalElem = document.getElementById('acceptRequestModal');
   const alertContainer = document.getElementById('alertContainer');
-  const declineBtn = document.getElementById('declineBtn'); // Botón de rechazar
+  const declineBtn = document.getElementById('declineBtn'); 
 
-  // Función auxiliar para mostrar la alerta en pantalla
+
   function showAlert(message, type = 'success') {
     if (!alertContainer) return;
 
@@ -20,40 +20,40 @@ document.addEventListener('DOMContentLoaded', function () {
     alertContainer.innerHTML = alertHTML;
   }
 
-  // 1. LÓGICA AL ACEPTAR LA SOLICITUD (Desde el Modal)
+
   if (acceptRequestForm) {
     acceptRequestForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Cerrar el modal de Bootstrap
+      
       const modalInstance = bootstrap.Modal.getInstance(acceptRequestModalElem);
       if (modalInstance) {
         modalInstance.hide();
       }
 
-      // Mostrar el mensaje de éxito requerido
+    
       showAlert('The request has been accepted, a notification has been sent to the user.', 'success');
 
-      // Opcional: Cambiar el estado visual de los botones
+    
       disableActionButtons();
     });
   }
 
-  // 2. LÓGICA AL RECHAZAR LA SOLICITUD
+  
   if (declineBtn) {
     declineBtn.addEventListener('click', function () {
       const confirmDecline = confirm('Are you sure you want to decline this request?');
       if (confirmDecline) {
-        // Mostrar el mensaje de rechazo requerido
+  
         showAlert('The request has been rejected, a notification has been sent to the user.', 'danger');
 
-        // Deshabilitar botones para evitar múltiples acciones
+        
         disableActionButtons();
       }
     });
   }
 
-  // Función para deshabilitar botones tras responder la solicitud
+
   function disableActionButtons() {
     const actionButtons = document.querySelectorAll('#requestCard button');
     actionButtons.forEach(btn => {
