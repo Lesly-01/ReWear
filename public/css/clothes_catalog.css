@@ -297,3 +297,9 @@ body{
   outline: none;
   font-size: 14px;
 }
+
+.form-range::-webkit-slider-runnable-track {
+  background-color: #c6e876; 
+  height: 0.5rem;
+  border-radius: 1rem;
+}
