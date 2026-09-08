@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const originalCard = document.getElementById('cardToClone');
 const cardsContainer = document.getElementById('cardsContainer');
 
-// 2. Arreglo con los datos para las 4 tarjetas nuevas
+
 const newProducts = [
   {
     id: 'product-2',
