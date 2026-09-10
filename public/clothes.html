@@ -174,14 +174,15 @@
       Receive custom request from clients, evaluate order details and turn custom requests into reality.
     </p>
 
+    
     <ul class="nav justify-content-center gap-3 align-items-center" id="catalogTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link custom-tab-banner active" id="clothes-tab" data-bs-toggle="pill" data-bs-target="#clothes-content" type="button" role="tab">
+        <button class="nav-link custom-tab-banner active" id="clothes-tab" data-bs-toggle="pill" data-bs-target="#clothes-content" type="button" role="tab" aria-controls="clothes-content" aria-selected="true">
           Customization request
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link custom-tab-banner" id="tailors-tab" data-bs-toggle="pill" data-bs-target="#tailors-content" type="button" role="tab">
+        <button class="nav-link custom-tab-banner" id="tailors-tab" data-bs-toggle="pill" data-bs-target="#tailors-content" type="button" role="tab" aria-controls="tailors-content" aria-selected="false">
           My active orders
         </button>
       </li>
@@ -197,39 +198,25 @@
 
 
 
-<div class="container my-0 px-3 px-md-4">
+<div class="container my-4">
   <div class="tab-content" id="catalogTabContent">
     
-  
-    <div class="tab-pane fade show active" id="clothes-content" role="tabpanel">
-      
+
+    <div class="tab-pane fade show active" id="clothes-content" role="tabpanel" aria-labelledby="clothes-tab">
+      <div class="row g-4" id="customization-requests-container">
+        <!-- tarjetas -->
+      </div>
+    </div>
+
     
-      <div class="row g-4" id="cardsContainer">
+    <div class="tab-pane fade" id="tailors-content" role="tabpanel" aria-labelledby="tailors-tab">
+      <div class="row g-4" id="orders-container">
+        <!-- tarjetas -->
+      </div>
+    </div>
 
-        <div class="container my-0 px-3 px-md-4">
-          <div class="tab-pane fade show active" id="clothes-content" role="tabpanel">
-            <div class="row g-4" id="cardsContainer">
-
-              <div class="container my-4">
-                <div class="row g-4" id="customization-requests-container">
-
-
-                </div>
-              </div>
-      
-
-
-      <div class="tab-pane fade" id="tailors-content" role="tabpanel">
-        <div class="nav nav-pills justify-content-center gap-2" id="designerCatalogTab" role="tablist">
-
-          <div class="container my-4">
-            <div class="row g-4" id="orders-container">
-    <!-- Las tarjetas se generarán aquí dinámicamente -->
   </div>
 </div>
-
-          
-  
 </main>
 
 
