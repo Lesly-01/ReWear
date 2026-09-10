@@ -1,0 +1,32 @@
+body{
+    background-color:#f8f4e6;
+}
+
+a, p, li, h1{
+    font-family:"Open sans", sans-serif;
+}
+
+.diseño-de-navbar{
+  background-color: #00403a;
+  height: 100px;
+}
+
+.navbar-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  color:#85ad65;
+}
+
+.navbar-nav .nav-link:hover {
+  font-size: 1.08rem; 
+  color: #A4F002;    
+  font-weight: bold; 
+}
+
+li{
+    color: #004434;
+}
+
+.logo_rewear{
+    width: 120px;
+}
