@@ -299,23 +299,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Manejo del envío del formulario dentro del modal
-  const form = document.getElementById('acceptRequestForm');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Cerrar modal automáticamente con la API de Bootstrap
-      const modalElement = document.getElementById('acceptRequestModal');
-      const modalInstance = bootstrap.Modal.getInstance(modalElement);
-      if (modalInstance) modalInstance.hide();
-      
-      form.reset();
-    });
-  }
-
-  // Renderizado inicial
-  renderActiveOrders(activeOrdersData);
   
+  // 1. Función de renderizado con los listeners integrados
+function renderActiveOrders(orders) {
+  const container = document.getElementById('orders-container');
+  if (!container) return;
 
-});
+  container.innerHTML = orders.map(order => `
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+        <div class="position-relative" style="height: 190px;">
+          <img src="${order.image}" class="w-100 h-100 object-fit-cover" alt="${order.title}">
+          
+          ${order.statusBg 
+            ? `<span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm" style="background-color: ${order.statusBg}; color: ${order.statusColor};">${order.status}</span>`
+            : `<span class="badge ${order.statusClass} position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm">${order.status}</span>`}
+          
+          <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 px-2 py-1 rounded-pill shadow-sm small">
+            ${order.date}
+          </span>
+        </div>
+
+        <div class="card-body p-3 d-flex flex-column">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-person-circle text-muted"></i>
+            <span class="fw-semibold text-dark small">${order.username}</span>
+          </div>
+
+          <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${order.title}</h6>
+          <p class="text-muted small mb-3 text-truncate-2" style="font-size: 0.82rem; line-height: 1.3;">
+            ${order.description}
+          </p>
+
+          <div class="p-2 rounded-3 mb-3 bg-light d-flex justify-content-between align-items-center">
+            <span class="text-muted" style="font-size: 0.75rem;">${order.priceLabel}</span>
+            <span class="fw-bold" style="color: #1b4332; font-size: 0.9rem;">${order.price}</span>
+          </div>
+
+          <button type="button" 
+                  class="btn btn-sm flex-fill rounded-3 fw-semibold text-white px-1 btn-update-status" 
+                  data-id="${order.id}" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#updateStatusModal" 
+                  style="background-color: #1b4332; font-size: 0.78rem;">
+            Update Status
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // editar el estado
+  container.querySelectorAll('.btn-update-status').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const orderId = e.currentTarget.getAttribute('data-id');
+      const selectedOrder = activeOrdersData.find(o => o.id == orderId);
+
+      if (selectedOrder) {
+        document.getElementById('orderIdInput').value = selectedOrder.id;
+        document.getElementById('modalTargetUser').textContent = selectedOrder.username;
+        document.getElementById('modalOrderTitle').textContent = selectedOrder.title;
+        document.getElementById('statusSelect').value = selectedOrder.status;
+      }
+    });
+  });
+}
+
+
+const updateStatusForm = document.getElementById('updateStatusForm');
+
+if (updateStatusForm) {
+  updateStatusForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const orderId = document.getElementById('orderIdInput').value;
+    const newStatus = document.getElementById('statusSelect').value;
+
+    const order = activeOrdersData.find(o => o.id == orderId);
+
+    if (order) {
+      order.status = newStatus;
+
+      
+      if (newStatus === 'Completed') {
+        order.statusClass = 'bg-success-subtle text-success-emphasis';
+        delete order.statusBg;
+      } else if (newStatus === 'In Review') {
+        order.statusClass = 'bg-info-subtle text-info-emphasis';
+        delete order.statusBg;
+      } else if (newStatus === 'In Progress') {
+        order.statusBg = '#c6e876';
+        order.statusColor = '#1b4332';
+      }
+
+      
+      renderActiveOrders(activeOrdersData);
+
+     
+      const modalElement = document.getElementById('updateStatusModal');
+      const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+      modalInstance.hide();
+
+      
+      const commentInput = document.getElementById('statusCommentInput');
+      if (commentInput) commentInput.value = '';
+    }
+  });
+}
+
+
+renderActiveOrders(activeOrdersData);
+})
