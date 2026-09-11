@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const requestsData = [
     {
-      image: "/public/IMG/request-1.jpg",
+      image: "/public/IMG/old jacket.jpg",
       user: "@sofia_m",
       status: "Open",
       category: "UPCYCLING",
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
     },
     {
-      image: "/public/IMG/request-2.jpg",
+      image: "/public/IMG/crop top jacket.jpg",
       user: "@carlos_dev",
       status: "Open",
       category: "ALTERATION",
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$40.00 USD"
     },
     {
-      image: "/public/IMG/request-3.jpg",
+      image: "/public/img/crop top jacket.jpg",
       status: "In Review",
       statusClass: "bg-info-subtle text-info-emphasis",
       date: "Due: Oct 15",
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$45.00 USD"
     },
     {
-      image: "/public/IMG/request-4.jpg",
+      image: "/public/IMG/reques",
       status: "Completed",
       statusClass: "bg-success-subtle text-success-emphasis",
       date: "Oct 01",
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeOrdersData = [
     {
       id: 1,
-      image: "/public/IMG/denim corset.png",
+      image: "/public/IMG/old jacket.jpg",
       status: "In Progress",
       statusBg: "#c6e876",
       statusColor: "#1b4332",
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 2,
-      image: "/public/IMG/request-3.jpg",
+      image: "/public/IMG/crop top jacket.jpg",
       status: "In Review",
       statusClass: "bg-info-subtle text-info-emphasis",
       date: "Due: Oct 15",
