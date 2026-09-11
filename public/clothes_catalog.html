@@ -24,16 +24,119 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                   <li class="nav-item"><a class="nav-link" href="/public/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/clothes.html">Clothes</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
-                </ul>
-            </div>
+  <ul class="navbar-nav ms-auto align-items-center gap-2">
+    <li class="nav-item"><a class="nav-link" href="/public/homepage.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/public/clothes.html">Clothes</a></li>
+    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
+    <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
+    <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
+    
+    <!-- Botón para abrir el Modal desplegable -->
+    <li class="nav-item ms-lg-2">
+      <button type="button" class="btn btn-success btn-sm rounded-pill px-3 fw-semibold shadow-sm d-flex align-items-center gap-1" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#createRequestModal">
+        <i class="bi bi-plus-circle-fill"></i> Create Request
+      </button>
+    </li>
+  </ul>
+</div>
         </div>
     </nav>
+
+    <!--Customization Request -->
+<div class="modal fade" id="createRequestModal" tabindex="-1" aria-labelledby="createRequestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 border-0 shadow-lg">
+      
+    
+      <div class="modal-header border-0 pb-0 pt-4 px-4">
+        <div>
+          <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-1 extra-small mb-1">Client Portal</span>
+          <h4 class="modal-title fw-bold" id="createRequestModalLabel" style="color: #1b4332;">New Customization Request</h4>
+        </div>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      
+      <form id="createRequestForm">
+        <div class="modal-body p-4">
+          <p class="text-muted extra-small mb-4">
+            Explain what you want to transform. Local tailors and artisans will view your request and send you their offers.
+          </p>
+
+          <div class="row g-3">
+           
+            <div class="col-12">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Request Title *</label>
+              <input type="text" id="requestTitleInput" class="form-control bg-light border-0 rounded-3 shadow-none extra-small p-2.5" placeholder="e.g. Embroidery on Vintage Denim Jacket" required>
+            </div>
+
+            
+            <div class="col-12 col-md-6">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Garment Type *</label>
+              <input type="text" id="garmentTypeInput" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g. Black Cotton Hoodie" required>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Customization Method *</label>
+              <select id="methodSelect" class="form-select bg-light border-0 rounded-3 shadow-none extra-small" required>
+                <option value="" selected disabled>Select a method...</option>
+                <option value="Custom Embroidery">Custom Embroidery</option>
+                <option value="Upcycling & Patchwork">Upcycling & Patchwork</option>
+                <option value="Garment Alteration">Garment Alteration</option>
+                <option value="Fabric Painting">Fabric Painting</option>
+              </select>
+            </div>
+
+            
+            <div class="col-12 col-md-6">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Your Garment Photo *</label>
+              <input type="file" id="garmentPhotoInput" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" accept="image/*" required>
+              <span class="text-muted extra-small d-block mt-1" style="font-size: 0.75rem;">Clear photo of the item you want to modify.</span>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Reference File / Inspiration (Optional)</label>
+              <input type="file" id="referencePhotoInput" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" accept="image/*,.pdf">
+              <span class="text-muted extra-small d-block mt-1" style="font-size: 0.75rem;">Design sketch, Pinterest image, or pattern.</span>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Detailed Instructions *</label>
+              <textarea id="instructionsInput" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" rows="3" placeholder="Describe placement, colors, thread type, measurements, or special requests..." required></textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label extra-small fw-semibold text-muted mb-1">Estimated Budget Range ($USD) *</label>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
+                    <input type="number" id="minBudgetInput" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Min (e.g. 20)" min="1" required>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
+                    <input type="number" id="maxBudgetInput" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Max (e.g. 40)" min="1" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="modal-footer border-0 pt-0 px-4 pb-4">
+          <button type="button" class="btn btn-light rounded-pill px-4 btn-sm fw-semibold text-muted" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold shadow-sm" style="background-color: #1b4332; border: none;">
+            Publish Request
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
  
     
     

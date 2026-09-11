@@ -306,7 +306,7 @@ const newTailors = [
 ];
 
 
-// LÓGICA DE CLONACIÓN PARA TAILORS
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const tailorCardToClone = document.getElementById('tailorCardToClone');
@@ -319,28 +319,27 @@ document.addEventListener('DOMContentLoaded', () => {
       
       clone.removeAttribute('id');
 
-      // 2. Mapear la imagen de perfil
+      
       const img = clone.querySelector('.card-img-top, img');
       if (img) {
         img.src = tailor.imageSrc;
         img.alt = `${tailor.name} Tailor`;
       }
 
-      // 3. Mapear Badges superiores (Ubicación y Rating)
+      
       const locationBadge = clone.querySelector('.tailor-location');
       if (locationBadge) locationBadge.textContent = tailor.location;
 
       const ratingBadge = clone.querySelector('.tailor-rating');
       if (ratingBadge) ratingBadge.textContent = tailor.rating;
 
-      // 4. Mapear Nombre y Título/Especialidad principal
       const nameEl = clone.querySelector('.card-title, .tailor-name');
       if (nameEl) nameEl.textContent = tailor.name;
 
       const titleEl = clone.querySelector('.tailor-title');
       if (titleEl) titleEl.textContent = tailor.title;
 
-      // 5. Mapear Especialidades / Tags dinámicos
+     
       const tagsContainer = clone.querySelector('.tailor-tags');
       if (tagsContainer) {
         tagsContainer.innerHTML = tailor.specialties
@@ -348,15 +347,35 @@ document.addEventListener('DOMContentLoaded', () => {
           .join(' ');
       }
 
-      // 6. Mapear Tiempo de respuesta y Enlace al Perfil
+      
       const timeEl = clone.querySelector('.tailor-time');
       if (timeEl) timeEl.textContent = tailor.responseTime;
 
       const profileLink = clone.querySelector('a.stretched-link, .tailor-link');
       if (profileLink) profileLink.href = tailor.link;
 
-      // 7. Inyectar la tarjeta clonada al contenedor
+      
       tailorsContainer.appendChild(clone);
     });
   }
 });
+
+const createRequestForm = document.getElementById('createRequestForm');
+  const createRequestModalElem = document.getElementById('createRequestModal');
+
+  if (createRequestForm) {
+    createRequestForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      
+      const modalInstance = bootstrap.Modal.getInstance(createRequestModalElem);
+      if (modalInstance) {
+        modalInstance.hide();
+      }
+
+      
+      showAlert('Your customization request has been published successfully!', 'success');
+
+      createRequestForm.reset();
+    });
+  }
