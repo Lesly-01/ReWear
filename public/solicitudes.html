@@ -125,7 +125,6 @@
   </div>
 
   <div id="alertContainer" class="mb-3">
-
     <div id="statusAlert" class="alert d-none align-items-center justify-content-between rounded-3 mb-4 shadow-sm" role="alert">
       <div class="d-flex align-items-center gap-2">
         <i id="alertIcon" class="bi fs-5"></i>
@@ -133,79 +132,79 @@
       </div>
       <button type="button" class="btn-close btn-close-white" onclick="hideAlert()" aria-label="Close"></button>
     </div>
+  </div>
 
-    
-    <div class="card designer-card card-rewear-border shadow-lg rounded-4 bg-white p-4 p-md-5 mx-auto" style="max-width: 850px;">
-      
-      <div class="mb-4 text-center">
-        <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-2 extra-small mb-2">Incoming Order</span>
-        <h3 class="fw-bold h3" style="color: #1b4332;">Customization request</h3>
-        <p class="text-muted extra-small mb-0">
-          <i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> Request made by: <strong style="color: #1b4332;">@username</strong>
-        </p>
-      </div>
-     
-      <div class="row g-4 mb-4">
-        <div class="col-12 col-md-6 d-flex flex-column gap-3">
+  <!-- Contenedor principal en formato GRID -->
+  <div class="row g-4" id="requestsContainer">
+
+    <!-- Tarjeta Molde (col-12 col-lg-6 para mostrar 2 por fila en pantallas grandes) -->
+    <div class="col-12 col-lg-6" id="requestCardToClone">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white card-hover request-card-item">
+        
+        <!-- Header Visual con Imagen y Badges sobrepuestos tipo catálogo -->
+        <div class="position-relative overflow-hidden">
+          <img src="/public/IMG/pantalon.jpg" class="card-img-top request-img" alt="Reference Image" style="height: 200px; object-fit: cover;">
           
-          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
-            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method</span>
-            <strong class="text-dark fs-6">Custom Embroidery</strong>
+          <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm extra-small fw-semibold request-user">
+            <i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @username
+          </span>
+          
+          <span class="badge position-absolute top-0 end-0 m-3 px-3 py-2 text-dark rounded-pill extra-small shadow-sm request-status" style="background-color: #c7f9cc !important;">
+            Open
+          </span>
+        </div>
+        
+        <!-- Cuerpo compacto de la tarjeta -->
+        <div class="card-body d-flex flex-column p-4">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-light text-success border border-success-subtle px-2 py-1 extra-small request-tag">EMBROIDERY</span>
+            <span class="text-muted extra-small"><i class="bi bi-clock me-1"></i>3 days left</span>
           </div>
 
-          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
-            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Placement</span>
-            <strong class="text-dark fs-6">Full Back (Centered)</strong>
-          </div>
+          <h5 class="card-title fw-bold text-dark fs-6 mb-2 request-title">Customization request</h5>
+          
+          <!-- Lista compacta de especificaciones -->
+          <div class="d-flex flex-column gap-2 mb-3">
+            <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
+              <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method & Placement</span>
+              <strong class="text-dark extra-small request-method">Custom Embroidery - Full Back</strong>
+            </div>
 
-          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
-            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment / Fabric</span>
-            <strong class="text-dark fs-6">Black Hoodie (100% Cotton)</strong>
-          </div>
+            <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
+              <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment</span>
+              <strong class="text-dark extra-small request-garment">Black Hoodie (100% Cotton)</strong>
+            </div>
 
-          <div class="bg-light-subtle rounded-3 p-3 border-start border-4" style="border-color: #1b4332 !important;">
-            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Price range</span>
-            <strong class="text-dark fs-6">$20-$40</strong>
-          </div>
-
-          <div class="bg-light-subtle rounded-3 p-3 border-start border-4 d-flex flex-column gap-2" style="border-color: #1b4332 !important;">
-            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Attached File</span>
-            <div class="d-flex align-items-center justify-content-between">
-              <span class="text-dark fw-bold extra-small text-truncate me-2">
-                <i class="bi bi-file-earmark-pdf text-danger me-1"></i>pantalon.jpg
-              </span>
-
-              <a href="/public/IMG/pantalon.jpg" download="pantalon.jpg" class="btn btn-sm rounded-pill px-3 py-1 extra-small fw-semibold text-white" style="background-color: #146443;">
-                <i class="bi bi-download me-1"></i>Download
-              </a>
+            <div class="bg-light-subtle rounded-3 p-3 border border-light-subtle">
+              <span class="d-block text-muted extra-small fw-semibold mb-1">Instructions:</span>
+              <p class="text-secondary extra-small mb-0 request-instructions" style="line-height: 1.4; font-size: 0.8rem;">
+                Please use metallic gold thread for borders. Scale matches 25cm in width as specified.
+              </p>
             </div>
           </div>
-        </div>
 
-        <div class="col-12 col-md-6">
-          <div class="bg-light-subtle rounded-3 p-4 border border-light-subtle h-100 d-flex flex-column">
-            <h6 class="fw-semibold text-dark extra-small mb-2">Design instructions:</h6>
-            <p class="text-secondary extra-small mb-0 flex-grow-1" style="line-height: 1.6; font-size: 0.85rem;">
-              Please use metallic gold thread for the borders. Ensure the embroidery scale matches exactly 25cm in width as specified in the client draft.
-            </p>
+          <!-- Footer con rango de precio y botones de acción -->
+          <div class="mt-auto pt-3 d-flex align-items-center justify-content-between border-top">
+            <div>
+              <span class="text-muted extra-small d-block">Price range</span>
+              <strong class="fs-6 request-price" style="color: #1b4332;">$20 - $40</strong>
+            </div>
+
+            <div class="d-flex gap-2 action-buttons">
+              <button type="button" class="btn btn-outline-danger rounded-pill px-3 btn-sm extra-small fw-semibold decline-btn">
+                Decline
+              </button>
+              <button type="button" class="btn btn-success rounded-pill px-3 btn-sm extra-small fw-semibold shadow-sm accept-btn" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
+                Apply / Review
+              </button>
+            </div>
           </div>
+
         </div>
 
       </div>
-
-      <div class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top border-light-subtle">
-        
-        <button type="button" id="declineBtn" class="btn btn-outline-danger rounded-pill px-4 btn-sm fw-semibold">
-          Decline
-        </button>
-        
-        
-        <button type="button" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold shadow-sm" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
-          Accept Request
-        </button>
-      </div>
-
     </div>
+
   </div>
 </main>
 
