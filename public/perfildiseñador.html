@@ -155,7 +155,9 @@
       
       <div class="modal-header border-bottom-0 pb-0">
         <h5 class="modal-title fw-bold text-dark" id="editProfileModalLabel">Edit Designer Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button id="editProfileBtn" class="btn btn-outline-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+          Edit Profile
+        </button>
       </div>
 
       <div class="modal-body p-4">
@@ -234,100 +236,122 @@
       </div>
     </div>
 
+
+
+
+
     
-    <div class="row g-4" id="recent-orders-section">
+    
+   
+<div class="row g-4" id="recent-orders-section">
+
+
+  <div class="col-12 col-lg-6">
+    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
       
-  
-      <div class="col-12 col-lg-6">
-        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
-          <h6 class="fw-bold text-dark mb-3">My designs</h6>
-          <div class="row g-3">
-            <div class="col-6 col-sm-3">
-              <div class="rounded-3 bg-light p-2 text-center">
-                
-                <img src="/public/IMG/denim corset.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
-                <span class="d-block text-truncate extra-small fw-semibold">Denim corset...</span>
-                <span class="text-success extra-small fw-bold">$30</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="rounded-3 bg-light p-2 text-center">
-                <img src="/public/IMG/tarjeta img.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
-                <span class="d-block text-truncate extra-small fw-semibold">Stawberry painting...</span>
-                <span class="text-success extra-small fw-bold">$25</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="rounded-3 bg-light p-2 text-center">
-                <img src="/public/IMG/Patched jeans.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
-                <span class="d-block text-truncate extra-small fw-semibold">Patched jeans...</span>
-                <span class="text-success extra-small fw-bold">$20</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="rounded-3 bg-light p-2 text-center">
-                <img src="/public/IMG/pantalon.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Floral Denim Jacket">
-                <span class="d-block text-truncate extra-small fw-semibold">Jeans design...</span>
-                <span class="text-success extra-small fw-bold">$35</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold text-dark mb-0">My designs</h6>
+        <button type="button" class="btn btn-sm rounded-pill px-2.5 py-1 extra-small fw-semibold text-white" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#newPostModal">
+          <i class="bi bi-plus-lg"></i> Add Post
+        </button>
       </div>
 
       
-      <div class="col-12 col-lg-6">
-        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="fw-bold text-dark mb-0">Recent Orders & Requests</h6>
-            <span class="badge bg-danger rounded-pill px-2 py-1 extra-small">1 Pending Request</span>
-          </div>
-
-          <div class="d-flex flex-column gap-2">
-          
-
-            <a href="/public/solicitudes.html" class="p-2.5 rounded-3 bg-light border-start border-4 border-warning d-flex align-items-center justify-content-between text-decoration-none">
-              <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle bg-warning-subtle text-warning p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
-                  <i class="bi bi-exclamation-circle-fill"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-0 text-dark extra-small">Custom Hoodie Request</h6>
-                  <span class="text-muted extra-small">From @username • June 10, 2026</span>
-                </div>
-              </div>
-              <span class="badge badge-pending rounded-pill px-3 py-1.5 extra-small fw-semibold">Review</span>
-            </a>
-
-
-            <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center gap-3">
-                <img src="/public/IMG/totee bag.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
-                <div>
-                  <h6 class="fw-bold mb-0 text-dark extra-small">Botanical Tote bag</h6>
-                  <span class="text-muted extra-small">Order #124 • May 10, 2026</span>
-                </div>
-              </div>
-              <span class="badge badge-in-progress rounded-pill px-3 py-1.5 extra-small fw-semibold">In progress</span>
+      <div class="row g-3" id="portfolioShowcaseContainer">
+        
+        <div class="col-6 col-sm-3">
+          <div class="rounded-3 bg-light p-2 text-center h-100 d-flex flex-column justify-content-between">
+            <img src="/public/IMG/denim corset.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Denim corset">
+            <div>
+              <span class="d-block text-truncate extra-small fw-semibold text-dark">Denim corset</span>
+              <span class="text-success extra-small fw-bold">$30</span>
             </div>
-
-
-            <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center gap-3">
-                <img src="/public/IMG/floral jacket.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px ; object-fit: cover;">
-                <div>
-                  <h6 class="fw-bold mb-0 text-dark extra-small">Floral Denim Jacket</h6>
-                  <span class="text-muted extra-small">Order #125 • May 28, 2026</span>
-                </div>
-              </div>
-              <span class="badge badge-completed rounded-pill px-3 py-1.5 extra-small fw-semibold">Completed</span>
-            </div>
-
           </div>
         </div>
-      </div>
 
+        <div class="col-6 col-sm-3">
+          <div class="rounded-3 bg-light p-2 text-center h-100 d-flex flex-column justify-content-between">
+            <img src="/public/IMG/tarjeta img.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Strawberry painting">
+            <div>
+              <span class="d-block text-truncate extra-small fw-semibold text-dark">Strawberry...</span>
+              <span class="text-success extra-small fw-bold">$25</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="rounded-3 bg-light p-2 text-center h-100 d-flex flex-column justify-content-between">
+            <img src="/public/IMG/Patched jeans.png" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Patched jeans">
+            <div>
+              <span class="d-block text-truncate extra-small fw-semibold text-dark">Patched jeans</span>
+              <span class="text-success extra-small fw-bold">$20</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <div class="rounded-3 bg-light p-2 text-center h-100 d-flex flex-column justify-content-between">
+            <img src="/public/IMG/pantalon.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width: 100%; object-fit: cover;" alt="Jeans design">
+            <div>
+              <span class="d-block text-truncate extra-small fw-semibold text-dark">Jeans design</span>
+              <span class="text-success extra-small fw-bold">$35</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
+
+  
+  <div class="col-12 col-lg-6">
+    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold text-dark mb-0">Recent Orders & Requests</h6>
+        <span class="badge bg-danger rounded-pill px-2 py-1 extra-small">1 Pending Request</span>
+      </div>
+
+      <div class="d-flex flex-column gap-2">
+        <a href="/public/solicitudes.html" class="p-2.5 rounded-3 bg-light border-start border-4 border-warning d-flex align-items-center justify-content-between text-decoration-none">
+          <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle bg-warning-subtle text-warning p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+              <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0 text-dark extra-small">Custom Hoodie Request</h6>
+              <span class="text-muted extra-small">From @username • June 10, 2026</span>
+            </div>
+          </div>
+          <span class="badge badge-pending rounded-pill px-3 py-1.5 extra-small fw-semibold">Review</span>
+        </a>
+
+        <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-3">
+            <img src="/public/IMG/totee bag.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px; object-fit: cover;">
+            <div>
+              <h6 class="fw-bold mb-0 text-dark extra-small">Botanical Tote bag</h6>
+              <span class="text-muted extra-small">Order #124 • May 10, 2026</span>
+            </div>
+          </div>
+          <span class="badge badge-in-progress rounded-pill px-3 py-1.5 extra-small fw-semibold">In progress</span>
+        </div>
+
+        <div class="p-2.5 rounded-3 d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-3">
+            <img src="/public/IMG/floral jacket.jpg" class="img-fluid rounded-3 mb-2" style="height: 80px; width:80px; object-fit: cover;">
+            <div>
+              <h6 class="fw-bold mb-0 text-dark extra-small">Floral Denim Jacket</h6>
+              <span class="text-muted extra-small">Order #125 • May 28, 2026</span>
+            </div>
+          </div>
+          <span class="badge badge-completed rounded-pill px-3 py-1.5 extra-small fw-semibold">Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   </main>
 
@@ -386,6 +410,9 @@
   </div>
 </footer>
 
+
+
+
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 border-0 shadow">
@@ -429,7 +456,9 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/public/js/perfil-diseñador.js"></script>
 
  
 </body>

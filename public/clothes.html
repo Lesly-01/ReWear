@@ -30,6 +30,10 @@
                    <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
                    <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
+                   <li class="nav-item ms-lg-2">
+                    <button type="button" class="btn btn-success btn-sm rounded-pill px-3 fw-semibold shadow-sm d-flex align-items-center gap-1" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#newPostModal"><i class="bi bi-plus-circle-fill"></i> Add Portfolio Project
+                    </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -186,12 +190,6 @@
           My active orders
         </button>
       </li>
-
-      <li class="nav-item">
-        <button id="btnAddDesign" class="btn btn-rewear-action rounded-3 px-3 fw-semibold d-none" data-bs-toggle="modal" data-bs-target="#newPostModal" style="background-color: #1b4332; color: #ffffff;">
-          <i class="bi bi-plus-circle me-1"></i> Add new design
-        </button>
-      </li>
     </ul>
   </div>
 </section>
@@ -276,66 +274,78 @@
 
 
 
-<div class="modal fade" id="newPostModal" tabindex="-1" aria-hidden="true">
+
+<!-- Add Portfolio Project -->
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 rounded-4 shadow">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      
       
       <div class="modal-header border-0 pb-0 px-4 pt-4">
-        <h5 class="modal-title fw-bold text-dark fs-5">Create New Post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div>
+          <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-1 extra-small mb-1">Designer Showcase</span>
+          <h4 class="modal-title fw-bold" id="newPostModalLabel" style="color: #1b4332;">Add Project to Portfolio</h4>
+        </div>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
+      
       <div class="modal-body p-4">
         <form id="createPostForm">
           <div class="row g-3">
             
-            <!-- Imagen-->
+           
             <div class="col-12 col-md-5">
-              <label class="form-label extra-small fw-semibold text-muted">Image Path or URL</label>
-              <input type="text" id="postImg" class="form-control rounded-3" placeholder="/img/denim corset.png" required>
-              <div class="mt-2 text-center p-3 border rounded-3 bg-light">
-                <i class="bi bi-image text-muted fs-3"></i>
-                <p class="extra-small text-muted mb-0">Preview image path</p>
+              <label class="form-label extra-small fw-semibold text-muted">Image File or URL *</label>
+              <input type="text" id="postImg" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="/public/IMG/denim_corset.png" required>
+              <div class="mt-3 text-center p-4 border rounded-3 bg-light d-flex flex-column align-items-center justify-content-center">
+                <i class="bi bi-image text-muted fs-2 mb-1"></i>
+                <p class="extra-small text-muted mb-0">Project Image Preview</p>
               </div>
             </div>
 
-          
+            
             <div class="col-12 col-md-7">
               
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Post tile</label>
-                <input type="text" id="postTitle" class="form-control rounded-3" placeholder="e.g., Denim patchwork corset" required>
+                <label class="form-label extra-small fw-semibold text-muted">Project / Design Title *</label>
+                <input type="text" id="postTitle" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g., Hand-embroidered Denim Corset" required>
               </div>
 
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Category or garment Style (Tags)</label>
-                <input type="text" id="postCategory" class="form-control rounded-3" placeholder="e.g., Corset, Contemporary Craft, Y2K" required>
+                <label class="form-label extra-small fw-semibold text-muted">Category / Techniques Used (Tags) *</label>
+                <input type="text" id="postCategory" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g., UPCYCLING, Hand Embroidery, Y2K" required>
               </div>
 
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Price range ($USD)</label>
+                <label class="form-label extra-small fw-semibold text-muted">Estimated Starting Price Range ($USD) *</label>
                 <div class="input-group">
-                  <input type="text" id="postMinPrice" class="form-control rounded-3" placeholder="($) Min" required>
-                  <span class="input-group-text bg-transparent border-0">-</span>
-                  <input type="text" id="postMaxPrice" class="form-control rounded-3" placeholder="($) Max" required>
+                  <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
+                  <input type="number" id="postMinPrice" class="form-control bg-light border-0 shadow-none extra-small" placeholder="Min (e.g. 35)" min="1" required>
+                  <span class="input-group-text bg-light border-0 text-muted extra-small">-</span>
+                  <span class="input-group-text bg-light border-0 text-muted extra-small">$</span>
+                  <input type="number" id="postMaxPrice" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Max (e.g. 60)" min="1" required>
                 </div>
               </div>
 
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Description of the garment or design</label>
-                <textarea id="postDescription" class="form-control rounded-3" rows="3" placeholder="Describe the materials, upcycling process, and details..." required></textarea>
+                <label class="form-label extra-small fw-semibold text-muted">Garment & Process Description *</label>
+                <textarea id="postDescription" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" rows="3" placeholder="Describe materials upcycled, technique applied, estimated production time..." required></textarea>
               </div>
 
             </div>
           </div>
 
+          
           <div class="mt-4 text-end border-top pt-3">
-            <button type="button" class="btn btn-light rounded-3 px-4 me-2 fw-semibold" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-success rounded-3 px-4 fw-semibold" style="background-color: #1b4332; border: none;">Publish post</button>
+            <button type="button" class="btn btn-light rounded-pill px-4 me-2 btn-sm fw-semibold text-muted" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4 btn-sm fw-semibold shadow-sm" style="background-color: #1b4332; border: none;">
+              Publish to Portfolio
+            </button>
           </div>
         </form>
       </div>
@@ -343,6 +353,7 @@
     </div>
   </div>
 </div>
+
 
 
 <!--Update Status -->
