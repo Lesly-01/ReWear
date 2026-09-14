@@ -1,19 +1,29 @@
-// Obtener el rol de los parámetros de la URL
-const urlParams = new URLSearchParams(window.location.search);
-const selectedRole = urlParams.get('role'); // Devuelve "diseñador" o "comprador"
+function mostrarMensaje(mensaje, tipo) {
+    const alertBox = document.getElementById("alertMessage");
+    if (alertBox) {
+        alertBox.className = `alert alert-${tipo} w-100`;
+        alertBox.textContent = mensaje;
+        alertBox.classList.remove("d-none");
+    }
+}
 
 async function registrarUsuario(event) {
     event.preventDefault();
 
-    const alertBox = document.getElementById("alertMessage");
-    alertBox.classList.add("d-none");
+    // 1. Obtener el rol directamente adentro para evitar problemas de inicialización
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedRole = urlParams.get('role'); // Devuelve "diseñador" o "comprador"
 
-    // Si el usuario intentó entrar a signup.html sin pasar por la selección de perfil
+    const alertBox = document.getElementById("alertMessage");
+    if (alertBox) alertBox.classList.add("d-none");
+
+    // 2. Validar que la URL traiga un rol válido
     if (!selectedRole || (selectedRole !== 'comprador' && selectedRole !== 'diseñador')) {
         mostrarMensaje("Por favor, selecciona primero tu perfil.", "danger");
         return;
     }
 
+    // 3. Capturar valores de los campos
     const email = document.getElementById("email").value.trim();
     const username = document.getElementById("username").value.trim();
     const phone = document.getElementById("phone").value.trim();
@@ -31,7 +41,7 @@ async function registrarUsuario(event) {
         phone: phone,
         password: password,
         confirm_password: confirmPassword,
-        role: selectedRole // Enviamos el rol capturado de la URL
+        role: selectedRole
     };
 
     try {
@@ -41,8 +51,6 @@ async function registrarUsuario(event) {
             body: JSON.stringify(data)
         });
 
-        
-
         const result = await response.json();
 
         if (result.success) {
@@ -50,9 +58,9 @@ async function registrarUsuario(event) {
             
             setTimeout(() => {
                 if (result.role === "comprador") {
-                    window.location.href = "/public/clothes_catalog.html";
+                    window.location.href = "clothes_catalog.html";
                 } else if (result.role === "diseñador") {
-                    window.location.href = "/public/clothes.html";
+                    window.location.href = "clothes.html";
                 }
             }, 1500);
         } else {
@@ -60,6 +68,6 @@ async function registrarUsuario(event) {
         }
     } catch (error) {
         mostrarMensaje("Ocurrió un error al procesar la solicitud.", "danger");
-        console.error(error);
+        console.error("Error en Fetch:", error);
     }
 }

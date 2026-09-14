@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "Base de datos rewear"; // Asegúrate de colocar el nombre exacto de tu BD en Laragon
+    private $db_name = "rewear";
     private $username = "root";
     private $password = ""; // En Laragon la contraseña por defecto de root suele estar vacía
     public $conn;

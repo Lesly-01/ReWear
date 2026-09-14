@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const requestsData = [
     {
-      image: "/public/IMG/old jacket.jpg",
+      image: "IMG/old jacket.jpg",
       user: "@sofia_m",
       status: "Open",
       category: "UPCYCLING",
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
     },
     {
-      image: "/public/IMG/crop top jacket.jpg",
+      image: "IMG/crop top jacket.jpg",
       user: "@carlos_dev",
       status: "Open",
       category: "ALTERATION",
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     },
     {
-      image: "/public/IMG/request-3.jpg",
+      image: "IMG/request-3.jpg",
       user: "@ana_style",
       status: "Open",
       category: "EMBROIDERY",
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link: "/public/solicitudes.html?id=1"
     },
     {
-      image: "/public/IMG/request-4.jpg",
+      image: "IMG/request-4.jpg",
       user: "@luis_design",
       status: "Open",
       category: "CUSTOM FIT",
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const activeOrdersData = [
     {
-      image: "/public/IMG/denim corset.png",
+      image: "IMG/denim corset.png",
       status: "In Progress",
       statusBg: "#c6e876",
       statusColor: "#1b4332",
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$40.00 USD"
     },
     {
-      image: "/public/img/crop top jacket.jpg",
+      image: "IMG/crop top jacket.jpg",
       status: "In Review",
       statusClass: "bg-info-subtle text-info-emphasis",
       date: "Due: Oct 15",
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: "$45.00 USD"
     },
     {
-      image: "/public/IMG/reques",
+      image: "IMG/reques",
       status: "Completed",
       statusClass: "bg-success-subtle text-success-emphasis",
       date: "Oct 01",
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeOrdersData = [
     {
       id: 1,
-      image: "/public/IMG/old jacket.jpg",
+      image: "IMG/old jacket.jpg",
       status: "In Progress",
       statusBg: "#c6e876",
       statusColor: "#1b4332",
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 2,
-      image: "/public/IMG/crop top jacket.jpg",
+      image: "IMG/crop top jacket.jpg",
       status: "In Review",
       statusClass: "bg-info-subtle text-info-emphasis",
       date: "Due: Oct 15",
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 3,
-      image: "/public/IMG/request-4.jpg",
+      image: "IMG/request-4.jpg",
       status: "Completed",
       statusClass: "bg-success-subtle text-success-emphasis",
       date: "Oct 01",

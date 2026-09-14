@@ -84,7 +84,7 @@ try {
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
     // Consulta de inserción (mapeando a las columnas de tu base de datos)
-    $insertQuery = "INSERT INTO usuarios (nombre, correo, password_hash, rol, Teléfono) 
+    $insertQuery = "INSERT INTO usuarios (nombre, correo, password_hash, rol, telefono) 
                     VALUES (:nombre, :correo, :password_hash, :rol, :telefono)";
     
     $stmtInsert = $db->prepare($insertQuery);
