@@ -519,6 +519,13 @@
   </div>
 </div>
 
+
+<script src="js/auth_guard.js"></script>
+<script>
+    // Solo permite el acceso a usuarios con rol 'comprador'
+    verificarAcceso(['comprador']);
+</script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     
@@ -570,6 +577,9 @@
     }
   });
 </script>
+
+
+
 <script src="/public/js/icono_clothes_catalog.js"></script>
 </body>
 </html>
