@@ -31,7 +31,7 @@ $role = isset($input['role']) ? trim($input['role']) : '';
 if (empty($email) || empty($username) || empty($phone) || empty($password) || empty($confirm_password) || empty($role)) {
     echo json_encode([
         "success" => false,
-        "message" => "Todos los campos son obligatorios."
+        "message" => "All fields are required."
     ]);
     exit;
 }
@@ -39,7 +39,7 @@ if (empty($email) || empty($username) || empty($phone) || empty($password) || em
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode([
         "success" => false,
-        "message" => "El formato del correo electrónico no es válido."
+        "message" => "The email format is invalid."
     ]);
     exit;
 }
@@ -47,7 +47,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if ($password !== $confirm_password) {
     echo json_encode([
         "success" => false,
-        "message" => "Las contraseñas no coinciden."
+        "message" => "Passwords do not match."
     ]);
     exit;
 }
@@ -56,7 +56,7 @@ $roles_permitidos = ['comprador', 'diseñador'];
 if (!in_array($role, $roles_permitidos)) {
     echo json_encode([
         "success" => false,
-        "message" => "El rol seleccionado no es válido."
+        "message" => "The selected role is invalid."
     ]);
     exit;
 }
@@ -74,7 +74,7 @@ try {
     if ($stmtCheck->rowCount() > 0) {
         echo json_encode([
             "success" => false,
-            "message" => "El correo electrónico ya se encuentra registrado."
+            "message" => "User or email already registered."
         ]);
         exit;
     }
@@ -109,7 +109,7 @@ try {
 
     echo json_encode([
         "success" => true,
-        "message" => "Usuario registrado exitosamente.",
+        "message" => "User registered successfully.",
         "role" => $role
     ]);
 

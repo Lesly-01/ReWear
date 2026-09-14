@@ -19,7 +19,7 @@ async function registrarUsuario(event) {
 
     // 2. Validar que la URL traiga un rol válido
     if (!selectedRole || (selectedRole !== 'comprador' && selectedRole !== 'diseñador')) {
-        mostrarMensaje("Por favor, selecciona primero tu perfil.", "danger");
+        mostrarMensaje("Please select your profile first.", "danger");
         return;
     }
 
@@ -31,7 +31,7 @@ async function registrarUsuario(event) {
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
-        mostrarMensaje("Las contraseñas no coinciden.", "danger");
+        mostrarMensaje("Passwords do not match.", "danger");
         return;
     }
 
@@ -67,7 +67,7 @@ async function registrarUsuario(event) {
             mostrarMensaje(result.message, "danger");
         }
     } catch (error) {
-        mostrarMensaje("Ocurrió un error al procesar la solicitud.", "danger");
+        mostrarMensaje("An error occurred while processing the request.", "danger");
         console.error("Error en Fetch:", error);
     }
 }
