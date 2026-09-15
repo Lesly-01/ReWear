@@ -31,9 +31,17 @@ async function iniciarSesion(event) {
         const result = await response.json();
 
         if (result.success) {
+            // 1. GUARDAR DATOS AQUÍ (Antes del setTimeout y de la redirección)
+            // Guardamos el objeto que devuelve tu backend o el nombre ingresado
+            const usuarioSesion = {
+                username: result.username || identifier, // Usa la respuesta del servidor o el identificador ingresado
+                role: result.role
+            };
+            localStorage.setItem('usuarioSesion', JSON.stringify(usuarioSesion));
+
             mostrarMensaje(result.message, "success");
 
-            // Redirección basada en el rol del usuario guardado en HeidiSQL
+            // 2. Redirección basada en el rol
             setTimeout(() => {
                 if (result.role === "comprador") {
                     window.location.href = "clothes_catalog.html";

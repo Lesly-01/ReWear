@@ -1,6 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // 1. Ocultar notificación solo al interactuar con el menú de notificaciones
+  // Declara la variable en el scope principal de DOMContentLoaded
+  let usuarioGuardado = null;
+
+  try {
+    usuarioGuardado = JSON.parse(localStorage.getItem('usuarioSesion')) || JSON.parse(localStorage.getItem('usuariosesion'));
+    console.log("Datos de sesión recuperados:", usuarioGuardado);
+  } catch (e) {
+    console.error("Error al parsear localStorage:", e);
+  }
+
+  // 0. Actualizar el elemento de la interfaz con el username
+  if (usuarioGuardado && usuarioGuardado.username) {
+    let nombreMostrar = usuarioGuardado.username;
+    
+    // Si inicia sesión con email, toma lo que está antes del @
+    if (nombreMostrar.includes('@') && !nombreMostrar.startsWith('@')) {
+      nombreMostrar = nombreMostrar.split('@')[0];
+    }
+
+    const usernameFormateado = nombreMostrar.startsWith('@') 
+      ? nombreMostrar 
+      : `@${nombreMostrar}`;
+
+    const usernameHeader = document.getElementById('profileUsername') || document.querySelector('h5');
+    
+    if (usernameHeader) {
+      usernameHeader.textContent = usernameFormateado;
+      console.log("Nombre actualizado con éxito en el DOM a:", usernameFormateado);
+    } else {
+      console.warn("No se encontró el elemento con id='profileUsername' o ningún <h5> en el HTML.");
+    }
+  } else {
+    console.warn("No hay datos de 'usuarioSesion' en el localStorage.");
+  }
+
+  // 1. Ocultar notificación
   const notificationItems = document.querySelectorAll('#notificationsDropdown + .dropdown-menu .dropdown-item');
   notificationItems.forEach(item => {
     item.addEventListener('click', function () {
@@ -11,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 2. Lógica para editar el perfil del diseñador (Username, Bio, Specialty)
+  // 2. Editar perfil
   const editProfileForm = document.getElementById('editProfileForm');
   const editProfileModalElem = document.getElementById('editProfileModal');
 
@@ -19,13 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
     editProfileForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Capturar los valores del formulario
-      const newUsername = editProfileForm.querySelector('input[type="text"]').value;
-      const newBio = editProfileForm.querySelector('textarea').value;
-      const newSpecialty = editProfileForm.querySelectorAll('input[type="text"]')[1].value;
+      const newUsername = editProfileForm.querySelector('input[type="text"]')?.value || '';
+      const newBio = editProfileForm.querySelector('textarea')?.value || '';
+      const inputsText = editProfileForm.querySelectorAll('input[type="text"]');
+      const newSpecialty = inputsText.length > 1 ? inputsText[1].value : '';
 
-      // Actualizar el DOM en la tarjeta principal
-      const usernameHeader = document.querySelector('h5.fw-bold.text-dark');
+      const usernameHeader = document.getElementById('profileUsername') || document.querySelector('h5');
       const specialtyBadge = document.querySelector('.badge.rounded-pill.text-dark.border');
       const bioParagraph = document.querySelector('p.text-muted.extra-small');
 
@@ -33,7 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (specialtyBadge) specialtyBadge.textContent = newSpecialty;
       if (bioParagraph) bioParagraph.textContent = newBio;
 
-      // Cerrar el modal de bootstrap dinámicamente
+      // Actualizar localStorage dinámicamente
+      if (usuarioGuardado) {
+        usuarioGuardado.username = newUsername;
+        localStorage.setItem('usuarioSesion', JSON.stringify(usuarioGuardado));
+      }
+
       if (editProfileModalElem) {
         const modalInstance = bootstrap.Modal.getInstance(editProfileModalElem) || new bootstrap.Modal(editProfileModalElem);
         modalInstance.hide();
@@ -41,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 3. Crear nueva publicación en el portafolio
+  // 3. Crear nueva publicación
   const createPostForm = document.getElementById('createPostForm');
   const portfolioContainer = document.getElementById('portfolioShowcaseContainer');
   const newPostModalElem = document.getElementById('newPostModal');
