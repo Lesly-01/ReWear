@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. CUSTOMIZATION REQUESTS 
   
   const requestsData = [
     {
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Patchwork Denim Jacket Customization",
       description: "Looking to add light denim patchwork to the back and cuffs with an urban style.",
       budget: "$35.00 USD",
-      link: "/public/solicitudes.html?id=1"
+      link: "solicitudes.html?id=1"
       
       
     },
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Vintage Denim Crop Top",
       description: "Cropped fit and frayed hem alteration for a vintage denim shirt.",
       budget: "$28.00 USD",
-      link: "/public/solicitudes.html?id=1"
+      link: "solicitudes.html?id=1"
 
     },
     {
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Floral Corset Embroidery",
       description: "Custom floral design made with sustainable threads on an upcycled fabric corset.",
       budget: "$45.00 USD",
-      link: "/public/solicitudes.html?id=1"
+      link: "solicitudes.html?id=1"
     },
     {
       image: "IMG/request-4.jpg",
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Punk Patchwork Pants Modification",
       description: "Adding metallic zippers, studs, and recycled fabric patches to black denim.",
       budget: "$40.00 USD",
-      link: "/public/solicitudes.html?id=1"
+      link: "solicitudes.html?id=1"
     }
   ];
 

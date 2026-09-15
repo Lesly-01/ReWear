@@ -9,14 +9,16 @@ async function verificarAcceso(rolesPermitidos = []) {
             return null;
         }
 
+        const rolUsuario = data.user.rol; // 'comprador' o 'disenador'
+
         // 2. Validar restricción por rol si la página lo requiere
-        if (rolesPermitidos.length > 0 && !rolesPermitidos.includes(data.user.rol)) {
-            alert("Unauthorized access for your user role.");
+        if (rolesPermitidos.length > 0 && !rolesPermitidos.includes(rolUsuario)) {
+            alert("Acceso no autorizado para tu rol de usuario.");
             
-            // Redirigir a la vista correspondiente según su rol real
-            if (data.user.rol === "diseñador") {
+            // Redirigir a la vista correspondiente según su rol
+            if (rolUsuario === "disenador") {
                 window.location.href = "clothes.html";
-            } else if (data.user.rol === "comprador") {
+            } else if (rolUsuario === "comprador") {
                 window.location.href = "clothes_catalog.html";
             } else {
                 window.location.href = "homepage.html";
@@ -26,7 +28,7 @@ async function verificarAcceso(rolesPermitidos = []) {
 
         return data.user;
     } catch (error) {
-        console.error("Error verifying authentication:", error);
+        console.error("Error al verificar autenticación:", error);
         window.location.href = "login.html";
     }
 }

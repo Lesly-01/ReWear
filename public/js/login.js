@@ -37,7 +37,7 @@ async function iniciarSesion(event) {
             setTimeout(() => {
                 if (result.role === "comprador") {
                     window.location.href = "clothes_catalog.html";
-                } else if (result.role === "diseñador") {
+                } else if (result.role === "disenador") {
                     window.location.href = "clothes.html";
                 } else {
                     window.location.href = "homepage.html";

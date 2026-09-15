@@ -52,7 +52,7 @@ if ($password !== $confirm_password) {
     exit;
 }
 
-$roles_permitidos = ['comprador', 'diseñador'];
+$roles_permitidos = ['comprador', 'disenador'];
 if (!in_array($role, $roles_permitidos)) {
     echo json_encode([
         "success" => false,
@@ -97,8 +97,8 @@ try {
     $stmtInsert->execute();
     $id_usuario = $db->lastInsertId();
 
-    // Si el rol es diseñador, crear su perfil inicial
-    if ($role === 'diseñador') {
+    // Si el rol es disenador, crear su perfil inicial
+    if ($role === 'disenador') {
         $profileQuery = "INSERT INTO perfiles_disenador (id_usuario) VALUES (:id_usuario)";
         $stmtProfile = $db->prepare($profileQuery);
         $stmtProfile->bindParam(':id_usuario', $id_usuario);

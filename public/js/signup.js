@@ -12,13 +12,13 @@ async function registrarUsuario(event) {
 
     // 1. Obtener el rol directamente adentro para evitar problemas de inicialización
     const urlParams = new URLSearchParams(window.location.search);
-    const selectedRole = urlParams.get('role'); // Devuelve "diseñador" o "comprador"
+    const selectedRole = urlParams.get('role'); // Devuelve "disenador" o "comprador"
 
     const alertBox = document.getElementById("alertMessage");
     if (alertBox) alertBox.classList.add("d-none");
 
     // 2. Validar que la URL traiga un rol válido
-    if (!selectedRole || (selectedRole !== 'comprador' && selectedRole !== 'diseñador')) {
+    if (!selectedRole || (selectedRole !== 'comprador' && selectedRole !== 'disenador')) {
         mostrarMensaje("Please select your profile first.", "danger");
         return;
     }
@@ -59,7 +59,7 @@ async function registrarUsuario(event) {
             setTimeout(() => {
                 if (result.role === "comprador") {
                     window.location.href = "clothes_catalog.html";
-                } else if (result.role === "diseñador") {
+                } else if (result.role === "disenador") {
                     window.location.href = "clothes.html";
                 }
             }, 1500);

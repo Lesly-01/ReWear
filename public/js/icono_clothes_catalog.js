@@ -58,9 +58,9 @@ const newProducts = [
 
     seller: '@ana_dev',
 
-    imageSrc: '/public/img/jacket.png',
+    imageSrc: 'IMG/jacket.png',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 
@@ -73,9 +73,9 @@ const newProducts = [
 
     seller: '@carlos_m',
 
-    imageSrc: '/public/img/cargo jeans.jpg',
+    imageSrc: 'IMG/cargo jeans.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 
@@ -88,9 +88,9 @@ const newProducts = [
 
     seller: '@sofia_trend',
 
-    imageSrc: '/public/img/graphic tee.jpg',
+    imageSrc: 'IMG/graphic tee.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 
@@ -103,9 +103,9 @@ const newProducts = [
 
     seller: '@lucia_style',
 
-    imageSrc: '/public/img/hih waist skirt.jpg',
+    imageSrc: 'IMG/hih waist skirt.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 
@@ -118,9 +118,9 @@ const newProducts = [
 
     seller: '@Camila_style',
 
-    imageSrc: '/public/img/jeans.jpg',
+    imageSrc: 'IMG/jeans.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
   },
 
   {
@@ -132,9 +132,9 @@ const newProducts = [
 
     seller: '@lucia_style',
 
-    imageSrc: '/public/img/hoodie.jpg',
+    imageSrc: 'IMG/hoodie.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 
@@ -147,9 +147,9 @@ const newProducts = [
 
     seller: '@lucia_style',
 
-    imageSrc: '/public/img/top.jpg',
+    imageSrc: 'IMG/top.jpg',
 
-    link: '/public/publicaciones.html'
+    link: 'publicaciones.html'
 
   },
 ];
@@ -194,8 +194,8 @@ const tailorsList = [
     rating: '★ 4.8 (15)',
     responseTime: '< 2 hours',
     specialties: ['Streetwear', 'Parches', 'Chaquetas'],
-    imageSrc: '/public/IMG/chaqueta.jpg',
-    profileLink: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/chaqueta.jpg',
+    profileLink: 'perfildiseñador.html'
   },
   {
     id: 'tailor-3',
@@ -205,8 +205,8 @@ const tailorsList = [
     rating: '★ 5.0 (42)',
     responseTime: '< 30 mins',
     specialties: ['Goth', 'Pantalones', 'Custom'],
-    imageSrc: '/public/IMG/cargo jeans.jpg',
-    profileLink: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/cargo jeans.jpg',
+    profileLink: 'perfildiseñador.html'
   },
   {
     id: 'tailor-4',
@@ -216,8 +216,8 @@ const tailorsList = [
     rating: '★ 4.7 (19)',
     responseTime: '< 4 hours',
     specialties: ['Vestidos', 'Faldas', 'Ajustes'],
-    imageSrc: '/public/IMG/graphic tee.jpg',
-    profileLink: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/graphic tee.jpg',
+    profileLink: 'perfildiseñador.html'
   }
 ];
 
@@ -266,9 +266,7 @@ if (originalTailorCard && tailorsContainer) {
 }
 
 
-// =========================================================
-// ARRAY DE DATOS: LOCAL TAILORS & ARTISANS
-// =========================================================
+
 const newTailors = [
   {
     id: 'tailor-2',
@@ -278,8 +276,8 @@ const newTailors = [
     rating: '★ 4.8 (15)',
     responseTime: '< 2 hours',
     specialties: ['Streetwear', 'Parches', 'Chaquetas'],
-    imageSrc: '/public/IMG/diseñador foto perfil.jpg', // Ajusta según tu ruta de imágenes
-    link: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/diseñador foto perfil.jpg', // Ajusta según tu ruta de imágenes
+    link: 'perfildiseñador.html'
   },
   {
     id: 'tailor-3',
@@ -289,8 +287,8 @@ const newTailors = [
     rating: '★ 5.0 (42)',
     responseTime: '< 30 mins',
     specialties: ['Goth', 'Pantalones', 'Custom'],
-    imageSrc: '/public/IMG/diseñador foto perfil.jpg',
-    link: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/diseñador foto perfil.jpg',
+    link: 'perfildiseñador.html'
   },
   {
     id: 'tailor-4',
@@ -300,8 +298,8 @@ const newTailors = [
     rating: '★ 4.7 (19)',
     responseTime: '< 4 hours',
     specialties: ['Vestidos', 'Faldas', 'Ajustes'],
-    imageSrc: '/public/IMG/diseñador foto perfil.jpg',
-    link: '/public/perfildiseñador.html'
+    imageSrc: 'IMG/diseñador foto perfil.jpg',
+    link: 'perfildiseñador.html'
   }
 ];
 

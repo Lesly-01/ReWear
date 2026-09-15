@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardUser.classList.remove('selected');
       // Actualizamos el enlace apuntando al rol 'diseñador' que espera PHP/MySQL
       if (btnEnter) {
-        btnEnter.href = "signup.html?role=diseñador";
+        btnEnter.href = "signup.html?role=disenador";
       }
     } else if (role === 'user') {
       cardUser.classList.add('selected');
