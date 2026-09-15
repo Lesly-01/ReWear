@@ -32,3 +32,29 @@ async function verificarAcceso(rolesPermitidos = []) {
         window.location.href = "login.html";
     }
 }
+
+function irAMiPerfil() {
+    // Intenta leer 'usuarioSesion' o 'usuario' por si varía el nombre de la clave
+    const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
+    
+    if (!datosGuardados) {
+        console.warn('No se encontró ninguna sesión activa en localStorage.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const usuario = JSON.parse(datosGuardados);
+
+    // Lee la propiedad del rol sin importar si se llama 'rol', 'role' o 'tipo'
+    const rol = (usuario.rol || usuario.role || usuario.tipo || '').toLowerCase();
+
+    // Redirección adaptada a variaciones del rol
+    if (rol === 'disenador' || rol === 'designer') {
+        window.location.href = 'perfil_disenador.html'; // Nombre exacto de tu HTML de diseñador
+    } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario') {
+        window.location.href = 'perfilusuario.html';    // Nombre exacto de tu HTML de comprador
+    } else {
+        console.warn('Rol no reconocido:', rol);
+        window.location.href = 'login.html';
+    }
+}
