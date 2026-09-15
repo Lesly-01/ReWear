@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
+session_start();
 require_once("../config/conexion.php");
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -97,7 +98,8 @@ try {
     $stmtInsert->execute();
     $id_usuario = $db->lastInsertId();
 
-    // Si el rol es disenador, crear su perfil inicial
+    
+// Si el rol es disenador, crear su perfil inicial
     if ($role === 'disenador') {
         $profileQuery = "INSERT INTO perfiles_disenador (id_usuario) VALUES (:id_usuario)";
         $stmtProfile = $db->prepare($profileQuery);
@@ -105,12 +107,18 @@ try {
         $stmtProfile->execute();
     }
 
+    // Guardar variables de sesión al registrarse exitosamente
+    $_SESSION['id_usuario'] = $id_usuario;
+    $_SESSION['nombre']     = $username;
+    $_SESSION['correo']     = $email;
+    $_SESSION['rol']        = $role;
+
     $db->commit();
 
     echo json_encode([
         "success" => true,
         "message" => "User registered successfully.",
-        "role" => $role
+        "role"    => $role
     ]);
 
 } catch (PDOException $e) {
