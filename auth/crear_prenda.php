@@ -1,45 +1,54 @@
 <?php
-header("Content-Type: application/json");
-require_once "conexion.php";
+header('Content-Type: application/json');
+require_once 'conexion.php'; // Asegúrate de que el nombre de tu archivo de conexión sea el correcto
 
 session_start();
+$id_disenador = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 1;
 
-// Validar que se haya enviado por POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = trim($_POST['title'] ?? '');
+    $category = trim($_POST['category'] ?? '');
+    $min_price = floatval($_POST['min_price'] ?? 0);
+    $max_price = floatval($_POST['max_price'] ?? 0);
+    $description = trim($_POST['description'] ?? '');
+
+    // Manejo de la subida de imagen
+    $image_path = 'IMG/default.jpg';
     
-    // Obtener id del diseñador (de la sesión o enviado desde el cliente)
-    $id_disenador = $_SESSION['id_usuario'] ?? $_POST['id_disenador'] ?? 1; // 1 como valor por defecto de prueba
+    if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES['image_file']['tmp_name'];
+        $fileName = $_FILES['image_file']['name'];
+        $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-    $titulo = trim($_POST['postTitle'] ?? '');
-    $tecnicas = trim($_POST['postCategory'] ?? '');
-    $precio_minimo = floatval($_POST['postMinPrice'] ?? 0);
-    $precio_maximo = floatval($_POST['postMaxPrice'] ?? 0);
-    $descripcion = trim($_POST['postDescription'] ?? '');
-    $imagen_url = trim($_POST['postImg'] ?? '');
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+        if (in_array($fileExtension, $allowedExtensions)) {
+            $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+            $uploadFileDir = './uploads/';
 
-    // Validaciones básicas
-    if (empty($titulo) || empty($descripcion) || $precio_minimo <= 0) {
-        echo json_encode(["success" => false, "message" => "Por favor completa todos los campos requeridos."]);
-        exit;
+            if (!is_dir($uploadFileDir)) {
+                mkdir($uploadFileDir, 0755, true);
+            }
+
+            $dest_path = $uploadFileDir . $newFileName;
+            if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                $image_path = 'uploads/' . $newFileName;
+            }
+        }
     }
 
-    // Insertar en la tabla prendas_publicadas
-    $stmt = $conn->prepare("INSERT INTO prendas_publicadas (id_disenador, titulo, descripcion, precio_minimo, precio_maximo, tecnicas_usadas, imagen_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    
-    $stmt->bind_param("issddss", $id_disenador, $titulo, $descripcion, $precio_minimo, $precio_maximo, $tecnicas, $imagen_url);
+    try {
+        $stmt = $pdo->prepare("INSERT INTO prendas_portafolio (id_disenador, titulo, categoria, precio_minimo, precio_maximo, descripcion, imagen_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$id_disenador, $title, $category, $min_price, $max_price, $description, $image_path]);
 
-    if ($stmt->execute()) {
         echo json_encode([
-            "success" => true, 
-            "message" => "¡Proyecto publicado correctamente en tu portafolio!",
-            "id_prenda" => $stmt->insert_id
+            'success' => true,
+            'message' => '¡Proyecto publicado exitosamente en el portafolio!'
         ]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Error al guardar en la base de datos: " . $stmt->error]);
+    } catch (PDOException $e) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Error en la base de datos: ' . $e->getMessage()
+        ]);
     }
-
-    $stmt->close();
-} else {
-    echo json_encode(["success" => false, "message" => "Método no permitido."]);
 }
 ?>
