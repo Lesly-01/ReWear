@@ -1,183 +1,119 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    const favButtons = document.querySelectorAll('.btn-fav');
-    favButtons.forEach(button => {
-
-      const productId = button.getAttribute('data-product-id');
-
-      const isFav = localStorage.getItem(`fav_${productId}`) === 'true';
-
-      const icon = button.querySelector('i');
-
-      if (isFav) {
-
-        icon.classList.remove('bi-heart');
-
-        icon.classList.add('bi-heart-fill', 'text-danger');
-
-      }
-      button.addEventListener('click', function (e) {
-
-        e.stopPropagation();
-
-        const currentlyFav = icon.classList.contains('bi-heart-fill');
-
-        if (currentlyFav) {
-
-          icon.classList.remove('bi-heart-fill', 'text-danger');
-
-          icon.classList.add('bi-heart');
-
-          localStorage.setItem(`fav_${productId}`, 'false');
-
-        } else {
-          icon.classList.remove('bi-heart');
-
-          icon.classList.add('bi-heart-fill', 'text-danger');
-
-          localStorage.setItem(`fav_${productId}`, 'true');
-        }
-      });
-    });
-  });
-
-
-
-const originalCard = document.getElementById('cardToClone');
-
-const cardsContainer = document.getElementById('cardsContainer');
-
-const newProducts = [
-
-  {
-    id: 'product-2',
-
-    title: 'Embroidered mesh back denim jacket',
-
-    price: '$25.00',
-
-    seller: '@ana_dev',
-
-    imageSrc: 'IMG/jacket.png',
-
-    link: 'publicaciones.html'
-
-  },
-
-  {
-    id: 'product-3',
-
-    title: 'Punk patchwork pants',
-
-    price: '$30.00',
-
-    seller: '@carlos_m',
-
-    imageSrc: 'IMG/cargo jeans.jpg',
-
-    link: 'publicaciones.html'
-
-  },
-
-  {
-    id: 'product-4',
-
-    title: 'Custom Mall Goth Grid Shirt with Patchwork',
-
-    price: '$22.50',
-
-    seller: '@sofia_trend',
-
-    imageSrc: 'IMG/graphic tee.jpg',
-
-    link: 'publicaciones.html'
-
-  },
-
-  {
-    id: 'product-5',
-
-    title: 'High waist skirt',
-
-    price: '$18.00',
-
-    seller: '@lucia_style',
-
-    imageSrc: 'IMG/hih waist skirt.jpg',
-
-    link: 'publicaciones.html'
-
-  },
-
-{
-    id: 'product-6',
-
-    title: 'Upcycled Sashiko Boro Patchwork Denim Jeans.',
-
-    price: '$15.00',
-
-    seller: '@Camila_style',
-
-    imageSrc: 'IMG/jeans.jpg',
-
-    link: 'publicaciones.html'
-  },
-
-  {
-    id: 'product-7',
-
-    title: 'Vintage style jacket',
-
-    price: '$18.00',
-
-    seller: '@lucia_style',
-
-    imageSrc: 'IMG/hoodie.jpg',
-
-    link: 'publicaciones.html'
-
-  },
-
-  {
-    id: 'product-8',
-
-    title: 'Falda Jean Tiro Alto',
-
-    price: '$18.00',
-
-    seller: '@lucia_style',
-
-    imageSrc: 'IMG/top.jpg',
-
-    link: 'publicaciones.html'
-
-  },
-];
-
-newProducts.forEach((product) => {
-
-  const clone = originalCard.cloneNode(true);
-
-  clone.removeAttribute('id');
-
-
-  clone.querySelector('.product-img').src = product.imageSrc;
-
-  clone.querySelector('.product-img').alt = product.title;
-
-  clone.querySelector('.badge').textContent = product.seller;
-
-  clone.querySelector('.btn-fav').setAttribute('data-product-id', product.id);
-
-  clone.querySelector('.card-title').textContent = product.title;
-
-  clone.querySelector('strong').textContent = product.price;
-
-  clone.querySelector('.btn-rewear-action').href = product.link;
-
-  cardsContainer.appendChild(clone);
-
-});
+// document.addEventListener('DOMContentLoaded', () => {
+
+//     const favButtons = document.querySelectorAll('.btn-fav');
+//     favButtons.forEach(button => {
+
+//       const productId = button.getAttribute('data-product-id');
+//       const isFav = localStorage.getItem(`fav_${productId}`) === 'true';
+//       const icon = button.querySelector('i');
+
+//       if (isFav) {
+//         icon.classList.remove('bi-heart');
+//         icon.classList.add('bi-heart-fill', 'text-danger');
+//       }
+//       button.addEventListener('click', function (e) {
+//         e.stopPropagation();
+//         const currentlyFav = icon.classList.contains('bi-heart-fill');
+
+//         if (currentlyFav) {
+//           icon.classList.remove('bi-heart-fill', 'text-danger');
+//           icon.classList.add('bi-heart');
+//           localStorage.setItem(`fav_${productId}`, 'false');
+
+//         } else {
+//           icon.classList.remove('bi-heart');
+//           icon.classList.add('bi-heart-fill', 'text-danger');
+//           localStorage.setItem(`fav_${productId}`, 'true');
+//         }
+//       });
+//     });
+//   });
+
+
+
+// const originalCard = document.getElementById('cardToClone');
+// const cardsContainer = document.getElementById('cardsContainer');
+// const newProducts = [
+
+//   {
+//     id: 'product-2',
+//     title: 'Embroidered mesh back denim jacket',
+//     price: '$25.00',
+//     seller: '@ana_dev',
+//     imageSrc: 'IMG/jacket.png',
+//     link: 'publicaciones.html'
+//   },
+
+//   {
+//     id: 'product-3',
+//     title: 'Punk patchwork pants',
+//     price: '$30.00',
+//     seller: '@carlos_m',
+//     imageSrc: 'IMG/cargo jeans.jpg',
+//     link: 'publicaciones.html'
+//   },
+
+//   {
+//     id: 'product-4',
+//     title: 'Custom Mall Goth Grid Shirt with Patchwork',
+//     price: '$22.50',
+//     seller: '@sofia_trend',
+//     imageSrc: 'IMG/graphic tee.jpg',
+//     link: 'publicaciones.html'
+//   },
+
+//   {
+//     id: 'product-5',
+//     title: 'High waist skirt',
+//     price: '$18.00',
+//     seller: '@lucia_style',
+//     imageSrc: 'IMG/hih waist skirt.jpg',
+//     link: 'publicaciones.html'
+//   },
+
+// {
+//     id: 'product-6',
+//     title: 'Upcycled Sashiko Boro Patchwork Denim Jeans.',
+//     price: '$15.00',
+//     seller: '@Camila_style',
+//     imageSrc: 'IMG/jeans.jpg',
+//     link: 'publicaciones.html'
+//   },
+
+//   {
+//     id: 'product-7',
+//     title: 'Vintage style jacket',
+//     price: '$18.00',
+//     seller: '@lucia_style',
+//     imageSrc: 'IMG/hoodie.jpg',
+//     link: 'publicaciones.html'
+
+//   },
+
+//   {
+//     id: 'product-8',
+//     title: 'Falda Jean Tiro Alto',
+//     price: '$18.00',
+//     seller: '@lucia_style',
+//     imageSrc: 'IMG/top.jpg',
+//     link: 'publicaciones.html'
+//   },
+// ];
+
+// newProducts.forEach((product) => {
+
+//   const clone = originalCard.cloneNode(true);
+//   clone.removeAttribute('id');
+//   clone.querySelector('.product-img').src = product.imageSrc;
+//   clone.querySelector('.product-img').alt = product.title;
+//   clone.querySelector('.badge').textContent = product.seller;
+//   clone.querySelector('.btn-fav').setAttribute('data-product-id', product.id);
+//   clone.querySelector('.card-title').textContent = product.title;
+//   clone.querySelector('strong').textContent = product.price;
+//   clone.querySelector('.btn-rewear-action').href = product.link;
+//   cardsContainer.appendChild(clone);
+// });
 
 
 // tarjetas de tailors
@@ -227,7 +163,6 @@ if (originalTailorCard && tailorsContainer) {
     const clone = originalTailorCard.cloneNode(true);
     clone.removeAttribute('id');
 
-    
     const img = clone.querySelector('.tailor-img');
     if (img) {
       img.src = tailor.imageSrc;
