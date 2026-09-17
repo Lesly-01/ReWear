@@ -2,20 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('createRequestForm');
     if (form) {
         form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita que la página se recargue
+            e.preventDefault();
 
             const formData = new FormData(form);
 
             try {
-                // Subimos un nivel con ../ para salir de /public/ y encontrar /solicitudes/
                 const res = await fetch('../solicitudes/create.php', {
                     method: 'POST',
                     body: formData
                 });
 
-                // Si la ruta está mal o el servidor da error (404, 500, etc.)
                 if (!res.ok) {
-                    throw new Error(`Error HTTP: ${res.status} - No se encontró el archivo PHP en la ruta especificada.`);
+                    throw new Error(`Error HTTP: ${res.status}`);
                 }
 
                 const data = await res.json();
@@ -24,11 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(data.message);
                     form.reset();
                     
-                    // Cerrar el modal de Bootstrap
+                    // Cerrar el modal
                     const modalEl = document.getElementById('createRequestModal');
                     if (modalEl) {
                         const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
                         modal.hide();
+                    }
+
+                    // Actualizar las tarjetas automáticamente en pantalla
+                    if (typeof window.cargarSolicitudes === 'function') {
+                        window.cargarSolicitudes();
                     }
                 } else {
                     alert('Error en la BD: ' + data.message);

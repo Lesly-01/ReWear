@@ -205,16 +205,48 @@
         <!-- tarjetas -->
       </div>
 
+      <template id="request-card-template">
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+        <div class="position-relative" style="height: 190px;">
+          <img class="w-100 h-100 object-fit-cover card-img" src="" alt="Request Image" onerror="this.src='IMG/default_request.jpg'">
+          <span class="badge bg-white text-dark rounded-pill px-3 py-2 position-absolute top-0 start-0 m-3 shadow-sm d-flex align-items-center gap-1">
+            <i class="bi bi-person-circle text-muted"></i> <span class="card-user"></span>
+          </span>
+          <span class="badge position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm card-status" style="background-color: #c6e876; color: #1b4332;"></span>
+        </div>
+
+        <div class="card-body p-3 d-flex flex-column">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge rounded-pill px-2 py-1 fw-semibold card-category" style="background-color: #e8f5e9; color: #1b4332;"></span>
+            <small class="text-muted"><i class="bi bi-clock me-1"></i><span class="card-time">New</span></small>
+          </div>
+
+          <h6 class="fw-bold mb-1 text-truncate card-title" style="color: #022522;"></h6>
+          <p class="text-muted small mb-3 text-truncate-2 card-description" style="font-size: 0.85rem; line-height: 1.3;"></p>
+
+          <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block text-muted text-uppercase fw-semibold" style="font-size: 0.65rem;">MAX BUDGET</span>
+              <span class="fw-bold fs-6 card-budget" style="color: #1b4332;"></span>
+            </div>
+
+            <a href="#" class="btn btn-sm px-3 py-2 rounded-3 fw-semibold text-white border-0 text-decoration-none card-link" style="background-color: #1b4332; font-size: 0.8rem;">
+              Apply / Review
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
       <div class="row g-0 pt-3 mb-4">
         <div class="col-12 text-center">
           <a href="solicitudes.html" class="btn btn-outline-success rounded-pill px-4 py-2 extra-small fw-semibold shadow-sm text-decoration-none" style="color: #1b4332; border-color: #1b4332;">
              View all posts <i class="bi bi-arrow-right ms-1"></i>
             </a>
           </div>
-        
         </div>
-
-
     </div>
 
     
@@ -228,9 +260,6 @@
 
   </div>
 </div>
-
-
-
 </main>
 
 
@@ -431,6 +460,7 @@
 
 <script src="js/clothes.js"></script>
 <script src="js/add_project.js"></script>
+<script src="js/add_request.js"></script>
 
 
 </body>
