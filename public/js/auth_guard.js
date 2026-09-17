@@ -50,11 +50,11 @@ function irAMiPerfil() {
 
     // Redirección adaptada a variaciones del rol
     if (rol === 'disenador' || rol === 'designer') {
-        window.location.href = 'perfil_diseñador.html'; 
+        window.location.href = 'perfildiseñador.html'; 
     } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario') {
         window.location.href = 'perfilusuario.html';
     } else {
         console.warn('Rol no reconocido:', rol);
-        window.location.href = 'login.html';
+        window.location.href = 'homepage.html';
     }
 }

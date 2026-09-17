@@ -26,15 +26,14 @@ $username = isset($input['username']) ? trim($input['username']) : '';
 $phone = isset($input['phone']) ? trim($input['phone']) : '';
 $password = isset($input['password']) ? trim($input['password']) : '';
 $confirm_password = isset($input['confirm_password']) ? trim($input['confirm_password']) : '';
-$role = isset($input['role']) ? trim($input['role']) : '';
+
+$raw_role = isset($input['role']) ? trim($input['role']) : '';
+
+// Normalización: convierte 'diseñador' a 'disenador' antes de validar e insertar
+$role = ($raw_role === 'diseñador') ? 'disenador' : $raw_role;
 
 // Validaciones de campos obligatorios
 if (empty($email) || empty($username) || empty($phone) || empty($password) || empty($confirm_password) || empty($role)) {
-    echo json_encode([
-        "success" => false,
-        "message" => "All fields are required."
-    ]);
-    exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

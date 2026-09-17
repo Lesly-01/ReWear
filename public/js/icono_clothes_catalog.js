@@ -307,7 +307,7 @@ const createRequestForm = document.getElementById('createRequestForm');
       }
 
       
-      showAlert('Your customization request has been published successfully!', 'success');
+      Alert('Your customization request has been published successfully!', 'success');
 
       createRequestForm.reset();
     });

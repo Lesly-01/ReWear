@@ -7,8 +7,8 @@ $db = $database->getConnection();
 
 try {
     $sql = "SELECT s.*, u.nombre AS comprador 
-            FROM solicitudes_personalizacion s 
-            LEFT JOIN usuarios u ON s.id_comprador = u.id_usuario 
+            FROM solicitudes s 
+            LEFT JOIN usuarios u ON s.id_usuario = u.id_usuario 
             ORDER BY s.id_solicitud DESC";
 
     $stmt = $db->prepare($sql);

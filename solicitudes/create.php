@@ -1,4 +1,8 @@
 <?php
+// Ocultar warnings de PHP para no romper el formato JSON
+error_reporting(0);
+ini_set('display_errors', 0);
+
 session_start();
 header('Content-Type: application/json');
 require_once("../config/conexion.php");
@@ -6,8 +10,8 @@ require_once("../config/conexion.php");
 $database = new Database();
 $db = $database->getConnection();
 
-// ID del comprador logueado (puedes ajustar la variable de sesión si usas otra)
-$id_comprador = $_SESSION['id_usuario'] ?? $_SESSION['user_id'] ?? 1;
+// ID del usuario logueado
+$id_usuario = $_SESSION['id_usuario'] ?? $_SESSION['user_id'] ?? 1;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = trim($_POST['request_title'] ?? '');
@@ -32,13 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        $sql = "INSERT INTO solicitudes_personalizacion 
-                (id_comprador, titulo, tipo_prenda, metodo, instrucciones, presupuesto_min, presupuesto_max, foto_prenda) 
-                VALUES (:id_comprador, :titulo, :tipo_prenda, :metodo, :instrucciones, :presupuesto_min, :presupuesto_max, :foto_prenda)";
+        // Pasamos NULL a id_categoria para evitar conflictos de clave foránea
+        $sql = "INSERT INTO solicitudes 
+                (id_usuario, id_categoria, titulo, tipo_prenda, metodo, instrucciones, presupuesto_min, presupuesto_max, foto_prenda) 
+                VALUES (:id_usuario, NULL, :titulo, :tipo_prenda, :metodo, :instrucciones, :presupuesto_min, :presupuesto_max, :foto_prenda)";
 
         $stmt = $db->prepare($sql);
         $stmt->execute([
-            ':id_comprador'   => $id_comprador,
+            ':id_usuario'     => $id_usuario,
             ':titulo'         => $titulo,
             ':tipo_prenda'    => $tipo_prenda,
             ':metodo'         => $metodo,
@@ -50,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode(['success' => true, 'message' => '¡Solicitud publicada exitosamente!']);
     } catch (PDOException $e) {
-        echo json_encode(['success' => false, 'message' => 'Error al guardar: ' . $e->getMessage()]);
+        echo json_encode(['success' => false, 'message' => 'Error al guardar en BD: ' . $e->getMessage()]);
     }
 }
 ?>

@@ -7,7 +7,7 @@ CREATE TABLE usuarios (
   nombre VARCHAR(100) NOT NULL,
   correo VARCHAR(150) NOT NULL UNIQUE,
   password_hash VARCHAR(255) NOT NULL,
-  rol ENUM('comprador', 'diseñador') NOT NULL,
+  rol ENUM('comprador', 'disenador') NOT NULL,
   telefono VARCHAR(20),
   fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
   estado ENUM('activo', 'suspendido') DEFAULT 'activo'
@@ -30,15 +30,20 @@ CREATE TABLE categoria (
 CREATE TABLE solicitudes (
   id_solicitud INT AUTO_INCREMENT PRIMARY KEY, 
   id_usuario INT NOT NULL,
-  id_categoria INT NOT NULL,
-  titulo VARCHAR(100) NOT NULL,
-  descripcion TEXT NOT NULL,
-  fecha_entrega DATE,
-  estado ENUM ('abierta', 'en_trato', 'finalizada', 'cancelada') DEFAULT 'abierta',
+  id_categoria INT NULL,
+  titulo VARCHAR(150) NOT NULL,
+  tipo_prenda VARCHAR(100) NOT NULL,
+  metodo VARCHAR(100) NOT NULL,
+  instrucciones TEXT NOT NULL,
+  presupuesto_min DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+  presupuesto_max DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+  foto_prenda VARCHAR(255) DEFAULT 'IMG/default_request.jpg',
+  fecha_entrega DATE NULL,
+  estado ENUM('abierta', 'en_trato', 'finalizada', 'cancelada') DEFAULT 'abierta',
   fecha_publicacion DATETIME DEFAULT CURRENT_TIMESTAMP,
 
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria) ON DELETE SET NULL
 );
 
 CREATE TABLE impacto_ambiental (
@@ -108,17 +113,20 @@ CREATE TABLE estilo (
 CREATE TABLE prendas_publicadas (
   id_prenda INT AUTO_INCREMENT PRIMARY KEY,
   id_disenador INT NOT NULL,
-  id_categoria INT NOT NULL,
-  id_estilo INT NOT NULL,
-  titulo VARCHAR (150),
-  descripcion TEXT,
-  precio DECIMAL(10,2),
-  estado ENUM('disponible','vendida') DEFAULT 'disponible',
+  id_categoria INT NULL,
+  id_estilo INT NULL,
+  titulo VARCHAR(150) NOT NULL,
+  descripcion TEXT NOT NULL,
+  precio_minimo DECIMAL(10,2) NOT NULL,
+  precio_maximo DECIMAL(10,2) NOT NULL,
+  tecnicas_usadas VARCHAR(255),
+  imagen_url VARCHAR(255),
+  estado ENUM('disponible','vendida','exhibicion') DEFAULT 'disponible',
   fecha_publicacion DATETIME DEFAULT CURRENT_TIMESTAMP,
 
-  FOREIGN KEY (id_disenador) REFERENCES usuarios(id_usuario),
-  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
-  FOREIGN KEY (id_estilo) REFERENCES estilo(id_estilo)
+  FOREIGN KEY (id_disenador) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria) ON DELETE SET NULL,
+  FOREIGN KEY (id_estilo) REFERENCES estilo(id_estilo) ON DELETE SET NULL
 );
 
 CREATE TABLE imagenes_prenda (
@@ -126,5 +134,17 @@ CREATE TABLE imagenes_prenda (
   id_prenda INT NOT NULL,
   imagen_url VARCHAR(255),
 
-  FOREIGN KEY (id_prenda) REFERENCES prendas_publicadas(id_prenda)
+  FOREIGN KEY (id_prenda) REFERENCES prendas_publicadas(id_prenda) ON DELETE CASCADE
+);
+
+CREATE TABLE prendas_portafolio (
+    id_prenda INT AUTO_INCREMENT PRIMARY KEY,
+    id_disenador INT NOT NULL,
+    titulo VARCHAR(150) NOT NULL,
+    categoria VARCHAR(100),
+    precio_minimo DECIMAL(10,2) NOT NULL,
+    precio_maximo DECIMAL(10,2) NOT NULL,
+    descripcion TEXT,
+    imagen_url VARCHAR(255) NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
