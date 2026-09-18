@@ -58,4 +58,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => false, 'message' => 'Error al guardar en BD: ' . $e->getMessage()]);
     }
 }
+
+// Manejo de foto_prenda
+$foto_prenda = null;
+
+if (isset($_FILES['foto_prenda']) && $_FILES['foto_prenda']['error'] === UPLOAD_ERR_OK) {
+    // Si el usuario subió una nueva imagen
+    $rutaDestino = '../public/uploads/' . time() . '_' . $_FILES['foto_prenda']['name'];
+    move_uploaded_file($_FILES['foto_prenda']['tmp_name'], $rutaDestino);
+    $foto_prenda = 'uploads/' . time() . '_' . $_FILES['foto_prenda']['name'];
+} elseif (!empty($_POST['foto_prenda_existente'])) {
+    // Si no subió una nueva, usa la imagen de la publicación previa
+    $foto_prenda = $_POST['foto_prenda_existente'];
+} else {
+    $foto_prenda = 'IMG/default_request.jpg';
+}
+
+// Manejo de foto_referencia (opcional)
+$foto_referencia = null;
+if (isset($_FILES['foto_referencia']) && $_FILES['foto_referencia']['error'] === UPLOAD_ERR_OK) {
+    $rutaRef = '../public/uploads/ref_' . time() . '_' . $_FILES['foto_referencia']['name'];
+    move_uploaded_file($_FILES['foto_referencia']['tmp_name'], $rutaRef);
+    $foto_referencia = 'uploads/ref_' . time() . '_' . $_FILES['foto_referencia']['name'];
+}
 ?>

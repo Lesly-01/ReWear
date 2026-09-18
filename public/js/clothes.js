@@ -55,6 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const titleEl = clone.querySelector('.card-title');
       if (titleEl) titleEl.textContent = item.titulo;
 
+      // ------------------------------------------------------------------
+      // INDICADOR DE ORIGEN (NUEVO BLOQUE)
+      // Revisa si la solicitud proviene de una publicación del catálogo
+      const originBadge = clone.querySelector('.card-origin-badge');
+      if (originBadge && item.titulo && item.titulo.includes('Solicitud basada en:')) {
+        originBadge.classList.remove('d-none');
+      }
+      // ------------------------------------------------------------------
+
       const descEl = clone.querySelector('.card-description');
       if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin descripción';
 
@@ -69,10 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("¡Tarjetas renderizadas exitosamente!");
   }
-
-  // Carga inicial
-  window.cargarSolicitudes();
-});
   
   // 2. ACTIVE ORDERS
   
@@ -159,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   
-  renderCustomizationCards(requestsData);
   renderActiveOrders(activeOrdersData);
 
   window.cargarSolicitudes();
@@ -384,3 +388,116 @@ if (updateStatusForm) {
 
 renderActiveOrders(activeOrdersData);
 })
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("1. DOM cargado correctamente");
+
+  // A. CARGA DE TARJETAS EN EL CONTENEDOR
+  window.cargarSolicitudes = async function() {
+    console.log("2. Iniciando función cargarSolicitudes");
+    
+    const container = document.getElementById('customization-requests-container');
+    const template = document.getElementById('request-card-template');
+
+    if (!container || !template) return;
+
+    try {
+      const response = await fetch('../solicitudes/read.php'); 
+      if (!response.ok) throw new Error(`HTTP Status: ${response.status}`);
+
+      const result = await response.json();
+
+      if (result.success && result.data && result.data.length > 0) {
+        renderizarConPlantilla(result.data, container, template);
+      } else {
+        container.innerHTML = '<p class="text-center text-muted">No hay solicitudes disponibles.</p>';
+      }
+    } catch (error) {
+      console.error("Error en la petición fetch:", error);
+    }
+  };
+
+  function renderizarConPlantilla(lista, container, template) {
+    container.innerHTML = ''; 
+
+    lista.forEach(item => {
+      const clone = template.content.cloneNode(true);
+
+      const imgEl = clone.querySelector('.card-img');
+      if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'IMG/default_request.jpg';
+
+      const userEl = clone.querySelector('.card-user');
+      if (userEl) userEl.textContent = `@${item.comprador || 'usuario'}`;
+
+      const statusEl = clone.querySelector('.card-status');
+      if (statusEl) statusEl.textContent = item.estado ? item.estado.toUpperCase() : 'ABIERTA';
+
+      const categoryEl = clone.querySelector('.card-category');
+      if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
+
+      const titleEl = clone.querySelector('.card-title');
+      if (titleEl) titleEl.textContent = item.titulo;
+
+      const descEl = clone.querySelector('.card-description');
+      if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin descripción';
+
+      const budgetEl = clone.querySelector('.card-budget');
+      if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
+
+      const linkEl = clone.querySelector('.card-link');
+      if (linkEl) linkEl.href = `publicaciones.html?id=${item.id_solicitud}`;
+
+      container.appendChild(clone);
+    });
+  }
+
+  // B. AUTO-LLENADO DEL FORMULARIO SI VIENE DE "PLACE ORDER"
+  function verificarPedidoDirecto() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const action = urlParams.get('action');
+    const prendaId = urlParams.get('id');
+
+    // Si la URL es: clothes.html?id=5&action=order
+    if (action === 'order' && prendaId) {
+      fetch(`../solicitudes/get_post.php?id=${prendaId}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success && data.post) {
+            const post = data.post;
+            
+            // Llenar campos del modal #createRequestForm
+            if (document.getElementById('request_title')) {
+              document.getElementById('request_title').value = `Pedido de: ${post.titulo}`;
+            }
+            if (document.getElementById('garment_type')) {
+              document.getElementById('garment_type').value = post.tipo_prenda || '';
+            }
+            if (document.getElementById('min_budget')) {
+              document.getElementById('min_budget').value = post.presupuesto_min || 0;
+            }
+            if (document.getElementById('max_budget')) {
+              document.getElementById('max_budget').value = post.presupuesto_max || 0;
+            }
+
+            // Abrir automáticamente el modal
+            const modalEl = document.getElementById('createRequestModal');
+            if (modalEl) {
+              const modal = new bootstrap.Modal(modalEl);
+              modal.show();
+            }
+          }
+        })
+        .catch(err => console.error("Error al obtener detalles de la prenda:", err));
+    }
+  }
+
+  // Ejecución inicial
+  window.cargarSolicitudes();
+  verificarPedidoDirecto();
+});
