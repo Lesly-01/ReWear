@@ -116,199 +116,142 @@
 // });
 
 
-// tarjetas de tailors
-const originalTailorCard = document.getElementById('tailorCardToClone');
-const tailorsContainer = document.getElementById('tailorsContainer');
-
-
-const tailorsList = [
-  {
-    id: 'tailor-2',
-    name: 'Carlos Mendoza',
-    title: 'Streetwear & Denim Specialist',
-    location: 'Santa Ana',
-    rating: '★ 4.8 (15)',
-    responseTime: '< 2 hours',
-    specialties: ['Streetwear', 'Parches', 'Chaquetas'],
-    imageSrc: 'IMG/chaqueta.jpg',
-    profileLink: 'perfildiseñador.html'
-  },
-  {
-    id: 'tailor-3',
-    name: 'Sofía Trenes',
-    title: 'Goth & Alternative Fashion',
-    location: 'San Salvador',
-    rating: '★ 5.0 (42)',
-    responseTime: '< 30 mins',
-    specialties: ['Goth', 'Pantalones', 'Custom'],
-    imageSrc: 'IMG/cargo jeans.jpg',
-    profileLink: 'perfildiseñador.html'
-  },
-  {
-    id: 'tailor-4',
-    name: 'Lucía Fernández',
-    title: 'Formal Upcycling & Alterations',
-    location: 'La Libertad',
-    rating: '★ 4.7 (19)',
-    responseTime: '< 4 hours',
-    specialties: ['Vestidos', 'Faldas', 'Ajustes'],
-    imageSrc: 'IMG/graphic tee.jpg',
-    profileLink: 'perfildiseñador.html'
-  }
-];
-
-if (originalTailorCard && tailorsContainer) {
-  tailorsList.forEach((tailor) => {
-    
-    const clone = originalTailorCard.cloneNode(true);
-    clone.removeAttribute('id');
-
-    const img = clone.querySelector('.tailor-img');
-    if (img) {
-      img.src = tailor.imageSrc;
-      img.alt = `${tailor.name} Tailor`;
-    }
-
-    const loc = clone.querySelector('.tailor-location');
-    if (loc) loc.textContent = tailor.location;
-
-    const rate = clone.querySelector('.tailor-rating');
-    if (rate) rate.textContent = tailor.rating;
-
-    const name = clone.querySelector('.tailor-name');
-    if (name) name.textContent = tailor.name;
-
-    const title = clone.querySelector('.tailor-title');
-    if (title) title.textContent = tailor.title;
-
-    const time = clone.querySelector('.tailor-time');
-    if (time) time.textContent = tailor.responseTime;
-
-    const link = clone.querySelector('.tailor-link');
-    if (link) link.href = tailor.profileLink;
-
-  
-    const tagsContainer = clone.querySelector('.tailor-tags');
-    if (tagsContainer) {
-      tagsContainer.innerHTML = tailor.specialties
-        .map(tag => `<span class="badge bg-light text-secondary border extra-small font-normal">${tag}</span>`)
-        .join('');
-    }
-
-    
-    tailorsContainer.appendChild(clone);
-  });
+async function loadTailorsFromDatabase() {
+  console.log("--> Iniciando carga de artesanos...");
+  // ... resto del código ...
 }
 
-
-
-const newTailors = [
-  {
-    id: 'tailor-2',
-    name: 'Carlos Mendoza',
-    title: 'Streetwear & Denim Specialist',
-    location: 'Santa Ana',
-    rating: '★ 4.8 (15)',
-    responseTime: '< 2 hours',
-    specialties: ['Streetwear', 'Parches', 'Chaquetas'],
-    imageSrc: 'IMG/diseñador foto perfil.jpg', // Ajusta según tu ruta de imágenes
-    link: 'perfildiseñador.html'
-  },
-  {
-    id: 'tailor-3',
-    name: 'Sofía Trenes',
-    title: 'Goth & Alternative Fashion',
-    location: 'San Salvador',
-    rating: '★ 5.0 (42)',
-    responseTime: '< 30 mins',
-    specialties: ['Goth', 'Pantalones', 'Custom'],
-    imageSrc: 'IMG/diseñador foto perfil.jpg',
-    link: 'perfildiseñador.html'
-  },
-  {
-    id: 'tailor-4',
-    name: 'Lucía Fernández',
-    title: 'Formal Upcycling & Alterations',
-    location: 'La Libertad',
-    rating: '★ 4.7 (19)',
-    responseTime: '< 4 hours',
-    specialties: ['Vestidos', 'Faldas', 'Ajustes'],
-    imageSrc: 'IMG/diseñador foto perfil.jpg',
-    link: 'perfildiseñador.html'
-  }
-];
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-  const tailorCardToClone = document.getElementById('tailorCardToClone');
-  const tailorsContainer = document.getElementById('tailorsContainer');
+  // Cargar diseñadores desde la base de datos
+  loadTailorsFromDatabase();
 
-  if (tailorCardToClone && tailorsContainer) {
-    newTailors.forEach((tailor) => {
-      
-      const clone = tailorCardToClone.cloneNode(true);
-      
-      clone.removeAttribute('id');
-
-      
-      const img = clone.querySelector('.card-img-top, img');
-      if (img) {
-        img.src = tailor.imageSrc;
-        img.alt = `${tailor.name} Tailor`;
-      }
-
-      
-      const locationBadge = clone.querySelector('.tailor-location');
-      if (locationBadge) locationBadge.textContent = tailor.location;
-
-      const ratingBadge = clone.querySelector('.tailor-rating');
-      if (ratingBadge) ratingBadge.textContent = tailor.rating;
-
-      const nameEl = clone.querySelector('.card-title, .tailor-name');
-      if (nameEl) nameEl.textContent = tailor.name;
-
-      const titleEl = clone.querySelector('.tailor-title');
-      if (titleEl) titleEl.textContent = tailor.title;
-
-     
-      const tagsContainer = clone.querySelector('.tailor-tags');
-      if (tagsContainer) {
-        tagsContainer.innerHTML = tailor.specialties
-          .map(tag => `<span class="badge bg-light text-secondary border extra-small font-normal">${tag}</span>`)
-          .join(' ');
-      }
-
-      
-      const timeEl = clone.querySelector('.tailor-time');
-      if (timeEl) timeEl.textContent = tailor.responseTime;
-
-      const profileLink = clone.querySelector('a.stretched-link, .tailor-link');
-      if (profileLink) profileLink.href = tailor.link;
-
-      
-      tailorsContainer.appendChild(clone);
-    });
-  }
-});
-
-const createRequestForm = document.getElementById('createRequestForm');
+  // Gestión del formulario de solicitudes
+  const createRequestForm = document.getElementById('createRequestForm');
   const createRequestModalElem = document.getElementById('createRequestModal');
 
   if (createRequestForm) {
     createRequestForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      
       const modalInstance = bootstrap.Modal.getInstance(createRequestModalElem);
       if (modalInstance) {
         modalInstance.hide();
       }
 
-      
-      Alert('Your customization request has been published successfully!', 'success');
-
+      alert('Your customization request has been published successfully!');
       createRequestForm.reset();
     });
   }
+});
+
+/**
+ * Función para consultar la base de datos e inyectar las tarjetas
+ */
+async function loadTailorsFromDatabase() {
+  const tailorsContainer = document.getElementById('tailorsContainer');
+  const template = document.getElementById('tailorCardTemplate');
+
+  if (!tailorsContainer || !template) return;
+
+  try {
+    // Petición al backend PHP
+    const response = await fetch('../backend/get_designers.php'); // Ajusta esta ruta si tu PHP está en otra carpeta
+    const result = await response.json();
+
+    if (result.success && result.data.length > 0) {
+      tailorsContainer.innerHTML = ''; // Limpiar contenedor por seguridad
+
+      result.data.forEach(tailor => {
+        const clone = template.content.cloneNode(true);
+
+        // 1. Imagen de Perfil
+const img = clone.querySelector('.tailor-img');
+if (img) {
+  if (tailor.foto_perfil && tailor.foto_perfil.trim() !== '') {
+    // Si la ruta en BD ya incluye 'IMG/' o 'uploads/', se usa directamente
+    img.src = tailor.foto_perfil;
+  } else {
+    // Respaldo por defecto en caso de que esté NULL en la BD
+    img.src = 'IMG/default_avatar.jpg';
+  }
+  
+  img.alt = `Foto de ${tailor.nombre}`;
+}
+
+        // 2. Ubicación (San Salvador como valor por defecto si no está en BD)
+        const locationBadge = clone.querySelector('.tailor-location');
+        if (locationBadge) {
+          locationBadge.textContent = 'El Salvador';
+        }
+
+        // 3. Calificación y promedio
+        const ratingBadge = clone.querySelector('.tailor-rating');
+        if (ratingBadge) {
+          const promedio = parseFloat(tailor.promedio_calificacion).toFixed(1);
+          ratingBadge.textContent = tailor.total_resenas > 0 
+            ? `★ ${promedio} (${tailor.total_resenas})` 
+            : '★ Nuevo';
+        }
+
+        // 4. Nombre
+        const nameEl = clone.querySelector('.tailor-name');
+        if (nameEl) nameEl.textContent = tailor.nombre;
+
+        // 5. Especialidad / Biografía
+        const titleEl = clone.querySelector('.tailor-title');
+        if (titleEl) {
+          titleEl.textContent = tailor.biografia ? tailor.biografia : 'Diseñador Textil y Upcycling';
+        }
+
+        // 6. Etiquetas de Técnicas
+        const tagsContainer = clone.querySelector('.tailor-tags');
+        if (tagsContainer) {
+          tagsContainer.innerHTML = '';
+          if (tailor.tecnicas) {
+            const listaTecnicas = tailor.tecnicas.split(',');
+            listaTecnicas.forEach(tecnica => {
+              const span = document.createElement('span');
+              span.className = 'badge bg-light text-secondary border extra-small font-normal';
+              span.textContent = tecnica.trim();
+              tagsContainer.appendChild(span);
+            });
+          } else {
+            tagsContainer.innerHTML = '<span class="badge bg-light text-secondary border extra-small font-normal">Upcycling</span>';
+          }
+        }
+
+        // 7. Enlace hacia el perfil con ID del diseñador
+        const profileLink = clone.querySelector('.tailor-link');
+        if (profileLink) {
+          profileLink.href = `perfildiseñador.html?id=${tailor.id_usuario}`;
+        }
+
+        tailorsContainer.appendChild(clone);
+      });
+    } else {
+      tailorsContainer.innerHTML = `
+        <div class="col-12 text-center py-5">
+          <p class="text-muted">No se encontraron diseñadores registrados aún.</p>
+        </div>`;
+    }
+  } catch (error) {
+    console.error('Error cargando los diseñadores:', error);
+    tailorsContainer.innerHTML = `
+      <div class="col-12 text-center py-4">
+        <p class="text-danger small">No se pudieron cargar los diseñadores.</p>
+      </div>`;
+  }
+}
+
+// Carga inmediata al iniciar
+document.addEventListener('DOMContentLoaded', () => {
+  loadTailorsFromDatabase();
+
+  // Escuchar el clic directamente en el botón de la pestaña
+  const tailorsTabBtn = document.querySelector('button[data-bs-target="#tailors-content"], [href="#tailors-content"]');
+  if (tailorsTabBtn) {
+    tailorsTabBtn.addEventListener('click', () => {
+      loadTailorsFromDatabase();
+    });
+  }
+});

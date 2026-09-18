@@ -42,7 +42,7 @@
           
           <div class="col-12 col-md-7 d-flex align-items-center gap-3">
             <div class="rounded-circle overflow-hidden bg-light border shadow-sm" style="width: 120px; height: 120px; flex-shrink: 0;">
-              <img id="profileAvatar" src="IMG/diseñador foto perfil.jpg" alt="Profile Picture" class="w-100 h-100" style="object-fit: cover;">
+              <img id="profileAvatar" src="IMG/default_avatar.jpg" alt="Profile Picture" class="w-100 h-100" style="object-fit: cover;">
             </div>
 
             <div>
@@ -377,40 +377,50 @@
       </div>
     </footer>
 
-    
     <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-4 border-0 shadow">
-          <div class="modal-header border-bottom-0 pb-0">
-            <h5 class="modal-title fw-bold text-dark" id="editProfileModalLabel">Edit Designer Profile</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark" id="editProfileModalLabel">Edit Designer Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <!-- enctype="multipart/form-data" es indispensable para enviar archivos -->
+        <form id="editProfileForm" enctype="multipart/form-data">
+          
+          <!-- Campo para Subir Imagen de Perfil -->
+          <div class="mb-3">
+            <label for="editFoto" class="form-label extra-small fw-semibold text-dark">Profile Picture</label>
+            <input type="file" class="form-control rounded-3 form-control-sm" id="editFoto" name="foto" accept="image/*">
           </div>
-          <div class="modal-body p-4">
-            <form id="editProfileForm">
-              <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-dark">Username</label>
-                <input type="text" class="form-control rounded-3" value="@Username" required>
-              </div>
 
-              <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-dark">Bio / Tagline</label>
-                <textarea class="form-control rounded-3" rows="3">I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.</textarea>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-dark">Specialty</label>
-                <input type="text" class="form-control rounded-3" value="Sustainable Fashion Designer">
-              </div>
-
-              <div class="d-flex justify-content-end gap-2 mt-4">
-                <button type="button" class="btn btn-light rounded-pill px-4 extra-small" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-success rounded-pill px-4 extra-small fw-semibold" style="background-color: #1b4332; border: none;">Save Changes</button>
-              </div>
-            </form>
+          <!-- Campo Username -->
+          <div class="mb-3">
+            <label for="editUsername" class="form-label extra-small fw-semibold text-dark">Username</label>
+            <input type="text" class="form-control rounded-3" id="editUsername" name="username" value="@Username" required>
           </div>
-        </div>
+
+          <!-- Campo Bio -->
+          <div class="mb-3">
+            <label for="editBio" class="form-label extra-small fw-semibold text-dark">Bio / Tagline</label>
+            <textarea class="form-control rounded-3" id="editBio" name="biografia" rows="3">I turn ideas into one-of-a-kind pieces and give clothes a second chance through creativity.</textarea>
+          </div>
+
+          <!-- Campo Especialidad -->
+          <div class="mb-3">
+            <label for="editSpecialty" class="form-label extra-small fw-semibold text-dark">Specialty</label>
+            <input type="text" class="form-control rounded-3" id="editSpecialty" name="especialidad" value="Sustainable Fashion Designer">
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-light rounded-pill px-4 extra-small" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success rounded-pill px-4 extra-small fw-semibold" style="background-color: #1b4332; border: none;">Save Changes</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
+</div>
 
     
     <script src="js/auth_guard.js"></script>

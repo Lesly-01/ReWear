@@ -135,77 +135,77 @@
   </div>
 
   <!-- Contenedor principal en formato GRID -->
-  <div class="row g-4" id="requestsContainer">
+  <!-- Contenedor principal donde se insertarán las tarjetas cargadas -->
+<div class="row g-4" id="customization-requests-container"></div>
 
-    <!-- Tarjeta Molde (col-12 col-lg-6 para mostrar 2 por fila en pantallas grandes) -->
-    <div class="col-12 col-lg-6" id="requestCardToClone">
-      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white card-hover request-card-item">
+<!-- Plantilla oculta (Template) con TU MISMO DISEÑO -->
+<template id="request-card-template">
+  <div class="col-12 col-lg-6">
+    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden product-card bg-white card-hover request-card-item">
+      
+      <!-- Header Visual con Imagen y Badges -->
+      <div class="position-relative overflow-hidden">
+        <img src="IMG/pantalon.jpg" class="card-img-top card-img" alt="Reference Image" style="height: 200px; object-fit: cover;">
         
-        <!-- Header Visual con Imagen y Badges sobrepuestos tipo catálogo -->
-        <div class="position-relative overflow-hidden">
-          <img src="/public/IMG/pantalon.jpg" class="card-img-top request-img" alt="Reference Image" style="height: 200px; object-fit: cover;">
-          
-          <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm extra-small fw-semibold request-user">
-            <i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @username
-          </span>
-          
-          <span class="badge position-absolute top-0 end-0 m-3 px-3 py-2 text-dark rounded-pill extra-small shadow-sm request-status" style="background-color: #c7f9cc !important;">
-            Open
-          </span>
+        <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 bg-white text-dark rounded-pill shadow-sm extra-small fw-semibold card-user">
+          <i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @username
+        </span>
+        
+        <span class="badge position-absolute top-0 end-0 m-3 px-3 py-2 text-dark rounded-pill extra-small shadow-sm card-status" style="background-color: #c7f9cc !important;">
+          OPEN
+        </span>
+      </div>
+      
+      <!-- Cuerpo de la tarjeta -->
+      <div class="card-body d-flex flex-column p-4">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="badge bg-light text-success border border-success-subtle px-2 py-1 extra-small card-category">EMBROIDERY</span>
+          <span class="text-muted extra-small"><i class="bi bi-clock me-1"></i>3 days left</span>
         </div>
+
+        <h5 class="card-title fw-bold text-dark fs-6 mb-2">Customization request</h5>
         
-        <!-- Cuerpo compacto de la tarjeta -->
-        <div class="card-body d-flex flex-column p-4">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <span class="badge bg-light text-success border border-success-subtle px-2 py-1 extra-small request-tag">EMBROIDERY</span>
-            <span class="text-muted extra-small"><i class="bi bi-clock me-1"></i>3 days left</span>
+        <div class="d-flex flex-column gap-2 mb-3">
+          <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method & Placement</span>
+            <strong class="text-dark extra-small card-method">Custom Embroidery - Full Back</strong>
           </div>
 
-          <h5 class="card-title fw-bold text-dark fs-6 mb-2 request-title">Customization request</h5>
-          
-          <!-- Lista compacta de especificaciones -->
-          <div class="d-flex flex-column gap-2 mb-3">
-            <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
-              <span class="d-block text-muted extra-small fw-semibold text-uppercase">Method & Placement</span>
-              <strong class="text-dark extra-small request-method">Custom Embroidery - Full Back</strong>
-            </div>
-
-            <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
-              <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment</span>
-              <strong class="text-dark extra-small request-garment">Black Hoodie (100% Cotton)</strong>
-            </div>
-
-            <div class="bg-light-subtle rounded-3 p-3 border border-light-subtle">
-              <span class="d-block text-muted extra-small fw-semibold mb-1">Instructions:</span>
-              <p class="text-secondary extra-small mb-0 request-instructions" style="line-height: 1.4; font-size: 0.8rem;">
-                Please use metallic gold thread for borders. Scale matches 25cm in width as specified.
-              </p>
-            </div>
+          <div class="bg-light-subtle rounded-3 p-2 border-start border-3" style="border-color: #1b4332 !important;">
+            <span class="d-block text-muted extra-small fw-semibold text-uppercase">Garment</span>
+            <strong class="text-dark extra-small card-garment">Black Hoodie (100% Cotton)</strong>
           </div>
 
-          <!-- Footer con rango de precio y botones de acción -->
-          <div class="mt-auto pt-3 d-flex align-items-center justify-content-between border-top">
-            <div>
-              <span class="text-muted extra-small d-block">Price range</span>
-              <strong class="fs-6 request-price" style="color: #1b4332;">$20 - $40</strong>
-            </div>
+          <div class="bg-light-subtle rounded-3 p-3 border border-light-subtle">
+            <span class="d-block text-muted extra-small fw-semibold mb-1">Instructions:</span>
+            <p class="text-secondary extra-small mb-0 card-description" style="line-height: 1.4; font-size: 0.8rem;">
+              Sin instrucciones
+            </p>
+          </div>
+        </div>
 
-            <div class="d-flex gap-2 action-buttons">
-              <button type="button" class="btn btn-outline-danger rounded-pill px-3 btn-sm extra-small fw-semibold decline-btn">
-                Decline
-              </button>
-              <button type="button" class="btn btn-success rounded-pill px-3 btn-sm extra-small fw-semibold shadow-sm accept-btn" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
-                Apply / Review
-              </button>
-            </div>
+        <!-- Footer con precio y acciones -->
+        <div class="mt-auto pt-3 d-flex align-items-center justify-content-between border-top">
+          <div>
+            <span class="text-muted extra-small d-block">Price range</span>
+            <strong class="fs-6 card-budget" style="color: #1b4332;">$0.00 USD</strong>
           </div>
 
+          <div class="d-flex gap-2 action-buttons">
+            <button type="button" class="btn btn-outline-danger rounded-pill px-3 btn-sm extra-small fw-semibold decline-btn">
+              Decline
+            </button>
+            <button type="button" class="btn btn-success rounded-pill px-3 btn-sm extra-small fw-semibold shadow-sm accept-btn" style="background-color: #1b4332; border: none;" data-bs-toggle="modal" data-bs-target="#acceptRequestModal">
+              Apply / Review
+            </button>
+          </div>
         </div>
 
       </div>
-    </div>
 
+    </div>
   </div>
+</template>
 </main>
 
 
