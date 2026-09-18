@@ -277,6 +277,63 @@
 <script src="js/solicitud.js"></script>
 <script src="js/auth_guard.js"></script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('id');
+
+  if (!postId) {
+    console.error("No se proporcionó un ID de publicación en la URL.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`../publicaciones/get_publication.php?id=${postId}`);
+    const result = await response.json();
+
+    if (result.success && result.data) {
+      const data = result.data;
+
+      // Inyección de textos e imagen
+      document.getElementById('postTitle').textContent = data.titulo || 'Sin título';
+      document.getElementById('postMainImage').src = data.foto_prenda ? `../public/${data.foto_prenda}` : 'IMG/default_request.jpg';
+      document.getElementById('postDesigner').textContent = `@${data.nombre_disenador || 'diseñador'}`;
+      document.getElementById('postSpecialization').textContent = data.especializaciones || 'General';
+      document.getElementById('postDescription').textContent = data.descripcion || 'Sin descripción disponible.';
+
+      // Formato de precios (Prioriza rango de perfil, si no usa precio de la prenda)
+      if (data.rango_precio_desde && data.rango_precio_hasta) {
+        document.getElementById('postPrice').innerHTML = `$${parseFloat(data.rango_precio_desde).toFixed(2)} - $${parseFloat(data.rango_precio_hasta).toFixed(2)} <small class="fs-6 text-muted">USD</small>`;
+      } else {
+        document.getElementById('postPrice').innerHTML = `$${parseFloat(data.precio || 0).toFixed(2)} <small class="fs-6 text-muted">USD</small>`;
+      }
+
+      // Fecha de publicación
+      if (data.fecha_publicacion) {
+        const fecha = new Date(data.fecha_publicacion);
+        document.getElementById('postDate').textContent = `Post made on ${fecha.toLocaleDateString()}`;
+      }
+
+      // Renderizado de badges (Categoría y Estilo)
+      const badgesContainer = document.getElementById('postBadges');
+      badgesContainer.innerHTML = '';
+
+      if (data.categoria_nombre) {
+        badgesContainer.innerHTML += `<span class="badge badge-rewear rounded-pill px-3 py-2 fw-semibold">${data.categoria_nombre}</span>`;
+      }
+      if (data.estilo_nombre) {
+        badgesContainer.innerHTML += `<span class="badge badge-rewear rounded-pill px-3 py-2 fw-semibold">${data.estilo_nombre}</span>`;
+      }
+
+    } else {
+      alert("La publicación solicitada no existe o fue eliminada.");
+    }
+  } catch (error) {
+    console.error("Error al obtener la publicación:", error);
+  }
+});
+</script>
+
 
     
 </body>
