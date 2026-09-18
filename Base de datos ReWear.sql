@@ -1,27 +1,25 @@
-CREATE DATABASE ReWear;
+CREATE DATABASE IF NOT EXISTS rewear;
 
-USE ReWear;
+USE rewear;
 
 CREATE TABLE usuarios(
-id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-nombre VARCHAR(100) NOT NULL,
-correo VARCHAR(150) NOT NULL UNIQUE,
-password_hash VARCHAR(255) NOT NULL,
-rol ENUM('comprador', 'diseñador',) NOT Null,
-Teléfono VARCHAR(20),
-fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
-estado ENUM('activo','suspendido') DEFAULT 'activo'
+  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  correo VARCHAR(150) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  rol ENUM('comprador', 'diseñador') NOT NULL,
+  telefono VARCHAR(20),
+  fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+  estado ENUM('activo', 'suspendido') DEFAULT 'activo'
 );
 
 CREATE TABLE perfiles_disenador(
-id_perfil INT AUTO_INCREMENT PRIMARY KEY, 
-id_usuario INT NOT NULL UNIQUE,
-biografia TEXT,
-rango_precio_desde DECIMAL (10,2),
-rango_precio_hasta DECIMAL (10,2),
-whatsapp VARCHAR (20),
-
-FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+  id_perfil INT AUTO_INCREMENT PRIMARY KEY, 
+  id_usuario INT NOT NULL UNIQUE,
+  biografia TEXT,
+  rango_precio_desde DECIMAL(10,2),
+  rango_precio_hasta DECIMAL(10,2),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE categoria(

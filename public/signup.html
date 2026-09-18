@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/signup.css">
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg diseño-de-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img class="logo_rewear" src="/public/IMG/rewear logo blanco.png" alt="ReWear Logo">
+                <img class="logo_rewear" src="IMG/rewear logo blanco.png" alt="ReWear Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -24,11 +24,11 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                   <li class="nav-item"><a class="nav-link" href="/public/homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/clothes.html">Clothes</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/Miperfil/myprofile.html">My profile</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/reviews.html">Reviews</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/public/aboutus.html">About us</a></li>
+                   <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                   <li class="nav-item"><a class="nav-link" href="clothes.html">Clothes</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#" onclick="irAMiPerfil(); return false;">My profile</a></li>
+                   <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                   <li class="nav-item"><a class="nav-link" href="aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
@@ -42,7 +42,7 @@
         
 
         <div class="col-md-5 hero-image-container d-flex align-items-center justify-content-center p-4">
-          <img src="/public/IMG/hilos.jpg" alt="ReWear Eco" class="img-fluid floating-img">
+          <img src="IMG/hilos.jpg" alt="ReWear Eco" class="img-fluid floating-img">
         </div>
 
   
@@ -51,35 +51,41 @@
           <h1 class="fw-bold title-text mb-1">Create an account</h1>
           <p class="subtitle-text mb-3">Join us and start making a difference today</p>
 
-      
-          <form class="w-100 p-4 mb-3">
-            
-            <div class="mb-3 text-start">
-              <input type="email" class="form-control custom-input" placeholder="Email address" required>
-            </div>
 
-            <div class="mb-3 text-start">
-              <input type="text" class="form-control custom-input" placeholder="Username" required>
-            </div>
-
-            <div class="mb-3 text-start">
-              <input type="tel" class="form-control custom-input" placeholder="Phone number" required>
-            </div>
-
-            <div class="mb-3 text-start">
-              <input type="password" class="form-control custom-input" placeholder="Password" required>
-            </div>
-
-            <div class="mb-2 text-start">
-              <input type="password" class="form-control custom-input" placeholder="Confirm password" required>
-            </div>
-
-          </form>
+          <div id="alertMessage" class="alert d-none" role="alert"></div>
+          
 
       
-          <a href="/public/clothes.html"    type="submit" class="btn btn-custom-submit w-50 py-2 mb-3">Sign up</a>
-          <p class="signup-text m-0">Already have an account? <a href="/public/login.html" class="signup-link fw-bold">Log in</a></p>
+          <form class="w-100 p-4 mb-3" id="signupForm" onsubmit="registrarUsuario(event)">
+  
+  <div class="mb-3 text-start">
+    <input type="email" class="form-control custom-input" placeholder="Email address" required id="email">
+  </div>
 
+  <div class="mb-3 text-start">
+    <input type="text" class="form-control custom-input" placeholder="Username" required id="username">
+  </div>
+
+  <div class="mb-3 text-start">
+    <input type="tel" class="form-control custom-input" placeholder="Phone number" required id="phone">
+  </div>
+
+  <div class="mb-3 text-start">
+    <input type="password" class="form-control custom-input" placeholder="Password" required id="password">
+  </div>
+
+  <div class="mb-3 text-start">
+    <input type="password" class="form-control custom-input" placeholder="Confirm password" required id="confirmPassword">
+  </div>
+
+  <button type="submit" id="btnSignup" class="btn btn-custom-submit w-100 py-2 mb-3">Sign up</button>
+
+</form>
+
+<p class="signup-text m-0">Already have an account? <a href="login.html" class="signup-link fw-bold">Log in</a></p>
+
+      
+         
         </div>
 
       </div>
@@ -108,10 +114,10 @@
       <div class="col-6 col-md-2">
         <h6 class="fw-bold text-cream mb-3">Explore the website</h6>
         <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-          <li><a href="/public/homepage.html">Homepage</a></li>
-          <li><a href="/public/clothes.html">Clothes</a></li>
-          <li><a href="/public/reviews.html">Reviews</a></li>
-          <li><a href="/public/aboutus.html">About us</a></li>
+          <li><a href="homepage.html">Homepage</a></li>
+          <li><a href="clothes.html">Clothes</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="aboutus.html">About us</a></li>
         </ul>
       </div>
 
@@ -142,6 +148,6 @@
 </footer>
 
   
-    
+<script src="js/signup.js"></script> 
 </body>
 </html>
