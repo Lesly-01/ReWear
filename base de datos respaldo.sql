@@ -18,13 +18,12 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 -- 2. TABLA PERFILES DISEÑADOR
-CREATE TABLE perfiles_disenador (
+CREATE TABLE IF NOT EXISTS perfiles_disenador (
   id_perfil INT AUTO_INCREMENT PRIMARY KEY, 
   id_usuario INT NOT NULL UNIQUE,
   biografia TEXT,
   rango_precio_desde DECIMAL(10,2),
   rango_precio_hasta DECIMAL(10,2),
-  foto_perfil VARCHAR(255) DEFAULT 'IMG/default_avatar.jpg',
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
