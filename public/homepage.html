@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
@@ -26,29 +26,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
-                   <li class="nav-item"><a class="nav-link" href="clothes.html">Clothes</a></li>
-                   <li class="nav-item"><a class="nav-link" href="#" onclick="irAMiPerfil(); return false;">My profile</a></li>
+                   <li class="nav-item"><a class="nav-link" id="nav-clothes" href="clothes_catalog.html">Clothes</a></li>
+                   <li class="nav-item"><a class="nav-link" id="nav-profile" href="profile.html">My profile</a></li>
                    <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-
+    <script src="js/auth_guard.js"></script>
 
     <header class="hero-section text-center text-md-start">
-       
-        <div class="banner-container position-relative d-flex align-items-center justify-content-center p-4 p-md-5" style="background-image: url('IMG/Collage\ final\ con\ opacidad\ .png'); background-size: cover; background-position: center; min-height: 380px;">
-  
-  
+
+        <div class="banner-container position-relative d-flex align-items-center justify-content-center p-4 p-md-5" style="background-image: url('IMG/Collage final con opacidad .png'); background-size: cover; background-position: center; min-height: 380px;">
+
+
       <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
 
-     
+
       <div class="container position-relative z-1">
         <div class="row align-items-center justify-content-center g-4">
-      
-      
+
+
       <div class="col-12 col-md-7 col-lg-6">
         <div class=" banner-glass-card bg-white rounded-4 p-4 text-center shadow-lg">
           <h2 class="fw-bold mb-0 fs-2 fs-md-1">
@@ -57,7 +56,7 @@
         </div>
       </div>
 
-  
+
       <div class="col-12 col-md-4 col-lg-3">
         <div class="d-flex flex-column gap-3">
           <a href="login.html" class="btn btn-login fw-bold py-2.5 rounded-3 text-center shadow-sm">
@@ -72,23 +71,23 @@
     </div>
   </div>
 
-</div>
+    </div>
 
     </header>
 
     <section class="how-it-works-section py-5">
   <div class="container">
-    
 
+B
     <div class="text-center mb-5">
       <h2 class="section-title fw-bold">How it works?</h2>
       <p class="text-muted">Four simple steps to make fashion sustainable</p>
     </div>
 
-    
+
     <div class="row g-4 position-relative align-items-stretch">
-      
-      
+
+
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="step-card h-100 text-center p-4">
           <span class="step-number">01</span>
@@ -100,7 +99,7 @@
         </div>
       </div>
 
-      
+
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="step-card h-100 text-center p-4">
           <span class="step-number">02</span>
@@ -112,7 +111,7 @@
         </div>
       </div>
 
-      
+
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="step-card h-100 text-center p-4">
           <span class="step-number">03</span>
@@ -124,9 +123,11 @@
         </div>
       </div>
 
-      
+
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="step-card h-100 text-center p-4">
+          <span class="step-number">04</span>
+          <div class="step-card h-100 text-center p-4">
           <span class="step-number">04</span>
           <div class="icon-wrapper mx-auto mb-3">
             <img src="IMG/mundo.png" alt="Make an impact" class="step-icon">
@@ -140,12 +141,11 @@
   </div>
 </section>
 
-
 <footer class="footer-rewear pt-5 pb-4">
   <div class="container">
     <div class="row g-4 mb-4">
-      
-      
+
+
       <div class="col-12 col-md-4">
         <h3 class="fw-bold text-cream mb-2">ReWear</h3>
         <p class="text-cream-muted small pe-md-3">
@@ -156,30 +156,30 @@
         </span>
       </div>
 
-     
+
       <div class="col-6 col-md-2">
         <h6 class="fw-bold text-cream mb-3">Explore the website</h6>
           <li><a href="homepage.html">Homepage</a></li>
-          <li><a href="clothes.html">Clothes</a></li>
+          <li><a href="clothes_catalog.html">Clothes</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="aboutus.html">About us</a></li>
       </div>
 
-      
+
       <div class="col-6 col-md-3">
         <h6 class="fw-bold text-cream mb-3">Explore the catalog</h6>
         <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-          <li><a href="">Support salvadoran talent</a></li>
-          <li><a href="">Make a positive impact</a></li>
-          <li><a href="">Promote an upcycling culture</a></li>
-          <li><a href="">Give your clothes a second chance</a></li>
+          <li><a href="#">Support salvadoran talent</a></li>
+          <li><a href="#">Make a positive impact</a></li>
+          <li><a href="#">Promote an upcycling culture</a></li>
+          <li><a href="#">Give your clothes a second chance</a></li>
         </ul>
       </div>
 
-      
+
       <div class="col-12 col-md-3">
         <h6 class="fw-bold text-cream mb-3">Be part of the change</h6>
-      
+
         <p class="text-cream-muted small mb-0">Join ReWear</p>
       </div>
 
@@ -191,9 +191,5 @@
   </div>
 </footer>
 
-
-    
-
-    
 </body>
 </html>

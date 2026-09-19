@@ -14,7 +14,7 @@ async function verificarAcceso(rolesPermitidos = []) {
         // 2. Validar restricción por rol si la página lo requiere
         if (rolesPermitidos.length > 0 && !rolesPermitidos.includes(rolUsuario)) {
             alert("Acceso no autorizado para tu rol de usuario.");
-            
+
             // Redirigir a la vista correspondiente según su rol
             if (rolUsuario === "disenador") {
                 window.location.href = "clothes.html";
@@ -36,7 +36,7 @@ async function verificarAcceso(rolesPermitidos = []) {
 function irAMiPerfil() {
     // Intenta leer 'usuarioSesion' o 'usuario' por si varía el nombre de la clave
     const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
-    
+
     if (!datosGuardados) {
         console.warn('No se encontró ninguna sesión activa en localStorage.');
         window.location.href = 'login.html';
@@ -45,12 +45,12 @@ function irAMiPerfil() {
 
     const usuario = JSON.parse(datosGuardados);
 
-    
+
     const rol = (usuario.rol || usuario.role || usuario.tipo || '').toLowerCase();
 
     // Redirección adaptada a variaciones del rol
     if (rol === 'disenador' || rol === 'designer') {
-        window.location.href = 'perfildiseñador.html'; 
+        window.location.href = 'perfildiseñador.html';
     } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario') {
         window.location.href = 'perfilusuario.html';
     } else {
@@ -58,3 +58,33 @@ function irAMiPerfil() {
         window.location.href = 'homepage.html';
     }
 }
+
+function updateNavbar() {
+    const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
+    if (!datosGuardados) return;
+
+    const usuario = JSON.parse(datosGuardados);
+    const rol = (usuario.rol || usuario.role || usuario.tipo || '').toLowerCase();
+
+    const clothesLink = document.getElementById('nav-clothes');
+    const profileLink = document.getElementById('nav-profile');
+
+    if (clothesLink) {
+        if (rol === 'disenador' || rol === 'designer') {
+            clothesLink.href = 'clothes.html';
+        } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario' || rol === 'client') {
+            clothesLink.href = 'clothes_catalog.html';
+        }
+    }
+
+    if (profileLink) {
+        if (rol === 'disenador' || rol === 'designer') {
+            profileLink.href = 'perfildiseñador.html';
+        } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario' || rol === 'client') {
+            profileLink.href = 'perfilusuario.html';
+        }
+    }
+}
+
+// Ejecutar updateNavbar automáticamente al cargar la página si el script está incluido
+document.addEventListener('DOMContentLoaded', updateNavbar);
