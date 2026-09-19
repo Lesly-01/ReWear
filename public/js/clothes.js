@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   window.cargarSolicitudes = async function() {
     console.log("2. Iniciando función cargarSolicitudes");
-    
+
     const container = document.getElementById('customization-requests-container');
     const template = document.getElementById('request-card-template');
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('../solicitudes/read.php'); 
+      const response = await fetch('../solicitudes/read.php');
 
       if (!response.ok) {
         throw new Error(`HTTP Error Status: ${response.status}`);
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function renderizarConPlantilla(lista, container, template) {
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     lista.forEach(item => {
       const clone = template.content.cloneNode(true);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
 
       const linkEl = clone.querySelector('.card-link');
-      if (linkEl) linkEl.href = `publicaciones.html?id=${item.id_solicitud}`;
+      if (linkEl) linkEl.href = `solicitudes.html?id=${item.id_solicitud}`;
 
       container.appendChild(clone);
     });
@@ -77,107 +77,91 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // B. GESTIÓN DE ÓRDENES ACTIVAS
+  // B. GESTIÓN DE ÓRDENES ACTIVAS (DINÁMICO)
   // ==========================================
-  const activeOrdersData = [
-    {
-      id: 1,
-      image: "IMG/denim corset.png",
-      status: "In Progress",
-      statusBg: "#c6e876",
-      statusColor: "#1b4332",
-      date: "Due: Oct 12",
-      username: "@sofia_m",
-      title: "Patchwork Customization",
-      description: "Denim jacket - Sleeve adjustments & back patchwork inserts.",
-      priceLabel: "Agreed Price:",
-      price: "$40.00 USD"
-    },
-    {
-      id: 2,
-      image: "IMG/crop top jacket.jpg",
-      status: "In Review",
-      statusClass: "bg-info-subtle text-info-emphasis",
-      date: "Due: Oct 15",
-      username: "@ana_style",
-      title: "Floral Corset Embroidery",
-      description: "Final fitting pictures sent to client for approval.",
-      priceLabel: "Agreed Price:",
-      price: "$45.00 USD"
-    },
-    {
-      id: 3,
-      image: "IMG/request-4.jpg",
-      status: "Completed",
-      statusClass: "bg-success-subtle text-success-emphasis",
-      date: "Oct 01",
-      username: "@luis_design",
-      title: "Punk Pants Modification",
-      description: "Order delivered successfully. Payment released.",
-      priceLabel: "Total Earned:",
-      price: "$40.00 USD"
+  async function cargarOrdenesActivas() {
+    console.log("Iniciando carga de órdenes activas...");
+    const container = document.getElementById('orders-container');
+    if (!container) return;
+
+    try {
+      // Endpoint hipotético que devuelve las postulaciones 'aceptada' del diseñador actual
+      const response = await fetch('../solicitudes/get_active_orders.php');
+
+      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+      const result = await response.json();
+
+      if (result.success && result.data && result.data.length > 0) {
+        renderActiveOrders(result.data);
+      } else {
+        container.innerHTML = '<p class="text-center text-muted">No tienes órdenes activas en este momento.</p>';
+      }
+    } catch (error) {
+      console.error("Error al cargar órdenes activas:", error);
+      container.innerHTML = '<p class="text-center text-danger">Error al cargar tus órdenes activas.</p>';
     }
-  ];
+  }
 
   function renderActiveOrders(orders) {
     const container = document.getElementById('orders-container');
     if (!container) return;
 
-    container.innerHTML = orders.map(order => `
+    container.innerHTML = orders.map(order => {
+      // Mapeo de estados a estilos
+      let statusStyle = { bg: '#c6e876', color: '#1b4332', text: order.estado || 'In Progress' };
+      if (order.estado === 'En Review') statusStyle = { bg: '#BEE3F8', color: '#2B6CB0', text: 'In Review' };
+      if (order.estado === 'Completed') statusStyle = { bg: '#C6F6D5', color: '#2F855A', text: 'Completed' };
+
+      return `
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
           <div class="position-relative" style="height: 190px;">
-            <img src="${order.image}" class="w-100 h-100 object-fit-cover" alt="${order.title}">
-            
-            ${order.statusBg 
-              ? `<span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm" style="background-color: ${order.statusBg}; color: ${order.statusColor};">${order.status}</span>`
-              : `<span class="badge ${order.statusClass} position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm">${order.status}</span>`}
-            
+            <img src="${order.foto_prenda ? '../public/' + order.foto_prenda : 'IMG/default_request.jpg'}" class="w-100 h-100 object-fit-cover" alt="${order.titulo}">
+
+            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm" style="background-color: ${statusStyle.bg}; color: ${statusStyle.color};">${statusStyle.text}</span>
+
             <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 px-2 py-1 rounded-pill shadow-sm small">
-              ${order.date}
+              ${order.fecha_postulacion || 'Active'}
             </span>
           </div>
 
           <div class="card-body p-3 d-flex flex-column">
             <div class="d-flex align-items-center gap-2 mb-2">
               <i class="bi bi-person-circle text-muted"></i>
-              <span class="fw-semibold text-dark small">${order.username}</span>
+              <span class="fw-semibold text-dark small">@${order.comprador || 'usuario'}</span>
             </div>
 
-            <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${order.title}</h6>
+            <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${order.titulo}</h6>
             <p class="text-muted small mb-3 text-truncate-2" style="font-size: 0.82rem; line-height: 1.3;">
-              ${order.description}
+              ${order.instrucciones || order.descripcion || 'Sin descripción'}
             </p>
 
             <div class="p-2 rounded-3 mb-3 bg-light d-flex justify-content-between align-items-center">
-              <span class="text-muted" style="font-size: 0.75rem;">${order.priceLabel}</span>
-              <span class="fw-bold" style="color: #1b4332; font-size: 0.9rem;">${order.price}</span>
+              <span class="text-muted" style="font-size: 0.75rem;">Agreed Price:</span>
+              <span class="fw-bold" style="color: #1b4332; font-size: 0.9rem;">$${parseFloat(order.presupuesto_max || 0).toFixed(2)} USD</span>
             </div>
 
-            <button type="button" 
-                    class="btn btn-sm flex-fill rounded-3 fw-semibold text-white px-1 btn-update-status" 
-                    data-id="${order.id}" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#updateStatusModal" 
+            <button type="button"
+                    class="btn btn-sm flex-fill rounded-3 fw-semibold text-white px-1 btn-update-status"
+                    data-id="${order.id_postulacion}"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateStatusModal"
                     style="background-color: #1b4332; font-size: 0.78rem;">
               Update Status
             </button>
           </div>
         </div>
       </div>
-    `).join('');
+    `}).join('');
 
     container.querySelectorAll('.btn-update-status').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const orderId = e.currentTarget.getAttribute('data-id');
-        const selectedOrder = activeOrdersData.find(o => o.id == orderId);
-
-        if (selectedOrder) {
-          if (document.getElementById('orderIdInput')) document.getElementById('orderIdInput').value = selectedOrder.id;
-          if (document.getElementById('modalTargetUser')) document.getElementById('modalTargetUser').textContent = selectedOrder.username;
-          if (document.getElementById('modalOrderTitle')) document.getElementById('modalOrderTitle').textContent = selectedOrder.title;
-          if (document.getElementById('statusSelect')) document.getElementById('statusSelect').value = selectedOrder.status;
-        }
+        // En una implementación real, buscaríamos los datos del objeto order.
+        // Para simplicidad, podemos hacer un fetch rápido o pasar los datos al render.
+        console.log("Actualizando orden:", orderId);
+        if (document.getElementById('orderIdInput')) document.getElementById('orderIdInput').value = orderId;
       });
     });
   }
@@ -190,33 +174,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const orderId = document.getElementById('orderIdInput').value;
       const newStatus = document.getElementById('statusSelect').value;
-      const order = activeOrdersData.find(o => o.id == orderId);
 
-      if (order) {
-        order.status = newStatus;
+      // Aquí se debería llamar a un PHP para actualizar el estado en la DB
+      console.log(`Actualizando orden ${orderId} a estado ${newStatus}`);
 
-        if (newStatus === 'Completed') {
-          order.statusClass = 'bg-success-subtle text-success-emphasis';
-          delete order.statusBg;
-        } else if (newStatus === 'In Review') {
-          order.statusClass = 'bg-info-subtle text-info-emphasis';
-          delete order.statusBg;
-        } else if (newStatus === 'In Progress') {
-          order.statusBg = '#c6e876';
-          order.statusColor = '#1b4332';
-        }
-
-        renderActiveOrders(activeOrdersData);
-
-        const modalElement = document.getElementById('updateStatusModal');
-        if (modalElement) {
-          const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
-          modalInstance.hide();
-        }
-
-        const commentInput = document.getElementById('statusCommentInput');
-        if (commentInput) commentInput.value = '';
+      const modalElement = document.getElementById('updateStatusModal');
+      if (modalElement) {
+        const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+        modalInstance.hide();
       }
+
+      const commentInput = document.getElementById('statusCommentInput');
+      if (commentInput) commentInput.value = '';
+
+      // Recargar la lista para ver cambios
+      cargarOrdenesActivas();
     });
   }
 
@@ -234,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
           if (data.success && data.post) {
             const post = data.post;
-            
+
             if (document.getElementById('request_title')) {
               document.getElementById('request_title').value = `Pedido de: ${post.titulo}`;
             }
@@ -263,6 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // EJECUCIÓN INICIAL
   // ==========================================
   window.cargarSolicitudes();
-  renderActiveOrders(activeOrdersData);
+  cargarOrdenesActivas();
   verificarPedidoDirecto();
 });

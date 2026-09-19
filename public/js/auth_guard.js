@@ -3,16 +3,22 @@ async function verificarAcceso(rolesPermitidos = []) {
         const response = await fetch("../auth/check_session.php");
         const data = await response.json();
 
+        // LOG DE DEPURACIÓN: Para saber qué está pasando en el navegador
+        console.log("Auth Guard - Session Data:", data);
+
         // 1. Si no está autenticado, redirigir al login
         if (!data.authenticated) {
+            console.warn("Auth Guard: Usuario no autenticado. Redirigiendo al login...");
             window.location.href = "login.html";
             return null;
         }
 
         const rolUsuario = data.user.rol; // 'comprador' o 'disenador'
+        console.log("Auth Guard - Rol detectado:", rolUsuario);
 
         // 2. Validar restricción por rol si la página lo requiere
         if (rolesPermitidos.length > 0 && !rolesPermitidos.includes(rolUsuario)) {
+            console.error(`Auth Guard: Acceso denegado. Rol ${rolUsuario} no está en la lista permitida:`, rolesPermitidos);
             alert("Acceso no autorizado para tu rol de usuario.");
 
             // Redirigir a la vista correspondiente según su rol
@@ -34,7 +40,6 @@ async function verificarAcceso(rolesPermitidos = []) {
 }
 
 function irAMiPerfil() {
-    // Intenta leer 'usuarioSesion' o 'usuario' por si varía el nombre de la clave
     const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
 
     if (!datosGuardados) {
@@ -44,11 +49,8 @@ function irAMiPerfil() {
     }
 
     const usuario = JSON.parse(datosGuardados);
-
-
     const rol = (usuario.rol || usuario.role || usuario.tipo || '').toLowerCase();
 
-    // Redirección adaptada a variaciones del rol
     if (rol === 'disenador' || rol === 'designer') {
         window.location.href = 'perfildiseñador.html';
     } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario') {
@@ -86,5 +88,4 @@ function updateNavbar() {
     }
 }
 
-// Ejecutar updateNavbar automáticamente al cargar la página si el script está incluido
 document.addEventListener('DOMContentLoaded', updateNavbar);
