@@ -1,113 +1,110 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const acceptRequestForm = document.getElementById('acceptRequestForm');
   const acceptRequestModalElem = document.getElementById('acceptRequestModal');
   const alertContainer = document.getElementById('alertContainer');
+  const container = document.getElementById('customization-requests-container');
+  const template = document.getElementById('request-card-template');
 
- 
   let currentActiveCard = null;
 
+  // ==========================================
+  // CARGA DINÁMICA DESDE BASE DE DATOS
+  // ==========================================
+  async function cargarSolicitudDetalle() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const solicitudId = urlParams.get('id');
 
- 
-  const requestOrdersList = [
-    {
-      id: 'req-2',
-      username: '@sofia_m',
-      title: 'Patchwork Denim Jacket',
-      tag: 'UPCYCLING',
-      method: 'Light denim patchwork',
-      garment: 'Vintage Blue Jacket',
-      instructions: 'Looking to add light denim patchwork to the back and cuffs with an urban style.',
-      priceRange: '$35.00 USD',
-      imageSrc: '/public/IMG/jacket.png'
-    },
-    {
-      id: 'req-3',
-      username: '@carlos_dev',
-      title: 'Vintage Denim Crop Top',
-      tag: 'ALTERATION',
-      method: 'Cropped fit & frayed hem',
-      garment: 'Denim Shirt',
-      instructions: 'Cropped fit and frayed hem alteration for a vintage style denim shirt.',
-      priceRange: '$28.00 USD',
-      imageSrc: '/public/IMG/chaqueta.jpg'
-    },
-    {
-      id: 'req-4',
-      username: '@ana_style',
-      title: 'Floral Corset Embroidery',
-      tag: 'EMBROIDERY',
-      method: 'Hand floral stitching',
-      garment: 'Upcycled Fabric Corset',
-      instructions: 'Custom floral design made with sustainable threads on an upcycled fabric corset.',
-      priceRange: '$45.00 USD',
-      imageSrc: '/public/IMG/top.jpg'
+    if (!solicitudId) {
+      console.error("No se encontró el ID de la solicitud en la URL.");
+      if (container) container.innerHTML = '<p class="text-center text-muted">No se proporcionó una solicitud válida.</p>';
+      return;
     }
-  ];
 
-  const originalCard = document.getElementById('requestCardToClone');
-  const container = document.getElementById('requestsContainer');
+    try {
+      // Llamada al backend para obtener los detalles de la solicitud
+      const response = await fetch(`../solicitudes/read.php?id=${solicitudId}`);
+      const result = await response.json();
 
-  if (originalCard && container) {
-    requestOrdersList.forEach((req) => {
-      const clone = originalCard.cloneNode(true);
-      clone.removeAttribute('id');
+      if (result.success && result.data) {
+        // Si el backend devuelve un array, tomamos el primer elemento o filtramos por ID
+        const data = Array.isArray(result.data)
+          ? result.data.find(item => item.id_solicitud == solicitudId)
+          : result.data;
 
-      const img = clone.querySelector('.request-img');
-      if (img) { img.src = req.imageSrc; img.alt = req.title; }
-
-      const user = clone.querySelector('.request-user');
-      if (user) user.innerHTML = `<i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> ${req.username}`;
-
-      const tag = clone.querySelector('.request-tag');
-      if (tag) tag.textContent = req.tag;
-
-      const title = clone.querySelector('.request-title');
-      if (title) title.textContent = req.title;
-
-      const method = clone.querySelector('.request-method');
-      if (method) method.textContent = req.method;
-
-      const garment = clone.querySelector('.request-garment');
-      if (garment) garment.textContent = req.garment;
-
-      const instructions = clone.querySelector('.request-instructions');
-      if (instructions) instructions.textContent = req.instructions;
-
-      const price = clone.querySelector('.request-price');
-      if (price) price.textContent = req.priceRange;
-
-      container.appendChild(clone);
-    });
+        if (data) {
+          renderizarTarjeta(data);
+        } else {
+          throw new Error("No se encontró la solicitud con ese ID.");
+        }
+      } else {
+        throw new Error(result.message || "Error al cargar la solicitud.");
+      }
+    } catch (error) {
+      console.error("Error en cargarSolicitudDetalle:", error);
+      if (container) container.innerHTML = `<p class="text-center text-danger">Error: ${error.message}</p>`;
+    }
   }
 
-  
+  function renderizarTarjeta(item) {
+    if (!container || !template) return;
 
+    container.innerHTML = '';
+    const clone = template.content.cloneNode(true);
 
+    // Imagen
+    const imgEl = clone.querySelector('.card-img');
+    if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'IMG/default_request.jpg';
 
+    // Usuario
+    const userEl = clone.querySelector('.card-user');
+    if (userEl) userEl.innerHTML = `<i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @${item.comprador || 'usuario'}`;
+
+    // Estado
+    const statusEl = clone.querySelector('.card-status');
+    if (statusEl) statusEl.textContent = item.estado ? item.estado.toUpperCase() : 'OPEN';
+
+    // Categoría / Método
+    const categoryEl = clone.querySelector('.card-category');
+    if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
+
+    // Título
+    const titleEl = clone.querySelector('.card-title');
+    if (titleEl) titleEl.textContent = item.titulo;
+
+    // Detalles específicos (Method y Garment)
+    const methodEl = clone.querySelector('.card-method');
+    if (methodEl) methodEl.textContent = item.metodo || 'Customization';
+
+    const garmentEl = clone.querySelector('.card-garment');
+    if (garmentEl) garmentEl.textContent = item.tipo_prenda || 'Garment not specified';
+
+    // Instrucciones
+    const descEl = clone.querySelector('.card-description');
+    if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin instrucciones';
+
+    // Precio
+    const budgetEl = clone.querySelector('.card-budget');
+    if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
+
+    container.appendChild(clone);
+  }
+
+  // ==========================================
+  // ACCIONES DE LA TARJETA
+  // ==========================================
   function showAlert(message, type = 'success') {
-  if (!alertContainer) return;
-
-  const icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-x-circle-fill';
-  const alertHTML = `
-    <div class="alert alert-${type} alert-dismissible fade show d-flex align-items-center gap-2 rounded-3 border-0 shadow-sm" role="alert">
-      <i class="bi ${icon} fs-5"></i>
-      <div>${message}</div>
-      <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  `;
-
-  alertContainer.innerHTML = alertHTML;
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
-
-  
-
-
-
+    if (!alertContainer) return;
+    const icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-x-circle-fill';
+    const alertHTML = `
+      <div class="alert alert-${type} alert-dismissible fade show d-flex align-items-center gap-2 rounded-3 border-0 shadow-sm" role="alert">
+        <i class="bi ${icon} fs-5"></i>
+        <div>${message}</div>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    alertContainer.innerHTML = alertHTML;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   function disableActionButtons(cardElement) {
     if (!cardElement) return;
@@ -118,10 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  
   document.addEventListener('click', function (e) {
     const cardItem = e.target.closest('.request-card-item') || e.target.closest('.col-12');
-
 
     if (e.target.classList.contains('decline-btn') || e.target.id === 'declineBtn') {
       const confirmDecline = confirm('Are you sure you want to decline this request?');
@@ -131,30 +126,43 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    
     if (e.target.classList.contains('accept-btn') || e.target.getAttribute('data-bs-target') === '#acceptRequestModal') {
       currentActiveCard = cardItem;
     }
   });
 
-
-
-
-
   if (acceptRequestForm) {
-    acceptRequestForm.addEventListener('submit', function (e) {
+    acceptRequestForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const modalInstance = bootstrap.Modal.getInstance(acceptRequestModalElem);
-      if (modalInstance) {
-        modalInstance.hide();
-      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const solicitudId = urlParams.get('id');
+      const idPostulacion = 0; // En un flujo real, aquí se crearía primero la postulación
 
-      showAlert('The request has been accepted, a notification has been sent to the user.', 'success');
+      try {
+        // Llamamos al script que creamos anteriormente para aceptar el pedido
+        const response = await fetch('../solicitudes/aceptar_pedido.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id_postulacion: idPostulacion })
+        });
+        const result = await response.json();
 
-      if (currentActiveCard) {
-        disableActionButtons(currentActiveCard);
+        if (result.success) {
+          const modalInstance = bootstrap.Modal.getInstance(acceptRequestModalElem);
+          if (modalInstance) modalInstance.hide();
+          showAlert('The request has been accepted, a notification has been sent to the user.', 'success');
+          if (currentActiveCard) disableActionButtons(currentActiveCard);
+        } else {
+          showAlert('Error: ' + result.message, 'danger');
+        }
+      } catch (error) {
+        console.error("Error al aceptar pedido:", error);
+        showAlert('An unexpected error occurred.', 'danger');
       }
     });
   }
+
+  // Ejecución inicial
+  cargarSolicitudDetalle();
 });
