@@ -148,3 +148,13 @@ CREATE TABLE prendas_portafolio (
     imagen_url VARCHAR(255) NOT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+-- extra  de la base de datos para 
+ALTER TABLE postulaciones
+  MODIFY COLUMN estado ENUM('pending', 'accepted', 'rejected', 'in_review', 'completed')
+  DEFAULT 'pending';
+
+  ALTER TABLE postulaciones
+  MODIFY COLUMN estado ENUM('pending', 'accepted', 'rejected', 'in_review', 'completed')
+  DEFAULT 'pending';

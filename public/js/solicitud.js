@@ -174,7 +174,15 @@ document.addEventListener('DOMContentLoaded', async function () {
           const modalInstance = bootstrap.Modal.getInstance(acceptRequestModalElem);
           if (modalInstance) modalInstance.hide();
           showAlert('The request has been accepted and the offer has been sent to the user.', 'success');
-          if (currentActiveCard) disableActionButtons(currentActiveCard);
+          if (currentActiveCard) {
+            currentActiveCard.remove();
+          } else {
+            // If we are in single view mode (URL ?id=...), we should probably refresh or redirect
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('id')) {
+              cargarSolicitudes();
+            }
+          }
         } else {
           showAlert('Error: ' + result.message, 'danger');
         }

@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify({
             id_postulacion: orderId,
-            estado: newStatus,
+            estado: newStatus === 'In Review' ? 'in_review' : (newStatus === 'Completed' ? 'completed' : 'pending'),
             comentario: comment
           })
         });

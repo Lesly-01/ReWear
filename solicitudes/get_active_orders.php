@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json");
-include '../config/conexion.php';
+require_once '../config/conexion.php';
 session_start();
 
 if (!isset($_SESSION['id_usuario'])) {
@@ -11,25 +11,22 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_disenador = $_SESSION['id_usuario'];
 
 try {
+    $database = new Database();
+    $db = $database->getConnection();
+
     // Unimos postulaciones con solicitudes para obtener los detalles del pedido
     // Filtramos solo aquellas que el diseñador ha aceptado
-    $sql = "SELECT p.id_postulacion, p.estado as estado_postulacion, p.fecha_postulacion,
+    $sql = "SELECT p.id_postulacion, p.estado as estado_postulacion, p.fecha as fecha_postulacion,
                    s.titulo, s.instrucciones, s.descripcion, s.presupuesto_max, s.foto_prenda,
-                   u.username as comprador
+                   u.nombre as comprador
             FROM postulaciones p
             JOIN solicitudes s ON p.id_solicitud = s.id_solicitud
             JOIN usuarios u ON s.id_usuario = u.id_usuario
-            WHERE p.id_disenador = ? AND p.estado = 'aceptada'";
+            WHERE p.id_disenador = ? AND p.estado = 'accepted'",";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id_disenador);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $orders = [];
-    while ($row = $result->fetch_assoc()) {
-        $orders[] = $row;
-    }
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$id_disenador]);
+    $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode(["success" => true, "data" => $orders]);
 

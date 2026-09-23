@@ -16,7 +16,7 @@ try {
 
     $id_postulacion = $json_data['id_postulacion'] ?? $_POST['id_postulacion'] ?? null;
     $id_solicitud = $json_data['id_solicitud'] ?? $_POST['id_solicitud'] ?? null;
-    $nuevo_estado = $json_data['estado'] ?? $_POST['estado'] ?? 'aceptada';
+    $nuevo_estado = $json_data['estado'] ?? $_POST['estado'] ?? 'accepted';
 
     // Corregido: Limpieza de la asignación de $comentario
     $comentario = null;
@@ -44,6 +44,7 @@ try {
 
     if ($id_postulacion) {
         // ESCENARIO A: Actualizar una postulación existente
+        // Ajustamos la consulta para que el estado sea flexible o validado
         $stmt1 = $db->prepare("UPDATE postulaciones SET estado = ?, mensaje = ? WHERE id_postulacion = ? AND id_disenador = ?");
         $stmt1->execute([$nuevo_estado, $comentario, $id_postulacion, $id_disenador]);
 
