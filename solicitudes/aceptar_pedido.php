@@ -1,58 +1,85 @@
 <?php
-header("Content-Type: application/json");
-include '../config/conexion.php';
+// Deshabilitar la visualización de errores en la salida para evitar corromper el JSON
+error_reporting(0);
+ini_set('display_errors', 0);
+
+header('Content-Type: application/json');
+require_once("../config/conexion.php");
 session_start();
 
-if (!isset($_SESSION['id_usuario'])) {
-    echo json_encode(["success" => false, "message" => "No session found"]);
-    exit;
-}
-
-$id_disenador = $_SESSION['id_usuario'];
-$data = json_decode(file_get_contents("php://input"), true);
-
-if (!isset($data['id_postulacion'])) {
-    echo json_encode(["success" => false, "message" => "Missing postulation ID"]);
-    exit;
-}
-
-$id_postulacion = $data['id_postulacion'];
-
 try {
-    $conn->begin_transaction();
+    $database = new Database();
+    $db = $database->getConnection(); // Retorna un objeto PDO
 
-    // 1. Actualizar la postulación a 'aceptada'
-    $stmt1 = $conn->prepare("UPDATE postulaciones SET estado = 'aceptada' WHERE id_postulacion = ? AND id_disenador = ?");
-    $stmt1->bind_param("ii", $id_postulacion, $id_disenador);
-    $stmt1->execute();
+    // Obtención de datos desde JSON (Fetch API) o POST tradicional
+    $json_data = json_decode(file_get_contents("php://input"), true);
 
-    if ($stmt1->affected_rows === 0) {
-        throw new Exception("Postulation not found or not owned by this designer");
+    $id_postulacion = $json_data['id_postulacion'] ?? $_POST['id_postulacion'] ?? null;
+    $id_solicitud = $json_data['id_solicitud'] ?? $_POST['id_solicitud'] ?? null;
+    $nuevo_estado = $json_data['estado'] ?? $_POST['estado'] ?? 'aceptada';
+
+    // Corregido: Limpieza de la asignación de $comentario
+    $comentario = null;
+    if ($json_data) {
+        $comentario = $json_data['mensaje'] ?? $json_data['comentario'] ?? null;
+    }
+    if (!$comentario) {
+        $comentario = $_POST['mensaje'] ?? $_POST['comentario'] ?? null;
     }
 
-    // 2. Obtener el id_solicitud asociado a esta postulación
-    $stmt2 = $conn->prepare("SELECT id_solicitud FROM postulaciones WHERE id_postulacion = ?");
-    $stmt2->bind_param("i", $id_postulacion);
-    $stmt2->execute();
-    $result = $stmt2->get_result();
-    $row = $result->fetch_assoc();
+    $precio = $json_data['precio_ofrecido'] ?? $_POST['precio_ofrecido'] ?? null;
 
-    if (!$row) {
-        throw new Exception("Could not find associated request");
+    if (!$id_postulacion && !$id_solicitud) {
+        echo json_encode(["success" => false, "message" => "Missing required ID (postulation or request)"]);
+        exit;
     }
 
-    $id_solicitud = $row['id_solicitud'];
+    $id_disenador = $_SESSION['id_usuario'] ?? null;
+    if (!$id_disenador) {
+        echo json_encode(["success" => false, "message" => "User session not found"]);
+        exit;
+    }
 
-    // 3. Actualizar la solicitud a 'en_trato'
-    $stmt3 = $conn->prepare("UPDATE solicitudes SET estado = 'en_trato' WHERE id_solicitud = ?");
-    $stmt3->bind_param("i", $id_solicitud);
-    $stmt3->execute();
+    $db->beginTransaction();
 
-    $conn->commit();
-    echo json_encode(["success" => true, "message" => "Order accepted successfully!"]);
+    if ($id_postulacion) {
+        // ESCENARIO A: Actualizar una postulación existente
+        $stmt1 = $db->prepare("UPDATE postulaciones SET estado = ?, mensaje = ? WHERE id_postulacion = ? AND id_disenador = ?");
+        $stmt1->execute([$nuevo_estado, $comentario, $id_postulacion, $id_disenador]);
+
+        if ($stmt1->rowCount() === 0) {
+            $check = $db->prepare("SELECT id_postulacion FROM postulaciones WHERE id_postulacion = ? AND id_disenador = ?");
+            $check->execute([$id_postulacion, $id_disenador]);
+            if (!$check->fetch()) {
+                throw new Exception("Postulation not found or not owned by this designer");
+            }
+        }
+
+        $stmt_sol = $db->prepare("SELECT id_solicitud FROM postulaciones WHERE id_postulacion = ?");
+        $stmt_sol->execute([$id_postulacion]);
+        $res_sol = $stmt_sol->fetch();
+        $id_sol_actual = $res_sol['id_solicitud'] ?? null;
+
+    } else {
+        // ESCENARIO B: Nueva aceptación (Crea postulación)
+        $stmt_post = $db->prepare("INSERT INTO postulaciones (id_solicitud, id_disenador, precio_ofrecido, mensaje, estado) VALUES (?, ?, ?, ?, ?)");
+        $stmt_post->execute([$id_solicitud, $id_disenador, $precio, $comentario, $nuevo_estado]);
+
+        $id_postulacion = $db->lastInsertId();
+        $id_sol_actual = $id_solicitud;
+    }
+
+    // Marcar la solicitud como 'en_trato'
+    if ($id_sol_actual) {
+        $stmt3 = $db->prepare("UPDATE solicitudes SET estado = 'en_trato' WHERE id_solicitud = ?");
+        $stmt3->execute([$id_sol_actual]);
+    }
+
+    $db->commit();
+    echo json_encode(["success" => true, "message" => "Order processed successfully!"]);
 
 } catch (Exception $e) {
-    $conn->rollback();
+    if (isset($db)) $db->rollBack();
     echo json_encode(["success" => false, "message" => $e->getMessage()]);
 }
 ?>

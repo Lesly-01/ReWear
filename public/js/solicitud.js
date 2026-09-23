@@ -10,37 +10,41 @@ document.addEventListener('DOMContentLoaded', async function () {
   // ==========================================
   // CARGA DINÁMICA DESDE BASE DE DATOS
   // ==========================================
-  async function cargarSolicitudDetalle() {
+  async function cargarSolicitudes() {
     const urlParams = new URLSearchParams(window.location.search);
     const solicitudId = urlParams.get('id');
 
-    if (!solicitudId) {
-      console.error("No se encontró el ID de la solicitud en la URL.");
-      if (container) container.innerHTML = '<p class="text-center text-muted">No se proporcionó una solicitud válida.</p>';
-      return;
-    }
-
     try {
-      // Llamada al backend para obtener los detalles de la solicitud
-      const response = await fetch(`../solicitudes/read.php?id=${solicitudId}`);
+      const url = solicitudId ? `../solicitudes/read.php?id=${solicitudId}` : `../solicitudes/read.php`;
+      const response = await fetch(url);
       const result = await response.json();
 
       if (result.success && result.data) {
-        // Si el backend devuelve un array, tomamos el primer elemento o filtramos por ID
-        const data = Array.isArray(result.data)
-          ? result.data.find(item => item.id_solicitud == solicitudId)
-          : result.data;
+        const data = result.data;
 
-        if (data) {
-          renderizarTarjeta(data);
+        if (solicitudId) {
+          const item = Array.isArray(data)
+            ? data.find(i => i.id_solicitud == solicitudId)
+            : data;
+
+          if (item) {
+            renderizarTarjeta(item);
+          } else {
+            throw new Error("No se encontró la solicitud con ese ID.");
+          }
         } else {
-          throw new Error("No se encontró la solicitud con ese ID.");
+          if (Array.isArray(data) && data.length > 0) {
+            container.innerHTML = '';
+            data.forEach(item => renderizarTarjeta(item));
+          } else {
+            container.innerHTML = '<p class="text-center text-muted">No hay solicitudes disponibles en este momento.</p>';
+          }
         }
       } else {
-        throw new Error(result.message || "Error al cargar la solicitud.");
+        throw new Error(result.message || "Error al cargar las solicitudes.");
       }
     } catch (error) {
-      console.error("Error en cargarSolicitudDetalle:", error);
+      console.error("Error en cargarSolicitudes:", error);
       if (container) container.innerHTML = `<p class="text-center text-danger">Error: ${error.message}</p>`;
     }
   }
@@ -48,50 +52,30 @@ document.addEventListener('DOMContentLoaded', async function () {
   function renderizarTarjeta(item) {
     if (!container || !template) return;
 
-    container.innerHTML = '';
     const clone = template.content.cloneNode(true);
-
-    // Imagen
     const imgEl = clone.querySelector('.card-img');
     if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'IMG/default_request.jpg';
-
-    // Usuario
     const userEl = clone.querySelector('.card-user');
     if (userEl) userEl.innerHTML = `<i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @${item.comprador || 'usuario'}`;
-
-    // Estado
     const statusEl = clone.querySelector('.card-status');
     if (statusEl) statusEl.textContent = item.estado ? item.estado.toUpperCase() : 'OPEN';
-
-    // Categoría / Método
     const categoryEl = clone.querySelector('.card-category');
     if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
-
-    // Título
     const titleEl = clone.querySelector('.card-title');
     if (titleEl) titleEl.textContent = item.titulo;
-
-    // Detalles específicos (Method y Garment)
     const methodEl = clone.querySelector('.card-method');
     if (methodEl) methodEl.textContent = item.metodo || 'Customization';
-
     const garmentEl = clone.querySelector('.card-garment');
     if (garmentEl) garmentEl.textContent = item.tipo_prenda || 'Garment not specified';
-
-    // Instrucciones
     const descEl = clone.querySelector('.card-description');
     if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin instrucciones';
-
-    // Precio
     const budgetEl = clone.querySelector('.card-budget');
     if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
-
+    const cardDiv = clone.querySelector('.request-card-item');
+    if (cardDiv) cardDiv.setAttribute('data-id', item.id_solicitud);
     container.appendChild(clone);
   }
 
-  // ==========================================
-  // ACCIONES DE LA TARJETA
-  // ==========================================
   function showAlert(message, type = 'success') {
     if (!alertContainer) return;
     const icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-x-circle-fill';
@@ -127,7 +111,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     if (e.target.classList.contains('accept-btn') || e.target.getAttribute('data-bs-target') === '#acceptRequestModal') {
-      currentActiveCard = cardItem;
+      if (cardItem) {
+        const solicitudId = cardItem.getAttribute('data-id');
+        const modal = document.getElementById('acceptRequestModal');
+        if (modal) {
+          modal.setAttribute('data-current-solicitud', solicitudId);
+        }
+        currentActiveCard = cardItem;
+      }
     }
   });
 
@@ -135,34 +126,64 @@ document.addEventListener('DOMContentLoaded', async function () {
     acceptRequestForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const solicitudId = urlParams.get('id');
-      const idPostulacion = 0; // En un flujo real, aquí se crearía primero la postulación
+      const modal = document.getElementById('acceptRequestModal');
+      let solicitudId = modal ? modal.getAttribute('data-current-solicitud') : null;
+
+      if (!solicitudId) {
+        const urlParams = new URLSearchParams(window.location.search);
+        solicitudId = urlParams.get('id');
+      }
+
+      if (!solicitudId && currentActiveCard) {
+        solicitudId = currentActiveCard.getAttribute('data-id');
+      }
+
+      const finalPrice = document.getElementById('finalPriceInput').value;
+      const deliveryTime = document.getElementById('deliveryTimeInput').value;
+      const deliveryUnit = document.getElementById('deliveryUnitSelect').value;
+      const note = document.getElementById('designerNoteInput').value;
+
+      if (!solicitudId) {
+        showAlert('Error: No se pudo determinar la solicitud seleccionada.', 'danger');
+        return;
+      }
 
       try {
-        // Llamamos al script que creamos anteriormente para aceptar el pedido
         const response = await fetch('../solicitudes/aceptar_pedido.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id_postulacion: idPostulacion })
+          body: JSON.stringify({
+            id_solicitud: solicitudId,
+            precio_ofrecido: parseFloat(finalPrice) || 0,
+            mensaje: `Tiempo estimado: ${deliveryTime} ${deliveryUnit}. Nota: ${note}`,
+            estado: 'aceptada'
+          })
         });
-        const result = await response.json();
+
+        // DEBUG: Capturamos la respuesta como texto primero para evitar el crash del JSON.parse
+        const textResponse = await response.text();
+        console.log("RAW RESPONSE FROM SERVER:", textResponse);
+
+        if (!response.ok) {
+          throw new Error(`Server error ${response.status}: ${textResponse}`);
+        }
+
+        const result = JSON.parse(textResponse);
 
         if (result.success) {
           const modalInstance = bootstrap.Modal.getInstance(acceptRequestModalElem);
           if (modalInstance) modalInstance.hide();
-          showAlert('The request has been accepted, a notification has been sent to the user.', 'success');
+          showAlert('The request has been accepted and the offer has been sent to the user.', 'success');
           if (currentActiveCard) disableActionButtons(currentActiveCard);
         } else {
           showAlert('Error: ' + result.message, 'danger');
         }
       } catch (error) {
         console.error("Error al aceptar pedido:", error);
-        showAlert('An unexpected error occurred.', 'danger');
+        showAlert('An unexpected error occurred. Check console for details.', 'danger');
       }
     });
   }
 
-  // Ejecución inicial
-  cargarSolicitudDetalle();
+  cargarSolicitudes();
 });

@@ -169,26 +169,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // Evento de envío del formulario del modal
   const updateStatusForm = document.getElementById('updateStatusForm');
   if (updateStatusForm) {
-    updateStatusForm.addEventListener('submit', function (e) {
+    updateStatusForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const orderId = document.getElementById('orderIdInput').value;
       const newStatus = document.getElementById('statusSelect').value;
+      const comment = document.getElementById('statusCommentInput').value;
 
-      // Aquí se debería llamar a un PHP para actualizar el estado en la DB
-      console.log(`Actualizando orden ${orderId} a estado ${newStatus}`);
-
-      const modalElement = document.getElementById('updateStatusModal');
-      if (modalElement) {
-        const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
-        modalInstance.hide();
+      if (!orderId) {
+        alert('Error: No se encontró el ID de la orden.');
+        return;
       }
 
-      const commentInput = document.getElementById('statusCommentInput');
-      if (commentInput) commentInput.value = '';
+      try {
+        const response = await fetch('../solicitudes/aceptar_pedido.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id_postulacion: orderId,
+            estado: newStatus,
+            comentario: comment
+          })
+        });
 
-      // Recargar la lista para ver cambios
-      cargarOrdenesActivas();
+        const result = await response.json();
+
+        if (result.success) {
+          const modalElement = document.getElementById('updateStatusModal');
+          if (modalElement) {
+            const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+            modalInstance.hide();
+          }
+
+          const commentInput = document.getElementById('statusCommentInput');
+          if (commentInput) commentInput.value = '';
+
+          // Recargar la lista para ver cambios
+          await cargarOrdenesActivas();
+          // También recargamos las solicitudes generales para que desaparezca de la otra lista
+          await cargarSolicitudes();
+        } else {
+          alert('Error al actualizar: ' + result.message);
+        }
+      } catch (error) {
+        console.error('Error en la petición:', error);
+        alert('Ocurrió un error al conectar con el servidor.');
+      }
     });
   }
 
