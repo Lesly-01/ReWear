@@ -54,22 +54,22 @@
           <div class="row g-4 align-items-start">
             <div class="col-12 col-md-5">
               <div class="rounded-4 overflow-hidden shadow-sm position-relative">
-                <img src="IMG/denim corset.png" class="img-fluid w-100 object-fit-cover"  style="height: 420px;" alt="Denim Patchwork Corset">
+                <img src="IMG/denim corset.png" id="postMainImage" class="img-fluid w-100 object-fit-cover"  style="height: 420px;" alt="Denim Patchwork Corset">
                </div>
               </div>
               
               <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
                 <div>
-                  <h2 class="fw-bold text-rewear-dark mb-3">Denim patchwork corset</h2>
+                  <h2 class="fw-bold text-rewear-dark mb-3" id="postTitle" >Denim patchwork corset</h2>
                   <div class="d-flex align-items-center gap-3 p-2 px-3 rounded-3 mb-4" style="background-color: #badd8c;">
                     <img src="IMG/diseñador foto perfil.jpg" alt="User Profile" class="rounded-circle object-fit-cover" style="width: 42px; height: 42px;">
                     <div>
-                      <p class="mb-0 fw-bold text-dark extra-small">Design made by <span class="text-success">@Username</span></p>
-                      <span class="text-muted extra-small" style="font-size: 0.78rem;">Area of specialization: Patchwork</span>
+                      <p class="mb-0 fw-bold text-dark extra-small">Design made by <span class="text-success" id="postDesignerName">@Username</span></p>
+                      <span class="text-muted extra-small" style="font-size: 0.78rem;" id="postSpecialization">Area of specialization: Patchwork</span>
                     </div>
                   </div>
                   
-                  <div class="d-flex flex-wrap gap-2 mb-3">
+                  <div class="d-flex flex-wrap gap-2 mb-3"  id="postTagsContainer">
                     <span class="badge badge-rewear rounded-pill px-3 py-2 fw-semibold">Corset</span>
                     <span class="badge badge-rewear rounded-pill px-3 py-2 fw-semibold">Contemporary Craft</span>
                     <span class="badge badge-rewear rounded-pill px-3 py-2 fw-semibold">Y2K / Streetwear</span>
@@ -77,16 +77,16 @@
 
             
                   <div class="mb-4">
-                     <h6 class="fw-bold text-dark mb-1 fs-6">Description</h6>
+                     <h6 class="fw-bold text-dark mb-1 fs-6" id="postDescription">Description</h6>
                       <p class="text-muted extra-small lh-base mb-0" style="font-size: 0.85rem;">
-                        This set features a strapless corset-style top, a patchwork bucket hat, and a matching shoulder bag, all crafted from reclaimed denim in multiple washes ranging from light blue to deep indigo. Handcrafted aesthetic with raw-edge details.
+                        
                      </p>
                     </div>
 
             
                     <div class="mb-4">
-                      <span class="text-muted extra-small d-block fw-semibold">Price range:</span>
-                     <span class="fs-4 fw-bold text-rewear-dark">$20.00 - $40.00 <small class="fs-6 text-muted">USD</small></span>
+                      <span class="text-muted extra-small d-block fw-semibold" id="postPriceRange">Price range:</span>
+                     <span class="fs-4 fw-bold text-rewear-dark"><small class="fs-6 text-muted"></small></span>
                     </div>
                   </div>
                   
@@ -95,7 +95,7 @@
                       <i class="bi bi-bag-check"></i> Place order
                     </button>
                     
-                    <span class="text-muted extra-small" style="font-size: 0.75rem;">Post made on 10/08/26</span>
+                    <span class="text-muted extra-small" style="font-size: 0.75rem;" id="postDate" >Post made on 10/08/26</span>
                   </div>
                  </div>
                 </div>
@@ -207,6 +207,8 @@
 <script>
     verificarAcceso(['comprador', 'disenador']);
 </script>
+
+ <script src="js/publicaciones.js"></script>
 
 
 
