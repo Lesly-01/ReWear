@@ -15,7 +15,7 @@ try {
     }
 
     // Obtenemos datos del usuario y su perfil de diseñador
-    $sql = "SELECT u.id_usuario, u.nombre, u.correo, p.biografia, p.rango_precio_desde, p.rango_precio_hasta
+    $sql = "SELECT u.id_usuario, u.nombre, u.correo, p.biografia, p.rango_precio_desde, p.rango_precio_hasta, p.foto_perfil
             FROM usuarios u
             JOIN perfiles_disenador p ON u.id_usuario = p.id_usuario
             WHERE u.id_usuario = :id LIMIT 1";

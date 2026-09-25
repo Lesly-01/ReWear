@@ -164,20 +164,23 @@ async function loadTailorsFromDatabase() {
       result.data.forEach(tailor => {
         const clone = template.content.cloneNode(true);
 
+        
         // 1. Imagen de Perfil
-const img = clone.querySelector('.tailor-img');
-if (img) {
-  if (tailor.foto_perfil && tailor.foto_perfil.trim() !== '') {
-    // Si la ruta en BD ya incluye 'IMG/' o 'uploads/', se usa directamente
-    img.src = tailor.foto_perfil;
-  } else {
-    // Respaldo por defecto en caso de que esté NULL en la BD
-    img.src = 'IMG/default_avatar.jpg';
-  }
-  
-  img.alt = `Foto de ${tailor.nombre}`;
-}
+          const img = clone.querySelector('.tailor-img');
+          if (img) {
+            if (tailor.foto_perfil && tailor.foto_perfil.trim() !== '') {
+              // Ajustamos la ruta según el origen para que sea accesible desde public/clothes_catalog.html
+              const photoPath = tailor.foto_perfil.startsWith('uploads/')
+                                ? `../${tailor.foto_perfil}`
+                                : tailor.foto_perfil;
+              img.src = photoPath;
+            } else {
+              img.src = 'IMG/default_avatar.jpg';
+            }
+            img.alt = `Foto de ${tailor.nombre}`;
+          }
 
+          
         // 2. Ubicación (San Salvador como valor por defecto si no está en BD)
         const locationBadge = clone.querySelector('.tailor-location');
         if (locationBadge) {

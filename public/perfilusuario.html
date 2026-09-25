@@ -229,6 +229,101 @@
             </div>
         </div>
 
+
+        <!-- Sección My Active Requests (Plantilla para renderizado dinámico desde BD) -->
+<div class="row g-4 mt-1" id="user-active-requests-section">
+  <div class="col-12">
+    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+      
+      <!-- Encabezado simple sin notificaciones -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold text-dark mb-0">My active requests</h6>
+        <a href="/public/solicitudes.html" class="text-decoration-none extra-small fw-semibold" style="color: #1b4332;">View all</a>
+      </div>
+
+      <!-- Contenedor dinámico de solicitudes -->
+      <div class="d-flex flex-column gap-3" id="requests-list-container">
+        
+        <!-- PLANTILLA ÍTEM 1: Ejemplo In Review -->
+        <div class="p-3 rounded-3 bg-light d-flex align-items-center justify-content-between gap-3 request-card-item" 
+             data-request-id="1" 
+             data-designer-id="101">
+          <div class="d-flex align-items-center gap-3">
+            <!-- Cuadro de imagen / vista previa con ID -->
+            <img src="/public/IMG/placeholder.jpg" 
+                 id="request-img-1" 
+                 class="rounded-3 flex-shrink-0" 
+                 style="width: 50px; height: 50px; object-fit: cover;" 
+                 alt="Preview image">
+            <div>
+              <!-- Título de la publicación -->
+              <h6 class="fw-bold text-dark extra-small mb-1" id="request-title-1">Custom Hoodie Design</h6>
+              <!-- Usuario del diseñador -->
+              <span class="text-muted extra-small d-block">
+                Designer: <span id="request-designer-1">@designer_username</span>
+              </span>
+            </div>
+          </div>
+          <!-- Estado de la orden (ej: In review) -->
+          <span class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-pill extra-small px-3 py-1" id="request-status-1">
+            In review
+          </span>
+        </div>
+
+        <!-- PLANTILLA ÍTEM 2: Ejemplo Completed -->
+        <div class="p-3 rounded-3 bg-light d-flex align-items-center justify-content-between gap-3 request-card-item" 
+             data-request-id="2" 
+             data-designer-id="102">
+          <div class="d-flex align-items-center gap-3">
+            <img src="/public/IMG/placeholder.jpg" 
+                 id="request-img-2" 
+                 class="rounded-3 flex-shrink-0" 
+                 style="width: 50px; height: 50px; object-fit: cover;" 
+                 alt="Preview image">
+            <div>
+              <h6 class="fw-bold text-dark extra-small mb-1" id="request-title-2">Botanical Tote bag</h6>
+              <span class="text-muted extra-small d-block">
+                Designer: <span id="request-designer-2">@designer_username</span>
+              </span>
+            </div>
+          </div>
+          <!-- Estado de la orden (ej: Completed) -->
+          <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill extra-small px-3 py-1" id="request-status-2">
+            Completed
+          </span>
+        </div>
+
+        <!-- PLANTILLA ÍTEM 3: Ejemplo Closed -->
+        <div class="p-3 rounded-3 bg-light d-flex align-items-center justify-content-between gap-3 request-card-item" 
+             data-request-id="3" 
+             data-designer-id="103">
+          <div class="d-flex align-items-center gap-3">
+            <img src="/public/IMG/placeholder.jpg" 
+                 id="request-img-3" 
+                 class="rounded-3 flex-shrink-0" 
+                 style="width: 50px; height: 50px; object-fit: cover;" 
+                 alt="Preview image">
+            <div>
+              <h6 class="fw-bold text-dark extra-small mb-1" id="request-title-3">Floral Denim Jacket</h6>
+              <span class="text-muted extra-small d-block">
+                Designer: <span id="request-designer-3">@designer_username</span>
+              </span>
+            </div>
+          </div>
+
+
+          
+          <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill extra-small px-3 py-1" id="request-status-3">
+            Closed
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
     </main>
 
     <footer class="footer-rewear pt-5 pb-4">
