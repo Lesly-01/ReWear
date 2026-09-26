@@ -26,22 +26,38 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (result.success && result.data) {
         const data = result.data;
 
-        // 1. Actualizar Username (SÓLO desde la DB, evita sobreescribir con la sesión)
+        // CONTROL DE VISIBILIDAD (Is Owner?)
+        const sessionUserId = usuarioSesion ? usuarioSesion.id_usuario : null;
+        const isOwner = (String(sessionUserId) === String(data.id_usuario));
+
+        // 1. Actualizar Username
         const usernameHeader = document.getElementById('profileUsername');
         if (usernameHeader) {
-          usernameHeader.textContent = data.nombre.startsWith('@') ? data.nombre : `@${data.nombre}`;
+          const nameToDisplay = isOwner && usuarioSesion ? usuarioSesion.nombre : data.nombre;
+          usernameHeader.textContent = nameToDisplay.startsWith('@') ? nameToDisplay : `@${nameToDisplay}`;
         }
 
-        // 2. Actualizar Bio y Especialidad
+        // 2. Actualizar Foto de Perfil / Avatar de Iniciales
+        const profileImg = document.getElementById('profileImage');
+        if (profileImg) {
+          if (data.foto_perfil && data.foto_perfil.trim() !== '') {
+            const photoPath = data.foto_perfil.startsWith('uploads/')
+                                ? `../${data.foto_perfil}`
+                                : data.foto_perfil;
+            profileImg.src = photoPath;
+            profileImg.classList.remove('avatar-initials');
+          } else {
+            profileImg.src = generateInitialsAvatar(data.nombre);
+            profileImg.classList.add('avatar-initials');
+          }
+        }
+
+        // 3. Actualizar Bio y Especialidad
         const bioParagraph = document.querySelector('p.text-muted.extra-small');
         if (bioParagraph) bioParagraph.textContent = data.biografia || 'No bio provided.';
 
         const specialtyBadge = document.querySelector('.badge.rounded-pill.text-dark.border');
         if (specialtyBadge) specialtyBadge.textContent = data.biografia || 'Sustainable Fashion Designer';
-
-        // 3. CONTROL DE VISIBILIDAD (Is Owner?)
-        const sessionUserId = usuarioSesion ? usuarioSesion.id_usuario : null;
-        const isOwner = (String(sessionUserId) === String(data.id_usuario));
 
         if (!isOwner) {
           // Ocultar elementos privados si NO es el dueño
@@ -72,6 +88,41 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   // Ejecutar carga
   loadProfile();
+
+  /**
+   * Genera un avatar basado en iniciales usando un Canvas y lo convierte a Base64
+   */
+  function generateInitialsAvatar(name) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 100;
+    canvas.height = 100;
+    const ctx = canvas.getContext('2d');
+
+    // Colores sugeridos basados en el nombre para que sean consistentes
+    const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3'];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const color = colors[Math.abs(hash) % colors.length];
+
+    // Fondo
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(50, 50, 50, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Texto (Iniciales)
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 40px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+    ctx.fillText(initials, 50, 50);
+
+    return canvas.toDataURL();
+  }
 
   // Mantener la lógica de cerrar sesión
   window.cerrarSesion = function() {

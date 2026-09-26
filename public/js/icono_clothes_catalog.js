@@ -116,6 +116,38 @@
 // });
 
 
+/**
+ * Genera un avatar basado en iniciales usando un Canvas y lo convierte a Base64
+ */
+function generateInitialsAvatar(name) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 100;
+  canvas.height = 100;
+  const ctx = canvas.getContext('2d');
+
+  const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3'];
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const color = colors[Math.abs(hash) % colors.length];
+
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(50, 50, 50, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = 'bold 40px Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+  ctx.fillText(initials, 50, 50);
+
+  return canvas.toDataURL();
+}
+
 async function loadTailorsFromDatabase() {
   console.log("--> Iniciando carga de artesanos...");
   // ... resto del código ...
@@ -147,6 +179,38 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Función para consultar la base de datos e inyectar las tarjetas
  */
+/**
+ * Genera un avatar basado en iniciales usando un Canvas y lo convierte a Base64
+ */
+function generateInitialsAvatar(name) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 100;
+  canvas.height = 100;
+  const ctx = canvas.getContext('2d');
+
+  const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3'];
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const color = colors[Math.abs(hash) % colors.length];
+
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(50, 50, 50, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = 'bold 40px Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+  ctx.fillText(initials, 50, 50);
+
+  return canvas.toDataURL();
+}
+
 async function loadTailorsFromDatabase() {
   const tailorsContainer = document.getElementById('tailorsContainer');
   const template = document.getElementById('tailorCardTemplate');
@@ -175,7 +239,7 @@ async function loadTailorsFromDatabase() {
                                 : tailor.foto_perfil;
               img.src = photoPath;
             } else {
-              img.src = 'IMG/default_avatar.jpg';
+              img.src = generateInitialsAvatar(tailor.nombre);
             }
             img.alt = `Foto de ${tailor.nombre}`;
           }
