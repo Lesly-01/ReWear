@@ -26,7 +26,7 @@ const AvatarManager = {
         const ctx = canvas.getContext('2d');
 
         // Paleta de colores consistente
-        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3', '#1b4332'];
+        const colors = ['#fa785b', '#71dd50', '#506add', '#d949e4', '#e6b251', '#5ae0d7', '#366451'];
         let hash = 0;
         for (let i = 0; i < name.length; i++) {
             hash = name.charCodeAt(i) + ((hash << 5) - hash);
