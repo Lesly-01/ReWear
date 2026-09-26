@@ -1,63 +1,56 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const editProfileModal = document.getElementById('editProfileModal');
-    const editProfileForm = document.getElementById('editProfileForm');
+document.addEventListener('DOMContentLoaded', async function () {
+  let usuarioSesion = null;
 
-    // Elementos del DOM donde se muestra la información
-    const profileUsername = document.getElementById('profileUsername');
-    const profileBio = document.getElementById('profileBio');
+  try {
+    usuarioSesion = JSON.parse(localStorage.getItem('usuarioSesion')) || JSON.parse(localStorage.getItem('usuariosesion'));
+  } catch (e) {
+    console.error("Error loading session:", e);
+  }
 
-    // Campos del formulario modal
-    const inputUsername = document.getElementById('inputUsername');
-    const inputBio = document.getElementById('inputBio');
+  const urlParams = new URLSearchParams(window.location.search);
+  const profileId = urlParams.get('id');
 
-    // 1. CARGAR EL NOMBRE AL INICIAR SESIÓN / CARGAR LA PÁGINA
-    let usuarioSesion = JSON.parse(localStorage.getItem('usuarioSesion')) || {};
+  async function loadProfile() {
+    try {
+      const targetId = profileId || (usuarioSesion ? usuarioSesion.id_usuario : null);
 
-    if (profileUsername) {
-        // Busca el nombre de usuario de la sesión o 'user', si no existe usa el predeterminado
-        const nombreGuardado = usuarioSesion.username || usuarioSesion.nombre || usuarioSesion.user;
-        
-        if (nombreGuardado) {
-            profileUsername.textContent = nombreGuardado.startsWith('@') 
-                ? nombreGuardado 
-                : `@${nombreGuardado}`;
+      if (!targetId) {
+        console.warn("No profile ID found");
+        return;
+      }
+
+      const response = await fetch(`../auth/get_profile.php?id=${targetId}`);
+      const result = await response.json();
+
+      if (result.success && result.data) {
+        const data = result.data;
+        const sessionUserId = usuarioSesion ? usuarioSesion.id_usuario : null;
+        const isOwner = (String(sessionUserId) === String(data.id_usuario));
+
+        // 1. Actualizar Username
+        const usernameHeader = document.getElementById('profileUsername');
+        if (usernameHeader) {
+          const nameToDisplay = isOwner && usuarioSesion ? usuarioSesion.nombre : data.nombre;
+          usernameHeader.textContent = nameToDisplay && nameToDisplay.startsWith('@') ? nameToDisplay : (nameToDisplay ? `@${nameToDisplay}` : '@Username');
         }
+
+        // 2. Actualizar Foto de Perfil / Avatar de Iniciales
+        const profileImg = document.getElementById('profileAvatar');
+        if (profileImg) {
+          const nameForInitials = isOwner && usuarioSesion ? usuarioSesion.nombre : data.nombre;
+          profileImg.src = AvatarManager.getProfileImage(nameForInitials || 'User', data.foto_perfil);
+        }
+
+        // 3. Actualizar Bio
+        const bioParagraph = document.getElementById('profileBio') || document.querySelector('p.text-muted.extra-small');
+        if (bioParagraph) bioParagraph.textContent = data.biografia || 'Looking for unique styles to give clothes a second chance.';
+      } else {
+        console.error("Error loading profile:", result.message);
+      }
+    } catch (error) {
+      console.error("Profile load error:", error);
     }
+  }
 
-    // 2. LLENAR LOS CAMPOS DEL MODAL AL ABRIRLO
-    if (editProfileModal) {
-      editProfileModal.addEventListener('show.bs.modal', function () {
-        if (profileUsername && inputUsername) {
-          inputUsername.value = profileUsername.textContent.trim();
-        }
-        if (profileBio && inputBio) {
-          inputBio.value = profileBio.textContent.trim();
-        }
-      });
-    }
-
-    // 3. GUARDAR LOS CAMBIOS Y ACTUALIZAR LOCALSTORAGE
-    if (editProfileForm) {
-      editProfileForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const nuevoNombre = inputUsername.value.trim();
-        const nuevaBio = inputBio.value.trim();
-
-        // Actualizar visualmente la página
-        if (profileUsername) profileUsername.textContent = nuevoNombre;
-        if (profileBio) profileBio.textContent = nuevaBio;
-
-        // Guardar el nuevo nombre en la sesión local
-        usuarioSesion.username = nuevoNombre;
-        usuarioSesion.nombre = nuevoNombre;
-        localStorage.setItem('usuarioSesion', JSON.stringify(usuarioSesion));
-
-        // Cerrar el Modal
-        const modalInstance = bootstrap.Modal.getInstance(editProfileModal);
-        if (modalInstance) {
-          modalInstance.hide();
-        }
-      });
-    }
+  loadProfile();
 });

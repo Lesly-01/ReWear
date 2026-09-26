@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   let usuarioSesion = null;
 
   try {
+    // Soporte para ambas posibles claves de sesión
     usuarioSesion = JSON.parse(localStorage.getItem('usuarioSesion')) || JSON.parse(localStorage.getItem('usuariosesion'));
   } catch (e) {
     console.error("Error loading session:", e);
@@ -33,13 +34,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         // 1. Actualizar Username
         const usernameHeader = document.getElementById('profileUsername');
         if (usernameHeader) {
+          // Priorizar nombre de sesión si es el dueño
           const nameToDisplay = isOwner && usuarioSesion ? usuarioSesion.nombre : data.nombre;
-          usernameHeader.textContent = nameToDisplay.startsWith('@') ? nameToDisplay : `@${nameToDisplay}`;
+          usernameHeader.textContent = nameToDisplay && nameToDisplay.startsWith('@') ? nameToDisplay : (nameToDisplay ? `@${nameToDisplay}` : '@Username');
         }
 
         // 2. Actualizar Foto de Perfil / Avatar de Iniciales
-        const profileImg = document.getElementById('profileImage');
+        // CORRECCIÓN: Usamos 'profileAvatar' que es el ID real en el HTML
+        const profileImg = document.getElementById('profileAvatar');
         if (profileImg) {
+          // Verificamos si existe la foto en los datos (aunque en la DB actual no exista, dejamos el código listo)
           if (data.foto_perfil && data.foto_perfil.trim() !== '') {
             const photoPath = data.foto_perfil.startsWith('uploads/')
                                 ? `../${data.foto_perfil}`
@@ -47,7 +51,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             profileImg.src = photoPath;
             profileImg.classList.remove('avatar-initials');
           } else {
-            profileImg.src = generateInitialsAvatar(data.nombre);
+            // Si no hay foto, generamos el avatar de iniciales
+            const nameForInitials = isOwner && usuarioSesion ? usuarioSesion.nombre : data.nombre;
+            profileImg.src = generateInitialsAvatar(nameForInitials || 'User');
             profileImg.classList.add('avatar-initials');
           }
         }
@@ -99,7 +105,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const ctx = canvas.getContext('2d');
 
     // Colores sugeridos basados en el nombre para que sean consistentes
-    const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3'];
+    const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FFB833', '#33FFF3', '#1b4332'];
     let hash = 0;
     for (let i = 0; i < name.length; i++) {
       hash = name.charCodeAt(i) + ((hash << 5) - hash);
@@ -127,6 +133,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Mantener la lógica de cerrar sesión
   window.cerrarSesion = function() {
       localStorage.removeItem('usuarioSesion');
+      localStorage.removeItem('usuariosesion');
       window.location.href = 'login.html';
   };
 });
