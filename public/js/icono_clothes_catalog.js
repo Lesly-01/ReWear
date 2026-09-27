@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * Función para consultar la base de datos e inyectar las tarjetas
  */
 async function loadTailorsFromDatabase() {
-  const tailorsContainer = document.getElementById('tailorsContainer');
+  const tailorsContainer = document.getElementById('orders-container');
   const template = document.getElementById('tailorCardTemplate');
 
   if (!tailorsContainer || !template) return;
