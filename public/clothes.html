@@ -171,7 +171,7 @@
 
 
 
-<section class="w-100 py-5 px-4 mb-5 rounded-0 text-center shadow-sm hero-banner d-flex align-items-center justify-content-center"  style="background: linear-gradient(rgba(123, 143, 100, 0.603), rgba(139, 155, 126, 0.493)), url('IMG/banner\ costura.jpg') center/cover no-repeat; min-height: 440px;">
+<section class="w-100 py-5 px-4 mb-5 rounded-0 text-center shadow-sm hero-banner d-flex align-items-center justify-content-center"  style="background: linear-gradient(rgba(123, 143, 100, 0.87), rgba(139, 155, 126, 0.712)), url('IMG/banner\ costura.jpg') center/cover no-repeat; min-height: 440px;">
 
   
 
@@ -182,7 +182,7 @@
     <h2 class="display-6 fw-bold mb-3" style="color: #000000;">Tailor your next project</h2>
 
     
-    <p class="lead opacity-100 mx-auto mb-4" style="max-width: 650px; font-weight:400; color: #fdfffe;">
+    <p class="lead opacity-100 mx-auto mb-4" style="max-width: 650px; font-weight:400; color: #000000;">
       Receive custom request from clients, evaluate order details and turn custom requests into reality.
     </p>
 
@@ -357,8 +357,8 @@
            
             <div class="col-12 col-md-5">
               <label class="form-label extra-small fw-semibold text-muted">Image File or URL *</label>
-              <input type="text" id="postImg" name="image_url" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="IMG/denim_corset.png" required>
-              <div class="mt-3 text-center p-4 border rounded-3 bg-light d-flex flex-column align-items-center justify-content-center">
+              <input type="text" id="postImg" name="image_url" class="form-control border-0 rounded-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="denim_corset.png" required>
+              <div class="mt-3 text-center p-4 border rounded-3 d-flex flex-column align-items-center justify-content-center" style="background-color: #e2e2e2a2;">
                 <i class="bi bi-image text-muted fs-2 mb-1"></i>
                 <p class="extra-small text-muted mb-0">Project Image Preview</p>
               </div>
@@ -367,36 +367,36 @@
             
             <div class="col-12 col-md-7">
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Project / Design Title *</label>
-                <input type="text" id="postTitle" name="title" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g., Hand-embroidered Denim Corset" required>
+                <label class="form-label extra-small fw-semibold" style="color: #063b27;" >Project / Design Title *</label>
+                <input type="text" id="postTitle" name="title" class="form-control  border-0 rounded-3 shadow-none extra-small"  style="background-color: #e2e2e2a2;"  placeholder="e.g., Hand-embroidered Denim Corset" required>
               </div>
 
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Category / Techniques Used (Tags) *</label>
-                <input type="text" id="postCategory" name="category" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g., UPCYCLING, Hand Embroidery, Y2K" required>
+                <label class="form-label extra-small fw-semibold" style="color: #063b27;">Category / Techniques Used (Tags) *</label>
+                <input type="text" id="postCategory" name="category" class="form-control border-0 rounded-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="e.g., Upcycling, Hand Embroidery, Y2K" required>
               </div>
 
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Estimated Starting Price Range ($USD) *</label>
+                <label class="form-label extra-small fw-semibold" style="color: #063b27;">Estimated Starting Price Range ($USD) *</label>
                 <div class="input-group">
-                  <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
-                  <input type="number" id="postMinPrice" name="min_price" step="0.01" class="form-control bg-light border-0 shadow-none extra-small" placeholder="Min (e.g. 35)" min="1" required>
-                  <span class="input-group-text bg-light border-0 text-muted extra-small">-</span>
-                  <span class="input-group-text bg-light border-0 text-muted extra-small">$</span>
-                  <input type="number" id="postMaxPrice" name="max_price" step="0.01" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Max (e.g. 60)" min="1" required>
+                  <span class="input-group-text  border-0 rounded-start-3 text-muted extra-small" style="background-color: #e2e2e2a2; color: #063b27;">$</span>
+                  <input type="number" id="postMinPrice" name="min_price" step="0.01" class="form-control border-0 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="Min (e.g. 10)" min="1" required>
+                  <span class="input-group-text border-0 text-muted extra-small" style="background-color: #e2e2e2a2; color: #063b27;">-</span>
+                  <span class="input-group-text border-0 text-muted extra-small" style="background-color: #e2e2e2a2; color: #063b27;" >$</span>
+                  <input type="number" id="postMaxPrice" name="max_price" step="0.01" class="form-control border-0 rounded-end-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="Max (e.g. 35)" min="1" required>
                 </div>
               </div>
 
               <div class="mb-3">
-                <label class="form-label fw-semibold">Project Image</label>
+                <label class="form-label extra-small fw-semibold" style="color: #063b27;">Project Image</label>
                 <input type="file" class="form-control" name="image_file" accept="image/*" required>
               </div>
 
               
               <div class="mb-3">
-                <label class="form-label extra-small fw-semibold text-muted">Garment & Process Description *</label>
-                <textarea id="postDescription" name="description"  class="form-control bg-light border-0 rounded-3 shadow-none extra-small" rows="3" placeholder="Describe materials upcycled, technique applied, estimated production time..." required></textarea>
+                <label class="form-label extra-small fw-semibold" style="color: #063b27;">Garment & Process Description *</label>
+                <textarea id="postDescription" name="description"  class="form-control border-0 rounded-3 shadow-none extra-small" rows="3" style="background-color: #e2e2e2a2;" placeholder="Describe materials upcycled, technique applied, estimated production time..." required></textarea>
               </div>
 
             </div>
