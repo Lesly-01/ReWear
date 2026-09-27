@@ -38,6 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderizarConPlantilla(lista, container, template) {
     container.innerHTML = '';
 
+    const statusTranslations = {
+    'en_trato': 'In progress',
+    'en trato': 'In progress',
+    'aceptada': 'In progress',
+    'en_proceso': 'In progress',
+    'pendiente': 'Pending',
+    'abierta': 'Open',
+    'disponible': 'Available',
+    'en_revision': 'In review',
+    'completada': 'Completed',
+    'rechazada': 'Rejected'
+  };
+
     lista.forEach(item => {
       const clone = template.content.cloneNode(true);
 
@@ -48,7 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (userEl) userEl.textContent = `@${item.comprador || 'usuario'}`;
 
       const statusEl = clone.querySelector('.card-status');
-      if (statusEl) statusEl.textContent = item.estado ? item.estado.toUpperCase() : 'ABIERTA';
+    if (statusEl) {
+      const rawStatus = String(item.estado || 'ABIERTA').trim().toLowerCase();
+      statusEl.textContent = statusTranslations[rawStatus] || 'In progress';
+    }
 
       const categoryEl = clone.querySelector('.card-category');
       if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
@@ -108,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
     const statusTranslations = {
+    'EN_TRATO': { text: 'In progress', bg: '#c6e876', color: '#1b4332' },
     'pendiente': { text: 'Pending', bg: '#FEFCBF', color: '#744210' },
     'aceptada': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
     'en_revision': { text: 'In Review', bg: '#BEE3F8', color: '#2B6CB0' },
@@ -151,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <button type="button"
-                    class="btn btn-sm flex-fill rounded-3 fw-semibold text-white px-1 btn-update-status"
+                    class="btn w-100 rounded-3 fw-semibold text-white btn-update-status"
                     data-id="${order.id_postulacion}"
                     data-bs-toggle="modal"
                     data-bs-target="#updateStatusModal"

@@ -20,7 +20,7 @@ try {
                    p.estado AS estado_postulacion, 
                    p.fecha AS fecha_postulacion,
                    p.precio_ofrecido,
-                   
+                   p.entrega_estimada,
                    s.titulo, 
                    s.instrucciones, 
                    s.descripcion, 
