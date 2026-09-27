@@ -166,19 +166,18 @@ async function loadTailorsFromDatabase() {
 
         
         // 1. Imagen de Perfil
-          const img = clone.querySelector('.tailor-img');
-          if (img) {
-            if (tailor.foto_perfil && tailor.foto_perfil.trim() !== '') {
-              // Ajustamos la ruta según el origen para que sea accesible desde public/clothes_catalog.html
-              const photoPath = tailor.foto_perfil.startsWith('uploads/')
-                                ? `../${tailor.foto_perfil}`
-                                : tailor.foto_perfil;
-              img.src = photoPath;
-            } else {
-              img.src = 'IMG/default_avatar.jpg';
-            }
-            img.alt = `Foto de ${tailor.nombre}`;
-          }
+           const img = clone.querySelector('.tailor-img');
+  if (img) {
+      if (tailor.foto_perfil && tailor.foto_perfil.trim() !== '') {
+          const photoPath = tailor.foto_perfil.startsWith('uploads/')
+                            ? `../${tailor.foto_perfil}`
+                            : tailor.foto_perfil;
+          img.src = photoPath;
+      } else {
+          img.src = AvatarManager.getProfileImage(tailor.nombre, null);
+      }
+      img.alt = `Foto de ${tailor.nombre}`;
+  }
 
           
         // 2. Ubicación (San Salvador como valor por defecto si no está en BD)
