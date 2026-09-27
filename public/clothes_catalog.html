@@ -53,7 +53,7 @@
       <div class="modal-header border-0 pb-0 pt-4 px-4">
         <div>
           <span class="badge rounded-pill bg-light text-success border border-success-subtle px-3 py-1 extra-small mb-1">Client Portal</span>
-          <h4 class="modal-title fw-bold" id="createRequestModalLabel" style="color: #1b4332;">New Customization Request</h4>
+          <h4 class="modal-title fw-bold" id="createRequestModalLabel" style="color: #27503f;">New Customization Request</h4>
         </div>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -68,58 +68,62 @@
           <div class="row g-3">
            
             <div class="col-12">
-              <label class="form-label extra-small fw-semibold mb-1">Request Title *</label>
-              <input type="text" id="requestTitleInput" name="request_title" class="form-control bg-light border-0 rounded-3 shadow-none extra-small p-2.5" placeholder="e.g. Embroidery on Vintage Denim Jacket" required>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Request Title *</label>
+              <input type="text" id="requestTitleInput" name="request_title" class="form-control  border-0 rounded-3 shadow-none extra-small p-2.5" style="background-color: #e2e2e2a2;" placeholder="e.g. Embroidery on Vintage Denim shirt" required>
             </div>
 
             
             <div class="col-12 col-md-6">
-              <label class="form-label extra-small fw-semibold mb-1">Garment Type *</label>
-              <input type="text" id="garmentTypeInput" name="garment_type" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" placeholder="e.g. Black Cotton Hoodie" required>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Garment Type *</label>
+              <input type="text" id="garmentTypeInput" name="garment_type" class="form-control border-0 rounded-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="e.g. Black Cotton Hoodie" required>
             </div>
 
             <div class="col-12 col-md-6">
-              <label class="form-label extra-small fw-semibold mb-1">Customization Method *</label>
-              <select id="methodSelect" name="customization_method" class="form-select bg-light border-0 rounded-3 shadow-none extra-small" required>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Customization Method *</label>
+              <select id="methodSelect" name="customization_method" style="background-color: #e2e2e2a2;" class="form-select border-0 rounded-3 shadow-none extra-small" required >
                 <option value="" selected disabled>Select a method...</option>
                 <option value="Custom Embroidery">Custom Embroidery</option>
                 <option value="Upcycling & Patchwork">Upcycling & Patchwork</option>
                 <option value="Garment Alteration">Garment Alteration</option>
                 <option value="Fabric Painting">Fabric Painting</option>
+                <option value="Sublimation Printing">Sublimation Printing</option>
+                <option value="Custom Tie-Dye">Custom Tie-Dye</option>
+                <option value="Laser Engraving">Laser Engraving</option>
+                <option value="Screen Printing">Screen Printing</option>
               </select>
             </div>
 
             
             <div class="col-12 col-md-6">
-              <label class="form-label extra-small fw-semibold mb-1">Your Garment Photo *</label>
-              <input type="file" id="garmentPhotoInput" name="garment_photo" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" accept="image/*" required>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Your Garment Photo *</label>
+              <input type="file" id="garmentPhotoInput" name="garment_photo" class="form-control border-0 rounded-3 shadow-none extra-small"  style="background-color: #e2e2e2a2;"  accept="image/*" required>
               <span class="text-muted extra-small d-block mt-1" style="font-size: 0.75rem;">Clear photo of the item you want to modify.</span>
             </div>
 
             <div class="col-12 col-md-6">
-              <label class="form-label extra-small fw-semibold mb-1">Reference File / Inspiration (Optional)</label>
-              <input type="file" id="referencePhotoInput" name="reference_photo" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" accept="image/*,.pdf">
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Reference File / Inspiration (Optional)</label>
+              <input type="file" id="referencePhotoInput" name="reference_photo" class="form-control border-0 rounded-3 shadow-none extra-small" style="background-color: #e2e2e2a2;"  accept="image/*,.pdf">
               <span class="text-muted extra-small d-block mt-1" style="font-size: 0.75rem;">Design sketch, Pinterest image, or pattern.</span>
             </div>
 
             <div class="col-12">
-              <label class="form-label extra-small fw-semibold mb-1">Detailed Instructions *</label>
-              <textarea id="instructionsInput" name="instructions" class="form-control bg-light border-0 rounded-3 shadow-none extra-small" rows="3" placeholder="Describe placement, colors, thread type, measurements, or special requests..." required></textarea>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Detailed Instructions *</label>
+              <textarea id="instructionsInput" name="instructions" class="form-control border-0 rounded-3 shadow-none extra-small" rows="3" style="background-color: #e2e2e2a2;" placeholder="Describe placement, colors, thread type, measurements, or special requests..." required></textarea>
             </div>
 
             <div class="col-12">
-              <label class="form-label extra-small fw-semibold mb-1">Estimated Budget Range ($USD) *</label>
+              <label class="form-label extra-small fw-semibold mb-1" style="color: #063b27;">Estimated Budget Range ($USD) *</label>
               <div class="row g-2">
                 <div class="col-6">
                   <div class="input-group">
-                    <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
-                    <input type="number" name="min_budget" id="minBudgetInput" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Min (e.g. 20)" min="1" required>
+                    <span class="input-group-text border-0 rounded-start-3 text-muted extra-small" style="background-color: #e2e2e2a2;">$</span>
+                    <input type="number" name="min_budget" id="minBudgetInput" class="form-control border-0 rounded-end-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="Min (e.g. 20)" min="1" required>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="input-group">
-                    <span class="input-group-text bg-light border-0 rounded-start-3 text-muted extra-small">$</span>
-                    <input type="number" name="max_budget" id="maxBudgetInput" class="form-control bg-light border-0 rounded-end-3 shadow-none extra-small" placeholder="Max (e.g. 40)" min="1" required>
+                    <span class="input-group-text border-0 rounded-start-3 text-muted extra-small" style="background-color: #e2e2e2a2;">$</span>
+                    <input type="number" name="max_budget" id="maxBudgetInput" class="form-control border-0 rounded-end-3 shadow-none extra-small" style="background-color: #e2e2e2a2;" placeholder="Max (e.g. 40)" min="1" required>
                   </div>
                 </div>
               </div>
