@@ -192,7 +192,7 @@ async function loadTailorsFromDatabase() {
           const promedio = parseFloat(tailor.promedio_calificacion).toFixed(1);
           ratingBadge.textContent = tailor.total_resenas > 0 
             ? `★ ${promedio} (${tailor.total_resenas})` 
-            : '★ Nuevo';
+            : '★ New';
         }
 
         // 4. Nombre
@@ -202,7 +202,7 @@ async function loadTailorsFromDatabase() {
         // 5. Especialidad / Biografía
         const titleEl = clone.querySelector('.tailor-title');
         if (titleEl) {
-          titleEl.textContent = tailor.biografia ? tailor.biografia : 'Diseñador Textil y Upcycling';
+          titleEl.textContent = tailor.biografia ? tailor.biografia : 'Upcycling and textil designer';
         }
 
         // 6. Etiquetas de Técnicas
