@@ -16,13 +16,22 @@ try {
 
     // Unimos postulaciones con solicitudes para obtener los detalles del pedido
     // Filtramos solo aquellas que el diseñador ha aceptado
-    $sql = "SELECT p.id_postulacion, p.estado as estado_postulacion, p.fecha as fecha_postulacion,
-                   s.titulo, s.instrucciones, s.descripcion, s.presupuesto_max, s.foto_prenda,
-                   u.nombre as comprador
+    $sql = "SELECT p.id_postulacion, 
+                   p.estado AS estado_postulacion, 
+                   p.fecha AS fecha_postulacion,
+                   p.precio_ofrecido,
+                   
+                   s.titulo, 
+                   s.instrucciones, 
+                   s.descripcion, 
+                   s.presupuesto_max, 
+                   s.foto_prenda,
+                   u.nombre AS comprador
             FROM postulaciones p
             JOIN solicitudes s ON p.id_solicitud = s.id_solicitud
             JOIN usuarios u ON s.id_usuario = u.id_usuario
-            WHERE p.id_disenador = ? AND p.estado = 'accepted'",";
+            WHERE p.id_disenador = ? AND p.estado IN ('aceptada', 'pendiente')
+            ORDER BY p.fecha DESC";
 
     $stmt = $db->prepare($sql);
     $stmt->execute([$id_disenador]);

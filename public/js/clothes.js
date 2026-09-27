@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('orders-container');
     if (!container) return;
 
+    const statusTranslations = {
+    'pendiente': { text: 'Pending', bg: '#FEFCBF', color: '#744210' },
+    'aceptada': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
+    'en_revision': { text: 'In Review', bg: '#BEE3F8', color: '#2B6CB0' },
+    'completada': { text: 'Completed', bg: '#C6F6D5', color: '#2F855A' },
+    'rechazada': { text: 'Rejected', bg: '#FED7D7', color: '#9B2C2C' }
+  };
+
     container.innerHTML = orders.map(order => {
       // Mapeo de estados a estilos
       let statusStyle = { bg: '#c6e876', color: '#1b4332', text: order.estado || 'In Progress' };
