@@ -3,18 +3,30 @@ async function verificarAcceso(rolesPermitidos = []) {
         const response = await fetch("../auth/check_session.php");
         const data = await response.json();
 
-        // LOG DE DEPURACIÓN: Para saber qué está pasando en el navegador
+        // LOG DE DEPURACIÓN
         console.log("Auth Guard - Session Data:", data);
 
-        // 1. Si no está autenticado, redirigir al login
+        // 1. Si no está autenticado, limpiar almacenamiento y redirigir al login
         if (!data.authenticated) {
             console.warn("Auth Guard: Usuario no autenticado. Redirigiendo al login...");
+            sessionStorage.removeItem('usuario');
+            localStorage.removeItem('usuario');
             window.location.href = "login.html";
             return null;
         }
 
+        // --- SOLUCIÓN AQUÍ ---
+        // Guardar los datos devueltos por PHP tanto en sessionStorage como en localStorage
+        if (data.user) {
+            sessionStorage.setItem('usuario', JSON.stringify(data.user));
+            localStorage.setItem('usuario', JSON.stringify(data.user));
+        }
+
         const rolUsuario = data.user.rol; // 'comprador' o 'disenador'
         console.log("Auth Guard - Rol detectado:", rolUsuario);
+
+        // Actualizar los enlaces de la barra de navegación dinámicamente
+        updateNavbar();
 
         // 2. Validar restricción por rol si la página lo requiere
         if (rolesPermitidos.length > 0 && !rolesPermitidos.includes(rolUsuario)) {
@@ -40,10 +52,10 @@ async function verificarAcceso(rolesPermitidos = []) {
 }
 
 function irAMiPerfil() {
-    const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
+    const datosGuardados = sessionStorage.getItem('usuario') || localStorage.getItem('usuario') || localStorage.getItem('usuarioSesion');
 
     if (!datosGuardados) {
-        console.warn('No se encontró ninguna sesión activa en localStorage.');
+        console.warn('No se encontró ninguna sesión activa.');
         window.location.href = 'login.html';
         return;
     }
@@ -56,13 +68,12 @@ function irAMiPerfil() {
     } else if (rol === 'comprador' || rol === 'buyer' || rol === 'usuario') {
         window.location.href = 'perfilusuario.html';
     } else {
-        console.warn('Rol no reconocido:', rol);
         window.location.href = 'homepage.html';
     }
 }
 
 function updateNavbar() {
-    const datosGuardados = localStorage.getItem('usuarioSesion') || localStorage.getItem('usuario');
+    const datosGuardados = sessionStorage.getItem('usuario') || localStorage.getItem('usuario') || localStorage.getItem('usuarioSesion');
     if (!datosGuardados) return;
 
     const usuario = JSON.parse(datosGuardados);

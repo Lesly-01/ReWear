@@ -1,45 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('createRequestForm');
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-
-            try {
-                const res = await fetch('../solicitudes/create.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!res.ok) {
-                    throw new Error(`Error HTTP: ${res.status}`);
-                }
-
-                const data = await res.json();
-
-                if (data.success) {
-                    alert(data.message);
-                    form.reset();
-                    
-                    // Cerrar el modal
-                    const modalEl = document.getElementById('createRequestModal');
-                    if (modalEl) {
-                        const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-                        modal.hide();
-                    }
-
-                    // Actualizar las tarjetas automáticamente en pantalla
-                    if (typeof window.cargarSolicitudes === 'function') {
-                        window.cargarSolicitudes();
-                    }
-                } else {
-                    alert('Error en la BD: ' + data.message);
-                }
-            } catch (err) {
-                console.error('Error al enviar la solicitud:', err);
-                alert('Ocurrió un error al procesar el formulario: ' + err.message);
-            }
-        });
+    const createPostForm = document.getElementById('createPostForm');
+    if (createPostForm) {
+        createPostForm.addEventListener('submit', guardarProyecto);
     }
 });
+
+async function guardarProyecto(event) {
+    // Evita la recarga automática de la página
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+        // Asegúrate de que la ruta apunte al directorio correcto de tu backend
+        const response = await fetch('../prendas/create.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert(result.message);
+            form.reset();
+
+            // Cierra el modal de Bootstrap tras guardar
+            const modalElement = document.getElementById('newPostModal');
+            if (modalElement) {
+                const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+                modalInstance.hide();
+            }
+        } else {
+            alert('Attention: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error saving project:', error);
+        alert('A connection error occurred while saving the project.');
+    }
+}

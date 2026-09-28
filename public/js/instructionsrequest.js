@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 4. Inyectar los datos recibidos de la base de datos
     document.getElementById('order-designer').textContent = `@${data.designer_username || 'unassigned'}`;
     document.getElementById('order-status').textContent = data.status || 'In review';
-    document.getElementById('order-img').src = data.image_path || '/public/IMG/placeholder.jpg';
+    document.getElementById('order-img').src = data.image_path || 'img/placeholder.jpg';
     document.getElementById('order-method').textContent = data.method || 'Not specified';
     document.getElementById('order-instructions').textContent = data.instructions || 'No details provided.';
 

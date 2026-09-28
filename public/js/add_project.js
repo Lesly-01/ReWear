@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    e.preventDefault();
     const createPostForm = document.getElementById('createPostForm');
     if (createPostForm) {
         createPostForm.addEventListener('submit', guardarProyecto);
