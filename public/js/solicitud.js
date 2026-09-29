@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (userEl) userEl.innerHTML = `<i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @${item.comprador || 'usuario'}`;
     const statusEl = clone.querySelector('.card-status');
 
-    if (statusEl) statusEl.textContent = item.estado ? item.estado.toUpperCase() : 'OPEN';
+    if (statusEl) statusEl.textContent = item.estado ? item.estado.toLowerCase() : 'OPEN';
     const categoryEl = clone.querySelector('.card-category');
 
     
-    if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
+    if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toLowerCase();
     const titleEl = clone.querySelector('.card-title');
     if (titleEl) titleEl.textContent = item.titulo;
     const methodEl = clone.querySelector('.card-method');

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ruta por defecto si no suben imagen
-    $image_path = !empty($image_url_input) ? $image_url_input : 'IMG/default.jpg';
+    $image_path = !empty($image_url_input) ? $image_url_input : 'public/imagenes/default_request.jpg';
     
     // 5. Manejo de la subida de imagen física
     if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {

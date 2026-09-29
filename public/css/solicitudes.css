@@ -93,3 +93,8 @@ body{
     font-size: 2rem;
     color: #0c5a40;
 }
+
+#customization-requests-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas bajen a la siguiente fila */
+}

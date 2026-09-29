@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $presupuesto_max = floatval($_POST['max_budget'] ?? 0);
 
     // Procesamiento de la foto principal (garment_photo)
-    $foto_prenda = '../public/imagenes/uploads_requests'; // Ruta por defecto
+    $foto_prenda = '../public/imagenes/uploads_requests/'; // Ruta por defecto
     
     if (isset($_FILES['garment_photo']) && $_FILES['garment_photo']['error'] === UPLOAD_ERR_OK) {
         $uploadDir = '../public/imagenes/uploads_requests/';
