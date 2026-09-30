@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (in_array($fileExtension, $allowedExtensions)) {
             $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
             // Ruta hacia la carpeta public/imagenes/uploads/
-            $uploadFileDir = '../public/imagenes/uploads/';
+            $uploadFileDir = '../public/imagenes/uploads';
 
             if (!is_dir($uploadFileDir)) {
                 mkdir($uploadFileDir, 0755, true);
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $dest_path = $uploadFileDir . $newFileName;
             if (move_uploaded_file($fileTmpPath, $dest_path)) {
-                $image_path = 'imagenes/uploads/' . $newFileName;
+                $image_path = 'imagenes/uploads' . $newFileName;
             }
         }
     }

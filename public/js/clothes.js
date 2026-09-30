@@ -4,6 +4,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log("1. DOM cargado correctamente");
 
+  function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   // ==========================================
   // A. CARGA DE SOLICITUDES DESDE EL BACKEND
   // ==========================================
@@ -42,17 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
 
     const statusTranslations = {
-    'en_trato': 'In progress',
-    'en trato': 'In progress',
-    'aceptada': 'In progress',
-    'en_proceso': 'In progress',
-    'pendiente': 'Pending',
-    'abierta': 'Open',
-    'disponible': 'Available',
-    'en_revision': 'In review',
-    'completada': 'Completed',
-    'rechazada': 'Rejected'
-  };
+      'en_trato': 'In progress',
+      'en trato': 'In progress',
+      'aceptada': 'In progress',
+      'en_proceso': 'In progress',
+      'pendiente': 'Pending',
+      'abierta': 'Open',
+      'disponible': 'Available',
+      'en_revision': 'In review',
+      'completada': 'Completed',
+      'rechazada': 'Rejected'
+    };
 
     lista.forEach(item => {
       const clone = template.content.cloneNode(true);
@@ -64,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (userEl) userEl.textContent = `@${item.comprador || 'usuario'}`;
 
       const statusEl = clone.querySelector('.card-status');
-    if (statusEl) {
-      const rawStatus = String(item.estado || 'ABIERTA').trim().toLowerCase();
-      statusEl.textContent = statusTranslations[rawStatus] || 'In progress';
-    }
+      if (statusEl) {
+        const rawStatus = String(item.estado || 'ABIERTA').trim().toLowerCase();
+        statusEl.textContent = statusTranslations[rawStatus] || 'In progress';
+      }
 
       const categoryEl = clone.querySelector('.card-category');
       if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toLowerCase();
@@ -104,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
     try {
-      // Endpoint hipotético que devuelve las postulaciones 'aceptada' del diseñador actual
       const response = await fetch('../solicitudes/get_active_orders.php');
 
       if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
@@ -127,42 +136,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
     const statusTranslations = {
-    'EN_TRATO': { text: 'In progress', bg: '#c6e876', color: '#1b4332' },
-    'pendiente': { text: 'Pending', bg: '#FEFCBF', color: '#744210' },
-    'aceptada': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
-    'en_revision': { text: 'In Review', bg: '#BEE3F8', color: '#2B6CB0' },
-    'completada': { text: 'Completed', bg: '#C6F6D5', color: '#2F855A' },
-    'rechazada': { text: 'Rejected', bg: '#FED7D7', color: '#9B2C2C' }
-  };
+      'en_trato': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
+      'aceptada': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
+      'en_proceso': { text: 'In Progress', bg: '#c6e876', color: '#1b4332' },
+      'pendiente': { text: 'Pending', bg: '#FEFCBF', color: '#744210' },
+      'en_revision': { text: 'In Review', bg: '#BEE3F8', color: '#2B6CB0' },
+      'completada': { text: 'Completed', bg: '#C6F6D5', color: '#2F855A' },
+      'rechazada': { text: 'Rejected', bg: '#FED7D7', color: '#9B2C2C' }
+    };
 
     container.innerHTML = orders.map(order => {
-      // Mapeo de estados a estilos
-      let statusStyle = { bg: '#c6e876', color: '#1b4332', text: order.estado || 'In Progress' };
-      if (order.estado === 'En Review') statusStyle = { bg: '#BEE3F8', color: '#2B6CB0', text: 'In Review' };
-      if (order.estado === 'Completed') statusStyle = { bg: '#C6F6D5', color: '#2F855A', text: 'Completed' };
+      const rawStatus = String(order.estado || '').trim().toLowerCase();
+      const statusStyle = statusTranslations[rawStatus] || { 
+        bg: '#c6e876', 
+        color: '#1b4332', 
+        text: escapeHTML(order.estado) || 'In Progress' 
+      };
 
       return `
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
           <div class="position-relative" style="height: 190px;">
-            <img src="${order.foto_prenda ? '../public/' + order.foto_prenda : 'IMG/default_request.jpg'}" class="w-100 h-100 object-fit-cover" alt="${order.titulo}">
+            <img src="${order.foto_prenda ? '../public/' + escapeHTML(order.foto_prenda) : 'IMG/default_request.jpg'}" class="w-100 h-100 object-fit-cover" alt="${escapeHTML(order.titulo)}">
 
             <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm" style="background-color: ${statusStyle.bg}; color: ${statusStyle.color};">${statusStyle.text}</span>
 
             <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 px-2 py-1 rounded-pill shadow-sm small">
-              ${order.fecha_postulacion || 'Active'}
+              ${escapeHTML(order.fecha_postulacion) || 'Active'}
             </span>
           </div>
 
           <div class="card-body p-3 d-flex flex-column">
             <div class="d-flex align-items-center gap-2 mb-2">
               <i class="bi bi-person-circle text-muted"></i>
-              <span class="fw-semibold text-dark small">@${order.comprador || 'usuario'}</span>
+              <span class="fw-semibold text-dark small">@${escapeHTML(order.comprador) || 'usuario'}</span>
             </div>
 
-            <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${order.titulo}</h6>
+            <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${escapeHTML(order.titulo)}</h6>
             <p class="text-muted small mb-3 text-truncate-2" style="font-size: 0.82rem; line-height: 1.3;">
-              ${order.instrucciones || order.descripcion || 'No description'}
+              ${escapeHTML(order.instrucciones || order.descripcion || 'No description')}
             </p>
 
             <div class="p-2 rounded-3 mb-3 bg-light d-flex justify-content-between align-items-center">
@@ -172,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <button type="button"
                     class="btn w-100 rounded-3 fw-semibold text-white btn-update-status"
-                    data-id="${order.id_postulacion}"
+                    data-id="${escapeHTML(order.id_postulacion)}"
                     data-bs-toggle="modal"
                     data-bs-target="#updateStatusModal"
                     style="background-color: #1b4332; font-size: 0.78rem;">
@@ -186,10 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
     container.querySelectorAll('.btn-update-status').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const orderId = e.currentTarget.getAttribute('data-id');
-        // En una implementación real, buscaríamos los datos del objeto order.
-        // Para simplicidad, podemos hacer un fetch rápido o pasar los datos al render.
         console.log("Actualizando orden:", orderId);
-        if (document.getElementById('orderIdInput')) document.getElementById('orderIdInput').value = orderId;
+        const orderInput = document.getElementById('orderIdInput');
+        if (orderInput) orderInput.value = orderId;
       });
     });
   }
@@ -200,9 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatusForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const orderId = document.getElementById('orderIdInput').value;
-      const newStatus = document.getElementById('statusSelect').value;
-      const comment = document.getElementById('statusCommentInput').value;
+      const orderId = document.getElementById('orderIdInput')?.value;
+      const newStatus = document.getElementById('statusSelect')?.value;
+      const comment = document.getElementById('statusCommentInput')?.value;
 
       if (!orderId) {
         alert('Error: No se encontró el ID de la orden.');
@@ -217,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify({
             id_postulacion: orderId,
-            estado: newStatus === 'In Review' ? 'in_review' : (newStatus === 'Completed' ? 'completed' : 'pending'),
+            estado: newStatus,
             comentario: comment
           })
         });
@@ -234,9 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const commentInput = document.getElementById('statusCommentInput');
           if (commentInput) commentInput.value = '';
 
-          // Recargar la lista para ver cambios
           await cargarOrdenesActivas();
-          // También recargamos las solicitudes generales para que desaparezca de la otra lista
           await cargarSolicitudes();
         } else {
           alert('Error al actualizar: ' + result.message);
