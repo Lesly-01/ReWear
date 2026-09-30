@@ -1,3 +1,6 @@
+// este es el de las tarjetas de clothes.html //
+
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log("1. DOM cargado correctamente");
 
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const clone = template.content.cloneNode(true);
 
       const imgEl = clone.querySelector('.card-img');
-      if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'IMG/default_request.jpg';
+      if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'imagenes/uploads_requests/default_request.jpg';
 
       const userEl = clone.querySelector('.card-user');
       if (userEl) userEl.textContent = `@${item.comprador || 'usuario'}`;
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
       const categoryEl = clone.querySelector('.card-category');
-      if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toUpperCase();
+      if (categoryEl) categoryEl.textContent = (item.metodo || item.tipo_prenda || 'CUSTOM').toLowerCase();
 
       const titleEl = clone.querySelector('.card-title');
       if (titleEl) titleEl.textContent = item.titulo;
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const descEl = clone.querySelector('.card-description');
-      if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin descripción';
+      if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'No description';
 
       const budgetEl = clone.querySelector('.card-budget');
       if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
@@ -111,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (result.success && result.data && result.data.length > 0) {
         renderActiveOrders(result.data);
       } else {
-        container.innerHTML = '<p class="text-center text-muted">No tienes órdenes activas en este momento.</p>';
+        container.innerHTML = '<p class="text-center text-muted">You do not have any active orders at the moment.</p>';
       }
     } catch (error) {
       console.error("Error al cargar órdenes activas:", error);
-      container.innerHTML = '<p class="text-center text-danger">Error al cargar tus órdenes activas.</p>';
+      container.innerHTML = '<p class="text-center text-danger">Error loading your active orders.</p>';
     }
   }
 
@@ -159,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <h6 class="fw-bold mb-1 text-truncate" style="color: #022522;">${order.titulo}</h6>
             <p class="text-muted small mb-3 text-truncate-2" style="font-size: 0.82rem; line-height: 1.3;">
-              ${order.instrucciones || order.descripcion || 'Sin descripción'}
+              ${order.instrucciones || order.descripcion || 'No description'}
             </p>
 
             <div class="p-2 rounded-3 mb-3 bg-light d-flex justify-content-between align-items-center">
