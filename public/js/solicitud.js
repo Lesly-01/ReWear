@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const garmentEl = clone.querySelector('.card-garment');
     if (garmentEl) garmentEl.textContent = item.tipo_prenda || 'Garment not specified';
     const descEl = clone.querySelector('.card-description');
-    if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'Sin instrucciones';
+    if (descEl) descEl.textContent = item.instrucciones || item.descripcion || 'No instructions';
     const budgetEl = clone.querySelector('.card-budget');
     if (budgetEl) budgetEl.textContent = `$${parseFloat(item.presupuesto_max || 0).toFixed(2)} USD`;
     const cardDiv = clone.querySelector('.request-card-item');
