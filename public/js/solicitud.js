@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const clone = template.content.cloneNode(true);
     const imgEl = clone.querySelector('.card-img');
-    if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'IMG/default_request.jpg';
+    if (imgEl) imgEl.src = item.foto_prenda ? `../public/${item.foto_prenda}` : 'imagenes/uploads_requests/default_request.jpg';
     const userEl = clone.querySelector('.card-user');
     if (userEl) userEl.innerHTML = `<i class="bi bi-person-circle me-1" style="color: #1b4332;"></i> @${item.comprador || 'usuario'}`;
     const statusEl = clone.querySelector('.card-status');

@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode([
             'success' => true,
-            'message' => '¡Proyecto publicado exitosamente en el portafolio!'
+            'message' => '¡Project successfully published in the portfolio!'
         ]);
 
     } catch (PDOException $e) {

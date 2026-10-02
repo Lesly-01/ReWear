@@ -366,7 +366,7 @@
 
       // Inyección de textos e imagen
       document.getElementById('postTitle').textContent = data.titulo || 'Sin título';
-      document.getElementById('postMainImage').src = data.foto_prenda ? `../public/${data.foto_prenda}` : 'IMG/default_request.jpg';
+      document.getElementById('postMainImage').src = data.foto_prenda ? `../public/${data.foto_prenda}` : 'imagenes/uploads_requests/default_request.jpg';
       document.getElementById('postDesigner').textContent = `@${data.nombre_disenador || 'diseñador'}`;
       document.getElementById('postSpecialization').textContent = data.especializaciones || 'General';
       document.getElementById('postDescription').textContent = data.descripcion || 'Sin descripción disponible.';
